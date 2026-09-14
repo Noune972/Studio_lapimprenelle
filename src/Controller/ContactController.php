@@ -22,12 +22,19 @@ class ContactController extends AbstractController
             $data = $form->getData();
 
             $email = (new Email())
-                ->from('contact@camilledev.fr')
-                ->to('contact@camilledev.fr')
-                ->replyTo($data['email'])
-                ->subject('Nouveau message de contact — ' . $data['nom'])
-                ->text($data['message'] . "\n\nType de projet : " . $data['typeProjet']);
-
+            ->from('contact@lapimprenelle.fr')
+            ->to('contact@lapimprenelle.fr')
+            ->replyTo($data['email'])
+            ->subject('Nouveau message de contact — ' . $data['nom'])
+            ->text(sprintf(
+        "Nom : %s\nEmail : %s\nTéléphone : %s\nType de projet : %s\nBudget : %s\n\nMessage :\n%s",
+        $data['nom'],
+        $data['email'],
+        $data['telephone'] ?? 'non renseigné',
+        $data['typeProjet'],
+        $data['budget'] ?? 'non renseigné',
+        $data['message']
+    ));
             $mailer->send($email);
 
             $this->addFlash('success', 'Votre message a bien été envoyé, merci !');

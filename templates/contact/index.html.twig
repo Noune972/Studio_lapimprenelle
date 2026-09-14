@@ -1,25 +1,72 @@
 {% extends 'base.html.twig' %}
-{% block title %}Contact — Studio Lapimprenelle{% endblock %}
+{% block title %}Contact — Tempo{% endblock %}
 
 {% block body %}
-<div class="max-w-md mx-auto px-6 py-10">
-    <h1 class="text-xl font-medium text-center mb-2">Discutons de votre projet</h1>
-    <p class="text-sm text-gray-500 text-center mb-6">Réponse sous 24h ouvrées.</p>
+<section class="bg-cream min-h-screen">
+  <div class="max-w-6xl mx-auto px-6 py-16 grid lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-lg">
 
-    {% for message in app.flashes('success') %}
-        <div class="bg-emerald-50 text-emerald-700 text-sm px-4 py-2 rounded-md mb-4">{{ message }}</div>
-    {% endfor %}
+    <!-- Colonne photo -->
+    <div class="hidden lg:block relative">
+      <img src="{{ asset('images/contact.png') }}" alt="Tempo, agence web" class="w-full h-full object-cover" onerror="this.parentElement.style.background='linear-gradient(135deg,#D9C8A9,#B9A480)'">
+    </div>
 
-    {{ form_start(form) }}
-        <div class="flex flex-col gap-3">
-            {{ form_row(form.nom) }}
-            {{ form_row(form.email) }}
-            {{ form_row(form.typeProjet) }}
-            {{ form_row(form.message) }}
-            <button type="submit" class="bg-emerald-700 text-white py-2.5 rounded-md text-sm font-medium mt-1">Envoyer le message</button>
+    <!-- Colonne formulaire -->
+    <div class="bg-[#F7F1E7] p-10 lg:p-14">
+      <div class="text-xs tracking-widest text-terracotta font-medium mb-3">CONTACT</div>
+      <h1 class="font-display text-3xl mb-2">Discutons de votre projet</h1>
+      <p class="text-sm text-ink-soft mb-8">Réponse sous 24h ouvrées.</p>
+
+      {% for message in app.flashes('success') %}
+        <div class="bg-emerald-50 text-emerald-700 text-sm px-4 py-3 rounded-lg mb-6">{{ message }}</div>
+      {% endfor %}
+
+      {{ form_start(form, {attr: {class: 'space-y-4'}}) }}
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            {{ form_label(form.nom, null, {label_attr: {class: 'block text-xs font-medium text-ink-soft mb-1.5'}}) }}
+            {{ form_widget(form.nom, {attr: {class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'}}) }}
+            {{ form_errors(form.nom) }}
+          </div>
+          <div>
+            {{ form_label(form.email, null, {label_attr: {class: 'block text-xs font-medium text-ink-soft mb-1.5'}}) }}
+            {{ form_widget(form.email, {attr: {class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'}}) }}
+            {{ form_errors(form.email) }}
+          </div>
         </div>
-    {{ form_end(form) }}
 
-    <p class="text-xs text-gray-400 text-center mt-4">ou écrivez directement à contact@camilledev.fr</p>
-</div>
+        <div>
+          {{ form_label(form.telephone, null, {label_attr: {class: 'block text-xs font-medium text-ink-soft mb-1.5'}}) }}
+          {{ form_widget(form.telephone, {attr: {class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'}}) }}
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            {{ form_label(form.typeProjet, null, {label_attr: {class: 'block text-xs font-medium text-ink-soft mb-1.5'}}) }}
+            {{ form_widget(form.typeProjet, {attr: {class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'}}) }}
+          </div>
+          <div>
+            {{ form_label(form.budget, null, {label_attr: {class: 'block text-xs font-medium text-ink-soft mb-1.5'}}) }}
+            {{ form_widget(form.budget, {attr: {class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'}}) }}
+          </div>
+        </div>
+
+        <div>
+          {{ form_label(form.message, null, {label_attr: {class: 'block text-xs font-medium text-ink-soft mb-1.5'}}) }}
+          {{ form_widget(form.message, {attr: {class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm min-h-[110px] focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'}}) }}
+        </div>
+
+      
+
+        <button type="submit" class="w-full bg-[#00687A] hover:bg-[#00566A] text-white py-3 rounded-lg text-sm font-semibold transition">
+          Envoyer le message
+        </button>
+
+      {{ form_end(form) }}
+
+      <p class="text-xs text-ink-soft/70 text-center mt-6">ou écrivez directement à <a href="mailto:contact@tempo-agence.fr" class="underline">contact@tempo-agence.fr</a></p>
+    </div>
+
+  </div>
+</section>
 {% endblock %}

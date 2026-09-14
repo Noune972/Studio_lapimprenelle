@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ projet.titre }} — Studio Lapimprenelle{% endblock %}
+
+{% block body %}
+<div class="max-w-2xl mx-auto px-6 py-10">
+    <a href="{{ path('app_projet_index') }}" class="text-sm text-gray-500">← Tous les projets</a>
+    <h1 class="text-xl font-medium mt-3 mb-1">{{ projet.titre }}</h1>
+    <div class="text-xs text-gray-400 mb-6">{{ projet.type }}</div>
+    <div class="h-56 bg-gray-100 rounded-xl mb-6"></div>
+    <p class="text-sm text-gray-700 leading-relaxed">{{ projet.description }}</p>
+    {% if projet.lien %}
+    <a href="{{ projet.lien }}" target="_blank" class="inline-block mt-6 border border-gray-300 px-4 py-2 rounded-md text-sm">Voir le site ↗</a>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %}Services — Camille Dev{% endblock %}
+
+{% block body %}
+<div class="max-w-2xl mx-auto px-6 py-10">
+    <h1 class="text-xl font-medium text-center mb-8">Ce que je peux faire pour vous</h1>
+    <div class="flex flex-col gap-4">
+        <div class="bg-gray-50 rounded-xl p-5">
+            <div class="font-medium mb-1">Sites WordPress</div>
+            <p class="text-sm text-gray-600 mb-2">Sites vitrines, blogs et boutiques en ligne. Thème sur mesure, performance et référencement soignés, prise en main autonome après livraison.</p>
+            <div class="text-xs text-gray-400">À partir de 1 500 €</div>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-5">
+            <div class="font-medium mb-1">Applications Symfony</div>
+            <p class="text-sm text-gray-600 mb-2">Back-office, API, outils métier sur mesure. Architecture propre, tests automatisés, déploiement fiable via Docker.</p>
+            <div class="text-xs text-gray-400">Sur devis, selon le périmètre</div>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-5">
+            <div class="font-medium mb-1">Refonte et maintenance</div>
+            <p class="text-sm text-gray-600 mb-2">Site existant lent, piraté ou obsolète : audit clair, remise à niveau, reprise sans tout casser.</p>
+            <div class="text-xs text-gray-400">Audit offert</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

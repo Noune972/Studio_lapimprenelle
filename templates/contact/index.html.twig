@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %}Contact — Studio Lapimprenelle{% endblock %}
+
+{% block body %}
+<div class="max-w-md mx-auto px-6 py-10">
+    <h1 class="text-xl font-medium text-center mb-2">Discutons de votre projet</h1>
+    <p class="text-sm text-gray-500 text-center mb-6">Réponse sous 24h ouvrées.</p>
+
+    {% for message in app.flashes('success') %}
+        <div class="bg-emerald-50 text-emerald-700 text-sm px-4 py-2 rounded-md mb-4">{{ message }}</div>
+    {% endfor %}
+
+    {{ form_start(form) }}
+        <div class="flex flex-col gap-3">
+            {{ form_row(form.nom) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.typeProjet) }}
+            {{ form_row(form.message) }}
+            <button type="submit" class="bg-emerald-700 text-white py-2.5 rounded-md text-sm font-medium mt-1">Envoyer le message</button>
+        </div>
+    {{ form_end(form) }}
+
+    <p class="text-xs text-gray-400 text-center mt-4">ou écrivez directement à contact@camilledev.fr</p>
+</div>
+{% endblock %}

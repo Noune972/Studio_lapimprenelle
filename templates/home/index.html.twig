@@ -1,0 +1,327 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tempo, agence web à Toulouse{% endblock %}
+
+{% block body %}
+<div class="bg-cream text-ink font-sans">
+
+
+  <section class="max-w-7xl mx-auto px-10 pt-8 pb-20 grid md:grid-cols-2 gap-14 items-center">
+    <div>
+      <div class="text-xs tracking-widest text-terracotta font-medium mb-4">CRÉATION WEB · DÉVELOPPEMENT · SEO</div>
+      <h1 class="font-display text-4xl leading-[1.15] mb-6">
+        Création sites web<br>Symfony & WordPress<span class="text-terracotta">Toulouse.</span>
+      </h1>
+      <p class="text-ink-soft leading-relaxed mb-8 max-w-md">
+        Je conçois des sites WordPress élégants et des applications Symfony sur mesure pour les entreprises, indépendants et projets qui veulent vraiment se démarquer.
+      </p>
+      <div class="flex flex-wrap gap-3 mb-8">
+        <a href="{{ path('app_contact') }}" class="bg-terracotta hover:bg-terracotta-dark text-cream px-6 py-3 rounded-full text-sm font-medium inline-flex items-center gap-2">Discuter de mon projet <span aria-hidden="true">→</span></a>
+        <a href="{{ path('app_projet_index') }}" class="px-6 py-3 rounded-full text-sm font-medium border border-ink/15">Voir mes réalisations</a>
+      </div>
+      <div class="flex flex-wrap gap-6 text-sm text-ink-soft">
+        <div class="flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-pine text-white flex items-center justify-center text-xs">W</span>WordPress</div>
+        <div class="flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-ink text-white flex items-center justify-center text-xs">sf</span>Symfony &amp; PHP sur mesure</div>
+        <div class="flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-terracotta text-white flex items-center justify-center text-xs">◎</span>SEO &amp; contenu</div>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="bg-[#00687A] rounded-2xl h-96 w-full shadow-xl flex items-center justify-center">
+        <img src="{{ asset('images/hero-desk.jpg') }}" alt="Bureau avec ordinateur portable" class="w-full h-full object-cover rounded-2xl" onerror="this.remove()">
+      </div>
+     
+    </div>
+  </section>
+
+  <section class="bg-cream-2 py-20">
+    <div class="max-w-7xl mx-auto px-10">
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div>
+          <div class="text-xs tracking-widest text-terracotta font-medium mb-3">MON EXPERTISE</div>
+          <h2 class="font-display text-3xl leading-snug">Des solutions adaptées à vos besoins</h2>
+        </div>
+        <p class="text-ink-soft leading-relaxed self-end">Un accompagnement pensé autour de votre projet, de vos objectifs et de vos utilisateurs.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-cream rounded-2xl p-8">
+          <div class="w-11 h-11 rounded-full bg-pine text-white flex items-center justify-center mb-6">W</div>
+          <h3 class="font-display text-xl mb-3">Sites WordPress</h3>
+          <p class="text-sm text-ink-soft leading-relaxed mb-6">Des sites vitrines, boutiques et blogs élégants, faciles à administrer et pensés pour évoluer.</p>
+          <ul class="space-y-2 text-sm text-ink-soft mb-6">
+            <li class="flex gap-2"><span class="text-terracotta">✓</span>Design personnalisé</li>
+            <li class="flex gap-2"><span class="text-terracotta">✓</span>Responsive mobile &amp; desktop</li>
+            <li class="flex gap-2"><span class="text-terracotta">✓</span>SEO technique</li>
+            <li class="flex gap-2"><span class="text-terracotta">✓</span>Formation à l'administration</li>
+          </ul>
+          <a href="{{ path('app_contact') }}" class="w-9 h-9 rounded-full bg-terracotta text-white flex items-center justify-center">→</a>
+        </div>
+
+        <div class="bg-[#00687A] text-cream rounded-2xl p-8">
+          <div class="w-11 h-11 rounded-full bg-white text-pine flex items-center justify-center mb-6 font-medium">sf</div>
+          <h3 class="font-display text-xl mb-3">Applications Symfony</h3>
+          <p class="text-sm text-white/70 leading-relaxed mb-6">Quand un simple CMS ne suffit plus, je développe des applications métier adaptées à vos besoins.</p>
+          <ul class="space-y-2 text-sm text-white/80 mb-6">
+            <li class="flex gap-2"><span class="text-terracotta">✓</span>PHP &amp; Symfony</li>
+            <li class="flex gap-2"><span class="text-terracotta">✓</span>Bases de données &amp; Doctrine</li>
+            <li class="flex gap-2"><span class="text-terracotta">✓</span>Back-office sur mesure</li>
+            <li class="flex gap-2"><span class="text-terracotta">✓</span>Gestion des utilisateurs &amp; rôles</li>
+          </ul>
+          <a href="{{ path('app_contact') }}" class="w-9 h-9 rounded-full bg-terracotta text-white flex items-center justify-center">→</a>
+        </div>
+
+        <div class="bg-cream rounded-2xl p-8">
+          <div class="w-11 h-11 rounded-full bg-terracotta text-white flex items-center justify-center mb-6">◎</div>
+          <h3 class="font-display text-xl mb-3">SEO &amp; contenu</h3>
+          <p class="text-sm text-ink-soft leading-relaxed mb-6">Une belle interface ne suffit pas. Votre site doit aussi être compréhensible par les moteurs de recherche.</p>
+          <ul class="space-y-2 text-sm text-ink-soft mb-6">
+            <li class="flex gap-2"><span class="text-terracotta">✓</span>Structure SEO</li>
+            <li class="flex gap-2"><span class="text-terracotta">✓</span>Contenus optimisés</li>
+            <li class="flex gap-2"><span class="text-terracotta">✓</span>Balises &amp; maillage interne</li>
+            <li class="flex gap-2"><span class="text-terracotta">✓</span>Stratégie éditoriale</li>
+          </ul>
+          <a href="{{ path('app_contact') }}" class="w-9 h-9 rounded-full bg-terracotta text-white flex items-center justify-center">→</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-10 grid md:grid-cols-2 gap-16 items-center">
+      <div class="bg-[#00687A] rounded-2xl h-80"></div>
+
+      <div>
+        <div class="text-xs tracking-widest text-terracotta font-medium mb-3">UNE APPROCHE DIFFÉRENTE</div>
+        <h2 class="font-display text-3xl leading-snug mb-4">
+          Pas seulement un joli site.<br><span class="text-terracotta">Un véritable outil.</span>
+        </h2>
+        <p class="text-ink-soft leading-relaxed mb-3 max-w-md">Un site web doit être beau, mais surtout utile. Il doit présenter votre activité, rassurer vos visiteurs, faciliter leur navigation et contribuer à vos objectifs.</p>
+        <p class="text-ink-soft leading-relaxed mb-6 max-w-md">C'est pourquoi je travaille sur trois dimensions : l'expérience utilisateur, la technique et le contenu.</p>
+        <a href="{{ path('app_contact') }}" class="text-sm font-medium inline-flex items-center gap-1.5 mb-10">Parlons de votre projet <span aria-hidden="true">→</span></a>
+
+        <div class="grid grid-cols-2 gap-x-8 gap-y-6">
+          <div class="flex gap-3">
+            <span class="w-8 h-8 rounded-full bg-terracotta text-white text-xs flex items-center justify-center flex-shrink-0">01</span>
+            <div><div class="font-medium text-sm mb-0.5">Comprendre</div><div class="text-xs text-ink-soft">Vos besoins, vos utilisateurs et vos objectifs.</div></div>
+          </div>
+          <div class="flex gap-3">
+            <span class="w-8 h-8 rounded-full bg-pine text-white text-xs flex items-center justify-center flex-shrink-0">02</span>
+            <div><div class="font-medium text-sm mb-0.5">Concevoir</div><div class="text-xs text-ink-soft">Une expérience claire, moderne et adaptée.</div></div>
+          </div>
+          <div class="flex gap-3">
+            <span class="w-8 h-8 rounded-full bg-terracotta text-white text-xs flex items-center justify-center flex-shrink-0">03</span>
+            <div><div class="font-medium text-sm mb-0.5">Développer</div><div class="text-xs text-ink-soft">WordPress ou Symfony selon la nature du projet.</div></div>
+          </div>
+          <div class="flex gap-3">
+            <span class="w-8 h-8 rounded-full bg-[#A68A63] text-white text-xs flex items-center justify-center flex-shrink-0">04</span>
+            <div><div class="font-medium text-sm mb-0.5">Faire évoluer</div><div class="text-xs text-ink-soft">Maintenance, contenu, SEO et évolutions futures.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-cream-2 py-20">
+    
+<div class="max-w-7xl mx-auto px-10">
+    <div class="grid md:grid-cols-[1fr,2fr] gap-10 items-center mb-10">
+
+        {# ============================= #}
+        {#        PARTIE GAUCHE           #}
+        {# ============================= #}
+
+        <div>
+            <div class="text-xs tracking-widest text-terracotta font-medium mb-3">
+                PORTFOLIO
+            </div>
+
+            <h2 class="font-display text-3xl leading-snug mb-4">
+                Quelques projets réalisés
+            </h2>
+
+            <p class="text-sm text-ink-soft mb-6 max-w-xs">
+                Des sites uniques, pensés pour répondre aux besoins spécifiques de chaque client.
+            </p>
+
+            <a href="{{ path('app_projet_index') }}"
+               class="bg-terracotta hover:bg-terracotta-dark text-cream px-5 py-2.5 rounded-full text-sm font-medium inline-flex items-center gap-2">
+                Voir plus de projets
+                <span aria-hidden="true">→</span>
+            </a>
+        </div>
+
+
+        {# ============================= #}
+        {#        PARTIE DROITE           #}
+        {#       3 SITES CLIENTS          #}
+        {# ============================= #}
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+
+
+            {# ============================= #}
+            {#           SITE 1                #}
+            {# ============================= #}
+
+            <a href="https://cjt-chauffeur-prive.fr/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="group block">
+
+                <div class="bg-white rounded-2xl shadow-md p-5 h-48
+                            flex flex-col items-center justify-center
+                            transition-all duration-300
+                            group-hover:-translate-y-1
+                            group-hover:shadow-xl">
+
+                    {# Logo du client #}
+                    <div class="h-20 w-full flex items-center justify-center mb-4">
+                        <img
+                            src="{{ asset('images/cjt.png') }}"
+                            alt="Logo Cj transport 1"
+                            class="w-[140px] object-contain"
+                        >
+                    </div>
+
+                    {# Nom du client #}
+                    <div class="text-sm font-medium text-ink
+                                group-hover:text-terracotta transition">
+                        Cjt transport
+                    </div>
+
+                    {# Lien #}
+                    <div class="text-xs text-ink-soft mt-1">
+                        Voir le site →
+                    </div>
+
+                </div>
+            </a>
+
+
+            {# ============================= #}
+            {#           SITE 2                #}
+            {# ============================= #}
+
+            <a href="https://www.mydrivers.fr"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="group block">
+
+                <div class="bg-white rounded-2xl shadow-md p-5 h-48
+                            flex flex-col items-center justify-center
+                            transition-all duration-300
+                            group-hover:-translate-y-1
+                            group-hover:shadow-xl">
+
+                    {# Logo du client #}
+                    <div class="h-20 w-full flex items-center justify-center mb-4">
+                        <img
+                            src="{{ asset('images/mydrivers.png') }}"
+                            alt="Logo Client 2"
+                            class="w-[200px] object-contain"
+                        >
+                    </div>
+
+                    {# Nom du client #}
+                    <div class="text-sm font-medium text-ink
+                                group-hover:text-terracotta transition">
+                        Mydrivers
+                    </div>
+
+                    {# Lien #}
+                    <div class="text-xs text-ink-soft mt-1">
+                        Voir le site →
+                    </div>
+
+                </div>
+            </a>
+
+
+            {# ============================= #}
+            {#           SITE 3                #}
+            {# ============================= #}
+
+            <a href="https://www.granit-art.fr"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="group block">
+
+                <div class="bg-white rounded-2xl shadow-md p-5 h-48
+                            flex flex-col items-center justify-center
+                            transition-all duration-300
+                            group-hover:-translate-y-1
+                            group-hover:shadow-xl">
+
+                    {# Logo du client #}
+                    <div class="h-20 w-full flex items-center justify-center mb-4">
+                        <img
+                            src="{{ asset('images/granit.png') }}"
+                            alt="Logo Client 3"
+                            class="w-[200px] object-contain"
+                        >
+                    </div>
+
+                    {# Nom du client #}
+                    <div class="text-sm font-medium text-ink
+                                group-hover:text-terracotta transition">
+                        Granit Art
+                    </div>
+
+                    {# Lien #}
+                    <div class="text-xs text-ink-soft mt-1">
+                        Voir le site →
+                    </div>
+
+                </div>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+
+        <div class="grid sm:grid-cols-3 gap-5">
+          {% for projet in projets %}
+          <article>
+            <a href="{{ path('app_projet_show', {slug: projet.slug}) }}">
+              <div class="bg-gradient-to-br from-[#D9C8A9] to-[#B9A480] rounded-xl h-40 mb-3"></div>
+              <div class="flex items-center justify-between">
+                <div><div class="text-sm font-medium">{{ projet.titre }}</div><div class="text-xs text-ink-soft">{{ projet.type }}</div></div>
+                <span class="w-7 h-7 rounded-full border border-ink/15 flex items-center justify-center text-xs">→</span>
+              </div>
+            </a>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-10">
+      <div class="text-xs tracking-widest text-terracotta font-medium mb-3">CRÉATION WEB À TOULOUSE</div>
+      <h2 class="font-display text-3xl leading-snug mb-10 max-w-xl">Un site pensé pour votre activité, pas pour rentrer dans une case.</h2>
+
+      <div class="grid md:grid-cols-3 gap-10 text-sm text-ink-soft leading-relaxed mb-8">
+        <p>Vous cherchez à créer un site professionnel pour votre entreprise ou votre projet personnel ? Je vous accompagne dans la conception d'une présence web élégante, fonctionnelle et responsive.</p>
+        <p>Selon vos besoins, votre projet peut prendre la forme d'un site WordPress facilement administrable ou d'une application Symfony développée sur mesure.</p>
+        <p>Le design, l'expérience utilisateur, le référencement naturel et la qualité technique sont pensés ensemble afin de construire un site cohérent et durable.</p>
+      </div>
+
+      <p class="font-display italic text-lg">Ensemble, <span class="underline decoration-terracotta">brillons sur la toile</span> !</p>
+    </div>
+  </section>
+
+  <section class="bg-[#00687A] text-cream py-24 text-center">
+    <div class="max-w-2xl mx-auto px-10">
+      <div class="text-xs tracking-widest text-terracotta font-medium mb-4">VOTRE PROJET COMMENCE ICI</div>
+      <h2 class="font-display text-3xl leading-snug mb-4">Et si on créait quelque chose<br>qui vous ressemble vraiment ?</h2>
+      <p class="text-white/70 mb-8 max-w-md mx-auto">Parlez-moi de votre idée, même si elle n'est encore qu'au stade de projet. Nous verrons ensemble la meilleure façon de la concrétiser.</p>
+      <a href="{{ path('app_contact') }}" class="bg-terracotta hover:bg-terracotta-dark text-cream px-6 py-3 rounded-full text-sm font-medium inline-flex items-center gap-2">
+        Démarrer une discussion <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+</div>
+{% endblock %}

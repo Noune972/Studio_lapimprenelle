@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ article.titre }} — Camille Dev{% endblock %}
+
+{% block body %}
+<div class="max-w-2xl mx-auto px-6 py-10">
+    <a href="{{ path('app_article_index') }}" class="text-sm text-gray-500">← Tous les articles</a>
+    <h1 class="text-xl font-medium mt-3 mb-1">{{ article.titre }}</h1>
+    <div class="text-xs text-gray-400 mb-6">{{ article.publishedAt|date('d F Y') }}</div>
+    <div class="text-sm text-gray-700 leading-relaxed">{{ article.contenu|nl2br }}</div>
+</div>
+{% endblock %}

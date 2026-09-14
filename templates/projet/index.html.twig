@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block title %}Projets — Studio Pimprenelle{% endblock %}
+
+{% block body %}
+<div class="max-w-3xl mx-auto px-6 py-10">
+    <h1 class="text-xl font-medium text-center mb-8">Quelques réalisations</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {% for projet in projets %}
+        <a href="{{ path('app_projet_show', {slug: projet.slug}) }}" class="border border-gray-200 rounded-xl overflow-hidden block">
+            <div class="h-28 bg-gray-100"></div>
+            <div class="p-3">
+                <div class="text-sm font-medium">{{ projet.titre }}</div>
+                <div class="text-xs text-gray-500">{{ projet.type }}</div>
+            </div>
+        </a>
+        {% else %}
+        <p class="text-sm text-gray-500 col-span-2 text-center">Aucun projet publié pour le moment.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

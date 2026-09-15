@@ -1,39 +1,307 @@
 {% extends 'base.html.twig' %}
-{% block title %}À propos — Camille Dev{% endblock %}
+
+{% block title %}À propos — Tempo agence web{% endblock %}
 
 {% block body %}
-<div class="max-w-2xl mx-auto px-6 py-10">
-    <div class="flex gap-6 flex-wrap items-start">
-        <div class="w-28 h-28 rounded-full bg-gray-100 flex-shrink-0"></div>
-        <div class="flex-1 min-w-[220px]">
-            <h1 class="text-xl font-medium mb-3">Bonjour, je suis Nathalie</h1>
-            <p class="text-sm text-gray-600 leading-relaxed mb-3">Bonjour à tous ! 
 
-Je suis Nathalie CAMIUL, née en Martinique.
+<div class="bg-cream text-ink overflow-hidden">
 
-Dès mon plus jeune âge j’ai toujours eu un réel intérêt pour la langue de Molière.
 
-C’est donc tout naturellement que je me suis dirigée vers la voie littéraire au lycée. Aimant bien dessiner j’ai fait arts plastiques de la seconde à la terminale. 
+{# =========================================================
+   HERO
+========================================================= #}
 
-J’affectionne particulièrement les artistes impressionnistes tels que Monet, Van Gogh et Caillebotte.
+<section class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 pt-16 lg:pt-24 pb-20 lg:pb-28">
 
-Le mouvement Baroque, notamment avec le Caravage, et sa technique du clair-obscur, suscitent en moi une émotion vive.
+    <div class="grid lg:grid-cols-[1fr,0.85fr] gap-14 lg:gap-20 items-start">
 
-Amoureuse de Frantz Fanon et d’Aimé Césaire, qui m’ont éduquée  aux effets dévastateurs des préjugés et stéréotypes..Je m’interroge également sur les nombreuses années perdues que peuvent représenter le racisme ordinaire dans le monde du travail. Face à la vacuité, l’absurdité, et le copinage j’ai décidé d’entreprendre.
+        <div class="max-w-2xl reveal">
 
-J’ai entamé des études à l’UFR de psychologie de 2005 à 2008 à l’université Toulouse II Jean Jaurès. En 2013 J’ai obtenu un DUT information et communication, option GIDO (gestion de l’information et du document dans les organisations) à l’IUT Toulouse III Paul Sabatier.
+            <div class="inline-flex items-center gap-3 mb-7">
+                <span class="w-8 h-px bg-terracotta"></span>
+                <span class="text-xs tracking-[0.25em] text-terracotta font-medium">
+                    À PROPOS DE TEMPO
+                </span>
+            </div>
 
-Ma facilité à manier la sémantique et le référencement naturel, m’a convaincue de renforcer mes compétences en techniques de rédactions et d’écrire pour le web.
+            <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl leading-[0.98] tracking-tight mb-8">
+                Bonjour, je suis
+                <span class="text-terracotta">Nathalie.</span>
+            </h1>
 
-A cet effet, j’ai entrepris un travail poussé d’écriture, de lecture et d’une veille constante en optimisation de contenus web. Je suis  rédactrice web SEO  à Toulouse et j’élabore un contenu de qualité pour vous aider à améliorer votre positionnement sur le web.
+            <p class="text-lg sm:text-xl text-ink-soft leading-relaxed max-w-xl">
+                Développeuse fullstack, j'imagine des présences digitales à la fois élégantes,
+                utiles et pensées pour durer. La sécurité et la robustesse de mes applis et sites sont importantes pour moi.
+            </p>
 
-Également passionnée par le digital, j’ai terminé une formation en conception de sites web. Je vous propose la création de vos sites web WordPress et Symfony.
-
-Notre agence SEO vous accompagne.
-
-Contactez-nous à contact@lapimprenelle.fr..</p>
-            
         </div>
+
+
+        {# PHOTO #}
+
+        <div class="relative max-w-md lg:ml-auto reveal" style="transition-delay:150ms">
+
+            <div class="absolute -top-8 -right-8 w-28 h-28 rounded-full bg-[#D9C8A9] opacity-50 pointer-events-none"></div>
+            <div class="absolute -bottom-8 -left-8 w-20 h-20 border border-terracotta/30 rounded-full pointer-events-none"></div>
+
+            <div class="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-[#D9C8A9] shadow-2xl group">
+                <img
+                    src="{{ asset('images/nath.png') }}"
+                    alt="Nathalie, fondatrice de Tempo agence web"
+                    class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                >
+            </div>
+
+            <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-2xl px-5 py-4 shadow-lg transition-transform duration-300 hover:-translate-y-1">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <div class="text-[10px] tracking-[0.25em] text-terracotta font-medium mb-1">TEMPO</div>
+                        <div class="text-sm font-medium">Agence web &amp; contenu</div>
+                    </div>
+                    <span class="text-xl text-terracotta">↗</span>
+                </div>
+            </div>
+
+        </div>
+
     </div>
+
+</section>
+
+{# =========================================================
+   INTRODUCTION
+========================================================= #}
+
+<section class="bg-white">
+
+    <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 py-20 lg:py-28">
+
+        <div class="grid lg:grid-cols-[0.7fr,1.3fr] gap-12 lg:gap-24">
+
+            <div class="reveal">
+                <div class="text-xs tracking-[0.25em] text-terracotta font-medium mb-5">MON HISTOIRE</div>
+                <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl leading-tight">
+                    Une histoire faite de mots, de curiosité et de créativité.
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12 text-sm text-ink-soft leading-8 reveal" style="transition-delay:150ms">
+
+                <div>
+                    <p class="mb-6">
+                        Née en Martinique, j'ai depuis toujours un rapport particulier aux mots et à la langue de Molière.
+                        Cette sensibilité m'a naturellement conduite vers une formation littéraire au lycée, où j'ai également
+                        pratiqué les arts plastiques.
+                    </p>
+                    <p>
+                        Je reste profondément attachée à l'univers artistique. J'affectionne particulièrement les impressionnistes
+                        comme Monet, Van Gogh et Caillebotte, mais également le mouvement baroque et le travail du Caravage,
+                        notamment sa maîtrise du clair-obscur.
+                    </p>
+                </div>
+
+                <div>
+                    <p class="mb-6">
+                        Les œuvres de Frantz Fanon et d'Aimé Césaire ont également profondément nourri ma réflexion sur
+                        les préjugés, les stéréotypes et les rapports humains dans le monde professionnel.
+                    </p>
+                    <p>
+                        Face à certaines absurdités du monde du travail, j'ai choisi de créer mon propre chemin et de mettre
+                        mes compétences au service de projets qui ont du sens.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{# =========================================================
+   PARCOURS
+========================================================= #}
+
+<section class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 py-20 lg:py-28">
+
+    <div class="grid lg:grid-cols-[0.7fr,1.3fr] gap-12 lg:gap-24">
+
+        <div class="reveal">
+            <div class="inline-flex items-center gap-3 mb-5">
+                <span class="w-8 h-px bg-terracotta"></span>
+                <span class="text-xs tracking-[0.25em] text-terracotta font-medium">MON PARCOURS</span>
+            </div>
+
+            <h2 class="font-display text-4xl lg:text-5xl leading-tight">Des lettres au digital.</h2>
+
+            <p class="text-sm text-ink-soft leading-relaxed mt-6 max-w-sm">
+                Un parcours atypique, nourri par la communication, l'écriture, la culture et une curiosité permanente
+                pour le numérique.
+            </p>
+        </div>
+
+
+        <div class="space-y-12">
+
+            {# 2005 #}
+            <div class="relative pl-8 border-l border-[#D9C8A9] reveal">
+                <div class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-terracotta transition-transform duration-300 hover:scale-150"></div>
+                <div class="text-[11px] tracking-[0.2em] text-terracotta font-medium mb-3">2005 — 2008</div>
+                <h3 class="font-display text-2xl mb-3">Psychologie</h3>
+                <p class="text-sm text-ink-soft leading-7">Études à l'UFR de psychologie de l'université Toulouse II Jean Jaurès.</p>
+            </div>
+
+            {# 2013 #}
+            <div class="relative pl-8 border-l border-[#D9C8A9] reveal" style="transition-delay:150ms">
+                <div class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-terracotta transition-transform duration-300 hover:scale-150"></div>
+                <div class="text-[11px] tracking-[0.2em] text-terracotta font-medium mb-3">2013</div>
+                <h3 class="font-display text-2xl mb-3">Information &amp; communication</h3>
+                <p class="text-sm text-ink-soft leading-7">
+                    Obtention d'un DUT Information et Communication, option GIDO — Gestion de l'information et du
+                    document dans les organisations — à l'IUT Toulouse III Paul Sabatier.
+                </p>
+            </div>
+
+            {# Aujourd'hui #}
+            <div class="relative pl-8 border-l border-[#D9C8A9] reveal" style="transition-delay:300ms">
+                <div class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-terracotta transition-transform duration-300 hover:scale-150"></div>
+                <div class="text-[11px] tracking-[0.2em] text-terracotta font-medium mb-3">AUJOURD'HUI</div>
+                <h3 class="font-display text-2xl mb-3">Rédaction web &amp; création de sites</h3>
+                <p class="text-sm text-ink-soft leading-7 mb-4">
+                    Ma facilité à manier la sémantique et mon intérêt pour le référencement naturel m'ont naturellement
+                    conduite vers la rédaction web SEO.
+                </p>
+                <p class="text-sm text-ink-soft leading-7">
+                    Passionnée par le digital, j'ai également développé mes compétences en conception de sites web afin
+                    de proposer des solutions complètes, de WordPress à Symfony.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{# =========================================================
+   EXPERTISE
+========================================================= #}
+
+<section class="bg-[#D9C8A9]/35">
+
+    <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 py-20 lg:py-28">
+
+        <div class="max-w-2xl mb-14 reveal">
+            <div class="text-xs tracking-[0.25em] text-terracotta font-medium mb-5">MON SAVOIR-FAIRE</div>
+            <h2 class="font-display text-4xl lg:text-5xl leading-tight mb-6">Deux expertises, un même objectif.</h2>
+            <p class="text-sm text-ink-soft leading-7 max-w-xl">
+                Créer une présence en ligne cohérente, élégante et efficace pour vous aider à développer votre activité.
+            </p>
+        </div>
+
+
+        <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+
+            {# SEO #}
+            <div class="group bg-white rounded-[2rem] p-8 lg:p-10 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 reveal">
+                <div class="flex items-start justify-between mb-10">
+                    <div class="w-14 h-14 rounded-2xl bg-[#D9C8A9]/60 flex items-center justify-center text-terracotta text-xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                        ✦
+                    </div>
+                    <span class="text-ink-soft/40 text-sm">01</span>
+                </div>
+                <h3 class="font-display text-2xl lg:text-3xl mb-4">Rédaction web SEO</h3>
+                <p class="text-sm text-ink-soft leading-7">
+                    Des contenus pensés pour vos lecteurs mais aussi pour les moteurs de recherche. Une écriture claire,
+                    naturelle et stratégique pour améliorer votre visibilité en ligne.
+                </p>
+                <div class="mt-8 text-xs tracking-widest text-terracotta">CONTENU · SEO · STRATÉGIE</div>
+            </div>
+
+            {# WEB #}
+            <div class="group bg-white rounded-[2rem] p-8 lg:p-10 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 reveal" style="transition-delay:150ms">
+                <div class="flex items-start justify-between mb-10">
+                    <div class="w-14 h-14 rounded-2xl bg-[#D9C8A9]/60 flex items-center justify-center text-terracotta text-xl transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
+                        ◇
+                    </div>
+                    <span class="text-ink-soft/40 text-sm">02</span>
+                </div>
+                <h3 class="font-display text-2xl lg:text-3xl mb-4">Création de sites web</h3>
+                <p class="text-sm text-ink-soft leading-7">
+                    Des sites internet sur mesure, pensés pour être beaux, intuitifs et adaptés à vos besoins.
+                    Je travaille notamment avec WordPress et Symfony.
+                </p>
+                <div class="mt-8 text-xs tracking-widest text-terracotta">WORDPRESS · SYMFONY · DESIGN</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{# =========================================================
+   PHILOSOPHIE
+========================================================= #}
+
+<section class="bg-white py-24 lg:py-32">
+
+    <div class="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-center reveal">
+
+        <div class="text-terracotta text-5xl font-display mb-5">"</div>
+
+        <p class="font-display text-3xl sm:text-4xl lg:text-1xl leading-[1.15] tracking-tight">
+            Un site efficace ne se contente pas d'être beau. Il doit performer : architecture claire, expérience fluide,
+            contenu optimisé, référencement maîtrisé et parcours pensé pour convertir.
+        </p>
+
+        <div class="mt-8 text-sm text-ink-soft">— Nathalie, fondatrice de Tempo</div>
+
+    </div>
+
+</section>
+
+
+{# =========================================================
+   CTA FINAL — BLEU DU LOGO
+========================================================= #}
+
+<section class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 pb-20 lg:pb-28">
+
+    <div class="relative overflow-hidden bg-[#00687A] rounded-[2.5rem] px-8 py-16 md:px-14 lg:px-20 lg:py-20 text-cream reveal">
+
+        <div class="absolute -top-20 -right-20 w-56 h-56 rounded-full border border-white/10"></div>
+        <div class="absolute -bottom-24 -left-16 w-64 h-64 rounded-full bg-white/5"></div>
+
+        <div class="relative z-10 text-center">
+
+            <div class="text-xs tracking-[0.25em] text-white/70 font-medium mb-5">UN PROJET ?</div>
+
+            <h2 class="font-display text-4xl md:text-5xl leading-tight mb-6">Parlons de votre projet.</h2>
+
+            <p class="text-sm md:text-base text-white/80 leading-relaxed max-w-xl mx-auto mb-9">
+                Vous avez besoin d'un site web ou de contenus pour développer votre visibilité ? Échangeons autour
+                de vos besoins.
+            </p>
+
+            <a href="mailto:contact@tempo-agence.fr"
+               class="group inline-flex items-center gap-3 bg-cream text-ink px-7 py-3.5 rounded-full text-sm font-medium
+                      hover:bg-white hover:-translate-y-0.5 transition-all duration-300">
+                Me contacter
+                <span class="text-base transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 </div>
+
 {% endblock %}

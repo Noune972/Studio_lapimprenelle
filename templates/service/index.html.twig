@@ -1,25 +1,912 @@
 {% extends 'base.html.twig' %}
-{% block title %}Services — Camille Dev{% endblock %}
+
+{% block title %}Services web | Tempo{% endblock %}
 
 {% block body %}
-<div class="max-w-2xl mx-auto px-6 py-10">
-    <h1 class="text-xl font-medium text-center mb-8">Ce que je peux faire pour vous</h1>
-    <div class="flex flex-col gap-4">
-        <div class="bg-gray-50 rounded-xl p-5">
-            <div class="font-medium mb-1">Sites WordPress</div>
-            <p class="text-sm text-gray-600 mb-2">Sites vitrines, blogs et boutiques en ligne. Thème sur mesure, performance et référencement soignés, prise en main autonome après livraison.</p>
-            <div class="text-xs text-gray-400">À partir de 1 500 €</div>
+
+<main class="bg-cream text-ink overflow-hidden">
+
+    {# =========================================================
+       HERO
+    ========================================================= #}
+
+    <section class="max-w-6xl mx-auto
+                    px-6 sm:px-8 lg:px-12 xl:px-16
+                    pt-16 lg:pt-24
+                    pb-16 lg:pb-20">
+
+        <div class="relative overflow-hidden
+                    bg-[#EFE7DA]
+                    rounded-[2.5rem]
+                    px-7 py-12
+                    sm:px-10 sm:py-14
+                    lg:px-14 lg:py-16">
+
+            {# Décoration #}
+            <div class="absolute -top-24 -right-20
+                        w-64 h-64 rounded-full
+                        bg-[#00687A]/5">
+            </div>
+
+            <div class="absolute -bottom-16 right-32
+                        w-32 h-32 rounded-full
+                        border border-terracotta/15">
+            </div>
+
+            <div class="relative max-w-4xl reveal">
+
+                <div class="flex items-center gap-4 mb-7">
+                    <span class="w-10 h-px bg-terracotta"></span>
+
+                    <span class="text-xs tracking-[0.25em]
+                                 uppercase font-semibold
+                                 text-terracotta">
+                        Mes services
+                    </span>
+                </div>
+
+                <h1 class="font-display
+                           text-4xl sm:text-5xl lg:text-[3.6rem]
+                           leading-[1.08] tracking-tight">
+
+                    Des solutions web pensées<br class="hidden sm:block">
+                    pour accompagner
+
+                    <span class="text-terracotta">
+                        vos ambitions.
+                    </span>
+
+                </h1>
+
+                <p class="mt-8 max-w-2xl
+                          text-lg sm:text-xl
+                          leading-relaxed text-ink-soft">
+
+                    Site WordPress, e-commerce ou application Symfony :
+                    je conçois des solutions digitales élégantes,
+                    performantes et pensées pour durer.
+
+                </p>
+
+            </div>
+
         </div>
-        <div class="bg-gray-50 rounded-xl p-5">
-            <div class="font-medium mb-1">Applications Symfony</div>
-            <p class="text-sm text-gray-600 mb-2">Back-office, API, outils métier sur mesure. Architecture propre, tests automatisés, déploiement fiable via Docker.</p>
-            <div class="text-xs text-gray-400">Sur devis, selon le périmètre</div>
+
+    </section>
+
+
+    {# =========================================================
+       INTRO
+    ========================================================= #}
+
+    <section class="max-w-6xl mx-auto
+                    px-6 sm:px-8 lg:px-12 xl:px-16
+                    pb-20 lg:pb-24">
+
+        <div class="grid lg:grid-cols-[0.7fr_1.3fr]
+                    gap-8 lg:gap-16
+                    items-start">
+
+            <div class="pt-2">
+
+                <span class="text-xs tracking-[0.22em]
+                             uppercase font-semibold
+                             text-terracotta">
+                    Une approche complète
+                </span>
+
+            </div>
+
+
+            <div class="max-w-2xl">
+
+                <p class="font-display
+                          text-2xl sm:text-[1.8rem]
+                          leading-[1.45]">
+
+                    Un beau site ne suffit pas. Il doit être
+                    <span class="text-[#00687A]">utile</span>,
+                    rapide, accessible et capable d'être trouvé
+                    par les bonnes personnes.
+
+                </p>
+
+                <p class="mt-6 text-base sm:text-lg
+                          leading-8 text-ink-soft">
+
+                    C'est pourquoi conception, développement,
+                    expérience utilisateur, performance et référencement
+                    naturel sont pensés ensemble dès le début du projet.
+
+                </p>
+
+            </div>
+
         </div>
-        <div class="bg-gray-50 rounded-xl p-5">
-            <div class="font-medium mb-1">Refonte et maintenance</div>
-            <p class="text-sm text-gray-600 mb-2">Site existant lent, piraté ou obsolète : audit clair, remise à niveau, reprise sans tout casser.</p>
-            <div class="text-xs text-gray-400">Audit offert</div>
+
+    </section>
+
+
+    {# =========================================================
+       EXPERTISES
+    ========================================================= #}
+
+    <section class="max-w-6xl mx-auto
+                    px-6 sm:px-8 lg:px-12 xl:px-16
+                    pb-20 lg:pb-28">
+
+        <div class="flex items-center gap-4 mb-10">
+
+            <span class="w-10 h-px bg-terracotta"></span>
+
+            <span class="text-xs tracking-[0.22em]
+                         uppercase font-semibold
+                         text-terracotta">
+                Mes expertises
+            </span>
+
         </div>
-    </div>
-</div>
+
+
+        <div class="space-y-5">
+
+            {# -------------------------------------------------
+               WORDPRESS
+            ------------------------------------------------- #}
+
+            <article class="grid
+                            lg:grid-cols-[70px_0.75fr_1.25fr]
+                            gap-6 lg:gap-12
+                            bg-white/60
+                            border border-[#D9C8A9]/45
+                            rounded-[2rem]
+                            px-7 sm:px-9 lg:px-10
+                            py-10 lg:py-12
+                            reveal">
+
+                <div>
+                    <span class="font-display
+                                 text-4xl leading-none
+                                 text-terracotta/45">
+                        01
+                    </span>
+                </div>
+
+
+                <div>
+
+                    <span class="block mb-4
+                                 text-xs tracking-[0.2em]
+                                 uppercase font-semibold
+                                 text-terracotta">
+                        WordPress
+                    </span>
+
+                    <h2 class="font-display
+                               text-3xl sm:text-[2.2rem]
+                               leading-[1.15]">
+
+                        Votre site,
+                        <span class="block text-terracotta">
+                            à votre image.
+                        </span>
+
+                    </h2>
+
+                </div>
+
+
+                <div class="max-w-xl">
+
+                    <p class="text-base sm:text-lg
+                              leading-8 text-ink-soft">
+
+                        Je crée des sites WordPress sur mesure pour
+                        présenter votre activité avec clarté et offrir
+                        une expérience agréable à vos visiteurs.
+
+                    </p>
+
+                    <p class="mt-5 text-base sm:text-lg
+                              leading-8 text-ink-soft">
+
+                        L'objectif : vous livrer un site esthétique,
+                        responsive, performant et simple à administrer,
+                        sans sacrifier la qualité technique.
+
+                    </p>
+
+                    <div class="flex flex-wrap gap-2.5 mt-8">
+
+                        {% for item in [
+                            'One page',
+                            'Site vitrine',
+                            'E-commerce',
+                            'Refonte'
+                        ] %}
+
+                            <span class="px-4 py-2
+                                         rounded-full
+                                         bg-[#EFE7DA]
+                                         text-sm font-medium">
+                                {{ item }}
+                            </span>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            {# -------------------------------------------------
+               SYMFONY
+            ------------------------------------------------- #}
+
+            <article class="grid
+                            lg:grid-cols-[70px_0.75fr_1.25fr]
+                            gap-6 lg:gap-12
+                            bg-white/60
+                            border border-[#D9C8A9]/45
+                            rounded-[2rem]
+                            px-7 sm:px-9 lg:px-10
+                            py-10 lg:py-12
+                            reveal">
+
+                <div>
+
+                    <span class="font-display
+                                 text-4xl leading-none
+                                 text-terracotta/45">
+                        02
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <span class="block mb-4
+                                 text-xs tracking-[0.2em]
+                                 uppercase font-semibold
+                                 text-terracotta">
+                        Symfony
+                    </span>
+
+                    <h2 class="font-display
+                               text-3xl sm:text-[2.2rem]
+                               leading-[1.15]">
+
+                        Pour les projets
+                        <span class="block text-terracotta">
+                            qui vont plus loin.
+                        </span>
+
+                    </h2>
+
+                </div>
+
+
+                <div class="max-w-xl">
+
+                    <p class="text-base sm:text-lg
+                              leading-8 text-ink-soft">
+
+                        Lorsque les besoins dépassent ceux d'un site
+                        traditionnel, je développe des applications
+                        Symfony adaptées à votre activité et à vos usages.
+
+                    </p>
+
+                    <p class="mt-5 text-base sm:text-lg
+                              leading-8 text-ink-soft">
+
+                        Gestion de comptes, données métier,
+                        tableaux de bord, formulaires avancés,
+                        espace d'administration ou fonctionnalités
+                        spécifiques : l'application est construite
+                        autour de vos besoins.
+
+                    </p>
+
+
+                    <div class="flex flex-wrap gap-2.5 mt-8">
+
+                        {% for item in [
+                            'Application web',
+                            'Application mobile',
+                            'Outil métier',
+                            'Back-office'
+                        ] %}
+
+                            <span class="px-4 py-2
+                                         rounded-full
+                                         bg-[#00687A]/8
+                                         text-[#00687A]
+                                         text-sm font-medium">
+                                {{ item }}
+                            </span>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            {# -------------------------------------------------
+               SEO
+            ------------------------------------------------- #}
+
+            <article class="grid
+                            lg:grid-cols-[70px_0.75fr_1.25fr]
+                            gap-6 lg:gap-12
+                            bg-white/60
+                            border border-[#D9C8A9]/45
+                            rounded-[2rem]
+                            px-7 sm:px-9 lg:px-10
+                            py-10 lg:py-12
+                            reveal">
+
+                <div>
+
+                    <span class="font-display
+                                 text-4xl leading-none
+                                 text-terracotta/45">
+                        03
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <span class="block mb-4
+                                 text-xs tracking-[0.2em]
+                                 uppercase font-semibold
+                                 text-terracotta">
+                        Référencement SEO
+                    </span>
+
+                    <h2 class="font-display
+                               text-3xl sm:text-[2.2rem]
+                               leading-[1.15]">
+
+                        Être visible
+                        <span class="block text-terracotta">
+                            naturellement.
+                        </span>
+
+                    </h2>
+
+                </div>
+
+
+                <div class="max-w-xl">
+
+                    <p class="text-base sm:text-lg
+                              leading-8 text-ink-soft">
+
+                        Le référencement naturel est intégré à mes
+                        prestations de création et de refonte.
+                        Votre site est pensé pour être compréhensible
+                        par vos visiteurs comme par les moteurs de recherche.
+
+                    </p>
+
+                    <p class="mt-5 text-base sm:text-lg
+                              leading-8 text-ink-soft">
+
+                        Architecture des pages, balisage,
+                        optimisation des contenus, performance
+                        et bonnes pratiques techniques sont pris
+                        en compte pendant la construction du site.
+
+                    </p>
+
+
+                    <div class="mt-8
+                                inline-flex items-center gap-3
+                                rounded-full
+                                bg-[#00687A]/8
+                                border border-[#00687A]/15
+                                px-4 py-2.5">
+
+                        <span class="flex
+                                     w-6 h-6
+                                     items-center justify-center
+                                     rounded-full
+                                     bg-[#00687A]
+                                     text-white text-xs">
+                            ✓
+                        </span>
+
+                        <span class="text-sm
+                                     font-medium
+                                     text-[#00687A]">
+                            SEO inclus dans les prestations
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    {# =========================================================
+       TYPES DE PROJETS
+    ========================================================= #}
+
+    <section class="max-w-6xl mx-auto
+                    px-6 sm:px-8 lg:px-12 xl:px-16
+                    pb-20 lg:pb-28">
+
+        <div class="relative
+                    bg-[#00687A]
+                    text-white
+                    rounded-[2.5rem]
+                    overflow-hidden
+                    px-7 sm:px-10 lg:px-14
+                    py-14 lg:py-16">
+
+
+            {# Décoration #}
+
+            <div class="absolute
+                        -right-24 -top-24
+                        w-72 h-72
+                        rounded-full
+                        border border-white/10">
+            </div>
+
+            <div class="absolute
+                        right-20 -bottom-20
+                        w-40 h-40
+                        rounded-full
+                        bg-white/[0.03]">
+            </div>
+
+
+            <div class="relative">
+
+                <div class="grid
+                            lg:grid-cols-[0.65fr_1.35fr]
+                            gap-8 lg:gap-16
+                            mb-12">
+
+                    <div>
+
+                        <span class="text-xs
+                                     tracking-[0.22em]
+                                     uppercase font-semibold
+                                     text-[#F1A579]">
+                            Votre projet
+                        </span>
+
+                    </div>
+
+
+                    <div class="max-w-2xl">
+
+                        <h2 class="font-display
+                                   text-3xl sm:text-4xl
+                                   leading-[1.18]">
+
+                            Une solution adaptée à ce que
+                            <span class="text-[#F1A579]">
+                                vous voulez construire.
+                            </span>
+
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                {# PROJETS #}
+
+                <div class="grid md:grid-cols-2 gap-4">
+
+                    {% set projects = [
+                        {
+                            number: '01',
+                            title: 'One page',
+                            text: "Une présence digitale concise et efficace pour présenter votre activité et votre offre sur une seule page."
+                        },
+                        {
+                            number: '02',
+                            title: 'Site vitrine',
+                            text: "Un site complet pour présenter votre entreprise, valoriser vos services et faciliter la prise de contact."
+                        },
+                        {
+                            number: '03',
+                            title: 'E-commerce',
+                            text: "Une boutique en ligne claire et rassurante pour valoriser vos produits et simplifier le parcours d'achat."
+                        },
+                        {
+                            number: '04',
+                            title: 'Refonte de site',
+                            text: "Moderniser votre site et améliorer son identité, son expérience, ses performances et son référencement."
+                        }
+                    ] %}
+
+
+                    {% for project in projects %}
+
+                        <article class="rounded-2xl
+                                        bg-white/[0.07]
+                                        border border-white/10
+                                        p-6 lg:p-7
+                                        transition-all duration-300
+                                        hover:bg-white/[0.1]
+                                        hover:-translate-y-0.5">
+
+                            <div class="flex items-center
+                                        justify-between
+                                        mb-8">
+
+                                <span class="font-display
+                                             text-xl
+                                             text-[#F1A579]">
+                                    {{ project.number }}
+                                </span>
+
+                                <span class="w-7 h-7
+                                             rounded-full
+                                             border border-white/20
+                                             flex items-center
+                                             justify-center
+                                             text-xs
+                                             text-white/70">
+                                    ↗
+                                </span>
+
+                            </div>
+
+
+                            <h3 class="font-display
+                                       text-xl sm:text-2xl
+                                       mb-3">
+
+                                {{ project.title }}
+
+                            </h3>
+
+
+                            <p class="text-sm sm:text-base
+                                      leading-7
+                                      text-white/70">
+
+                                {{ project.text }}
+
+                            </p>
+
+                        </article>
+
+                    {% endfor %}
+
+
+                    {# APPLICATION — pleine largeur #}
+
+                    <article class="md:col-span-2
+                                    grid md:grid-cols-[1fr_1.2fr]
+                                    gap-6
+                                    rounded-2xl
+                                    bg-white/[0.07]
+                                    border border-white/10
+                                    p-6 lg:p-7
+                                    transition-all duration-300
+                                    hover:bg-white/[0.1]">
+
+                        <div>
+
+                            <span class="font-display
+                                         text-xl
+                                         text-[#F1A579]">
+                                05
+                            </span>
+
+                            <h3 class="font-display
+                                       text-xl sm:text-2xl
+                                       mt-7">
+                                Application web &amp; mobile
+                            </h3>
+
+                        </div>
+
+
+                        <div class="flex items-end">
+
+                            <p class="text-sm sm:text-base
+                                      leading-7
+                                      text-white/70
+                                      max-w-lg">
+
+                                Une solution sur mesure lorsque votre
+                                projet nécessite des fonctionnalités
+                                spécifiques, des espaces utilisateurs
+                                ou une véritable logique métier.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    {# =========================================================
+       MÉTHODE
+    ========================================================= #}
+
+    <section class="max-w-6xl mx-auto
+                    px-6 sm:px-8 lg:px-12 xl:px-16
+                    pb-20 lg:pb-28">
+
+        <div class="grid
+                    lg:grid-cols-[0.75fr_1.25fr]
+                    gap-12 lg:gap-20">
+
+
+            <div>
+
+                <div class="flex items-center gap-3 mb-5">
+
+                    <span class="w-8 h-px bg-terracotta"></span>
+
+                    <span class="text-xs tracking-[0.22em]
+                                 uppercase font-semibold
+                                 text-terracotta">
+                        Ma méthode
+                    </span>
+
+                </div>
+
+
+                <h2 class="font-display
+                           text-3xl sm:text-4xl
+                           leading-[1.18]">
+
+                    De votre idée<br>
+                    à sa
+
+                    <span class="text-terracotta">
+                        mise en ligne.
+                    </span>
+
+                </h2>
+
+
+                <p class="mt-6 max-w-md
+                          text-base sm:text-lg
+                          leading-8 text-ink-soft">
+
+                    Un accompagnement clair à chaque étape,
+                    pour que vous sachiez où en est votre projet
+                    et pourquoi chaque choix est fait.
+
+                </p>
+
+            </div>
+
+
+            <div class="grid sm:grid-cols-2 gap-4">
+
+                {% set steps = [
+                    {
+                        number: '01',
+                        title: 'Écouter',
+                        text: "Comprendre votre activité, vos besoins, vos utilisateurs et vos objectifs."
+                    },
+                    {
+                        number: '02',
+                        title: 'Concevoir',
+                        text: "Définir la structure, l'expérience et la direction visuelle de votre projet."
+                    },
+                    {
+                        number: '03',
+                        title: 'Développer',
+                        text: "Construire une solution responsive, performante, sécurisée et optimisée."
+                    },
+                    {
+                        number: '04',
+                        title: 'Accompagner',
+                        text: "Vous accompagner jusqu'à la mise en ligne et dans la prise en main de votre outil."
+                    }
+                ] %}
+
+
+                {% for step in steps %}
+
+                    <article class="rounded-2xl
+                                    border border-[#D9C8A9]/50
+                                    bg-white/50
+                                    p-6 lg:p-7">
+
+                        <span class="font-display
+                                     text-xl text-terracotta">
+                            {{ step.number }}
+                        </span>
+
+                        <h3 class="font-display
+                                   text-xl sm:text-2xl
+                                   mt-6 mb-3">
+                            {{ step.title }}
+                        </h3>
+
+                        <p class="text-sm sm:text-base
+                                  text-ink-soft
+                                  leading-7">
+                            {{ step.text }}
+                        </p>
+
+                    </article>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    {# =========================================================
+       ENGAGEMENT
+    ========================================================= #}
+
+    <section class="max-w-6xl mx-auto
+                    px-6 sm:px-8 lg:px-12 xl:px-16
+                    pb-20">
+
+        <div class="bg-white/55
+                    border border-[#D9C8A9]/45
+                    rounded-[2rem]
+                    px-7 sm:px-10 lg:px-14
+                    py-10 lg:py-12">
+
+            <div class="max-w-3xl">
+
+                <span class="text-xs tracking-[0.22em]
+                             uppercase font-semibold
+                             text-terracotta">
+                    Mon engagement
+                </span>
+
+
+                <p class="font-display
+                          text-2xl sm:text-3xl
+                          leading-[1.4]
+                          text-[#00687A]
+                          mt-5">
+
+                    Chaque projet commence par l'écoute de vos besoins
+                    et poursuit un même objectif :
+
+                    <span class="text-terracotta">
+                        créer une solution web dont vous serez
+                        pleinement satisfait.
+                    </span>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    {# =========================================================
+       CTA
+    ========================================================= #}
+
+    <section class="max-w-6xl mx-auto
+                    px-6 sm:px-8 lg:px-12 xl:px-16
+                    pb-20 lg:pb-28">
+
+        <div class="relative overflow-hidden
+                    bg-[#EFE7DA]
+                    rounded-[2.5rem]
+                    px-7 py-11
+                    sm:px-10
+                    lg:px-14 lg:py-14">
+
+            <div class="absolute
+                        -top-24 -right-20
+                        w-60 h-60
+                        rounded-full
+                        border border-terracotta/10">
+            </div>
+
+
+            <div class="relative
+                        flex flex-col
+                        lg:flex-row
+                        lg:items-center
+                        lg:justify-between
+                        gap-9">
+
+                <div class="max-w-2xl">
+
+                    <span class="text-xs tracking-[0.22em]
+                                 uppercase font-semibold
+                                 text-terracotta">
+                        Parlons de votre projet
+                    </span>
+
+                    <h2 class="font-display
+                               text-3xl sm:text-4xl
+                               leading-[1.2]
+                               mt-4">
+
+                        Vous avez une idée ?
+
+                        <span class="text-terracotta">
+                            Donnons-lui vie.
+                        </span>
+
+                    </h2>
+
+                    <p class="mt-4 max-w-xl
+                              text-base sm:text-lg
+                              leading-7 text-ink-soft">
+
+                        Expliquez-moi votre activité, vos besoins
+                        et ce que vous souhaitez construire.
+                        Nous verrons ensemble la solution la plus adaptée.
+
+                    </p>
+
+                </div>
+
+
+                <a href="{{ path('app_contact') }}"
+                   class="inline-flex
+                          self-start lg:self-auto
+                          items-center justify-center
+                          gap-3
+                          rounded-full
+                          bg-[#00687A]
+                          text-white
+                          px-7 py-4
+                          text-sm font-medium
+                          transition-all duration-300
+                          hover:bg-[#005966]
+                          hover:-translate-y-0.5
+                          hover:shadow-lg">
+
+                    Discuter de mon projet
+
+                    <span aria-hidden="true">
+                        ↗
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
 {% endblock %}

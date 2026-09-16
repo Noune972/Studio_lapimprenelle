@@ -7,10 +7,16 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {% for projet in projets %}
         <a href="{{ path('app_projet_show', {slug: projet.slug}) }}" class="border border-gray-200 rounded-xl overflow-hidden block">
-            <div class="h-28 bg-gray-100"></div>
+        
+<div class="h-56 bg-gray-100 overflow-hidden flex items-center justify-center">
+    {% if projet.image %}
+        <img src="{{ asset('images/' ~ projet.image) }}" alt="{{ projet.titre }}" class="w-full h-full object-contain">
+    {% endif %}
+</div>
+
             <div class="p-3">
                 <div class="text-sm font-medium">{{ projet.titre }}</div>
-                <div class="text-xs text-gray-500">{{ projet.type }}</div>
+                <div class="text-xs text-gray-500">{{ projet.typeDeSite }}</div>
             </div>
         </a>
         {% else %}

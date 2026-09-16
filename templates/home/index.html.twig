@@ -15,7 +15,7 @@
         Je suis Nathalie Camiul développeuse fullstack, je conçois des sites WordPress élégants et des applications Symfony sur mesure pour les entreprises, indépendants et projets qui veulent vraiment se démarquer.
       </p>
       <div class="flex flex-wrap gap-3 mb-8">
-        <a href="{{ path('app_contact') }}" class="bg-terracotta hover:bg-terracotta-dark text-cream px-6 py-3 rounded-full text-sm font-medium inline-flex items-center gap-2">Discuter de mon projet <span aria-hidden="true">→</span></a>
+        <a href="{{ path('app_contact') }}" class="bg-[#00687A] hover:bg-terracotta-dark text-cream px-6 py-3 rounded-full text-sm font-medium inline-flex items-center gap-2">Discuter de mon projet <span aria-hidden="true">→</span></a>
         <a href="{{ path('app_projet_index') }}" class="px-6 py-3 rounded-full text-sm font-medium border border-ink/15">Voir mes réalisations</a>
       </div>
       <div class="flex flex-wrap gap-6 text-sm text-ink-soft">
@@ -144,149 +144,26 @@
             </p>
 
             <a href="{{ path('app_projet_index') }}"
-               class="bg-terracotta hover:bg-terracotta-dark text-cream px-5 py-2.5 rounded-full text-sm font-medium inline-flex items-center gap-2">
+               class="bg-[#00687A] hover:bg-terracotta-dark text-cream px-5 py-2.5 rounded-full text-sm font-medium inline-flex items-center gap-2">
                 Voir plus de projets
                 <span aria-hidden="true">→</span>
             </a>
         </div>
 
 
-        {# ============================= #}
-        {#        PARTIE DROITE           #}
-        {#       3 SITES CLIENTS          #}
-        {# ============================= #}
-
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
-
-
-            {# ============================= #}
-            {#           SITE 1                #}
-            {# ============================= #}
-
-            <a href="https://cjt-chauffeur-prive.fr/"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="group block">
-
-                <div class="bg-white rounded-2xl shadow-md p-5 h-48
-                            flex flex-col items-center justify-center
-                            transition-all duration-300
-                            group-hover:-translate-y-1
-                            group-hover:shadow-xl">
-
-                    {# Logo du client #}
-                    <div class="h-20 w-full flex items-center justify-center mb-4">
-                        <img
-                            src="{{ asset('images/cjt.png') }}"
-                            alt="Logo Cj transport 1"
-                            class="w-[140px] object-contain"
-                        >
-                    </div>
-
-                    {# Nom du client #}
-                    <div class="text-sm font-medium text-ink
-                                group-hover:text-terracotta transition">
-                        Cjt transport
-                    </div>
-
-                    {# Lien #}
-                    <div class="text-xs text-ink-soft mt-1">
-                        Voir le site →
-                    </div>
-
-                </div>
-            </a>
-
-
-            {# ============================= #}
-            {#           SITE 2                #}
-            {# ============================= #}
-
-            <a href="https://www.mydrivers.fr"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="group block">
-
-                <div class="bg-white rounded-2xl shadow-md p-5 h-48
-                            flex flex-col items-center justify-center
-                            transition-all duration-300
-                            group-hover:-translate-y-1
-                            group-hover:shadow-xl">
-
-                    {# Logo du client #}
-                    <div class="h-20 w-full flex items-center justify-center mb-4">
-                        <img
-                            src="{{ asset('images/mydrivers.png') }}"
-                            alt="Logo Client 2"
-                            class="w-[200px] object-contain"
-                        >
-                    </div>
-
-                    {# Nom du client #}
-                    <div class="text-sm font-medium text-ink
-                                group-hover:text-terracotta transition">
-                        Mydrivers
-                    </div>
-
-                    {# Lien #}
-                    <div class="text-xs text-ink-soft mt-1">
-                        Voir le site →
-                    </div>
-
-                </div>
-            </a>
-
-
-            {# ============================= #}
-            {#           SITE 3                #}
-            {# ============================= #}
-
-            <a href="https://www.granit-art.fr"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="group block">
-
-                <div class="bg-white rounded-2xl shadow-md p-5 h-48
-                            flex flex-col items-center justify-center
-                            transition-all duration-300
-                            group-hover:-translate-y-1
-                            group-hover:shadow-xl">
-
-                    {# Logo du client #}
-                    <div class="h-20 w-full flex items-center justify-center mb-4">
-                        <img
-                            src="{{ asset('images/granit.png') }}"
-                            alt="Logo Client 3"
-                            class="w-[200px] object-contain"
-                        >
-                    </div>
-
-                    {# Nom du client #}
-                    <div class="text-sm font-medium text-ink
-                                group-hover:text-terracotta transition">
-                        Granit Art
-                    </div>
-
-                    {# Lien #}
-                    <div class="text-xs text-ink-soft mt-1">
-                        Voir le site →
-                    </div>
-
-                </div>
-            </a>
-
-        </div>
-    </div>
-</div>
-
-
         <div class="grid sm:grid-cols-3 gap-5">
           {% for projet in projets %}
           <article>
             <a href="{{ path('app_projet_show', {slug: projet.slug}) }}">
-              <div class="bg-gradient-to-br from-[#D9C8A9] to-[#B9A480] rounded-xl h-40 mb-3"></div>
+              
+        <div class="rounded-xl h-56 mb-3 overflow-hidden bg-gradient-to-br from-[#D9C8A9] to-[#B9A480] flex items-center justify-center">
+    {% if projet.image %}
+        <img src="{{ asset('images/' ~ projet.image) }}" alt="{{ projet.titre }}" class="w-full h-full object-contain">
+    {% endif %}
+</div>
+
               <div class="flex items-center justify-between">
-                <div><div class="text-sm font-medium">{{ projet.titre }}</div><div class="text-xs text-ink-soft">{{ projet.type }}</div></div>
+                <div><div class="text-sm font-medium">{{ projet.titre }}</div><div class="text-xs text-ink-soft">{{ projet.typeDeSite }}</div></div>
                 <span class="w-7 h-7 rounded-full border border-ink/15 flex items-center justify-center text-xs">→</span>
               </div>
             </a>

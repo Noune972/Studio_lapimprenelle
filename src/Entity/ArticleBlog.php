@@ -19,10 +19,10 @@ class ArticleBlog
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type: 'text')]
     private ?string $extrait = null;
 
-    #[ORM\Column(length: 255)]
+   #[ORM\Column(type: 'text')]
     private ?string $contenu = null;
 
     #[ORM\Column(length: 255, nullable: true)]

@@ -1,21 +1,48 @@
 {% extends 'base.html.twig' %}
-{% block title %}Blog — Studio Lapimprenelle{% endblock %}
+{% block title %}Blog — Tempo agence web{% endblock %}
 
 {% block body %}
-<div class="max-w-2xl mx-auto px-6 py-10">
-    <h1 class="text-xl font-medium text-center mb-8">Articles et conseils</h1>
-    <div class="flex flex-col gap-3">
-        {% for article in articles %}
-        <a href="{{ path('app_article_show', {slug: article.slug}) }}" class="flex gap-4 items-center p-3 bg-gray-50 rounded-xl">
-            <div class="w-14 h-14 bg-gray-100 rounded-lg flex-shrink-0"></div>
-            <div>
-                <div class="text-sm font-medium">{{ article.titre }}</div>
-                <div class="text-xs text-gray-400">{{ article.publishedAt|date('d F Y') }}</div>
-            </div>
-        </a>
-        {% else %}
-        <p class="text-sm text-gray-500 text-center">Aucun article publié pour le moment.</p>
-        {% endfor %}
+<div class="bg-cream text-ink">
+
+  {# INTRO #}
+  <section class="max-w-4xl mx-auto px-6 sm:px-8 pt-16 lg:pt-24 pb-12 text-center">
+    <div class="inline-flex items-center gap-3 mb-6">
+     <h1 class="font-display text-5xl sm:text-5xl leading-tight mb-6">
+      Référencement naturel &amp; développement web
+    </h1>
     </div>
+
+   
+
+  </section>
+
+  {# GRILLE D'ARTICLES #}
+  <section class="max-w-6xl mx-auto px-6 sm:px-8 pb-24">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for article in articles %}
+      <a href="{{ path('app_article_show', {slug: article.slug}) }}" class="group block">
+        <div class="h-64 rounded-2xl overflow-hidden bg-[#D9C8A9] mb-4 flex items-center justify-center">
+      {% if article.image %}
+        <img src="{{ asset('images/' ~ article.image) }}" alt="{{ article.titre }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+      {% endif %}
+      </div>
+        <div class="text-xs tracking-widest text-terracotta font-medium mb-2">
+          {{ article.publishedAt|date('d M') }}
+        </div>
+        <h2 class="font-display text-lg leading-snug mb-2 group-hover:text-terracotta transition-colors">
+          {{ article.titre }}
+        </h2>
+        {% if article.extrait %}
+        <p class="text-sm text-ink-soft leading-relaxed line-clamp-2">
+          {{ article.extrait }}
+        </p>
+        {% endif %}
+      </a>
+      {% else %}
+      <p class="text-sm text-ink-soft col-span-full text-center">Aucun article publié pour le moment.</p>
+      {% endfor %}
+    </div>
+  </section>
+
 </div>
 {% endblock %}

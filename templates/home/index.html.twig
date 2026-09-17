@@ -26,9 +26,28 @@
     </div>
 
     <div class="relative">
-      <div class="bg-[#00687A] rounded-2xl h-96 w-full shadow-xl flex items-center justify-center">
-        <img src="{{ asset('images/nath.png') }}" alt="Bureau avec ordinateur portable" class="w-full h-full object-cover rounded-2xl" onerror="this.remove()">
-      </div>
+
+<div class="relative
+            max-w-[500px]
+            mx-auto
+            rounded-[2rem]
+            overflow-hidden
+            shadow-lg
+            group">
+
+    <img
+        src="{{ asset('images/nath.png') }}"
+        alt="Nathalie, fondatrice de Tempo agence web"
+        class="block
+               w-full h-auto
+               transition-transform duration-700 ease-out
+               group-hover:scale-[1.03]"
+    >
+
+</div>
+  
+
+</div>
      
     </div>
   </section>
@@ -156,7 +175,7 @@
           <article>
             <a href="{{ path('app_projet_show', {slug: projet.slug}) }}">
               
-        <div class="rounded-xl h-56 mb-3 overflow-hidden bg-gradient-to-br from-[#D9C8A9] to-[#B9A480] flex items-center justify-center">
+        <div class="rounded-xl h-56 mb-3 overflow-hidden bg-white flex items-center justify-center">
     {% if projet.image %}
         <img src="{{ asset('images/' ~ projet.image) }}" alt="{{ projet.titre }}" class="w-full h-full object-contain">
     {% endif %}

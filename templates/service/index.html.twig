@@ -125,311 +125,743 @@
         </div>
 
     </section>
+{# =========================================================
+   EXPERTISES
+========================================================= #}
+
+<section class="max-w-6xl mx-auto
+                px-6 sm:px-8 lg:px-12 xl:px-16
+                pb-20 lg:pb-28">
+
+    <div class="flex items-center gap-4 mb-8">
+
+        <span class="w-10 h-px bg-terracotta"></span>
+
+        <span class="text-xs tracking-[0.22em]
+                     uppercase font-semibold
+                     text-terracotta">
+            Mes expertises
+        </span>
+
+    </div>
+
+
+    <div class="space-y-4">
+
+
+        {# =====================================================
+           WORDPRESS
+        ===================================================== #}
+
+        <article class="grid
+                        lg:grid-cols-[50px_0.7fr_1.3fr]
+                        gap-5 lg:gap-9
+                        items-start
+                        bg-[#F6F2EB]
+                        border border-[#D9C8A9]/25
+                        rounded-2xl
+                        px-6 sm:px-7 lg:px-8
+                        py-6 lg:py-7
+                        reveal">
+
+            {# Numéro #}
+
+            <div>
+
+                <span class="font-display
+                             text-2xl
+                             leading-none
+                             text-terracotta/45">
+                    01
+                </span>
+
+            </div>
+
+
+            {# Titre #}
+
+            <div>
+
+                <span class="block mb-2
+                             text-xs tracking-[0.18em]
+                             uppercase font-semibold
+                             text-terracotta">
+                    WordPress
+                </span>
+
+                <h2 class="font-display
+                           text-2xl sm:text-3xl
+                           leading-[1.15]">
+
+                    Votre site,
+                    <span class="text-terracotta">
+                        à votre image.
+                    </span>
+
+                </h2>
+
+            </div>
+
+
+            {# Description #}
+
+            <div class="max-w-xl">
+
+                <p class="text-base
+                          leading-7
+                          text-ink-soft">
+
+                    Je crée des sites WordPress sur mesure,
+                    esthétiques, responsive et performants,
+                    pensés pour présenter votre activité avec clarté
+                    tout en restant simples à administrer.
+
+                </p>
+
+
+                <div class="flex flex-wrap
+                            gap-x-5 gap-y-2
+                            mt-4">
+
+                    {% for item in [
+                        'One page',
+                        'Site vitrine',
+                        'E-commerce',
+                        'Refonte'
+                    ] %}
+
+                        <span class="inline-flex
+                                     items-center gap-2
+                                     text-sm font-medium
+                                     text-ink-soft">
+
+                            <span class="w-1.5 h-1.5
+                                         rounded-full
+                                         bg-terracotta">
+                            </span>
+
+                            {{ item }}
+
+                        </span>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        {# =====================================================
+           SYMFONY
+        ===================================================== #}
+
+        <article class="grid
+                        lg:grid-cols-[50px_0.7fr_1.3fr]
+                        gap-5 lg:gap-9
+                        items-start
+                        bg-[#F6F2EB]
+                        border border-[#D9C8A9]/25
+                        rounded-2xl
+                        px-6 sm:px-7 lg:px-8
+                        py-6 lg:py-7
+                        reveal">
+
+            {# Numéro #}
+
+            <div>
+
+                <span class="font-display
+                             text-2xl
+                             leading-none
+                             text-terracotta/45">
+                    02
+                </span>
+
+            </div>
+
+
+            {# Titre #}
+
+            <div>
+
+                <span class="block mb-2
+                             text-xs tracking-[0.18em]
+                             uppercase font-semibold
+                             text-terracotta">
+                    Symfony
+                </span>
+
+                <h2 class="font-display
+                           text-2xl sm:text-3xl
+                           leading-[1.15]">
+
+                    Pour les projets
+                    <span class="text-terracotta">
+                        qui vont plus loin.
+                    </span>
+
+                </h2>
+
+            </div>
+
+
+            {# Description #}
+
+            <div class="max-w-xl">
+
+                <p class="text-base
+                          leading-7
+                          text-ink-soft">
+
+                    Je développe des applications Symfony sur mesure
+                    lorsque votre projet nécessite des fonctionnalités
+                    spécifiques, des données métier, des espaces utilisateurs
+                    ou une logique plus avancée.
+
+                </p>
+
+
+                <div class="flex flex-wrap
+                            gap-x-5 gap-y-2
+                            mt-4">
+
+                    {% for item in [
+                        'Application web',
+                        'Interface mobile',
+                        'Outil métier',
+                        'Back-office'
+                    ] %}
+
+                        <span class="inline-flex
+                                     items-center gap-2
+                                     text-sm font-medium
+                                     text-ink-soft">
+
+                            <span class="w-1.5 h-1.5
+                                         rounded-full
+                                         bg-[#00687A]">
+                            </span>
+
+                            {{ item }}
+
+                        </span>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        {# =====================================================
+           SEO
+        ===================================================== #}
+
+        <article class="grid
+                        lg:grid-cols-[50px_0.7fr_1.3fr]
+                        gap-5 lg:gap-9
+                        items-start
+                        bg-[#F6F2EB]
+                        border border-[#D9C8A9]/25
+                        rounded-2xl
+                        px-6 sm:px-7 lg:px-8
+                        py-6 lg:py-7
+                        reveal">
+
+            {# Numéro #}
+
+            <div>
+
+                <span class="font-display
+                             text-2xl
+                             leading-none
+                             text-terracotta/45">
+                    03
+                </span>
+
+            </div>
+
+
+            {# Titre #}
+
+            <div>
+
+                <span class="block mb-2
+                             text-xs tracking-[0.18em]
+                             uppercase font-semibold
+                             text-terracotta">
+                    Référencement SEO
+                </span>
+
+                <h2 class="font-display
+                           text-2xl sm:text-3xl
+                           leading-[1.15]">
+
+                    Être visible
+                    <span class="text-terracotta">
+                        naturellement.
+                    </span>
+
+                </h2>
+
+            </div>
+
+
+            {# Description #}
+
+            <div class="max-w-xl">
+
+                <p class="text-base
+                          leading-7
+                          text-ink-soft">
+
+                    Le socle SEO est intégré dès la conception :
+                    structure des pages, balisage, contenus,
+                    performances et bonnes pratiques techniques
+                    sont pensés pour faciliter votre visibilité.
+
+                </p>
+
+
+                <div class="inline-flex
+                            items-center gap-2.5
+                            mt-4
+                            text-sm font-medium
+                            text-[#00687A]">
+
+                    <span class="flex
+                                 w-5 h-5
+                                 shrink-0
+                                 items-center justify-center
+                                 rounded-full
+                                 bg-[#00687A]
+                                 text-white
+                                 text-[10px]">
+                        ✓
+                    </span>
+
+                    Socle SEO inclus dans les prestations
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
 
 
     {# =========================================================
-       EXPERTISES
-    ========================================================= #}
+   TYPES DE PROJETS / OFFRES
+========================================================= #}
 
-    <section class="max-w-6xl mx-auto
-                    px-6 sm:px-8 lg:px-12 xl:px-16
-                    pb-20 lg:pb-28">
+<section class="max-w-6xl mx-auto
+                px-6 sm:px-8 lg:px-12 xl:px-16
+                pb-20 lg:pb-28">
 
-        <div class="flex items-center gap-4 mb-10">
+    <div class="relative
+                bg-[#00687A]
+                text-white
+                rounded-[2.5rem]
+                overflow-hidden
+                px-7 sm:px-10 lg:px-14
+                py-14 lg:py-16">
 
-            <span class="w-10 h-px bg-terracotta"></span>
 
-            <span class="text-xs tracking-[0.22em]
-                         uppercase font-semibold
-                         text-terracotta">
-                Mes expertises
-            </span>
+        {# Décoration #}
 
+        <div class="absolute
+                    -right-24 -top-24
+                    w-72 h-72
+                    rounded-full
+                    border border-white/10">
+        </div>
+
+        <div class="absolute
+                    right-20 -bottom-20
+                    w-40 h-40
+                    rounded-full
+                    bg-white/[0.03]">
         </div>
 
 
-        <div class="space-y-5">
+        <div class="relative">
 
-            {# -------------------------------------------------
-               WORDPRESS
-            ------------------------------------------------- #}
 
-            <article class="grid
-                            lg:grid-cols-[70px_0.75fr_1.25fr]
-                            gap-6 lg:gap-12
-                            bg-white/60
-                            border border-[#D9C8A9]/45
-                            rounded-[2rem]
-                            px-7 sm:px-9 lg:px-10
-                            py-10 lg:py-12
-                            reveal">
+            {# =================================================
+               INTRO
+            ================================================= #}
+
+            <div class="grid
+                        lg:grid-cols-[0.65fr_1.35fr]
+                        gap-8 lg:gap-16
+                        mb-12 lg:mb-14">
 
                 <div>
-                    <span class="font-display
-                                 text-4xl leading-none
-                                 text-terracotta/45">
-                        01
+
+                    <span class="text-xs
+                                 tracking-[0.22em]
+                                 uppercase font-semibold
+                                 text-[#F1A579]">
+                        Votre projet
                     </span>
+
                 </div>
 
 
-                <div>
-
-                    <span class="block mb-4
-                                 text-xs tracking-[0.2em]
-                                 uppercase font-semibold
-                                 text-terracotta">
-                        WordPress
-                    </span>
+                <div class="max-w-2xl">
 
                     <h2 class="font-display
-                               text-3xl sm:text-[2.2rem]
-                               leading-[1.15]">
+                               text-3xl sm:text-4xl
+                               leading-[1.18]">
 
-                        Votre site,
-                        <span class="block text-terracotta">
+                        Une solution adaptée à ce que
+                        <span class="text-[#F1A579]">
+                            vous voulez construire.
+                        </span>
+
+                    </h2>
+
+                    <p class="mt-5
+                              text-base sm:text-lg
+                              leading-8
+                              text-white/70">
+
+                        Du site one page à l'application métier,
+                        chaque projet est conçu sur mesure avec une attention
+                        particulière portée à l'expérience utilisateur,
+                        aux performances et à la qualité technique.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            {# =================================================
+               ONE PAGE
+            ================================================= #}
+
+            <article class="grid
+                            lg:grid-cols-[0.7fr_1.3fr]
+                            gap-8 lg:gap-14
+                            rounded-[2rem]
+                            bg-white/[0.07]
+                            border border-white/10
+                            p-7 sm:p-8 lg:p-10
+                            reveal">
+
+                {# Présentation #}
+
+                <div>
+
+                    <div class="flex items-center gap-4">
+
+                        <span class="font-display
+                                     text-xl
+                                     text-[#F1A579]">
+                            01
+                        </span>
+
+                        <span class="text-xs
+                                     tracking-[0.18em]
+                                     uppercase
+                                     text-white/50">
+                            Site One Page
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="font-display
+                               text-2xl sm:text-3xl
+                               leading-[1.2]
+                               mt-7">
+
+                        Une présence claire,
+                        <span class="block text-[#F1A579]">
+                            simple et efficace.
+                        </span>
+
+                    </h3>
+
+
+                    <p class="mt-5
+                              text-sm sm:text-base
+                              leading-7
+                              text-white/70">
+
+                        Idéal pour présenter une activité, une offre
+                        ou un lancement avec un parcours fluide
+                        concentré sur une seule page.
+
+                    </p>
+
+
+                    {# Délai #}
+
+                    <div class="mt-8
+                                inline-flex
+                                items-center gap-3
+                                rounded-full
+                                bg-white/[0.08]
+                                border border-white/10
+                                px-4 py-2.5">
+
+                        <svg class="w-4 h-4 text-[#F1A579]"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.8">
+
+                            <circle cx="12" cy="12" r="9"/>
+                            <path d="M12 7v5l3 2"/>
+
+                        </svg>
+
+                        <span class="text-xs text-white/60">
+                            Délai estimé
+                        </span>
+
+                        <span class="text-sm font-semibold">
+                            1 semaine
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                {# Inclus #}
+
+                <div class="lg:border-l
+                            lg:border-white/10
+                            lg:pl-12">
+
+                    <p class="text-xs
+                              tracking-[0.18em]
+                              uppercase font-semibold
+                              text-white/50
+                              mb-6">
+                        Ce qui est inclus
+                    </p>
+
+
+                    {% set onePageFeatures = [
+                        'Conception d’une page unique intuitive et esthétique',
+                        'Contenu organisé pour une narration claire et captivante',
+                        'Intégration de fonctionnalités interactives',
+                        'Optimisation du référencement naturel (SEO)',
+                        'Optimisation du temps de chargement',
+                        'Compatibilité mobile, tablette et desktop',
+                        'Mise en place du certificat SSL'
+                    ] %}
+
+
+                    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4">
+
+                        {% for feature in onePageFeatures %}
+
+                            <div class="flex items-start gap-3">
+
+                                <span class="mt-0.5
+                                             flex w-5 h-5
+                                             shrink-0
+                                             items-center justify-center
+                                             rounded-full
+                                             bg-[#F1A579]/15">
+
+                                    <svg class="w-3 h-3
+                                                text-[#F1A579]"
+                                         viewBox="0 0 24 24"
+                                         fill="none"
+                                         stroke="currentColor"
+                                         stroke-width="2">
+
+                                        <path d="M5 12.5l4 4L19 7"/>
+
+                                    </svg>
+
+                                </span>
+
+                                <p class="text-sm
+                                          leading-6
+                                          text-white/70">
+                                    {{ feature }}
+                                </p>
+
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            {# =================================================
+               SITE VITRINE
+            ================================================= #}
+
+            <article class="grid
+                            lg:grid-cols-[0.7fr_1.3fr]
+                            gap-8 lg:gap-14
+                            rounded-[2rem]
+                            bg-white/[0.07]
+                            border border-white/10
+                            p-7 sm:p-8 lg:p-10
+                            mt-5
+                            reveal">
+
+                <div>
+
+                    <div class="flex items-center gap-4">
+
+                        <span class="font-display
+                                     text-xl
+                                     text-[#F1A579]">
+                            02
+                        </span>
+
+                        <span class="text-xs
+                                     tracking-[0.18em]
+                                     uppercase
+                                     text-white/50">
+                            Site vitrine
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="font-display
+                               text-2xl sm:text-3xl
+                               leading-[1.2]
+                               mt-7">
+
+                        Une vitrine digitale
+                        <span class="block text-[#F1A579]">
                             à votre image.
                         </span>
 
-                    </h2>
+                    </h3>
 
-                </div>
 
+                    <p class="mt-5
+                              text-sm sm:text-base
+                              leading-7
+                              text-white/70">
 
-                <div class="max-w-xl">
-
-                    <p class="text-base sm:text-lg
-                              leading-8 text-ink-soft">
-
-                        Je crée des sites WordPress sur mesure pour
-                        présenter votre activité avec clarté et offrir
-                        une expérience agréable à vos visiteurs.
-
-                    </p>
-
-                    <p class="mt-5 text-base sm:text-lg
-                              leading-8 text-ink-soft">
-
-                        L'objectif : vous livrer un site esthétique,
-                        responsive, performant et simple à administrer,
-                        sans sacrifier la qualité technique.
-
-                    </p>
-
-                    <div class="flex flex-wrap gap-2.5 mt-8">
-
-                        {% for item in [
-                            'One page',
-                            'Site vitrine',
-                            'E-commerce',
-                            'Refonte'
-                        ] %}
-
-                            <span class="px-4 py-2
-                                         rounded-full
-                                         bg-[#EFE7DA]
-                                         text-sm font-medium">
-                                {{ item }}
-                            </span>
-
-                        {% endfor %}
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            {# -------------------------------------------------
-               SYMFONY
-            ------------------------------------------------- #}
-
-            <article class="grid
-                            lg:grid-cols-[70px_0.75fr_1.25fr]
-                            gap-6 lg:gap-12
-                            bg-white/60
-                            border border-[#D9C8A9]/45
-                            rounded-[2rem]
-                            px-7 sm:px-9 lg:px-10
-                            py-10 lg:py-12
-                            reveal">
-
-                <div>
-
-                    <span class="font-display
-                                 text-4xl leading-none
-                                 text-terracotta/45">
-                        02
-                    </span>
-
-                </div>
-
-
-                <div>
-
-                    <span class="block mb-4
-                                 text-xs tracking-[0.2em]
-                                 uppercase font-semibold
-                                 text-terracotta">
-                        Symfony
-                    </span>
-
-                    <h2 class="font-display
-                               text-3xl sm:text-[2.2rem]
-                               leading-[1.15]">
-
-                        Pour les projets
-                        <span class="block text-terracotta">
-                            qui vont plus loin.
-                        </span>
-
-                    </h2>
-
-                </div>
-
-
-                <div class="max-w-xl">
-
-                    <p class="text-base sm:text-lg
-                              leading-8 text-ink-soft">
-
-                        Lorsque les besoins dépassent ceux d'un site
-                        traditionnel, je développe des applications
-                        Symfony adaptées à votre activité et à vos usages.
-
-                    </p>
-
-                    <p class="mt-5 text-base sm:text-lg
-                              leading-8 text-ink-soft">
-
-                        Gestion de comptes, données métier,
-                        tableaux de bord, formulaires avancés,
-                        espace d'administration ou fonctionnalités
-                        spécifiques : l'application est construite
-                        autour de vos besoins.
-
-                    </p>
-
-
-                    <div class="flex flex-wrap gap-2.5 mt-8">
-
-                        {% for item in [
-                            'Application web',
-                            'Application mobile',
-                            'Outil métier',
-                            'Back-office'
-                        ] %}
-
-                            <span class="px-4 py-2
-                                         rounded-full
-                                         bg-[#00687A]/8
-                                         text-[#00687A]
-                                         text-sm font-medium">
-                                {{ item }}
-                            </span>
-
-                        {% endfor %}
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            {# -------------------------------------------------
-               SEO
-            ------------------------------------------------- #}
-
-            <article class="grid
-                            lg:grid-cols-[70px_0.75fr_1.25fr]
-                            gap-6 lg:gap-12
-                            bg-white/60
-                            border border-[#D9C8A9]/45
-                            rounded-[2rem]
-                            px-7 sm:px-9 lg:px-10
-                            py-10 lg:py-12
-                            reveal">
-
-                <div>
-
-                    <span class="font-display
-                                 text-4xl leading-none
-                                 text-terracotta/45">
-                        03
-                    </span>
-
-                </div>
-
-
-                <div>
-
-                    <span class="block mb-4
-                                 text-xs tracking-[0.2em]
-                                 uppercase font-semibold
-                                 text-terracotta">
-                        Référencement SEO
-                    </span>
-
-                    <h2 class="font-display
-                               text-3xl sm:text-[2.2rem]
-                               leading-[1.15]">
-
-                        Être visible
-                        <span class="block text-terracotta">
-                            naturellement.
-                        </span>
-
-                    </h2>
-
-                </div>
-
-
-                <div class="max-w-xl">
-
-                    <p class="text-base sm:text-lg
-                              leading-8 text-ink-soft">
-
-                        Le référencement naturel est intégré à mes
-                        prestations de création et de refonte.
-                        Votre site est pensé pour être compréhensible
-                        par vos visiteurs comme par les moteurs de recherche.
-
-                    </p>
-
-                    <p class="mt-5 text-base sm:text-lg
-                              leading-8 text-ink-soft">
-
-                        Architecture des pages, balisage,
-                        optimisation des contenus, performance
-                        et bonnes pratiques techniques sont pris
-                        en compte pendant la construction du site.
+                        Un site complet pour présenter votre entreprise,
+                        valoriser vos services et transformer vos visiteurs
+                        en prises de contact.
 
                     </p>
 
 
                     <div class="mt-8
-                                inline-flex items-center gap-3
+                                inline-flex
+                                items-center gap-3
                                 rounded-full
-                                bg-[#00687A]/8
-                                border border-[#00687A]/15
+                                bg-white/[0.08]
+                                border border-white/10
                                 px-4 py-2.5">
 
-                        <span class="flex
-                                     w-6 h-6
-                                     items-center justify-center
-                                     rounded-full
-                                     bg-[#00687A]
-                                     text-white text-xs">
-                            ✓
+                        <svg class="w-4 h-4 text-[#F1A579]"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.8">
+                            <circle cx="12" cy="12" r="9"/>
+                            <path d="M12 7v5l3 2"/>
+                        </svg>
+
+                        <span class="text-xs text-white/60">
+                            Délai estimé
                         </span>
 
-                        <span class="text-sm
-                                     font-medium
-                                     text-[#00687A]">
-                            SEO inclus dans les prestations
+                        <span class="text-sm font-semibold">
+                            3 semaines
                         </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="lg:border-l
+                            lg:border-white/10
+                            lg:pl-12">
+
+                    <p class="text-xs
+                              tracking-[0.18em]
+                              uppercase font-semibold
+                              text-white/50
+                              mb-6">
+                        Ce qui est inclus
+                    </p>
+
+
+                    {% set vitrineFeatures = [
+                        'Conception d’un site multipage adapté à votre activité',
+                        'Organisation des contenus et de la navigation',
+                        'Design personnalisé dans le respect de votre identité visuelle',
+                        'Responsive mobile, tablette et desktop',
+                        'Formulaire de contact et fonctionnalités adaptées',
+                        'Optimisation SEO technique des pages',
+                        'Optimisation des performances et du temps de chargement',
+                        'Mise en place du certificat SSL'
+                    ] %}
+
+
+                    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4">
+
+                        {% for feature in vitrineFeatures %}
+
+                            <div class="flex items-start gap-3">
+
+                                <span class="mt-0.5
+                                             flex w-5 h-5
+                                             shrink-0
+                                             items-center justify-center
+                                             rounded-full
+                                             bg-[#F1A579]/15">
+
+                                    <svg class="w-3 h-3
+                                                text-[#F1A579]"
+                                         viewBox="0 0 24 24"
+                                         fill="none"
+                                         stroke="currentColor"
+                                         stroke-width="2">
+
+                                        <path d="M5 12.5l4 4L19 7"/>
+
+                                    </svg>
+
+                                </span>
+
+                                <p class="text-sm
+                                          leading-6
+                                          text-white/70">
+                                    {{ feature }}
+                                </p>
+
+                            </div>
+
+                        {% endfor %}
 
                     </div>
 
@@ -437,220 +869,510 @@
 
             </article>
 
-        </div>
-
-    </section>
 
 
-    {# =========================================================
-       TYPES DE PROJETS
-    ========================================================= #}
+            {# =================================================
+               E-COMMERCE
+            ================================================= #}
 
-    <section class="max-w-6xl mx-auto
-                    px-6 sm:px-8 lg:px-12 xl:px-16
-                    pb-20 lg:pb-28">
+            <article class="grid
+                            lg:grid-cols-[0.7fr_1.3fr]
+                            gap-8 lg:gap-14
+                            rounded-[2rem]
+                            bg-white/[0.07]
+                            border border-white/10
+                            p-7 sm:p-8 lg:p-10
+                            mt-5
+                            reveal">
 
-        <div class="relative
-                    bg-[#00687A]
-                    text-white
-                    rounded-[2.5rem]
-                    overflow-hidden
-                    px-7 sm:px-10 lg:px-14
-                    py-14 lg:py-16">
+                <div>
 
+                    <div class="flex items-center gap-4">
 
-            {# Décoration #}
-
-            <div class="absolute
-                        -right-24 -top-24
-                        w-72 h-72
-                        rounded-full
-                        border border-white/10">
-            </div>
-
-            <div class="absolute
-                        right-20 -bottom-20
-                        w-40 h-40
-                        rounded-full
-                        bg-white/[0.03]">
-            </div>
-
-
-            <div class="relative">
-
-                <div class="grid
-                            lg:grid-cols-[0.65fr_1.35fr]
-                            gap-8 lg:gap-16
-                            mb-12">
-
-                    <div>
+                        <span class="font-display
+                                     text-xl
+                                     text-[#F1A579]">
+                            03
+                        </span>
 
                         <span class="text-xs
-                                     tracking-[0.22em]
-                                     uppercase font-semibold
-                                     text-[#F1A579]">
-                            Votre projet
+                                     tracking-[0.18em]
+                                     uppercase
+                                     text-white/50">
+                            E-commerce
                         </span>
 
                     </div>
 
 
-                    <div class="max-w-2xl">
+                    <h3 class="font-display
+                               text-2xl sm:text-3xl
+                               leading-[1.2]
+                               mt-7">
 
-                        <h2 class="font-display
-                                   text-3xl sm:text-4xl
-                                   leading-[1.18]">
+                        Une boutique pensée
+                        <span class="block text-[#F1A579]">
+                            pour vos clients.
+                        </span>
 
-                            Une solution adaptée à ce que
-                            <span class="text-[#F1A579]">
-                                vous voulez construire.
-                            </span>
+                    </h3>
 
-                        </h2>
+
+                    <p class="mt-5
+                              text-sm sm:text-base
+                              leading-7
+                              text-white/70">
+
+                        Une boutique en ligne claire et rassurante,
+                        pensée pour valoriser vos produits et simplifier
+                        le parcours d'achat.
+
+                    </p>
+
+
+                    <div class="mt-8
+                                inline-flex
+                                items-center gap-3
+                                rounded-full
+                                bg-white/[0.08]
+                                border border-white/10
+                                px-4 py-2.5">
+
+                        <svg class="w-4 h-4 text-[#F1A579]"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.8">
+                            <circle cx="12" cy="12" r="9"/>
+                            <path d="M12 7v5l3 2"/>
+                        </svg>
+
+                        <span class="text-xs text-white/60">
+                            Délai estimé
+                        </span>
+
+                        <span class="text-sm font-semibold">
+                            1 mois et demi
+                        </span>
 
                     </div>
 
                 </div>
 
 
-                {# PROJETS #}
+                <div class="lg:border-l
+                            lg:border-white/10
+                            lg:pl-12">
 
-                <div class="grid md:grid-cols-2 gap-4">
+                    <p class="text-xs
+                              tracking-[0.18em]
+                              uppercase font-semibold
+                              text-white/50
+                              mb-6">
+                        Ce qui est inclus
+                    </p>
 
-                    {% set projects = [
-                        {
-                            number: '01',
-                            title: 'One page',
-                            text: "Une présence digitale concise et efficace pour présenter votre activité et votre offre sur une seule page."
-                        },
-                        {
-                            number: '02',
-                            title: 'Site vitrine',
-                            text: "Un site complet pour présenter votre entreprise, valoriser vos services et faciliter la prise de contact."
-                        },
-                        {
-                            number: '03',
-                            title: 'E-commerce',
-                            text: "Une boutique en ligne claire et rassurante pour valoriser vos produits et simplifier le parcours d'achat."
-                        },
-                        {
-                            number: '04',
-                            title: 'Refonte de site',
-                            text: "Moderniser votre site et améliorer son identité, son expérience, ses performances et son référencement."
-                        }
+
+                    {% set ecommerceFeatures = [
+                        'Conception graphique adaptée à votre identité',
+                        'Création et organisation du catalogue produits',
+                        'Pages produits et catégories',
+                        'Panier et parcours de commande',
+                        'Intégration du paiement sécurisé',
+                        'Gestion des commandes et de la boutique',
+                        'Responsive mobile, tablette et desktop',
+                        'Optimisation SEO technique',
+                        'Optimisation des performances',
+                        'Mise en place du certificat SSL'
                     ] %}
 
 
-                    {% for project in projects %}
+                    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4">
 
-                        <article class="rounded-2xl
-                                        bg-white/[0.07]
-                                        border border-white/10
-                                        p-6 lg:p-7
-                                        transition-all duration-300
-                                        hover:bg-white/[0.1]
-                                        hover:-translate-y-0.5">
+                        {% for feature in ecommerceFeatures %}
 
-                            <div class="flex items-center
-                                        justify-between
-                                        mb-8">
+                            <div class="flex items-start gap-3">
 
-                                <span class="font-display
-                                             text-xl
-                                             text-[#F1A579]">
-                                    {{ project.number }}
-                                </span>
-
-                                <span class="w-7 h-7
+                                <span class="mt-0.5
+                                             flex w-5 h-5
+                                             shrink-0
+                                             items-center justify-center
                                              rounded-full
-                                             border border-white/20
-                                             flex items-center
-                                             justify-center
-                                             text-xs
-                                             text-white/70">
-                                    ↗
+                                             bg-[#F1A579]/15">
+
+                                    <svg class="w-3 h-3
+                                                text-[#F1A579]"
+                                         viewBox="0 0 24 24"
+                                         fill="none"
+                                         stroke="currentColor"
+                                         stroke-width="2">
+
+                                        <path d="M5 12.5l4 4L19 7"/>
+
+                                    </svg>
+
                                 </span>
+
+                                <p class="text-sm
+                                          leading-6
+                                          text-white/70">
+                                    {{ feature }}
+                                </p>
 
                             </div>
 
+                        {% endfor %}
 
-                            <h3 class="font-display
-                                       text-xl sm:text-2xl
-                                       mb-3">
-
-                                {{ project.title }}
-
-                            </h3>
-
-
-                            <p class="text-sm sm:text-base
-                                      leading-7
-                                      text-white/70">
-
-                                {{ project.text }}
-
-                            </p>
-
-                        </article>
-
-                    {% endfor %}
-
-
-                    {# APPLICATION — pleine largeur #}
-
-                    <article class="md:col-span-2
-                                    grid md:grid-cols-[1fr_1.2fr]
-                                    gap-6
-                                    rounded-2xl
-                                    bg-white/[0.07]
-                                    border border-white/10
-                                    p-6 lg:p-7
-                                    transition-all duration-300
-                                    hover:bg-white/[0.1]">
-
-                        <div>
-
-                            <span class="font-display
-                                         text-xl
-                                         text-[#F1A579]">
-                                05
-                            </span>
-
-                            <h3 class="font-display
-                                       text-xl sm:text-2xl
-                                       mt-7">
-                                Application web &amp; mobile
-                            </h3>
-
-                        </div>
-
-
-                        <div class="flex items-end">
-
-                            <p class="text-sm sm:text-base
-                                      leading-7
-                                      text-white/70
-                                      max-w-lg">
-
-                                Une solution sur mesure lorsque votre
-                                projet nécessite des fonctionnalités
-                                spécifiques, des espaces utilisateurs
-                                ou une véritable logique métier.
-
-                            </p>
-
-                        </div>
-
-                    </article>
+                    </div>
 
                 </div>
+
+            </article>
+
+
+
+            {# =================================================
+               APPLICATION SYMFONY
+            ================================================= #}
+
+            <article class="grid
+                            lg:grid-cols-[0.7fr_1.3fr]
+                            gap-8 lg:gap-14
+                            rounded-[2rem]
+                            bg-[#F7F1E7]
+                            text-ink
+                            border border-white/10
+                            p-7 sm:p-8 lg:p-10
+                            mt-5
+                            reveal">
+
+                <div>
+
+                    <div class="flex items-center gap-4">
+
+                        <span class="font-display
+                                     text-xl
+                                     text-terracotta">
+                            04
+                        </span>
+
+                        <span class="text-xs
+                                     tracking-[0.18em]
+                                     uppercase
+                                     text-ink-soft">
+                            Application Symfony
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="font-display
+                               text-2xl sm:text-3xl
+                               leading-[1.2]
+                               mt-7">
+
+                        Une solution conçue
+                        <span class="block text-terracotta">
+                            autour de votre métier.
+                        </span>
+
+                    </h3>
+
+
+                    <p class="mt-5
+                              text-sm sm:text-base
+                              leading-7
+                              text-ink-soft">
+
+                        Pour les projets nécessitant une logique métier,
+                        des espaces utilisateurs, une gestion de données
+                        ou des fonctionnalités spécifiques.
+
+                    </p>
+
+
+                    <div class="mt-8
+                                inline-flex
+                                items-center gap-3
+                                rounded-full
+                                bg-[#00687A]/8
+                                border border-[#00687A]/10
+                                px-4 py-2.5">
+
+                        <svg class="w-4 h-4 text-[#00687A]"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.8">
+                            <circle cx="12" cy="12" r="9"/>
+                            <path d="M12 7v5l3 2"/>
+                        </svg>
+
+                        <span class="text-xs text-ink-soft">
+                            Délai estimé
+                        </span>
+
+                        <span class="text-sm
+                                     font-semibold
+                                     text-[#00687A]">
+                            2 à 3 mois
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="lg:border-l
+                            lg:border-[#D9C8A9]/60
+                            lg:pl-12">
+
+                    <p class="text-xs
+                              tracking-[0.18em]
+                              uppercase font-semibold
+                              text-ink-soft
+                              mb-6">
+                        Ce qui est inclus
+                    </p>
+
+
+                    {% set symfonyFeatures = [
+                        'Analyse des besoins et définition des fonctionnalités',
+                        'Conception des maquettes desktop et mobile',
+                        'Conception du modèle conceptuel de données (MCD)',
+                        'Architecture et développement avec Symfony',
+                        'Conception et gestion de la base de données',
+                        'Espaces utilisateurs et gestion des droits selon les besoins',
+                        'Back-office et fonctionnalités métier sur mesure',
+                        'Interface responsive mobile, tablette et desktop',
+                        'Sécurisation de l’application et des données',
+                        'Tests fonctionnels avant mise en production',
+                        'Déploiement et accompagnement à la prise en main'
+                    ] %}
+
+
+                    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4">
+
+                        {% for feature in symfonyFeatures %}
+
+                            <div class="flex items-start gap-3">
+
+                                <span class="mt-0.5
+                                             flex w-5 h-5
+                                             shrink-0
+                                             items-center justify-center
+                                             rounded-full
+                                             bg-[#00687A]/10">
+
+                                    <svg class="w-3 h-3
+                                                text-[#00687A]"
+                                         viewBox="0 0 24 24"
+                                         fill="none"
+                                         stroke="currentColor"
+                                         stroke-width="2">
+
+                                        <path d="M5 12.5l4 4L19 7"/>
+
+                                    </svg>
+
+                                </span>
+
+                                <p class="text-sm
+                                          leading-6
+                                          text-ink-soft">
+                                    {{ feature }}
+                                </p>
+
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            {# =================================================
+               REFONTE
+            ================================================= #}
+
+            <article class="grid
+                            lg:grid-cols-[0.7fr_1.3fr]
+                            gap-8 lg:gap-14
+                            rounded-[2rem]
+                            bg-white/[0.07]
+                            border border-white/10
+                            p-7 sm:p-8 lg:p-10
+                            mt-5
+                            reveal">
+
+                <div>
+
+                    <div class="flex items-center gap-4">
+
+                        <span class="font-display
+                                     text-xl
+                                     text-[#F1A579]">
+                            05
+                        </span>
+
+                        <span class="text-xs
+                                     tracking-[0.18em]
+                                     uppercase
+                                     text-white/50">
+                            Refonte
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="font-display
+                               text-2xl sm:text-3xl
+                               leading-[1.2]
+                               mt-7">
+
+                        Faire évoluer
+                        <span class="block text-[#F1A579]">
+                            votre site existant.
+                        </span>
+
+                    </h3>
+
+
+                    <p class="mt-5
+                              text-sm sm:text-base
+                              leading-7
+                              text-white/70">
+
+                        Une refonte permet de moderniser votre présence
+                        en ligne tout en améliorant l'expérience,
+                        les performances et la qualité technique.
+
+                    </p>
+
+
+                    <div class="mt-8
+                                inline-flex
+                                items-center gap-3
+                                rounded-full
+                                bg-white/[0.08]
+                                border border-white/10
+                                px-4 py-2.5">
+
+                        <span class="text-xs text-white/60">
+                            Délai
+                        </span>
+
+                        <span class="text-sm font-semibold">
+                            Sur devis
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="lg:border-l
+                            lg:border-white/10
+                            lg:pl-12">
+
+                    <p class="text-xs
+                              tracking-[0.18em]
+                              uppercase font-semibold
+                              text-white/50
+                              mb-6">
+                        Selon votre projet
+                    </p>
+
+
+                    {% set refonteFeatures = [
+                        'Audit du site existant',
+                        'Analyse de la structure et du parcours utilisateur',
+                        'Modernisation de l’interface et de l’identité visuelle',
+                        'Réorganisation des contenus et de la navigation',
+                        'Adaptation mobile, tablette et desktop',
+                        'Amélioration des performances',
+                        'Optimisation du socle SEO',
+                        'Mise à jour et sécurisation technique',
+                        'Migration des contenus lorsque nécessaire'
+                    ] %}
+
+
+                    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4">
+
+                        {% for feature in refonteFeatures %}
+
+                            <div class="flex items-start gap-3">
+
+                                <span class="mt-0.5
+                                             flex w-5 h-5
+                                             shrink-0
+                                             items-center justify-center
+                                             rounded-full
+                                             bg-[#F1A579]/15">
+
+                                    <svg class="w-3 h-3
+                                                text-[#F1A579]"
+                                         viewBox="0 0 24 24"
+                                         fill="none"
+                                         stroke="currentColor"
+                                         stroke-width="2">
+
+                                        <path d="M5 12.5l4 4L19 7"/>
+
+                                    </svg>
+
+                                </span>
+
+                                <p class="text-sm
+                                          leading-6
+                                          text-white/70">
+                                    {{ feature }}
+                                </p>
+
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            {# =================================================
+               NOTE DÉLAIS
+            ================================================= #}
+
+            <div class="mt-8
+                        max-w-3xl
+                        flex items-start gap-3
+                        text-xs sm:text-sm
+                        leading-6
+                        text-white/50">
+
+                <span class="text-[#F1A579]">*</span>
+
+                <p>
+                    Les délais sont donnés à titre indicatif et commencent
+                    après validation du projet et réception de l'ensemble
+                    des éléments nécessaires. Ils peuvent évoluer selon
+                    la complexité du projet, les contenus à intégrer
+                    et les délais de validation.
+                </p>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
 
+</section>
 
     {# =========================================================
        MÉTHODE

@@ -1,72 +1,450 @@
 {% extends 'base.html.twig' %}
+
 {% block title %}Contact — Tempo{% endblock %}
 
 {% block body %}
+
 <section class="bg-cream min-h-screen">
-  <div class="max-w-6xl mx-auto px-6 py-16 grid lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-lg">
 
-    <!-- Colonne photo -->
-    <div class="hidden lg:block relative">
-      <img src="{{ asset('images/contact.png') }}" alt="Tempo, agence web" class="w-full h-full object-cover" onerror="this.parentElement.style.background='linear-gradient(135deg,#D9C8A9,#B9A480)'">
+    <div class="max-w-6xl mx-auto
+                px-6 py-16
+                grid lg:grid-cols-2
+                gap-0
+                rounded-2xl
+                overflow-hidden
+                shadow-lg">
+
+        {# =====================================================
+           COLONNE PHOTO
+        ===================================================== #}
+
+        <div class="hidden lg:block relative">
+
+            <img
+                src="{{ asset('images/contact.png') }}"
+                alt="Tempo, agence web"
+                class="w-full h-full object-cover"
+                onerror="this.parentElement.style.background='linear-gradient(135deg,#D9C8A9,#B9A480)'"
+            >
+
+        </div>
+
+
+        {# =====================================================
+           COLONNE FORMULAIRE
+        ===================================================== #}
+
+        <div class="bg-[#F7F1E7] p-10 lg:p-14">
+
+            <div class="text-xs
+                        tracking-widest
+                        text-terracotta
+                        font-medium
+                        mb-3">
+                CONTACT
+            </div>
+
+
+            <h1 class="font-display text-3xl mb-2">
+                Discutons de votre projet
+            </h1>
+
+
+            <p class="text-sm text-ink-soft mb-8">
+                Réponse sous 24h ouvrées.
+            </p>
+
+
+            {# =================================================
+               MESSAGE DE SUCCÈS
+            ================================================= #}
+
+            {% for message in app.flashes('success') %}
+
+                <div class="mb-6
+                            rounded-xl
+                            border border-[#00687A]/20
+                            bg-[#00687A]/10
+                            px-4 py-3
+                            text-sm
+                            text-[#00687A]">
+
+                    <div class="flex items-center gap-3">
+
+                        <span class="flex
+                                     h-6 w-6
+                                     shrink-0
+                                     items-center justify-center
+                                     rounded-full
+                                     bg-[#00687A]
+                                     text-xs
+                                     text-white">
+                            ✓
+                        </span>
+
+                        <span>
+                            {{ message }}
+                        </span>
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+
+            {# =================================================
+               MESSAGE RATE LIMITER
+            ================================================= #}
+
+            {% for message in app.flashes('error') %}
+
+                <div class="mb-6
+                            rounded-xl
+                            border border-terracotta/20
+                            bg-terracotta/10
+                            px-4 py-3
+                            text-sm
+                            text-terracotta">
+
+                    {{ message }}
+
+                </div>
+
+            {% endfor %}
+
+
+
+            {# =================================================
+               FORMULAIRE
+            ================================================= #}
+
+            {{ form_start(form, {
+                attr: {
+                    class: 'space-y-4'
+                }
+            }) }}
+
+
+                {# =============================================
+                   ERREURS GLOBALES
+                ============================================= #}
+
+                {% if form.vars.submitted and not form.vars.valid %}
+
+                    <div class="rounded-xl
+                                border border-terracotta/20
+                                bg-terracotta/10
+                                px-4 py-3
+                                text-sm
+                                text-terracotta">
+
+                        <p class="font-medium mb-1">
+                            Le formulaire contient une erreur.
+                        </p>
+
+                        {{ form_errors(form) }}
+
+                    </div>
+
+                {% endif %}
+
+
+
+                {# =============================================
+                   NOM + EMAIL
+                ============================================= #}
+
+                <div class="grid sm:grid-cols-2 gap-4">
+
+
+                    {# NOM #}
+
+                    <div>
+
+                        {{ form_label(
+                            form.nom,
+                            null,
+                            {
+                                label_attr: {
+                                    class: 'block text-xs font-medium text-ink-soft mb-1.5'
+                                }
+                            }
+                        ) }}
+
+                        {{ form_widget(
+                            form.nom,
+                            {
+                                attr: {
+                                    class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'
+                                }
+                            }
+                        ) }}
+
+
+                        <div class="mt-1
+                                    text-xs
+                                    text-terracotta">
+                            {{ form_errors(form.nom) }}
+                        </div>
+
+                    </div>
+
+
+
+                    {# EMAIL #}
+
+                    <div>
+
+                        {{ form_label(
+                            form.email,
+                            null,
+                            {
+                                label_attr: {
+                                    class: 'block text-xs font-medium text-ink-soft mb-1.5'
+                                }
+                            }
+                        ) }}
+
+                        {{ form_widget(
+                            form.email,
+                            {
+                                attr: {
+                                    class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'
+                                }
+                            }
+                        ) }}
+
+
+                        <div class="mt-1
+                                    text-xs
+                                    text-terracotta">
+                            {{ form_errors(form.email) }}
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                {# =============================================
+                   TÉLÉPHONE
+                ============================================= #}
+
+                <div>
+
+                    {{ form_label(
+                        form.telephone,
+                        null,
+                        {
+                            label_attr: {
+                                class: 'block text-xs font-medium text-ink-soft mb-1.5'
+                            }
+                        }
+                    ) }}
+
+                    {{ form_widget(
+                        form.telephone,
+                        {
+                            attr: {
+                                class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'
+                            }
+                        }
+                    ) }}
+
+
+                    <div class="mt-1
+                                text-xs
+                                text-terracotta">
+                        {{ form_errors(form.telephone) }}
+                    </div>
+
+                </div>
+
+
+
+                {# =============================================
+                   TYPE DE PROJET + BUDGET
+                ============================================= #}
+
+                <div class="grid sm:grid-cols-2 gap-4">
+
+
+                    {# TYPE DE PROJET #}
+
+                    <div>
+
+                        {{ form_label(
+                            form.typeProjet,
+                            null,
+                            {
+                                label_attr: {
+                                    class: 'block text-xs font-medium text-ink-soft mb-1.5'
+                                }
+                            }
+                        ) }}
+
+                        {{ form_widget(
+                            form.typeProjet,
+                            {
+                                attr: {
+                                    class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'
+                                }
+                            }
+                        ) }}
+
+
+                        <div class="mt-1
+                                    text-xs
+                                    text-terracotta">
+                            {{ form_errors(form.typeProjet) }}
+                        </div>
+
+                    </div>
+
+
+
+                    {# BUDGET #}
+
+                    <div>
+
+                        {{ form_label(
+                            form.budget,
+                            null,
+                            {
+                                label_attr: {
+                                    class: 'block text-xs font-medium text-ink-soft mb-1.5'
+                                }
+                            }
+                        ) }}
+
+                        {{ form_widget(
+                            form.budget,
+                            {
+                                attr: {
+                                    class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'
+                                }
+                            }
+                        ) }}
+
+
+                        <div class="mt-1
+                                    text-xs
+                                    text-terracotta">
+                            {{ form_errors(form.budget) }}
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                {# =============================================
+                   MESSAGE
+                ============================================= #}
+
+                <div>
+
+                    {{ form_label(
+                        form.message,
+                        null,
+                        {
+                            label_attr: {
+                                class: 'block text-xs font-medium text-ink-soft mb-1.5'
+                            }
+                        }
+                    ) }}
+
+                    {{ form_widget(
+                        form.message,
+                        {
+                            attr: {
+                                class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm min-h-[110px] focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'
+                            }
+                        }
+                    ) }}
+
+
+                    <div class="mt-1
+                                text-xs
+                                text-terracotta">
+                        {{ form_errors(form.message) }}
+                    </div>
+
+                </div>
+
+
+
+                {# =============================================
+                   HONEYPOT ANTI-SPAM
+                   Invisible pour l'utilisateur
+                ============================================= #}
+
+                <div class="absolute
+                            -left-[9999px]
+                            w-px h-px
+                            overflow-hidden"
+                     aria-hidden="true">
+
+                    {{ form_widget(form.website) }}
+
+                    {{ form_errors(form.website) }}
+
+                </div>
+
+
+
+                {# =============================================
+                   BOUTON
+                ============================================= #}
+
+                <button
+                    type="submit"
+                    class="w-full
+                           bg-[#00687A]
+                           hover:bg-[#00566A]
+                           text-white
+                           py-3
+                           rounded-lg
+                           text-sm
+                           font-semibold
+                           transition">
+
+                    Envoyer le message
+
+                </button>
+
+
+            {{ form_end(form) }}
+
+
+
+            {# =================================================
+               EMAIL
+            ================================================= #}
+
+            <p class="text-xs
+                      text-ink-soft/70
+                      text-center
+                      mt-6">
+
+                ou composez directement le
+
+                <a href="tel:0675064781"
+                   class="underline hover:text-[#00687A] transition">
+
+                    0675064781
+
+                </a>
+
+            </p>
+
+        </div>
+
     </div>
 
-    <!-- Colonne formulaire -->
-    <div class="bg-[#F7F1E7] p-10 lg:p-14">
-      <div class="text-xs tracking-widest text-terracotta font-medium mb-3">CONTACT</div>
-      <h1 class="font-display text-3xl mb-2">Discutons de votre projet</h1>
-      <p class="text-sm text-ink-soft mb-8">Réponse sous 24h ouvrées.</p>
-
-      {% for message in app.flashes('success') %}
-        <div class="bg-emerald-50 text-emerald-700 text-sm px-4 py-3 rounded-lg mb-6">{{ message }}</div>
-      {% endfor %}
-
-      {{ form_start(form, {attr: {class: 'space-y-4'}}) }}
-
-        <div class="grid sm:grid-cols-2 gap-4">
-          <div>
-            {{ form_label(form.nom, null, {label_attr: {class: 'block text-xs font-medium text-ink-soft mb-1.5'}}) }}
-            {{ form_widget(form.nom, {attr: {class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'}}) }}
-            {{ form_errors(form.nom) }}
-          </div>
-          <div>
-            {{ form_label(form.email, null, {label_attr: {class: 'block text-xs font-medium text-ink-soft mb-1.5'}}) }}
-            {{ form_widget(form.email, {attr: {class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'}}) }}
-            {{ form_errors(form.email) }}
-          </div>
-        </div>
-
-        <div>
-          {{ form_label(form.telephone, null, {label_attr: {class: 'block text-xs font-medium text-ink-soft mb-1.5'}}) }}
-          {{ form_widget(form.telephone, {attr: {class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'}}) }}
-        </div>
-
-        <div class="grid sm:grid-cols-2 gap-4">
-          <div>
-            {{ form_label(form.typeProjet, null, {label_attr: {class: 'block text-xs font-medium text-ink-soft mb-1.5'}}) }}
-            {{ form_widget(form.typeProjet, {attr: {class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'}}) }}
-          </div>
-          <div>
-            {{ form_label(form.budget, null, {label_attr: {class: 'block text-xs font-medium text-ink-soft mb-1.5'}}) }}
-            {{ form_widget(form.budget, {attr: {class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'}}) }}
-          </div>
-        </div>
-
-        <div>
-          {{ form_label(form.message, null, {label_attr: {class: 'block text-xs font-medium text-ink-soft mb-1.5'}}) }}
-          {{ form_widget(form.message, {attr: {class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm min-h-[110px] focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'}}) }}
-        </div>
-
-      
-
-        <button type="submit" class="w-full bg-[#00687A] hover:bg-[#00566A] text-white py-3 rounded-lg text-sm font-semibold transition">
-          Envoyer le message
-        </button>
-
-      {{ form_end(form) }}
-
-      <p class="text-xs text-ink-soft/70 text-center mt-6">ou écrivez directement à <a href="mailto:contact@tempo-agence.fr" class="underline">contact@tempo-agence.fr</a></p>
-    </div>
-
-  </div>
 </section>
+
 {% endblock %}

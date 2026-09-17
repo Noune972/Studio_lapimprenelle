@@ -22,7 +22,7 @@ class Projet
     #[ORM\Column(length: 255)]
     private ?string $type_de_site = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $image = null;
 
     #[ORM\Column]
@@ -34,10 +34,12 @@ class Projet
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $lien = null;
 
+
     public function getId(): ?int
     {
         return $this->id;
     }
+
 
     public function getTitre(): ?string
     {
@@ -51,6 +53,7 @@ class Projet
         return $this;
     }
 
+
     public function getDescription(): ?string
     {
         return $this->description;
@@ -62,6 +65,7 @@ class Projet
 
         return $this;
     }
+
 
     public function getTypeDeSite(): ?string
     {
@@ -75,17 +79,19 @@ class Projet
         return $this;
     }
 
+
     public function getImage(): ?string
     {
         return $this->image;
     }
 
-    public function setImage(string $image): static
+    public function setImage(?string $image): static
     {
         $this->image = $image;
 
         return $this;
     }
+
 
     public function getCreatedAt(): ?\DateTimeImmutable
     {
@@ -99,6 +105,7 @@ class Projet
         return $this;
     }
 
+
     public function getSlug(): ?string
     {
         return $this->slug;
@@ -110,6 +117,7 @@ class Projet
 
         return $this;
     }
+
 
     public function getLien(): ?string
     {

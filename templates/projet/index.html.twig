@@ -1,27 +1,905 @@
 {% extends 'base.html.twig' %}
-{% block title %}Projets — Studio Pimprenelle{% endblock %}
+
+{% block title %}Réalisations — Tempo agence web{% endblock %}
+
 
 {% block body %}
-<div class="max-w-3xl mx-auto px-6 py-10">
-    <h1 class="text-xl font-medium text-center mb-8">Quelques réalisations</h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {% for projet in projets %}
-        <a href="{{ path('app_projet_show', {slug: projet.slug}) }}" class="border border-gray-200 rounded-xl overflow-hidden block">
-        
-<div class="h-56 bg-gray-100 overflow-hidden flex items-center justify-center">
-    {% if projet.image %}
-        <img src="{{ asset('images/' ~ projet.image) }}" alt="{{ projet.titre }}" class="w-full h-full object-contain">
-    {% endif %}
+
+<div class="bg-cream text-ink overflow-hidden">
+
+
+    {# =========================================================
+       HERO
+    ========================================================= #}
+
+    <section class="max-w-6xl mx-auto
+                    px-6 sm:px-8 lg:px-12 xl:px-16
+                    pt-16 sm:pt-20 lg:pt-28
+                    pb-12 lg:pb-16">
+
+        <div class="max-w-4xl reveal">
+
+            <div class="flex items-center gap-4 mb-7">
+
+                <span class="w-10 h-px bg-terracotta"></span>
+
+                <span class="text-xs
+                             tracking-[0.22em]
+                             uppercase
+                             font-semibold
+                             text-terracotta">
+                    Réalisations
+                </span>
+
+            </div>
+
+
+            <h1 class="font-display
+                       text-5xl sm:text-6xl lg:text-[4.7rem]
+                       leading-[0.98]
+                       tracking-[-0.035em]">
+
+                Des projets pensés
+
+                <span class="block text-terracotta">
+                    pour être utiles.
+                </span>
+
+            </h1>
+
+
+            <p class="mt-7
+                      max-w-2xl
+                      text-base sm:text-lg
+                      leading-8
+                      text-ink-soft">
+
+                Sites vitrines, e-commerce et applications web :
+                découvrez une sélection de projets conçus pour répondre
+                à des objectifs concrets et offrir une expérience claire,
+                élégante et efficace.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    {# =========================================================
+       INTRO / FILTRES VISUELS
+    ========================================================= #}
+
+    <section class="max-w-6xl mx-auto
+                    px-6 sm:px-8 lg:px-12 xl:px-16
+                    pb-12 lg:pb-14">
+
+        <div class="flex flex-wrap items-center gap-2.5 reveal">
+
+            <span class="inline-flex
+                         items-center
+                         rounded-full
+                         bg-terracotta
+                         text-white
+                         text-sm font-medium
+                         px-5 py-2.5">
+
+                Tous les projets
+
+            </span>
+
+
+            <span class="inline-flex
+                         items-center
+                         rounded-full
+                         bg-[#EEE7DC]
+                         text-ink-soft
+                         text-sm
+                         px-5 py-2.5">
+
+                Sites vitrines
+
+            </span>
+
+
+            <span class="inline-flex
+                         items-center
+                         rounded-full
+                         bg-[#EEE7DC]
+                         text-ink-soft
+                         text-sm
+                         px-5 py-2.5">
+
+                E-commerce
+
+            </span>
+
+
+            <span class="inline-flex
+                         items-center
+                         rounded-full
+                         bg-[#EEE7DC]
+                         text-ink-soft
+                         text-sm
+                         px-5 py-2.5">
+
+                Applications Symfony
+
+            </span>
+
+
+            <span class="inline-flex
+                         items-center
+                         rounded-full
+                         bg-[#EEE7DC]
+                         text-ink-soft
+                         text-sm
+                         px-5 py-2.5">
+
+                Refontes
+
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    {# =========================================================
+       LISTE DES PROJETS
+    ========================================================= #}
+
+    <section class="max-w-6xl mx-auto
+                    px-6 sm:px-8 lg:px-12 xl:px-16
+                    pb-24 lg:pb-32">
+
+
+        {% if projets is not empty %}
+
+
+            <div class="grid
+                        md:grid-cols-2
+                        gap-x-8 lg:gap-x-10
+                        gap-y-14 lg:gap-y-20">
+
+
+                {% for projet in projets %}
+
+
+                    <article class="group reveal">
+
+
+                        {# =================================================
+                           ZONE VISUELLE
+                        ================================================= #}
+
+                        <div class="relative
+                                    rounded-[2rem]
+                                    overflow-hidden
+                                    px-5 sm:px-7 lg:px-8
+                                    pt-8 sm:pt-10
+                                    pb-5 sm:pb-6
+
+                                    {% if loop.index is odd %}
+                                        bg-[#E9E0D4]
+                                    {% else %}
+                                        bg-[#E1E7E4]
+                                    {% endif %}
+                        ">
+
+
+                            {# Petit numéro #}
+
+                            <span class="absolute
+                                         top-5 left-6
+                                         text-[10px]
+                                         tracking-[0.18em]
+                                         uppercase
+                                         font-semibold
+                                         text-ink/35">
+
+                                0{{ loop.index }}
+
+                            </span>
+
+
+
+                            {# =================================================
+                               MOCKUP ORDINATEUR
+                            ================================================= #}
+
+                            <div class="relative
+                                        mx-auto
+                                        max-w-[520px]
+                                        mt-5
+                                        transition-transform
+                                        duration-500
+                                        ease-out
+                                        group-hover:-translate-y-1">
+
+
+                                {# =============================================
+                                   ÉCRAN
+                                ============================================= #}
+
+                                <div class="relative
+                                            bg-[#181A19]
+                                            rounded-t-[15px]
+                                            p-[6px]
+                                            shadow-[0_22px_45px_rgba(23,32,30,0.18)]">
+
+
+                                    {# Webcam #}
+
+                                    <span class="absolute
+                                                 top-[2px]
+                                                 left-1/2
+                                                 -translate-x-1/2
+                                                 w-[3px] h-[3px]
+                                                 rounded-full
+                                                 bg-white/25
+                                                 z-20">
+                                    </span>
+
+
+
+                                    {# =========================================
+                                       CONTENU DE L'ÉCRAN
+                                    ========================================= #}
+
+                                    <div class="relative
+                                                aspect-[16/10]
+                                                overflow-hidden
+                                                rounded-t-[9px]
+                                                bg-[#F7F3EC]">
+
+
+                                        {% if projet.image %}
+
+
+                                            <img
+                                                src="{{ asset('uploads/projets/' ~ projet.image) }}"
+                                                alt="Aperçu du projet {{ projet.titre }}"
+                                                loading="lazy"
+                                                class="w-full h-full
+                                                       object-cover object-top
+                                                       transition-transform
+                                                       duration-700
+                                                       ease-out
+                                                       group-hover:scale-[1.025]"
+                                            >
+
+
+                                        {% else %}
+
+
+                                            {# =================================
+                                               PLACEHOLDER SI AUCUNE IMAGE
+                                            ================================= #}
+
+                                            <div class="absolute inset-0
+                                                        flex flex-col
+                                                        items-center
+                                                        justify-center
+                                                        text-center
+                                                        px-8
+                                                        bg-[#F7F3EC]">
+
+
+                                                <div class="flex
+                                                            items-center
+                                                            justify-center
+                                                            w-12 h-12
+                                                            rounded-full
+                                                            bg-[#00687A]/10
+                                                            text-[#00687A]
+                                                            mb-4">
+
+
+                                                    <svg
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.5"
+                                                        class="w-5 h-5"
+                                                        aria-hidden="true"
+                                                    >
+
+                                                        <rect
+                                                            x="3"
+                                                            y="4"
+                                                            width="18"
+                                                            height="14"
+                                                            rx="2"
+                                                        />
+
+                                                        <path d="M8 21h8"/>
+
+                                                        <path d="M12 18v3"/>
+
+                                                    </svg>
+
+                                                </div>
+
+
+                                                <span class="font-display
+                                                             text-xl
+                                                             text-ink">
+
+                                                    {{ projet.titre }}
+
+                                                </span>
+
+
+                                                <span class="mt-2
+                                                             text-xs
+                                                             text-ink-soft">
+
+                                                    Aperçu bientôt disponible
+
+                                                </span>
+
+                                            </div>
+
+
+                                        {% endif %}
+
+
+                                        {# Reflet subtil sur l'écran #}
+
+                                        <div class="absolute inset-0
+                                                    pointer-events-none
+                                                    bg-gradient-to-tr
+                                                    from-transparent
+                                                    via-white/[0.025]
+                                                    to-white/[0.10]">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                {# =============================================
+                                   BASE DU LAPTOP
+                                ============================================= #}
+
+                                <div class="relative
+                                            h-[11px]
+                                            bg-gradient-to-b
+                                            from-[#D8D8D6]
+                                            via-[#C4C4C2]
+                                            to-[#A7A7A5]
+                                            rounded-b-md">
+
+
+                                    {# Encoche centrale #}
+
+                                    <div class="absolute
+                                                top-0
+                                                left-1/2
+                                                -translate-x-1/2
+                                                w-16
+                                                h-[4px]
+                                                bg-[#929290]
+                                                rounded-b-md">
+                                    </div>
+
+                                </div>
+
+
+
+                                {# =============================================
+                                   PIED / PERSPECTIVE
+                                ============================================= #}
+
+                                <div class="mx-auto
+                                            w-[94%]
+                                            h-[4px]
+                                            bg-[#9B9B99]
+                                            rounded-b-[50%]">
+                                </div>
+
+
+
+                                {# =============================================
+                                   OMBRE SOUS L'ORDINATEUR
+                                ============================================= #}
+
+                                <div class="mx-auto
+                                            w-[78%]
+                                            h-4
+                                            -mt-1
+                                            rounded-full
+                                            bg-black/15
+                                            blur-lg">
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+
+                        {# =================================================
+                           INFORMATIONS DU PROJET
+                        ================================================= #}
+
+                        <div class="pt-6 sm:pt-7">
+
+
+                            <div class="flex
+                                        items-start
+                                        justify-between
+                                        gap-6">
+
+
+                                <div class="min-w-0">
+
+
+                                    {# Catégorie #}
+
+                                    {% if projet.categorie is defined and projet.categorie %}
+
+                                        <span class="block
+                                                     mb-2
+                                                     text-[10px]
+                                                     tracking-[0.18em]
+                                                     uppercase
+                                                     font-semibold
+                                                     text-terracotta">
+
+                                            {{ projet.categorie }}
+
+                                        </span>
+
+                                    {% endif %}
+
+
+
+                                    {# Titre #}
+
+                                    <h2 class="font-display
+                                               text-2xl sm:text-[1.8rem]
+                                               leading-tight
+                                               transition-colors
+                                               duration-300
+                                               group-hover:text-terracotta">
+
+                                        {{ projet.titre }}
+
+                                    </h2>
+
+
+
+                                    {# Description #}
+
+                                    {% if projet.description is defined and projet.description %}
+
+                                        <p class="mt-3
+                                                  max-w-md
+                                                  text-sm sm:text-base
+                                                  leading-7
+                                                  text-ink-soft">
+
+                                           {% if projet.description %}
+
+    <p class="mt-3
+              max-w-md
+              text-sm sm:text-base
+              leading-7
+              text-ink-soft">
+
+        {{ projet.description }}
+
+    </p>
+
+{% endif %}
+
+                                        </p>
+
+                                    {% endif %}
+
+
+                                </div>
+
+
+
+                                {# =================================================
+                                   FLÈCHE
+                                ================================================= #}
+
+                                {% if projet.url is defined and projet.url %}
+
+                                    <a
+                                        href="{{ projet.url }}"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Voir le projet {{ projet.titre }}"
+                                        class="flex
+                                               shrink-0
+                                               w-11 h-11
+                                               items-center
+                                               justify-center
+                                               rounded-full
+                                               border
+                                               border-[#D9C8A9]
+                                               text-terracotta
+                                               transition-all
+                                               duration-300
+                                               group-hover:bg-terracotta
+                                               group-hover:text-white
+                                               group-hover:border-terracotta
+                                               group-hover:-translate-y-0.5"
+                                    >
+
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="1.7"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            class="w-4 h-4"
+                                            aria-hidden="true"
+                                        >
+
+                                            <path d="M7 17L17 7"/>
+
+                                            <path d="M8 7h9v9"/>
+
+                                        </svg>
+
+                                    </a>
+
+
+                                {% else %}
+
+
+                                    <span class="flex
+                                                 shrink-0
+                                                 w-11 h-11
+                                                 items-center
+                                                 justify-center
+                                                 rounded-full
+                                                 border
+                                                 border-[#D9C8A9]
+                                                 text-terracotta
+                                                 transition-all
+                                                 duration-300
+                                                 group-hover:bg-terracotta
+                                                 group-hover:text-white
+                                                 group-hover:border-terracotta
+                                                 group-hover:-translate-y-0.5">
+
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="1.7"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            class="w-4 h-4"
+                                            aria-hidden="true"
+                                        >
+
+                                            <path d="M7 17L17 7"/>
+
+                                            <path d="M8 7h9v9"/>
+
+                                        </svg>
+
+                                    </span>
+
+
+                                {% endif %}
+
+
+                            </div>
+
+
+                            {# Ligne décorative #}
+
+                            <div class="mt-7
+                                        h-px
+                                        bg-[#D9C8A9]/50
+                                        origin-left
+                                        transition-transform
+                                        duration-500
+                                        group-hover:scale-x-[0.96]">
+                            </div>
+
+
+                        </div>
+
+
+                    </article>
+
+
+                {% endfor %}
+
+
+            </div>
+
+
+
+        {% else %}
+
+
+            {# =================================================
+               AUCUN PROJET
+            ================================================= #}
+
+            <div class="rounded-[2rem]
+                        bg-[#EEE7DC]
+                        px-8
+                        py-16
+                        sm:py-20
+                        text-center">
+
+
+                <span class="text-xs
+                             tracking-[0.2em]
+                             uppercase
+                             font-semibold
+                             text-terracotta">
+
+                    Portfolio
+
+                </span>
+
+
+                <h2 class="mt-4
+                           font-display
+                           text-3xl sm:text-4xl">
+
+                    Les projets arrivent bientôt.
+
+                </h2>
+
+
+                <p class="mt-4
+                          max-w-lg
+                          mx-auto
+                          text-base
+                          leading-7
+                          text-ink-soft">
+
+                    De nouvelles réalisations sont actuellement
+                    en préparation et seront présentées ici prochainement.
+
+                </p>
+
+            </div>
+
+
+        {% endif %}
+
+
+    </section>
+
+
+
+    {# =========================================================
+       PHILOSOPHIE
+    ========================================================= #}
+
+    <section class="max-w-6xl mx-auto
+                    px-6 sm:px-8 lg:px-12 xl:px-16
+                    pb-24 lg:pb-28">
+
+
+        <div class="grid
+                    lg:grid-cols-[0.8fr_1.2fr]
+                    gap-8 lg:gap-20
+                    items-start
+                    reveal">
+
+
+            <div>
+
+                <div class="flex items-center gap-4">
+
+                    <span class="w-10 h-px bg-terracotta"></span>
+
+                    <span class="text-xs
+                                 tracking-[0.22em]
+                                 uppercase
+                                 font-semibold
+                                 text-terracotta">
+
+                        Ma vision
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div>
+
+                <h2 class="font-display
+                           text-3xl sm:text-[2.5rem]
+                           leading-[1.15]">
+
+                    Pas seulement un joli site,
+
+                    <span class="text-terracotta">
+                        un véritable outil.
+                    </span>
+
+                </h2>
+
+
+                <p class="mt-6
+                          max-w-2xl
+                          text-base sm:text-lg
+                          leading-8
+                          text-ink-soft">
+
+                    Chaque projet est conçu autour de votre activité,
+                    de vos utilisateurs et de vos objectifs.
+                    Le design donne envie de rester, mais la structure,
+                    les performances et l'expérience doivent surtout
+                    permettre au site d'être réellement utile.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    {# =========================================================
+       CTA FINAL
+    ========================================================= #}
+
+    <section class="max-w-6xl mx-auto
+                    px-6 sm:px-8 lg:px-12 xl:px-16
+                    pb-24 lg:pb-32">
+
+
+        <div class="relative
+                    overflow-hidden
+                    rounded-[2.5rem]
+                    bg-[#00687A]
+                    text-white
+                    px-7 sm:px-10 lg:px-16
+                    py-12 sm:py-14 lg:py-16
+                    reveal">
+
+
+            {# Cercle décoratif #}
+
+            <div class="absolute
+                        -right-24
+                        -top-24
+                        w-72 h-72
+                        rounded-full
+                        border border-white/10">
+            </div>
+
+
+            <div class="absolute
+                        -right-8
+                        -bottom-40
+                        w-80 h-80
+                        rounded-full
+                        border border-white/[0.07]">
+            </div>
+
+
+
+            <div class="relative z-10
+                        flex
+                        flex-col lg:flex-row
+                        lg:items-end
+                        lg:justify-between
+                        gap-10">
+
+
+                <div class="max-w-2xl">
+
+
+                    <span class="text-xs
+                                 tracking-[0.22em]
+                                 uppercase
+                                 font-semibold
+                                 text-white/60">
+
+                        Votre projet
+
+                    </span>
+
+
+                    <h2 class="mt-5
+                               font-display
+                               text-4xl sm:text-5xl
+                               lg:text-[3.5rem]
+                               leading-[1.05]">
+
+                        Et si le prochain
+
+                        <span class="block text-[#F1A579]">
+                            était le vôtre ?
+                        </span>
+
+                    </h2>
+
+
+                    <p class="mt-6
+                              max-w-xl
+                              text-base sm:text-lg
+                              leading-8
+                              text-white/70">
+
+                        Parlons de votre activité, de vos besoins
+                        et de ce que votre futur site doit réellement
+                        accomplir.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <a
+                    href="{{ path('app_contact') }}"
+                    class="inline-flex
+                           self-start lg:self-auto
+                           items-center
+                           gap-3
+                           rounded-full
+                           bg-white
+                           text-[#00687A]
+                           px-6 py-3.5
+                           text-sm
+                           font-semibold
+                           hover:-translate-y-0.5
+                           hover:shadow-lg
+                           transition-all
+                           duration-300"
+                >
+
+                    Discutons de votre projet
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="w-4 h-4"
+                        aria-hidden="true"
+                    >
+
+                        <path d="M5 12h14"/>
+
+                        <path d="M13 6l6 6-6 6"/>
+
+                    </svg>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
 </div>
 
-            <div class="p-3">
-                <div class="text-sm font-medium">{{ projet.titre }}</div>
-                <div class="text-xs text-gray-500">{{ projet.typeDeSite }}</div>
-            </div>
-        </a>
-        {% else %}
-        <p class="text-sm text-gray-500 col-span-2 text-center">Aucun projet publié pour le moment.</p>
-        {% endfor %}
-    </div>
-</div>
 {% endblock %}

@@ -1,43 +1,348 @@
-
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
     <meta charset="UTF-8">
-    <title>{% block title %}Studio Lapimprenelle{% endblock %}</title>
+
+    <title>
+        {% block title %}Tempo — Agence web Toulouse{% endblock %}
+    </title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
     {% endblock %}
+
 </head>
-<body class="bg-cream text-ink font-sans">
-    
-   
-<header class="flex items-center justify-between px-10 py-5 mx-auto">
-    <div class="flex items-center gap-2">
-      <a href="{{ path('app_home') }}" class="flex items-center">
-      <img src="{{ asset('images/logo_tempo.png') }}" alt="logo tempo" class="w-[220px] h-auto"> </a>
+
+
+<body class="bg-cream text-ink font-sans min-h-screen flex flex-col">
+
+
+{# =========================================================
+   HEADER
+========================================================= #}
+
+<header class="relative z-50">
+
+    <div class="flex items-center justify-between
+                px-6 sm:px-8 lg:px-10
+                py-5 mx-auto">
+
+
+        {# =====================================================
+           LOGO
+        ===================================================== #}
+
+        <a href="{{ path('app_home') }}"
+           class="flex items-center">
+
+            <img
+                src="{{ asset('images/logo_tempo.png') }}"
+                alt="Tempo"
+                class="w-[180px] sm:w-[220px] h-auto"
+            >
+
+        </a>
+
+
+
+        {# =====================================================
+           NAVIGATION DESKTOP
+        ===================================================== #}
+
+        <nav class="hidden md:flex
+                    items-center gap-8
+                    text-sm text-ink-soft">
+
+            <a href="{{ path('app_home') }}"
+               class="hover:text-terracotta transition-colors">
+                Accueil
+            </a>
+
+            <a href="{{ path('app_service') }}"
+               class="hover:text-terracotta transition-colors">
+                Services
+            </a>
+
+            <a href="{{ path('app_projet_index') }}"
+               class="hover:text-terracotta transition-colors">
+                Réalisations
+            </a>
+
+            <a href="{{ path('app_apropos') }}"
+               class="hover:text-terracotta transition-colors">
+                À propos
+            </a>
+
+            <a href="{{ path('app_article_index') }}"
+               class="hover:text-terracotta transition-colors">
+                Blog
+            </a>
+
+        </nav>
+
+
+
+        {# =====================================================
+           CONTACT DESKTOP
+        ===================================================== #}
+
+        <a href="{{ path('app_contact') }}"
+           class="hidden md:inline-flex
+                  items-center gap-2
+                  rounded-full
+                  bg-[#00687A]
+                  hover:bg-terracotta-dark
+                  text-white
+                  text-sm
+                  px-5 py-2.5
+                  transition-colors">
+
+            Contact
+
+            <span aria-hidden="true">
+                →
+            </span>
+
+        </a>
+
+
+
+        {# =====================================================
+           BOUTON BURGER MOBILE
+        ===================================================== #}
+
+        <button
+            id="menu-toggle"
+            type="button"
+            class="md:hidden
+                   flex items-center justify-center
+                   w-11 h-11
+                   rounded-full
+                   bg-[#F6F2EB]
+                   border border-[#D9C8A9]/40
+                   text-ink"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+        >
+
+            {# BURGER #}
+
+            <svg
+                id="menu-icon-open"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                aria-hidden="true"
+            >
+
+                <path d="M4 7h16"/>
+                <path d="M4 12h16"/>
+                <path d="M4 17h16"/>
+
+            </svg>
+
+
+            {# CROIX #}
+
+            <svg
+                id="menu-icon-close"
+                class="hidden w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                aria-hidden="true"
+            >
+
+                <path d="M6 6l12 12"/>
+                <path d="M18 6L6 18"/>
+
+            </svg>
+
+        </button>
+
     </div>
-    <nav class="hidden md:flex items-center gap-8 text-sm text-ink-soft">
-      <a href="{{ path('app_home') }}" class="text-terracotta border-b border-terracotta pb-1">Accueil</a>
-      <a href="{{ path('app_service') }}" class="hover:text-ink">Services</a>
-      <a href="{{ path('app_projet_index') }}" class="hover:text-ink">Réalisations</a>
-      <a href="{{ path('app_apropos') }}" class="hover:text-ink">À propos</a>
-      <a href="{{ path('app_article_index') }}" class="hover:text-ink">Blog</a>
-    </nav>
-    <a href="{{ path('app_contact') }}" class="bg-[#00687A] hover:bg-terracotta-dark text-cream text-sm px-5 py-2.5 rounded-full inline-flex items-center gap-1.5">
-      Contact <span aria-hidden="true">→</span>
-    </a>
-  </header>
 
-    <main>
-        {% block body %}{% endblock %}
-    </main>
 
-    <footer class="px-6 py-4 border-t border-gray-200 flex justify-between text-xs text-gray-400">
-        <span>Tempo agence web Toulouse</span>
-        <span>contact@lapimprenelle.fr</span>
-    </footer>
 
-    {% block javascripts %}{% endblock %}
+    {# =========================================================
+       MENU MOBILE
+    ========================================================= #}
+
+    <div
+        id="mobile-menu"
+        class="hidden md:hidden
+               absolute
+               left-4 right-4
+               top-full
+               bg-[#F6F2EB]
+               border border-[#D9C8A9]/40
+               rounded-2xl
+               shadow-xl
+               overflow-hidden"
+    >
+
+        <nav class="flex flex-col p-3">
+
+
+            <a href="{{ path('app_home') }}"
+               class="px-5 py-3.5
+                      rounded-xl
+                      text-sm text-ink
+                      hover:bg-white/60
+                      hover:text-terracotta
+                      transition">
+
+                Accueil
+
+            </a>
+
+
+            <a href="{{ path('app_service') }}"
+               class="px-5 py-3.5
+                      rounded-xl
+                      text-sm text-ink
+                      hover:bg-white/60
+                      hover:text-terracotta
+                      transition">
+
+                Services
+
+            </a>
+
+
+            <a href="{{ path('app_projet_index') }}"
+               class="px-5 py-3.5
+                      rounded-xl
+                      text-sm text-ink
+                      hover:bg-white/60
+                      hover:text-terracotta
+                      transition">
+
+                Réalisations
+
+            </a>
+
+
+            <a href="{{ path('app_apropos') }}"
+               class="px-5 py-3.5
+                      rounded-xl
+                      text-sm text-ink
+                      hover:bg-white/60
+                      hover:text-terracotta
+                      transition">
+
+                À propos
+
+            </a>
+
+
+            <a href="{{ path('app_article_index') }}"
+               class="px-5 py-3.5
+                      rounded-xl
+                      text-sm text-ink
+                      hover:bg-white/60
+                      hover:text-terracotta
+                      transition">
+
+                Blog
+
+            </a>
+
+
+
+            {# Séparateur #}
+
+            <div class="h-px bg-[#D9C8A9]/50 my-2"></div>
+
+
+
+            {# CONTACT MOBILE #}
+
+            <a href="{{ path('app_contact') }}"
+               class="flex
+                      items-center justify-between
+                      rounded-xl
+                      bg-terracotta
+                      text-white
+                      px-5 py-3.5
+                      text-sm font-medium
+                      hover:bg-terracotta-dark
+                      transition">
+
+                Me contacter
+
+                <span aria-hidden="true">
+                    →
+                </span>
+
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+{# =========================================================
+   CONTENU DES PAGES
+========================================================= #}
+
+<main class="flex-1">
+
+    {% block body %}
+    {% endblock %}
+
+</main>
+
+
+
+{# =========================================================
+   FOOTER
+========================================================= #}
+
+<footer class="px-6 py-4
+               border-t border-gray-200
+               flex flex-col sm:flex-row
+               gap-2
+               justify-between
+               text-xs text-gray-400">
+
+    <span>
+        Tempo agence web Toulouse
+    </span>
+
+    <span>
+        contact@tempo-agenceweb.com
+    </span>
+
+</footer>
+
+
+
+{# =========================================================
+   JAVASCRIPT GLOBAL
+========================================================= #}
+
+{% block javascripts %}
+
+    {% block importmap %}
+        {{ importmap('app') }}
+    {% endblock %}
+
+{% endblock %}
+
+
 </body>
 </html>

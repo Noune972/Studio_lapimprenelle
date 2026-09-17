@@ -10,125 +10,339 @@
        HERO
     ========================================================= #}
 
-    <section class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 pt-16 lg:pt-24 pb-20 lg:pb-28">
+    <section class="max-w-6xl mx-auto
+                    px-6 sm:px-8 lg:px-12 xl:px-16
+                    pt-16 lg:pt-24
+                    pb-20 lg:pb-28">
 
-      <div class="grid lg:grid-cols-[1.25fr_0.75fr]
-            gap-12 lg:gap-16
-            items-center">
+        <div class="grid
+                    lg:grid-cols-[1.25fr_0.75fr]
+                    gap-12 lg:gap-16
+                    items-center">
+
+
+            {# =====================================================
+               TEXTE
+            ===================================================== #}
 
             <div class="max-w-2xl reveal">
 
                 <div class="inline-flex items-center gap-3 mb-7">
+
                     <span class="w-8 h-px bg-terracotta"></span>
 
-                    <span class="text-xs tracking-[0.25em] text-terracotta font-medium">
+                    <span class="text-xs
+                                 tracking-[0.25em]
+                                 text-terracotta
+                                 font-medium">
                         À PROPOS DE TEMPO
                     </span>
+
                 </div>
 
-                <h1 class="font-display text-5xl sm:text-6xl lg:text-5xl leading-[0.98] tracking-tight mb-8">
+
+                <h1 class="font-display
+                           text-4xl sm:text-5xl lg:text-5xl
+                           leading-[1.05]
+                           tracking-tight
+                           mb-8">
+
                     Bonjour, je suis
-                    <span class="text-terracotta">Nathalie.</span>
+                    <span class="text-terracotta">
+                        Nathalie.
+                    </span>
+
                 </h1>
 
-                <p class="text-lg sm:text-xl text-ink-soft leading-relaxed max-w-xl">
-                    Développeuse fullstack, j'imagine des présences digitales à la fois élégantes,
-                    utiles et pensées pour durer. La sécurité et la robustesse de mes applis et sites sont importantes pour moi.
+
+                <p class="text-lg
+                          text-ink-soft
+                          leading-relaxed
+                          max-w-xl">
+
+                    Développeuse fullstack, j'imagine des présences digitales
+                    à la fois élégantes, utiles et pensées pour durer.
+
+                    <span class="font-semibold text-ink">
+                        La sécurité et la robustesse
+                    </span>
+
+                    de mes applications et sites sont également au cœur
+                    de mon travail.
+
                 </p>
 
             </div>
 
 
-          {# PHOTO #}
 
-<div class="relative
-            w-full max-w-[360px]
-            lg:ml-auto
-            lg:-mt-10
-            xl:-mt-14
-            reveal"
-     style="transition-delay:150ms">
+            {# =====================================================
+               PHOTO + IDENTITÉ + RÉSEAUX
+            ===================================================== #}
 
-    {# Décor haut droite #}
-    <div class="absolute
-                -top-6 -right-6
-                w-24 h-24
-                rounded-full
-                bg-[#D9C8A9]/50
-                pointer-events-none">
-    </div>
-
-    {# Décor bas gauche #}
-    <div class="absolute
-                -bottom-6 -left-6
-                w-16 h-16
-                rounded-full
-                border border-terracotta/30
-                pointer-events-none">
-    </div>
+            <div class="relative
+                        w-full
+                        max-w-[360px]
+                        mx-auto
+                        lg:ml-auto
+                        lg:mr-0
+                        lg:-mt-10
+                        xl:-mt-14
+                        reveal"
+                 style="transition-delay:150ms">
 
 
-    {# Photo #}
-    <div class="relative
-                aspect-[4/5]
-                rounded-[2rem]
-                overflow-hidden
-                bg-[#D9C8A9]
-                shadow-lg
-                group">
+                {# Décoration haut droite #}
 
-        <img
-            src="{{ asset('images/nath.png') }}"
-            alt="Nathalie, fondatrice de Tempo agence web"
-            class="w-full h-full
-                   object-cover
-                   transition-transform duration-700 ease-out
-                   group-hover:scale-[1.03]"
-        >
-
-    </div>
-
-
-    {# Cartouche #}
-    <div class="absolute
-                bottom-5 left-5 right-5
-                bg-white/95
-                backdrop-blur-sm
-                rounded-xl
-                px-4 py-3
-                shadow-md">
-
-        <div class="flex items-center justify-between gap-4">
-
-            <div>
-
-                <div class="text-[10px]
-                            tracking-[0.22em]
-                            text-terracotta
-                            font-medium
-                            mb-1">
-                    TEMPO
+                <div class="absolute
+                            -top-6 -right-6
+                            w-24 h-24
+                            rounded-full
+                            bg-[#D9C8A9]/50
+                            pointer-events-none">
                 </div>
 
-                <div class="text-sm font-medium">
-                    Agence web
+
+                {# Décoration bas gauche #}
+
+                <div class="absolute
+                            -bottom-6 -left-6
+                            w-16 h-16
+                            rounded-full
+                            border border-terracotta/30
+                            pointer-events-none">
+                </div>
+
+
+                {# Petite forme terracotta supplémentaire #}
+
+                <div class="absolute
+                            -left-3 top-20
+                            w-5 h-5
+                            rounded-full
+                            bg-terracotta
+                            pointer-events-none
+                            z-20">
+                </div>
+
+
+
+                {# =================================================
+                   PHOTO
+                ================================================= #}
+
+                <div class="relative
+                            aspect-[4/5]
+                            rounded-[2rem]
+                            overflow-hidden
+                            bg-[#D9C8A9]
+                            shadow-lg
+                            group">
+
+                    <img
+                        src="{{ asset('images/nath.png') }}"
+                        alt="Nathalie, fondatrice de Tempo agence web"
+                        class="w-full h-full
+                               object-cover
+                               transition-transform
+                               duration-700
+                               ease-out
+                               group-hover:scale-[1.03]"
+                    >
+
+                </div>
+
+
+
+                {# =================================================
+                   CARTOUCHE IDENTITÉ + RÉSEAUX
+                ================================================= #}
+
+                <div class="absolute
+                            bottom-5
+                            left-5
+                            right-5
+                            z-20
+                            bg-white/95
+                            backdrop-blur-sm
+                            rounded-2xl
+                            px-5 py-4
+                            shadow-md">
+
+                    <div class="flex
+                                items-center
+                                justify-between
+                                gap-4">
+
+
+                        {# Identité #}
+
+                        <div>
+
+                            <div class="text-[10px]
+                                        tracking-[0.22em]
+                                        uppercase
+                                        text-terracotta
+                                        font-semibold
+                                        mb-1">
+                                Tempo
+                            </div>
+
+                            <div class="text-sm
+                                        font-semibold
+                                        text-ink">
+                                 Agence web
+                            </div>
+
+                        </div>
+
+
+
+                        {# =================================================
+                           RÉSEAUX SOCIAUX
+                        ================================================= #}
+
+                        <div class="flex items-center gap-2">
+
+
+                            {# =============================
+                               LINKEDIN
+                            ============================= #}
+
+                            <a
+                                href="https://fr.linkedin.com/in/nathalie-camiul-847620198"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Retrouvez Tempo sur LinkedIn"
+
+                                class="flex
+                                       items-center
+                                       justify-center
+                                       w-9 h-9
+                                       flex-shrink-0
+                                       rounded-full
+                                       bg-[#00687A]
+                                       text-white
+                                       transition-all
+                                       duration-300
+                                       
+                                       hover:-translate-y-0.5
+                                       hover:shadow-md"
+                            >
+
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    class="w-4 h-4"
+                                    aria-hidden="true"
+                                >
+
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569
+                                           c0-1.328-.027-3.037-1.852-3.037
+                                           -1.853 0-2.136 1.445-2.136 2.939
+                                           v5.667H9.351V9h3.414v1.561h.047
+                                           c.477-.9 1.637-1.85 3.37-1.85
+                                           3.601 0 4.267 2.37 4.267 5.455
+                                           v6.286z
+
+                                           M5.337 7.433
+                                           a2.062 2.062 0 1 1 0-4.124
+                                           2.062 2.062 0 0 1 0 4.124z
+
+                                           M7.119 20.452
+                                           H3.555V9h3.564v11.452z"
+                                    />
+
+                                </svg>
+
+                            </a>
+
+
+
+                            {# =============================
+                               INSTAGRAM
+                            ============================= #}
+
+                            <a
+                                href="https://www.instagram.com/tempo_agence_web?stkn=MWEzYjd0NGczOHplZw=="
+   "
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Retrouvez Tempo sur Instagram"
+
+                                class="flex
+                                       items-center
+                                       justify-center
+                                       w-9 h-9
+                                       flex-shrink-0
+                                       rounded-full
+                                       border
+                                       border-terracotta/40
+                                       text-terracotta
+                                       transition-all
+                                       duration-300
+                                       hover:bg-terracotta
+                                       hover:text-white
+                                       hover:border-terracotta
+                                       hover:-translate-y-0.5
+                                       hover:shadow-md"
+                            >
+
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="w-4 h-4"
+                                    aria-hidden="true"
+                                >
+
+                                    <rect
+                                        x="3"
+                                        y="3"
+                                        width="18"
+                                        height="18"
+                                        rx="5"
+                                    />
+
+                                    <circle
+                                        cx="12"
+                                        cy="12"
+                                        r="4"
+                                    />
+
+                                    <circle
+                                        cx="17.5"
+                                        cy="6.5"
+                                        r="1"
+                                        fill="currentColor"
+                                        stroke="none"
+                                    />
+
+                                </svg>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
 
-            <span class="text-lg text-terracotta">
-                ↗
-            </span>
-
-        </div>
-
-    </div>
-
-</div>
-
         </div>
 
     </section>
+
+</div>
+
+
 
 
    {# =========================================================
@@ -139,72 +353,6 @@
 
     <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-20 lg:py-28">
 
-
-        {# =====================================================
-           HERO
-           texte ~65% / image ~35%
-        ===================================================== #}
-
-        <header class="grid lg:grid-cols-[1.65fr_.75fr]
-                       gap-10 lg:gap-14
-                       items-center
-                       mb-20 lg:mb-24">
-
-            <div class="reveal">
-
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="w-10 h-px bg-terracotta"></span>
-
-                    <span class="text-xs tracking-[0.22em]
-                                 uppercase font-semibold text-terracotta">
-                        Mon histoire
-                    </span>
-                </div>
-
-                <h2 class="font-display
-                           text-4xl sm:text-5xl lg:text-[2.5rem]
-                           leading-[1.08] tracking-tight">
-
-                    Une histoire faite de mots,<br class="hidden sm:block">
-                    de curiosité et de
-
-                    <span class="text-terracotta">
-                        créativité.
-                    </span>
-
-                </h2>
-
-                <p class="mt-7 max-w-xl
-                          text-base sm:text-lg
-                          leading-7 text-ink-soft">
-
-                    Des idées, des rencontres et l'envie de construire
-                    des expériences numériques qui ont du sens.
-
-                </p>
-
-            </div>
-
-
-            {# IMAGE HERO — volontairement petite #}
-
-            <figure class="hidden lg:block
-                           w-full max-w-[280px]
-                           justify-self-end reveal">
-
-                <div class="aspect-[4/3] overflow-hidden">
-
-                    <img
-                        src="{{ asset('images/about/hero-histoire.jpg') }}"
-                        alt=""
-                        class="w-full h-full object-cover"
-                    >
-
-                </div>
-
-            </figure>
-
-        </header>
 
 
 
@@ -246,7 +394,7 @@
                 </span>
 
                 <p class="font-display
-                          text-2xl sm:text-[1.75rem]
+                          text-2xl sm:text-[1.0rem]
                           leading-[1.45]">
 
                     Depuis quatre ans, vous me connaissez à travers
@@ -524,13 +672,13 @@
 
                     <p class="font-display
                               text-2xl sm:text-3xl
-                              lg:text-[2.4rem]
+                              lg:text-[2 rem]
                               leading-[1.35]">
 
-                        J’ai choisi de tracer mon propre chemin pour mettre mes compétences au service de vos projets, avec une conviction simple : concevoir des solutions web fiables, soignées et pensées pour 
+                        "J’ai choisi de tracer mon propre chemin pour mettre mes compétences au service de vos projets, avec une conviction simple : concevoir des solutions web fiables, soignées et pensées pour 
 
                         <span class="text-[#E69A67]">
-                            répondre pleinement à vos besoins.
+                            répondre pleinement à vos besoins."
                         </span>
 
                     </p>
@@ -548,215 +696,9 @@
     </div>
 
 </section>
-    {# =========================================================
-       PARCOURS
-    ========================================================= #}
+   
 
-    <section class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 py-20 lg:py-28">
-
-        <div class="grid lg:grid-cols-[0.7fr,1.3fr] gap-12 lg:gap-24">
-
-            <div class="reveal">
-
-                <div class="inline-flex items-center gap-3 mb-5">
-
-                    <span class="w-8 h-px bg-terracotta"></span>
-
-                    <span class="text-xs tracking-[0.25em] text-terracotta font-medium">
-                        MON PARCOURS
-                    </span>
-
-                </div>
-
-                <h2 class="font-display text-4xl lg:text-5xl leading-tight">
-                    Des lettres au digital.
-                </h2>
-
-                <p class="text-sm text-ink-soft leading-relaxed mt-6 max-w-sm">
-                    Un parcours atypique, nourri par la communication, l'écriture, la culture et une curiosité permanente
-                    pour le numérique.
-                </p>
-
-            </div>
-
-
-            <div class="space-y-12">
-
-                {# 2005 #}
-
-                <div class="relative pl-8 border-l border-[#D9C8A9] reveal">
-
-                    <div class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-terracotta transition-transform duration-300 hover:scale-150"></div>
-
-                    <div class="text-[11px] tracking-[0.2em] text-terracotta font-medium mb-3">
-                        2005 — 2008
-                    </div>
-
-                    <h3 class="font-display text-2xl mb-3">
-                        Psychologie
-                    </h3>
-
-                    <p class="text-sm text-ink-soft leading-7">
-                        Études à l'UFR de psychologie de l'université Toulouse II Jean Jaurès.
-                    </p>
-
-                </div>
-
-
-                {# 2013 #}
-
-                <div class="relative pl-8 border-l border-[#D9C8A9] reveal"
-                     style="transition-delay:150ms">
-
-                    <div class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-terracotta transition-transform duration-300 hover:scale-150"></div>
-
-                    <div class="text-[11px] tracking-[0.2em] text-terracotta font-medium mb-3">
-                        2013
-                    </div>
-
-                    <h3 class="font-display text-2xl mb-3">
-                        Information &amp; communication
-                    </h3>
-
-                    <p class="text-sm text-ink-soft leading-7">
-                        Obtention d'un DUT Information et Communication, option GIDO —
-                        Gestion de l'information et du document dans les organisations —
-                        à l'IUT Toulouse III Paul Sabatier.
-                    </p>
-
-                </div>
-
-
-                {# Aujourd'hui #}
-
-                <div class="relative pl-8 border-l border-[#D9C8A9] reveal"
-                     style="transition-delay:300ms">
-
-                    <div class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-terracotta transition-transform duration-300 hover:scale-150"></div>
-
-                    <div class="text-[11px] tracking-[0.2em] text-terracotta font-medium mb-3">
-                        AUJOURD'HUI
-                    </div>
-
-                    <h3 class="font-display text-2xl mb-3">
-                        Rédaction web &amp; création de sites
-                    </h3>
-
-                    <p class="text-sm text-ink-soft leading-7 mb-4">
-                        Ma facilité à manier la sémantique et mon intérêt pour le référencement naturel
-                        m'ont naturellement conduite vers la rédaction web SEO.
-                    </p>
-
-                    <p class="text-sm text-ink-soft leading-7">
-                        Passionnée par le digital, j'ai également développé mes compétences en conception
-                        de sites web afin de proposer des solutions complètes, de WordPress à Symfony.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    {# =========================================================
-       EXPERTISE
-    ========================================================= #}
-
-    <section class="bg-[#D9C8A9]/35">
-
-        <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 py-20 lg:py-28">
-
-            <div class="max-w-2xl mb-14 reveal">
-
-                <div class="text-xs tracking-[0.25em] text-terracotta font-medium mb-5">
-                    MON SAVOIR-FAIRE
-                </div>
-
-                <h2 class="font-display text-4xl lg:text-5xl leading-tight mb-6">
-                    Deux expertises, un même objectif.
-                </h2>
-
-                <p class="text-sm text-ink-soft leading-7 max-w-xl">
-                    Créer une présence en ligne cohérente, élégante et efficace pour vous aider à développer votre activité.
-                </p>
-
-            </div>
-
-
-            <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
-
-                {# SEO #}
-
-                <div class="group bg-white rounded-[2rem] p-8 lg:p-10 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 reveal">
-
-                    <div class="flex items-start justify-between mb-10">
-
-                        <div class="w-14 h-14 rounded-2xl bg-[#D9C8A9]/60 flex items-center justify-center text-terracotta text-xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
-                            ✦
-                        </div>
-
-                        <span class="text-ink-soft/40 text-sm">
-                            01
-                        </span>
-
-                    </div>
-
-                    <h3 class="font-display text-2xl lg:text-3xl mb-4">
-                        Rédaction web SEO
-                    </h3>
-
-                    <p class="text-sm text-ink-soft leading-7">
-                        Des contenus pensés pour vos lecteurs mais aussi pour les moteurs de recherche.
-                        Une écriture claire, naturelle et stratégique pour améliorer votre visibilité en ligne.
-                    </p>
-
-                    <div class="mt-8 text-xs tracking-widest text-terracotta">
-                        CONTENU · SEO · STRATÉGIE
-                    </div>
-
-                </div>
-
-
-                {# WEB #}
-
-                <div class="group bg-white rounded-[2rem] p-8 lg:p-10 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 reveal"
-                     style="transition-delay:150ms">
-
-                    <div class="flex items-start justify-between mb-10">
-
-                        <div class="w-14 h-14 rounded-2xl bg-[#D9C8A9]/60 flex items-center justify-center text-terracotta text-xl transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
-                            ◇
-                        </div>
-
-                        <span class="text-ink-soft/40 text-sm">
-                            02
-                        </span>
-
-                    </div>
-
-                    <h3 class="font-display text-2xl lg:text-3xl mb-4">
-                        Création de sites web
-                    </h3>
-
-                    <p class="text-sm text-ink-soft leading-7">
-                        Des sites internet sur mesure, pensés pour être beaux, intuitifs et adaptés à vos besoins.
-                        Je travaille notamment avec WordPress et Symfony.
-                    </p>
-
-                    <div class="mt-8 text-xs tracking-widest text-terracotta">
-                        WORDPRESS · SYMFONY · DESIGN
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
+   
 
 
     {# =========================================================

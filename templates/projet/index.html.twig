@@ -2,7 +2,6 @@
 
 {% block title %}Réalisations — Tempo agence web{% endblock %}
 
-
 {% block body %}
 
 <div class="bg-cream text-ink overflow-hidden">
@@ -20,7 +19,6 @@
         <div class="max-w-4xl reveal">
 
             <div class="flex items-center gap-4 mb-7">
-
                 <span class="w-10 h-px bg-terracotta"></span>
 
                 <span class="text-xs
@@ -30,23 +28,20 @@
                              text-terracotta">
                     Réalisations
                 </span>
-
             </div>
 
-
             <h1 class="font-display
-                       text-5xl sm:text-6xl lg:text-[4.7rem]
+                       text-5xl sm:text-6xl lg:text-[3.5rem]
                        leading-[0.98]
                        tracking-[-0.035em]">
 
                 Des projets pensés
 
                 <span class="block text-terracotta">
-                    pour être utiles.
+                    pour convertir.
                 </span>
 
             </h1>
-
 
             <p class="mt-7
                       max-w-2xl
@@ -66,9 +61,8 @@
     </section>
 
 
-
     {# =========================================================
-       INTRO / FILTRES VISUELS
+       TYPES DE PROJETS
     ========================================================= #}
 
     <section class="max-w-6xl mx-auto
@@ -84,11 +78,8 @@
                          text-white
                          text-sm font-medium
                          px-5 py-2.5">
-
                 Tous les projets
-
             </span>
-
 
             <span class="inline-flex
                          items-center
@@ -97,11 +88,8 @@
                          text-ink-soft
                          text-sm
                          px-5 py-2.5">
-
-                Sites vitrines
-
+                WordPress
             </span>
-
 
             <span class="inline-flex
                          items-center
@@ -110,35 +98,7 @@
                          text-ink-soft
                          text-sm
                          px-5 py-2.5">
-
-                E-commerce
-
-            </span>
-
-
-            <span class="inline-flex
-                         items-center
-                         rounded-full
-                         bg-[#EEE7DC]
-                         text-ink-soft
-                         text-sm
-                         px-5 py-2.5">
-
-                Applications Symfony
-
-            </span>
-
-
-            <span class="inline-flex
-                         items-center
-                         rounded-full
-                         bg-[#EEE7DC]
-                         text-ink-soft
-                         text-sm
-                         px-5 py-2.5">
-
-                Refontes
-
+                Symfony
             </span>
 
         </div>
@@ -146,27 +106,22 @@
     </section>
 
 
-
     {# =========================================================
-       LISTE DES PROJETS
+       PROJETS
     ========================================================= #}
 
     <section class="max-w-6xl mx-auto
                     px-6 sm:px-8 lg:px-12 xl:px-16
                     pb-24 lg:pb-32">
 
-
         {% if projets is not empty %}
-
 
             <div class="grid
                         md:grid-cols-2
                         gap-x-8 lg:gap-x-10
                         gap-y-14 lg:gap-y-20">
 
-
                 {% for projet in projets %}
-
 
                     <article class="group reveal">
 
@@ -186,11 +141,10 @@
                                         bg-[#E9E0D4]
                                     {% else %}
                                         bg-[#E1E7E4]
-                                    {% endif %}
-                        ">
+                                    {% endif %}">
 
 
-                            {# Petit numéro #}
+                            {# NUMÉRO DU PROJET #}
 
                             <span class="absolute
                                          top-5 left-6
@@ -200,10 +154,27 @@
                                          font-semibold
                                          text-ink/35">
 
-                                0{{ loop.index }}
+                                {{ '%02d'|format(loop.index) }}
 
                             </span>
 
+
+                            {# =================================================
+                               L'ORDINATEUR RESTE CLIQUABLE
+                               MAIS AUCUN "VOIR LE SITE" SUR L'IMAGE
+                            ================================================= #}
+
+                            {% if projet.lien %}
+
+                                <a
+                                    href="{{ projet.lien }}"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="block"
+                                    aria-label="Visiter le site {{ projet.titre }}"
+                                >
+
+                            {% endif %}
 
 
                             {# =================================================
@@ -231,18 +202,18 @@
                                             shadow-[0_22px_45px_rgba(23,32,30,0.18)]">
 
 
-                                    {# Webcam #}
+                                    {# WEBCAM #}
 
                                     <span class="absolute
                                                  top-[2px]
                                                  left-1/2
                                                  -translate-x-1/2
-                                                 w-[3px] h-[3px]
+                                                 w-[3px]
+                                                 h-[3px]
                                                  rounded-full
                                                  bg-white/25
                                                  z-20">
                                     </span>
-
 
 
                                     {# =========================================
@@ -258,35 +229,31 @@
 
                                         {% if projet.image %}
 
-
                                             <img
                                                 src="{{ asset('uploads/projets/' ~ projet.image) }}"
                                                 alt="Aperçu du projet {{ projet.titre }}"
                                                 loading="lazy"
-                                                class="w-full h-full
-                                                       object-cover object-top
+                                                class="w-full
+                                                       h-full
+                                                       object-cover
+                                                       object-top
                                                        transition-transform
                                                        duration-700
                                                        ease-out
                                                        group-hover:scale-[1.025]"
                                             >
 
-
                                         {% else %}
 
-
-                                            {# =================================
-                                               PLACEHOLDER SI AUCUNE IMAGE
-                                            ================================= #}
-
-                                            <div class="absolute inset-0
-                                                        flex flex-col
+                                            <div class="absolute
+                                                        inset-0
+                                                        flex
+                                                        flex-col
                                                         items-center
                                                         justify-center
                                                         text-center
                                                         px-8
                                                         bg-[#F7F3EC]">
-
 
                                                 <div class="flex
                                                             items-center
@@ -297,7 +264,6 @@
                                                             text-[#00687A]
                                                             mb-4">
 
-
                                                     <svg
                                                         viewBox="0 0 24 24"
                                                         fill="none"
@@ -306,7 +272,6 @@
                                                         class="w-5 h-5"
                                                         aria-hidden="true"
                                                     >
-
                                                         <rect
                                                             x="3"
                                                             y="4"
@@ -316,40 +281,32 @@
                                                         />
 
                                                         <path d="M8 21h8"/>
-
                                                         <path d="M12 18v3"/>
-
                                                     </svg>
 
                                                 </div>
 
-
                                                 <span class="font-display
                                                              text-xl
                                                              text-ink">
-
                                                     {{ projet.titre }}
-
                                                 </span>
-
 
                                                 <span class="mt-2
                                                              text-xs
                                                              text-ink-soft">
-
                                                     Aperçu bientôt disponible
-
                                                 </span>
 
                                             </div>
 
-
                                         {% endif %}
 
 
-                                        {# Reflet subtil sur l'écran #}
+                                        {# REFLET SUBTIL SUR L'ÉCRAN #}
 
-                                        <div class="absolute inset-0
+                                        <div class="absolute
+                                                    inset-0
                                                     pointer-events-none
                                                     bg-gradient-to-tr
                                                     from-transparent
@@ -357,14 +314,14 @@
                                                     to-white/[0.10]">
                                         </div>
 
+
                                     </div>
 
                                 </div>
 
 
-
                                 {# =============================================
-                                   BASE DU LAPTOP
+                                   BASE DE L'ORDINATEUR
                                 ============================================= #}
 
                                 <div class="relative
@@ -374,9 +331,6 @@
                                             via-[#C4C4C2]
                                             to-[#A7A7A5]
                                             rounded-b-md">
-
-
-                                    {# Encoche centrale #}
 
                                     <div class="absolute
                                                 top-0
@@ -391,10 +345,7 @@
                                 </div>
 
 
-
-                                {# =============================================
-                                   PIED / PERSPECTIVE
-                                ============================================= #}
+                                {# PETIT EFFET DE PERSPECTIVE #}
 
                                 <div class="mx-auto
                                             w-[94%]
@@ -404,10 +355,7 @@
                                 </div>
 
 
-
-                                {# =============================================
-                                   OMBRE SOUS L'ORDINATEUR
-                                ============================================= #}
+                                {# OMBRE SOUS L'ORDINATEUR #}
 
                                 <div class="mx-auto
                                             w-[78%]
@@ -421,8 +369,15 @@
 
                             </div>
 
-                        </div>
 
+                            {% if projet.lien %}
+
+                                </a>
+
+                            {% endif %}
+
+
+                        </div>
 
 
                         {# =================================================
@@ -431,19 +386,17 @@
 
                         <div class="pt-6 sm:pt-7">
 
-
                             <div class="flex
                                         items-start
                                         justify-between
-                                        gap-6">
-
+                                        gap-5 sm:gap-6">
 
                                 <div class="min-w-0">
 
 
-                                    {# Catégorie #}
+                                    {# TYPE DU SITE #}
 
-                                    {% if projet.categorie is defined and projet.categorie %}
+                                    {% if projet.typeDeSite %}
 
                                         <span class="block
                                                      mb-2
@@ -453,15 +406,26 @@
                                                      font-semibold
                                                      text-terracotta">
 
-                                            {{ projet.categorie }}
+                                            {% if projet.typeDeSite == 'wordpress' %}
+
+                                                WordPress
+
+                                            {% elseif projet.typeDeSite == 'symfony' %}
+
+                                                Symfony
+
+                                            {% else %}
+
+                                                {{ projet.typeDeSite }}
+
+                                            {% endif %}
 
                                         </span>
 
                                     {% endif %}
 
 
-
-                                    {# Titre #}
+                                    {# TITRE #}
 
                                     <h2 class="font-display
                                                text-2xl sm:text-[1.8rem]
@@ -475,10 +439,9 @@
                                     </h2>
 
 
+                                    {# DESCRIPTION #}
 
-                                    {# Description #}
-
-                                    {% if projet.description is defined and projet.description %}
+                                    {% if projet.description %}
 
                                         <p class="mt-3
                                                   max-w-md
@@ -486,21 +449,60 @@
                                                   leading-7
                                                   text-ink-soft">
 
-                                           {% if projet.description %}
-
-    <p class="mt-3
-              max-w-md
-              text-sm sm:text-base
-              leading-7
-              text-ink-soft">
-
-        {{ projet.description }}
-
-    </p>
-
-{% endif %}
+                                            {{ projet.description }}
 
                                         </p>
+
+                                    {% endif %}
+
+
+                                    {# =========================================
+                                       SEUL "VOIR LE SITE" VISIBLE
+                                       IL RESTE SOUS LA DESCRIPTION
+                                    ========================================= #}
+
+                                    {% if projet.lien %}
+
+                                        <a
+                                            href="{{ projet.lien }}"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="group/link
+                                                   inline-flex
+                                                   items-center
+                                                   gap-2
+                                                   mt-5
+                                                   text-sm
+                                                   font-semibold
+                                                   text-[#00687A]
+                                                   hover:text-terracotta
+                                                   transition-colors
+                                                   duration-300"
+                                        >
+
+                                            <span>
+                                                Voir le site
+                                            </span>
+
+                                            <svg
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="1.8"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="w-4 h-4
+                                                       transition-transform
+                                                       duration-300
+                                                       group-hover/link:translate-x-0.5
+                                                       group-hover/link:-translate-y-0.5"
+                                                aria-hidden="true"
+                                            >
+                                                <path d="M7 17L17 7"/>
+                                                <path d="M8 7h9v9"/>
+                                            </svg>
+
+                                        </a>
 
                                     {% endif %}
 
@@ -508,18 +510,17 @@
                                 </div>
 
 
-
                                 {# =================================================
-                                   FLÈCHE
+                                   BOUTON ROND ↗
                                 ================================================= #}
 
-                                {% if projet.url is defined and projet.url %}
+                                {% if projet.lien %}
 
                                     <a
-                                        href="{{ projet.url }}"
+                                        href="{{ projet.lien }}"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        aria-label="Voir le projet {{ projet.titre }}"
+                                        aria-label="Visiter le site {{ projet.titre }}"
                                         class="flex
                                                shrink-0
                                                w-11 h-11
@@ -531,10 +532,10 @@
                                                text-terracotta
                                                transition-all
                                                duration-300
-                                               group-hover:bg-terracotta
-                                               group-hover:text-white
-                                               group-hover:border-terracotta
-                                               group-hover:-translate-y-0.5"
+                                               hover:bg-terracotta
+                                               hover:text-white
+                                               hover:border-terracotta
+                                               hover:-translate-y-0.5"
                                     >
 
                                         <svg
@@ -547,18 +548,13 @@
                                             class="w-4 h-4"
                                             aria-hidden="true"
                                         >
-
                                             <path d="M7 17L17 7"/>
-
                                             <path d="M8 7h9v9"/>
-
                                         </svg>
 
                                     </a>
 
-
                                 {% else %}
-
 
                                     <span class="flex
                                                  shrink-0
@@ -567,14 +563,8 @@
                                                  justify-center
                                                  rounded-full
                                                  border
-                                                 border-[#D9C8A9]
-                                                 text-terracotta
-                                                 transition-all
-                                                 duration-300
-                                                 group-hover:bg-terracotta
-                                                 group-hover:text-white
-                                                 group-hover:border-terracotta
-                                                 group-hover:-translate-y-0.5">
+                                                 border-[#D9C8A9]/50
+                                                 text-ink/20">
 
                                         <svg
                                             viewBox="0 0 24 24"
@@ -586,45 +576,32 @@
                                             class="w-4 h-4"
                                             aria-hidden="true"
                                         >
-
                                             <path d="M7 17L17 7"/>
-
                                             <path d="M8 7h9v9"/>
-
                                         </svg>
 
                                     </span>
 
-
                                 {% endif %}
-
 
                             </div>
 
 
-                            {# Ligne décorative #}
+                            {# LIGNE DÉCORATIVE #}
 
                             <div class="mt-7
                                         h-px
-                                        bg-[#D9C8A9]/50
-                                        origin-left
-                                        transition-transform
-                                        duration-500
-                                        group-hover:scale-x-[0.96]">
+                                        bg-[#D9C8A9]/50">
                             </div>
-
 
                         </div>
 
 
                     </article>
 
-
                 {% endfor %}
 
-
             </div>
-
 
 
         {% else %}
@@ -637,30 +614,23 @@
             <div class="rounded-[2rem]
                         bg-[#EEE7DC]
                         px-8
-                        py-16
-                        sm:py-20
-                        text-center">
-
+                        py-16 sm:py-20
+                        text-center
+                        reveal">
 
                 <span class="text-xs
                              tracking-[0.2em]
                              uppercase
                              font-semibold
                              text-terracotta">
-
                     Portfolio
-
                 </span>
-
 
                 <h2 class="mt-4
                            font-display
                            text-3xl sm:text-4xl">
-
                     Les projets arrivent bientôt.
-
                 </h2>
-
 
                 <p class="mt-4
                           max-w-lg
@@ -679,9 +649,7 @@
 
         {% endif %}
 
-
     </section>
-
 
 
     {# =========================================================
@@ -692,13 +660,11 @@
                     px-6 sm:px-8 lg:px-12 xl:px-16
                     pb-24 lg:pb-28">
 
-
         <div class="grid
                     lg:grid-cols-[0.8fr_1.2fr]
                     gap-8 lg:gap-20
                     items-start
                     reveal">
-
 
             <div>
 
@@ -711,15 +677,12 @@
                                  uppercase
                                  font-semibold
                                  text-terracotta">
-
                         Ma vision
-
                     </span>
 
                 </div>
 
             </div>
-
 
 
             <div>
@@ -735,7 +698,6 @@
                     </span>
 
                 </h2>
-
 
                 <p class="mt-6
                           max-w-2xl
@@ -758,7 +720,6 @@
     </section>
 
 
-
     {# =========================================================
        CTA FINAL
     ========================================================= #}
@@ -766,7 +727,6 @@
     <section class="max-w-6xl mx-auto
                     px-6 sm:px-8 lg:px-12 xl:px-16
                     pb-24 lg:pb-32">
-
 
         <div class="relative
                     overflow-hidden
@@ -778,7 +738,7 @@
                     reveal">
 
 
-            {# Cercle décoratif #}
+            {# DÉCOR #}
 
             <div class="absolute
                         -right-24
@@ -787,7 +747,6 @@
                         rounded-full
                         border border-white/10">
             </div>
-
 
             <div class="absolute
                         -right-8
@@ -798,28 +757,23 @@
             </div>
 
 
-
-            <div class="relative z-10
+            <div class="relative
+                        z-10
                         flex
                         flex-col lg:flex-row
                         lg:items-end
                         lg:justify-between
                         gap-10">
 
-
                 <div class="max-w-2xl">
-
 
                     <span class="text-xs
                                  tracking-[0.22em]
                                  uppercase
                                  font-semibold
                                  text-white/60">
-
                         Votre projet
-
                     </span>
-
 
                     <h2 class="mt-5
                                font-display
@@ -835,7 +789,6 @@
 
                     </h2>
 
-
                     <p class="mt-6
                               max-w-xl
                               text-base sm:text-lg
@@ -848,9 +801,7 @@
 
                     </p>
 
-
                 </div>
-
 
 
                 <a
@@ -883,15 +834,11 @@
                         class="w-4 h-4"
                         aria-hidden="true"
                     >
-
                         <path d="M5 12h14"/>
-
                         <path d="M13 6l6 6-6 6"/>
-
                     </svg>
 
                 </a>
-
 
             </div>
 

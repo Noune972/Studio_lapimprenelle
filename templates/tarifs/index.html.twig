@@ -1,0 +1,1045 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tarifs création de site internet | Tempo{% endblock %}
+
+{% block body %}
+
+{# =========================================================
+   HERO
+========================================================= #}
+<section class="px-4 sm:px-6 lg:px-8 pt-6">
+
+    <div class="relative max-w-7xl mx-auto overflow-hidden
+                bg-[#EFE7DA] rounded-[2rem] lg:rounded-[2.5rem]">
+
+        {# Formes décoratives #}
+        <div class="absolute -top-16 -right-12 w-56 h-56
+                    rounded-full bg-[#C96A3E]/15"></div>
+
+        <div class="absolute top-20 right-[12%] w-20 h-20
+                    rounded-full border border-[#C96A3E]/40"></div>
+
+        <div class="absolute -bottom-16 left-[8%] w-44 h-44
+                    rounded-full bg-[#00687A]/10"></div>
+
+        <div class="absolute bottom-10 right-12 hidden lg:block
+                    w-24 h-24 rotate-12 rounded-[1.8rem]
+                    border border-[#00687A]/20"></div>
+
+        <div class="relative px-6 sm:px-10 lg:px-16 py-16 lg:py-20">
+
+            <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
+
+                {# Texte #}
+                <div class="reveal">
+
+                    <div class="inline-flex items-center gap-3 mb-6">
+                        <span class="w-8 h-[2px] bg-[#C96A3E]"></span>
+
+                        <span class="text-xs uppercase tracking-[0.18em]
+                                     text-[#C96A3E] font-semibold">
+                            Tarifs & prestations
+                        </span>
+                    </div>
+
+                    <h1 class="font-display
+                               text-4xl sm:text-5xl lg:text-[3.5rem]
+                               leading-[1.05] tracking-tight text-ink">
+                        Un budget clair pour
+                        <span class="text-[#00687A]">
+                            donner vie à votre projet.
+                        </span>
+                    </h1>
+
+                    <p class="mt-6 text-base sm:text-lg leading-7
+                              text-ink-soft max-w-2xl">
+                        Des tarifs de départ pour vous permettre de vous projeter,
+                        puis un devis adapté à vos besoins, vos objectifs
+                        et aux fonctionnalités de votre projet.
+                    </p>
+
+                    <div class="mt-8 flex flex-wrap gap-3">
+
+                        <a href="{{ path('app_contact') }}"
+                           class="inline-flex items-center gap-2
+                                  rounded-full bg-[#00687A] text-white
+                                  px-6 py-3.5 text-sm font-semibold
+                                  transition-all duration-300
+                                  hover:bg-[#005966]
+                                  hover:-translate-y-0.5">
+                            Parlons de votre projet
+                            <span>→</span>
+                        </a>
+
+                        <a href="#offres"
+                           class="inline-flex items-center gap-2
+                                  rounded-full border border-[#C96A3E]/50
+                                  text-[#C96A3E]
+                                  px-6 py-3.5 text-sm font-semibold
+                                  transition hover:bg-[#C96A3E]
+                                  hover:text-white">
+                            Voir les tarifs
+                            <span>↓</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                {# Composition graphique #}
+                <div class="relative hidden lg:flex justify-center reveal">
+
+                    <div class="relative w-[340px] h-[330px]">
+
+                        {# grande forme #}
+                        <div class="absolute top-2 right-2
+                                    w-64 h-64
+                                    bg-[#00687A]
+                                    rounded-[3rem_7rem_3rem_7rem]
+                                    rotate-3"></div>
+
+                        {# carte prix #}
+                        <div class="absolute top-14 left-0
+                                    w-60
+                                    bg-[#F7F3EC]
+                                    rounded-[1.7rem]
+                                    p-7
+                                    shadow-xl
+                                    -rotate-3">
+
+                            <p class="text-xs uppercase tracking-[0.18em]
+                                      text-[#C96A3E] mb-5">
+                                À partir de
+                            </p>
+
+                            <p class="font-display text-4xl text-ink">
+                                800 €
+                            </p>
+
+                            <p class="text-sm text-ink-soft mt-2">
+                                pour votre premier site
+                            </p>
+
+                            <div class="mt-6 h-px bg-[#D9C8A9]"></div>
+
+                            <p class="mt-4 text-xs text-ink-soft">
+                                Design · Responsive · SEO
+                            </p>
+
+                        </div>
+
+                        {# rond terracotta #}
+                        <div class="absolute bottom-3 right-5
+                                    w-28 h-28 rounded-full
+                                    bg-[#C96A3E]
+                                    flex items-center justify-center
+                                    text-center text-white
+                                    rotate-6">
+
+                            <span class="font-display text-lg leading-5">
+                                Votre idée.<br>
+                                Mon expertise.
+                            </span>
+
+                        </div>
+
+                        {# petit point #}
+                        <div class="absolute top-0 left-20
+                                    w-5 h-5 rounded-full
+                                    bg-[#C96A3E]"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{# =========================================================
+   PETITE BANDE DE PROMESSES
+========================================================= #}
+<section class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 py-12">
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+
+        {% set promises = [
+            ['01', 'Design personnalisé'],
+            ['02', 'Responsive'],
+            ['03', 'SEO technique'],
+            ['04', 'Accompagnement']
+        ] %}
+
+        {% for item in promises %}
+
+            <div class="reveal flex items-center gap-4
+                        border-b border-[#D9C8A9]
+                        py-4">
+
+                <span class="font-display text-xl text-[#C96A3E]">
+                    {{ item[0] }}
+                </span>
+
+                <span class="text-sm text-ink">
+                    {{ item[1] }}
+                </span>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+</section>
+
+
+{# =========================================================
+   INTRO
+========================================================= #}
+<section id="offres"
+         class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12
+                pt-10 pb-14">
+
+    <div class="grid lg:grid-cols-[0.65fr_1.35fr] gap-8 lg:gap-20">
+
+        <div class="reveal">
+
+            <div class="inline-flex items-center gap-3">
+
+                <span class="w-7 h-[2px] bg-[#C96A3E]"></span>
+
+                <p class="text-xs uppercase tracking-[0.18em]
+                          text-[#C96A3E] font-semibold">
+                    Les offres
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="reveal">
+
+            <h2 class="font-display
+                       text-3xl sm:text-4xl lg:text-[2.8rem]
+                       leading-[1.1] text-ink max-w-3xl">
+                À chaque projet,
+                <span class="text-[#00687A]">
+                    sa solution.
+                </span>
+            </h2>
+
+            <p class="mt-5 text-ink-soft leading-7 max-w-3xl">
+                Du site essentiel à l'application métier, je construis une solution
+                adaptée à votre activité, sans ajouter de fonctionnalités inutiles.
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+
+{# =========================================================
+   3 OFFRES PRINCIPALES
+========================================================= #}
+<section class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 pb-20">
+
+    <div class="grid lg:grid-cols-3 gap-6 items-stretch">
+
+
+        {# ONE PAGE #}
+        <article class="reveal relative overflow-hidden
+                        bg-[#EFE7DA]
+                        rounded-[2rem]
+                        p-7 lg:p-8">
+
+            <div class="absolute -right-10 -top-10
+                        w-32 h-32 rounded-full
+                        border-[20px] border-[#C96A3E]/10"></div>
+
+            <div class="relative">
+
+                <div class="flex justify-between items-start">
+
+                    <span class="w-10 h-10 rounded-full
+                                 bg-[#C96A3E] text-white
+                                 flex items-center justify-center
+                                 text-sm font-semibold">
+                        01
+                    </span>
+
+                    <span class="text-xs uppercase tracking-[0.15em]
+                                 text-ink-soft">
+                        1 semaine
+                    </span>
+
+                </div>
+
+                <p class="mt-8 text-xs uppercase tracking-[0.18em]
+                          text-[#C96A3E] font-semibold">
+                    One Page
+                </p>
+
+                <h3 class="font-display text-2xl sm:text-3xl
+                           text-ink mt-3">
+                    L'essentiel, bien pensé.
+                </h3>
+
+                <p class="text-sm leading-6 text-ink-soft mt-4">
+                    Une page unique pour présenter votre activité,
+                    votre univers et guider vos visiteurs vers l'action.
+                </p>
+
+                <div class="my-7 border-t border-[#D9C8A9]"></div>
+
+                <p class="text-xs text-ink-soft">
+                    À partir de
+                </p>
+
+                <p class="font-display text-4xl text-[#00687A] mt-1">
+                    800 €
+                </p>
+
+                <div class="mt-7 space-y-3">
+
+                    {% for item in [
+                        'Design personnalisé',
+                        'Responsive',
+                        'Formulaire de contact',
+                        'SEO technique',
+                        'Performance & sécurité',
+                        'Mise en ligne'
+                    ] %}
+
+                        <div class="flex gap-3 text-sm text-ink">
+                            <span class="text-[#C96A3E]">●</span>
+                            {{ item }}
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+                <a href="{{ path('app_contact') }}"
+                   class="mt-8 inline-flex items-center gap-2
+                          text-sm font-semibold text-[#00687A]">
+                    Choisir cette formule
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        {# SITE VITRINE - CARTE FORTE #}
+        <article class="reveal relative overflow-hidden
+                        bg-[#00687A] text-white
+                        rounded-[2rem]
+                        p-7 lg:p-8
+                        lg:-translate-y-5
+                        shadow-xl">
+
+            <div class="absolute -right-14 -bottom-14
+                        w-48 h-48 rounded-full
+                        bg-[#C96A3E]"></div>
+
+            <div class="absolute right-12 bottom-16
+                        w-20 h-20 rounded-full
+                        border border-white/30"></div>
+
+            <div class="relative">
+
+                <div class="flex justify-between items-start">
+
+                    <span class="w-10 h-10 rounded-full
+                                 bg-[#C96A3E]
+                                 flex items-center justify-center
+                                 text-sm font-semibold">
+                        02
+                    </span>
+
+                    <span class="rounded-full
+                                 bg-white/10 border border-white/20
+                                 px-3 py-1.5
+                                 text-[10px] uppercase tracking-[0.15em]">
+                        Le plus choisi
+                    </span>
+
+                </div>
+
+                <p class="mt-8 text-xs uppercase tracking-[0.18em]
+                          text-[#F0C7B3] font-semibold">
+                    Site vitrine
+                </p>
+
+                <h3 class="font-display text-2xl sm:text-3xl mt-3">
+                    Votre activité mérite son espace.
+                </h3>
+
+                <p class="text-sm leading-6 text-white/75 mt-4">
+                    Plusieurs pages pour présenter votre entreprise,
+                    vos services et construire une présence professionnelle.
+                </p>
+
+                <div class="my-7 border-t border-white/20"></div>
+
+                <p class="text-xs text-white/65">
+                    À partir de
+                </p>
+
+                <p class="font-display text-4xl mt-1">
+                    1 400 €
+                </p>
+
+                <p class="mt-2 text-xs text-white/60">
+                    Délai indicatif : 3 semaines
+                </p>
+
+                <div class="mt-7 space-y-3">
+
+                    {% for item in [
+                        'Site multipage',
+                        'Design personnalisé',
+                        'Navigation optimisée',
+                        'Responsive',
+                        'Formulaire de contact',
+                        'SEO technique',
+                        'Performances',
+                        'Sécurité SSL'
+                    ] %}
+
+                        <div class="flex gap-3 text-sm">
+                            <span class="text-[#F0A17B]">●</span>
+                            {{ item }}
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+                <a href="{{ path('app_contact') }}"
+                   class="mt-8 inline-flex items-center gap-2
+                          rounded-full bg-white text-[#00687A]
+                          px-5 py-3 text-sm font-semibold
+                          transition hover:-translate-y-0.5">
+                    Demander un devis
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        {# E-COMMERCE #}
+        <article class="reveal relative overflow-hidden
+                        bg-[#F3E5DC]
+                        rounded-[2rem]
+                        p-7 lg:p-8">
+
+            <div class="absolute -left-10 bottom-8
+                        w-24 h-24 rotate-45
+                        border border-[#C96A3E]/25"></div>
+
+            <div class="relative">
+
+                <div class="flex justify-between items-start">
+
+                    <span class="w-10 h-10 rounded-full
+                                 bg-[#C96A3E] text-white
+                                 flex items-center justify-center
+                                 text-sm font-semibold">
+                        03
+                    </span>
+
+                    <span class="text-xs uppercase tracking-[0.15em]
+                                 text-ink-soft">
+                        ~ 1,5 mois
+                    </span>
+
+                </div>
+
+                <p class="mt-8 text-xs uppercase tracking-[0.18em]
+                          text-[#C96A3E] font-semibold">
+                    E-commerce
+                </p>
+
+                <h3 class="font-display text-2xl sm:text-3xl
+                           text-ink mt-3">
+                    Une boutique qui travaille pour vous.
+                </h3>
+
+                <p class="text-sm leading-6 text-ink-soft mt-4">
+                    Une boutique en ligne claire et rassurante,
+                    pensée pour présenter vos produits et faciliter l'achat.
+                </p>
+
+                <div class="my-7 border-t border-[#D9C8A9]"></div>
+
+                <p class="text-xs text-ink-soft">
+                    À partir de
+                </p>
+
+                <p class="font-display text-4xl text-[#C96A3E] mt-1">
+                    2 000 €
+                </p>
+
+                <div class="mt-7 space-y-3">
+
+                    {% for item in [
+                        'Design personnalisé',
+                        'Catalogue produits',
+                        'Fiches produits',
+                        'Panier & commandes',
+                        'Paiement sécurisé',
+                        'Gestion de la boutique',
+                        'Responsive',
+                        'SEO & performances'
+                    ] %}
+
+                        <div class="flex gap-3 text-sm text-ink">
+                            <span class="text-[#C96A3E]">●</span>
+                            {{ item }}
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+                <a href="{{ path('app_contact') }}"
+                   class="mt-8 inline-flex items-center gap-2
+                          text-sm font-semibold text-[#C96A3E]">
+                    Lancer ma boutique
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+</section>
+
+
+{# =========================================================
+   SYMFONY
+========================================================= #}
+<section class="px-4 sm:px-6 lg:px-8 pb-6">
+
+    <div class="relative max-w-7xl mx-auto
+                bg-[#C96A3E]
+                text-white
+                rounded-[2rem]
+                overflow-hidden">
+
+        {# formes #}
+        <div class="absolute -top-24 right-[8%]
+                    w-60 h-60 rounded-full
+                    border-[45px] border-white/10"></div>
+
+        <div class="absolute -bottom-20 left-[40%]
+                    w-40 h-40 rounded-full
+                    bg-[#00687A]/25"></div>
+
+        <div class="relative px-7 sm:px-10 lg:px-14 py-12 lg:py-14">
+
+            <div class="grid lg:grid-cols-[0.7fr_1.3fr_0.6fr]
+                        gap-10 lg:gap-14 items-center">
+
+                <div class="reveal">
+
+                    <span class="inline-flex w-11 h-11 rounded-full
+                                 border border-white/40
+                                 items-center justify-center text-sm">
+                        04
+                    </span>
+
+                   <p class="mt-5 text-sm uppercase tracking-[0.12em] text-white font-bold">
+    Appli web Symfony
+</p>
+
+                </div>
+
+
+                <div class="reveal">
+
+                    <h2 class="font-display text-3xl sm:text-4xl
+                               leading-tight">
+                        Votre projet ne rentre pas
+                        dans une case ?
+                    </h2>
+
+                    <p class="mt-4 text-white/80 leading-7">
+                        Application web, outil métier, espace utilisateur,
+                        back-office ou fonctionnalités spécifiques :
+                        je développe une solution adaptée à votre fonctionnement.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mt-6">
+
+                        {% for item in [
+                            'Maquettes',
+                            'MCD',
+                            'Symfony',
+                            'Base de données',
+                            'Back-office',
+                            'Sécurité'
+                        ] %}
+
+                            <span class="rounded-full
+                                         border border-white/30
+                                         bg-white/10
+                                         px-3 py-2 text-xs">
+                                {{ item }}
+                            </span>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+
+                <div class="reveal lg:text-right">
+
+                    <p class="text-xs uppercase tracking-[0.18em]
+                              text-white/65">
+                        Projet personnalisé
+                    </p>
+
+                    <p class="font-display text-3xl sm:text-4xl mt-2">
+                        Sur devis
+                    </p>
+
+                    <p class="text-xs text-white/65 mt-2">
+                        Environ 2 à 3 mois
+                    </p>
+
+                    <a href="{{ path('app_contact') }}"
+                       class="mt-6 inline-flex items-center gap-2
+                              rounded-full bg-[#00687A]
+                              px-5 py-3
+                              text-sm font-semibold
+                              transition hover:bg-[#005966]">
+                        Étudier mon projet
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+{# =========================================================
+   REFONTE
+========================================================= #}
+<section class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 py-20">
+
+    <div class="grid lg:grid-cols-[0.75fr_1.25fr]
+                gap-10 lg:gap-20 items-center">
+
+        {# visuel #}
+        <div class="relative h-[300px] sm:h-[350px] reveal">
+
+            <div class="absolute left-0 top-8
+                        w-[75%] h-[75%]
+                        rounded-[2rem]
+                        bg-[#00687A]"></div>
+
+            <div class="absolute right-0 bottom-0
+                        w-[72%]
+                        bg-[#EFE7DA]
+                        rounded-[1.7rem]
+                        p-7
+                        shadow-lg">
+
+                <div class="flex gap-2 mb-7">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#C96A3E]"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#D9C8A9]"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#00687A]"></span>
+                </div>
+
+                <div class="w-3/4 h-3 bg-[#00687A]/20 rounded-full"></div>
+                <div class="w-full h-2 bg-[#D9C8A9]/60 rounded-full mt-4"></div>
+                <div class="w-5/6 h-2 bg-[#D9C8A9]/60 rounded-full mt-2"></div>
+
+                <div class="grid grid-cols-3 gap-2 mt-7">
+                    <div class="h-14 rounded-xl bg-[#C96A3E]/25"></div>
+                    <div class="h-14 rounded-xl bg-[#00687A]/15"></div>
+                    <div class="h-14 rounded-xl bg-[#C96A3E]/15"></div>
+                </div>
+
+            </div>
+
+            <div class="absolute top-0 right-10
+                        w-20 h-20 rounded-full
+                        bg-[#C96A3E]
+                        flex items-center justify-center
+                        text-white font-display text-lg">
+                Refonte
+            </div>
+
+        </div>
+
+
+        {# texte #}
+        <div class="reveal">
+
+            <div class="inline-flex items-center gap-3 mb-5">
+                <span class="w-7 h-[2px] bg-[#C96A3E]"></span>
+
+                <p class="text-xs uppercase tracking-[0.18em]
+                          text-[#C96A3E] font-semibold">
+                    05 — Refonte
+                </p>
+            </div>
+
+            <h2 class="font-display text-3xl sm:text-4xl
+                       leading-[1.1] text-ink">
+                Votre site a besoin
+                <span class="text-[#00687A]">
+                    d'un nouveau souffle ?
+                </span>
+            </h2>
+
+            <p class="mt-5 text-ink-soft leading-7">
+                Je reprends l'existant pour améliorer son design,
+                sa structure, ses performances et son référencement,
+                tout en conservant ce qui fonctionne déjà.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-3 mt-7">
+
+                {% for item in [
+                    'Audit de l’existant',
+                    'Modernisation du design',
+                    'Parcours utilisateur',
+                    'Responsive',
+                    'Performance',
+                    'SEO technique'
+                ] %}
+
+                    <div class="flex items-center gap-3 text-sm text-ink">
+                        <span class="w-6 h-6 rounded-full
+                                     bg-[#C96A3E]/15
+                                     text-[#C96A3E]
+                                     flex items-center justify-center
+                                     text-xs">
+                            ✓
+                        </span>
+
+                        {{ item }}
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+            <div class="flex items-center gap-6 mt-8">
+
+                <p class="font-display text-3xl text-[#00687A]">
+                    Sur devis
+                </p>
+
+                <a href="{{ path('app_contact') }}"
+                   class="inline-flex items-center gap-2
+                          text-sm font-semibold text-[#C96A3E]">
+                    Étudier ma refonte
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+{# =========================================================
+   CE QUI EST INCLUS
+========================================================= #}
+<section class="px-4 sm:px-6 lg:px-8">
+
+    <div class="max-w-7xl mx-auto
+                bg-[#EEE7DC]
+                rounded-[2rem]
+                overflow-hidden">
+
+        <div class="px-6 sm:px-10 lg:px-14 py-14 lg:py-16">
+
+            <div class="flex flex-col lg:flex-row
+                        lg:items-end lg:justify-between
+                        gap-6 mb-10 reveal">
+
+                <div>
+
+                    <p class="text-xs uppercase tracking-[0.18em]
+                              text-[#C96A3E] font-semibold mb-4">
+                        Toujours inclus
+                    </p>
+
+                    <h2 class="font-display text-3xl sm:text-4xl text-ink">
+                        Les fondations d'un
+                        <span class="text-[#00687A]">
+                            bon projet web.
+                        </span>
+                    </h2>
+
+                </div>
+
+                <p class="text-sm leading-6 text-ink-soft max-w-md">
+                    Quel que soit le projet, je porte une attention particulière
+                    à l'expérience utilisateur et à la qualité technique.
+                </p>
+
+            </div>
+
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+                {% set included = [
+                    {
+                        icon: '↗',
+                        title: 'Responsive',
+                        text: 'Une expérience adaptée au mobile, à la tablette et au desktop.'
+                    },
+                    {
+                        icon: '⚡',
+                        title: 'Performance',
+                        text: 'Un site rapide et optimisé pour offrir une navigation fluide.'
+                    },
+                    {
+                        icon: '◎',
+                        title: 'SEO',
+                        text: 'Une structure technique pensée pour le référencement naturel.'
+                    },
+                    {
+                        icon: '✦',
+                        title: 'Accompagnement',
+                        text: 'Un suivi humain de la réflexion initiale jusqu’à la mise en ligne.'
+                    }
+                ] %}
+
+                {% for item in included %}
+
+                    <article class="reveal
+                                    bg-[#F7F3EC]
+                                    rounded-[1.5rem]
+                                    p-6
+                                    border border-[#D9C8A9]/40
+                                    transition duration-300
+                                    hover:-translate-y-1">
+
+                        <span class="w-10 h-10 rounded-full
+                                     bg-[#C96A3E]
+                                     text-white
+                                     flex items-center justify-center
+                                     text-lg">
+                            {{ item.icon }}
+                        </span>
+
+                        <h3 class="font-display text-xl text-ink
+                                   mt-6 mb-3">
+                            {{ item.title }}
+                        </h3>
+
+                        <p class="text-sm leading-6 text-ink-soft">
+                            {{ item.text }}
+                        </p>
+
+                    </article>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+{# =========================================================
+   COMMENT SE CONSTRUIT LE DEVIS
+========================================================= #}
+<section class="max-w-7xl mx-auto
+                px-6 sm:px-10 lg:px-12
+                py-20 lg:py-24">
+
+    <div class="grid lg:grid-cols-[0.8fr_1.2fr]
+                gap-12 lg:gap-20">
+
+        <div class="reveal">
+
+            <p class="text-xs uppercase tracking-[0.18em]
+                      text-[#C96A3E] font-semibold mb-5">
+                Un tarif adapté
+            </p>
+
+            <h2 class="font-display
+                       text-3xl sm:text-4xl
+                       leading-[1.1] text-ink">
+                Qu'est-ce qui fait
+                <span class="text-[#00687A]">
+                    évoluer le devis ?
+                </span>
+            </h2>
+
+            <p class="mt-5 text-ink-soft leading-7">
+                Les prix affichés sont des points de départ.
+                Votre devis est ensuite construit selon les besoins
+                réels de votre projet.
+            </p>
+
+            {# forme visuelle #}
+            <div class="hidden lg:flex mt-10 items-center gap-3">
+
+                <div class="w-24 h-24 rounded-full
+                            bg-[#C96A3E]
+                            flex items-center justify-center
+                            text-white font-display text-center">
+                    Sur<br>mesure
+                </div>
+
+                <div class="w-16 h-px bg-[#D9C8A9]"></div>
+
+                <div class="w-14 h-14 rounded-[1rem]
+                            rotate-12 bg-[#00687A]"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="reveal">
+
+            {% set factors = [
+                ['01', 'Nombre de pages'],
+                ['02', 'Fonctionnalités spécifiques'],
+                ['03', 'Contenus à intégrer'],
+                ['04', 'Rédaction & optimisation SEO'],
+                ['05', 'Identité visuelle'],
+                ['06', 'Fonctionnalités e-commerce'],
+                ['07', 'Développement sur mesure']
+            ] %}
+
+            {% for item in factors %}
+
+                <div class="group flex items-center
+                            justify-between gap-5
+                            border-b border-[#D9C8A9]
+                            py-4">
+
+                    <div class="flex items-center gap-5">
+
+                        <span class="text-xs text-[#C96A3E]">
+                            {{ item[0] }}
+                        </span>
+
+                        <span class="text-sm sm:text-base
+                                     text-ink
+                                     group-hover:text-[#00687A]
+                                     transition">
+                            {{ item[1] }}
+                        </span>
+
+                    </div>
+
+                    <span class="w-8 h-8 rounded-full
+                                 border border-[#C96A3E]/40
+                                 flex items-center justify-center
+                                 text-[#C96A3E]
+                                 transition
+                                 group-hover:bg-[#C96A3E]
+                                 group-hover:text-white">
+                        +
+                    </span>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+</section>
+
+
+{# =========================================================
+   CTA FINAL
+========================================================= #}
+<section class="px-4 sm:px-6 lg:px-8 pb-8">
+
+    <div class="relative max-w-7xl mx-auto
+                bg-[#00687A]
+                rounded-[2rem] lg:rounded-[2.5rem]
+                overflow-hidden">
+
+        <div class="absolute -top-20 -left-20
+                    w-56 h-56 rounded-full
+                    border-[35px] border-white/10"></div>
+
+        <div class="absolute -bottom-24 right-[8%]
+                    w-52 h-52 rounded-full
+                    bg-[#C96A3E]"></div>
+
+        <div class="absolute right-[22%] top-10
+                    w-12 h-12 rounded-full
+                    bg-[#F7F3EC]/15"></div>
+
+        <div class="relative px-6 sm:px-10 lg:px-16
+                    py-14 lg:py-16">
+
+            <div class="max-w-3xl reveal">
+
+                <p class="text-xs uppercase tracking-[0.18em]
+                          text-[#F0C7B3] font-semibold mb-5">
+                    Et maintenant ?
+                </p>
+
+                <h2 class="font-display
+                           text-3xl sm:text-4xl lg:text-[2.8rem]
+                           leading-[1.1] text-white">
+                    Votre projet mérite mieux
+                    qu'un tarif générique.
+                </h2>
+
+                <p class="mt-5 text-white/75 leading-7 max-w-2xl">
+                    Racontez-moi votre projet. Nous définissons ensemble vos besoins,
+                    vos priorités et la solution la plus adaptée à votre budget.
+                </p>
+
+                <a href="{{ path('app_contact') }}"
+                   class="mt-8 inline-flex items-center gap-2
+                          rounded-full
+                          bg-[#C96A3E] text-white
+                          px-6 py-3.5
+                          text-sm font-semibold
+                          transition-all duration-300
+                          hover:bg-[#B25A31]
+                          hover:-translate-y-0.5
+                          hover:shadow-lg">
+                    Parlons de votre projet
+                    <span>→</span>
+                </a>
+
+                <p class="mt-5 text-xs leading-5 text-white/55 max-w-xl">
+                    Les tarifs indiqués sont des tarifs de départ.
+                    Un devis personnalisé est établi avant le démarrage
+                    selon le périmètre et les fonctionnalités du projet.
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

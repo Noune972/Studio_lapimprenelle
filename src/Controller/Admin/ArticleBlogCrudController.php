@@ -41,6 +41,13 @@ class ArticleBlogCrudController extends AbstractCrudController
                 ->setRequired(false),
             DateTimeField::new('publishedAt')
                 ->setLabel('Date de publication'),
+
+            TextField::new('metaDescription', 'Meta description')
+            ->setHelp('Description SEO affichée dans les résultats de recherche. Maximum 160 caractères.')
+            ->setFormTypeOption('attr', [
+            'maxlength' => 160,
+            ])
+            ->hideOnIndex(),
         ];
     }
 }

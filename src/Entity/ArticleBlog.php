@@ -22,7 +22,10 @@ class ArticleBlog
     #[ORM\Column(type: 'text')]
     private ?string $extrait = null;
 
-   #[ORM\Column(type: 'text')]
+    #[ORM\Column(length: 160, nullable: true)]
+    private ?string $metaDescription = null;
+
+    #[ORM\Column(type: 'text')]
     private ?string $contenu = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -31,10 +34,12 @@ class ArticleBlog
     #[ORM\Column]
     private ?\DateTimeImmutable $publishedAt = null;
 
+
     public function getId(): ?int
     {
         return $this->id;
     }
+
 
     public function getTitre(): ?string
     {
@@ -48,6 +53,7 @@ class ArticleBlog
         return $this;
     }
 
+
     public function getSlug(): ?string
     {
         return $this->slug;
@@ -59,6 +65,7 @@ class ArticleBlog
 
         return $this;
     }
+
 
     public function getExtrait(): ?string
     {
@@ -72,6 +79,20 @@ class ArticleBlog
         return $this;
     }
 
+
+    public function getMetaDescription(): ?string
+    {
+        return $this->metaDescription;
+    }
+
+    public function setMetaDescription(?string $metaDescription): static
+    {
+        $this->metaDescription = $metaDescription;
+
+        return $this;
+    }
+
+
     public function getContenu(): ?string
     {
         return $this->contenu;
@@ -84,6 +105,7 @@ class ArticleBlog
         return $this;
     }
 
+
     public function getImage(): ?string
     {
         return $this->image;
@@ -95,6 +117,7 @@ class ArticleBlog
 
         return $this;
     }
+
 
     public function getPublishedAt(): ?\DateTimeImmutable
     {

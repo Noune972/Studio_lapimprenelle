@@ -1,508 +1,1589 @@
 {% extends 'base.html.twig' %}
-{% block title %}Tempo, agence web à Toulouse{% endblock %}
+
+{% block title %}Création de sites web à Toulouse - Tempo{% endblock %}
+
+{% block meta_description %}
+    Tempo, agence web à Toulouse : création de sites WordPress, développement d'applications Symfony et accompagnement SEO pour développer votre présence en ligne.
+{% endblock %}
+
 
 {% block body %}
+
 <div class="bg-cream text-ink font-sans">
 
 
-  <section class="max-w-7xl mx-auto px-10 pt-8 pb-20 grid md:grid-cols-2 gap-14 items-center">
-    <div>
-      <div class="text-xs tracking-widest text-terracotta font-medium mb-4">CRÉATION WEB · DÉVELOPPEMENT · SEO</div>
-      <h1 class="font-display text-4xl leading-[1.15] mb-6">
-        Création sites web<br>Symfony & WordPress<span class="text-terracotta">Toulouse.</span>
-      </h1>
-      <p class="text-ink-soft leading-relaxed mb-8 max-w-md">
-        Je suis Nathalie Camiul développeuse fullstack, je conçois des sites WordPress élégants et des applications Symfony sur mesure pour les entreprises, indépendants et projets qui veulent vraiment se démarquer.
-      </p>
-      <div class="flex flex-wrap gap-3 mb-8">
-        <a href="{{ path('app_contact') }}" class="bg-[#00687A] hover:bg-terracotta-dark text-cream px-6 py-3 rounded-full text-sm font-medium inline-flex items-center gap-2">Discuter de mon projet <span aria-hidden="true">→</span></a>
-        <a href="{{ path('app_projet_index') }}" class="px-6 py-3 rounded-full text-sm font-medium border border-ink/15">Voir mes réalisations</a>
-      </div>
-      <div class="flex flex-wrap gap-6 text-sm text-ink-soft">
-        <div class="flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-pine text-white flex items-center justify-center text-xs">W</span>WordPress</div>
-        <div class="flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-ink text-white flex items-center justify-center text-xs">sf</span>Symfony &amp; PHP sur mesure</div>
-        <div class="flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-terracotta text-white flex items-center justify-center text-xs">◎</span>SEO &amp; contenu</div>
-      </div>
-    </div>
-
-    <div class="relative">
-
-<div class="relative
-            max-w-[500px]
-            mx-auto
-            rounded-[2rem]
-            overflow-hidden
-            shadow-lg
-            group">
-
-    <img
-        src="{{ asset('images/nath.png') }}"
-        alt="Nathalie, fondatrice de Tempo agence web"
-        class="block
-               w-full h-auto
-               transition-transform duration-700 ease-out
-               group-hover:scale-[1.03]"
-    >
-
-</div>
-  
-
-</div>
-     
-    </div>
-  </section>
-
-  <section class="bg-cream-2 py-20">
-    <div class="max-w-7xl mx-auto px-10">
-      <div class="grid md:grid-cols-2 gap-8 mb-12">
-        <div>
-          <div class="text-xs tracking-widest text-terracotta font-medium mb-3">MON EXPERTISE</div>
-          <h2 class="font-display text-3xl leading-snug">Des solutions adaptées à vos besoins</h2>
-        </div>
-        <p class="text-ink-soft leading-relaxed self-end">Un accompagnement pensé autour de votre projet, de vos objectifs et de vos utilisateurs.</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-cream rounded-2xl p-8">
-          <div class="w-11 h-11 rounded-full bg-pine text-white flex items-center justify-center mb-6">W</div>
-          <h3 class="font-display text-xl mb-3">Sites WordPress</h3>
-          <p class="text-sm text-ink-soft leading-relaxed mb-6">Des sites vitrines, boutiques et blogs élégants, faciles à administrer et pensés pour évoluer.</p>
-          <ul class="space-y-2 text-sm text-ink-soft mb-6">
-            <li class="flex gap-2"><span class="text-terracotta">✓</span>Design personnalisé</li>
-            <li class="flex gap-2"><span class="text-terracotta">✓</span>Responsive mobile &amp; desktop</li>
-            <li class="flex gap-2"><span class="text-terracotta">✓</span>SEO technique</li>
-            <li class="flex gap-2"><span class="text-terracotta">✓</span>Formation à l'administration</li>
-          </ul>
-          <a href="{{ path('app_contact') }}" class="w-9 h-9 rounded-full bg-terracotta text-white flex items-center justify-center">→</a>
-        </div>
-
-        <div class="bg-[#00687A] text-cream rounded-2xl p-8">
-          <div class="w-11 h-11 rounded-full bg-white text-pine flex items-center justify-center mb-6 font-medium">sf</div>
-          <h3 class="font-display text-xl mb-3">Applications Symfony</h3>
-          <p class="text-sm text-white/70 leading-relaxed mb-6">Quand un simple CMS ne suffit plus, je développe des applications métier adaptées à vos besoins.</p>
-          <ul class="space-y-2 text-sm text-white/80 mb-6">
-            <li class="flex gap-2"><span class="text-terracotta">✓</span>PHP &amp; Symfony</li>
-            <li class="flex gap-2"><span class="text-terracotta">✓</span>Bases de données &amp; Doctrine</li>
-            <li class="flex gap-2"><span class="text-terracotta">✓</span>Back-office sur mesure</li>
-            <li class="flex gap-2"><span class="text-terracotta">✓</span>Gestion des utilisateurs &amp; rôles</li>
-          </ul>
-          <a href="{{ path('app_contact') }}" class="w-9 h-9 rounded-full bg-terracotta text-white flex items-center justify-center">→</a>
-        </div>
-
-        <div class="bg-cream rounded-2xl p-8">
-          <div class="w-11 h-11 rounded-full bg-terracotta text-white flex items-center justify-center mb-6">◎</div>
-          <h3 class="font-display text-xl mb-3">SEO &amp; contenu</h3>
-          <p class="text-sm text-ink-soft leading-relaxed mb-6">Une belle interface ne suffit pas. Votre site doit aussi être compréhensible par les moteurs de recherche.</p>
-          <ul class="space-y-2 text-sm text-ink-soft mb-6">
-            <li class="flex gap-2"><span class="text-terracotta">✓</span>Structure SEO</li>
-            <li class="flex gap-2"><span class="text-terracotta">✓</span>Contenus optimisés</li>
-            <li class="flex gap-2"><span class="text-terracotta">✓</span>Balises &amp; maillage interne</li>
-            <li class="flex gap-2"><span class="text-terracotta">✓</span>Stratégie éditoriale</li>
-          </ul>
-          <a href="{{ path('app_contact') }}" class="w-9 h-9 rounded-full bg-terracotta text-white flex items-center justify-center">→</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-20">
-    <div class="max-w-7xl mx-auto px-10 grid md:grid-cols-1 gap-16 items-center">
-
-      <div>
-        <div class="text-xs tracking-widest text-terracotta font-medium mb-3">UNE APPROCHE DIFFÉRENTE</div>
-        <h2 class="font-display text-3xl leading-snug mb-4">
-          Pas seulement un joli site.<br><span class="text-terracotta">Un véritable outil.</span>
-        </h2>
-       <p class="text-ink-soft leading-relaxed mb-3 w-full">
-    Un site web doit être beau, mais surtout utile. Il doit présenter votre activité, rassurer vos visiteurs, faciliter leur navigation et contribuer à vos objectifs.
-</p>
-
-
-       <a
-    href="{{ path('app_contact') }}"
-    class="inline-flex
-           items-center
-           justify-center
-           gap-2
-           rounded-full
-           bg-[#00687A]
-           text-white
-           px-6
-           py-3.5
-           text-sm
-           font-semibold
-           transition-all
-           duration-300
-           hover:bg-[#005966]
-           hover:-translate-y-0.5
-           hover:shadow-lg
-           mb-10"
->
-    Parlons de votre projet
-
-    <span
-        aria-hidden="true"
-        class="transition-transform duration-300"
-    >
-        →
-    </span>
-</a>
-
-        <div class="grid grid-cols-2 gap-x-8 gap-y-6">
-          <div class="flex gap-3">
-            <span class="w-8 h-8 rounded-full bg-terracotta text-white text-xs flex items-center justify-center flex-shrink-0">01</span>
-            <div><div class="font-medium text-sm mb-0.5">Comprendre</div><div class="text-xs text-ink-soft">Vos besoins, vos utilisateurs et vos objectifs.</div></div>
-          </div>
-          <div class="flex gap-3">
-            <span class="w-8 h-8 rounded-full bg-pine text-white text-xs flex items-center justify-center flex-shrink-0">02</span>
-            <div><div class="font-medium text-sm mb-0.5">Concevoir</div><div class="text-xs text-ink-soft">Une expérience claire, moderne et adaptée.</div></div>
-          </div>
-          <div class="flex gap-3">
-            <span class="w-8 h-8 rounded-full bg-terracotta text-white text-xs flex items-center justify-center flex-shrink-0">03</span>
-            <div><div class="font-medium text-sm mb-0.5">Développer</div><div class="text-xs text-ink-soft">WordPress ou Symfony selon la nature du projet.</div></div>
-          </div>
-          <div class="flex gap-3">
-            <span class="w-8 h-8 rounded-full bg-[#A68A63] text-white text-xs flex items-center justify-center flex-shrink-0">04</span>
-            <div><div class="font-medium text-sm mb-0.5">Faire évoluer</div><div class="text-xs text-ink-soft">Maintenance, contenu, SEO et évolutions futures.</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  
     {# =========================================================
-   ACCOMPAGNEMENT
-========================================================= #}
+       HERO
+    ========================================================= #}
 
-<section class="relative overflow-hidden bg-cream-2 py-16 lg:py-20">
+    <section class="max-w-7xl mx-auto
+                    px-6 sm:px-10
+                    pt-8 pb-20
+                    grid md:grid-cols-2
+                    gap-14
+                    items-center">
 
-    {# Formes décoratives #}
-    <div class="pointer-events-none absolute -top-20 -right-20
-                w-56 h-56 rounded-full bg-terracotta/10"></div>
+        <div>
 
-    <div class="pointer-events-none absolute -bottom-24 -left-16
-                w-64 h-64 rounded-full bg-[#00687A]/8"></div>
+            <div class="text-xs
+                        tracking-widest
+                        text-terracotta
+                        font-medium
+                        mb-4">
+                CRÉATION WEB · DÉVELOPPEMENT · SEO
+            </div>
 
 
-    <div class="relative max-w-7xl mx-auto px-6 sm:px-10">
+            <h1 class="font-display
+                       text-4xl
+                       leading-[1.15]
+                       mb-6">
 
-        {# =====================================================
-           INTRO
-        ===================================================== #}
+                Création sites web
+                <br>
 
-        <div class="grid lg:grid-cols-[0.8fr_1.2fr]
-                    gap-8 lg:gap-16
-                    items-end
-                    mb-12">
+                Symfony & WordPress
 
-            <div>
+                <span class="text-terracotta">
+                    Toulouse.
+                </span>
 
-                <div class="flex items-center gap-3 mb-4">
+            </h1>
 
-                    <span class="w-8 h-px bg-terracotta"></span>
 
-                    <span class="text-xs
-                                 uppercase
-                                 tracking-[0.2em]
-                                 font-semibold
-                                 text-terracotta">
-                        Mon accompagnement
+            <p class="text-ink-soft
+                      leading-relaxed
+                      mb-8
+                      max-w-md">
+
+                Je suis Nathalie Camiul développeuse fullstack,
+                je conçois des sites WordPress élégants et des
+                applications Symfony sur mesure pour les entreprises,
+                indépendants et projets qui veulent vraiment se démarquer.
+
+            </p>
+
+
+            <div class="flex flex-wrap gap-3 mb-8">
+
+                <a href="{{ path('app_contact') }}"
+                   class="bg-[#00687A]
+                          hover:bg-[#005966]
+                          text-cream
+                          px-6 py-3
+                          rounded-full
+                          text-sm
+                          font-medium
+                          inline-flex
+                          items-center
+                          gap-2
+                          transition">
+
+                    Discuter de mon projet
+
+                    <span aria-hidden="true">
+                        →
                     </span>
 
-                </div>
+                </a>
 
 
-                <h2 class="font-display
-                           text-3xl sm:text-4xl
-                           leading-[1.1]">
+                <a href="{{ path('app_projet_index') }}"
+                   class="px-6 py-3
+                          rounded-full
+                          text-sm
+                          font-medium
+                          border border-ink/15
+                          transition
+                          hover:border-terracotta
+                          hover:text-terracotta">
 
-                    De l’idée
-                    <br>
+                    Voir mes réalisations
 
-                    <span class="text-[#00687A]">
-                        à la mise en ligne.
-                    </span>
-
-                </h2>
+                </a>
 
             </div>
 
 
-            <div class="lg:pb-1">
+            <div class="flex flex-wrap
+                        gap-6
+                        text-sm
+                        text-ink-soft">
 
-                <p class="max-w-2xl
-                          text-base
-                          leading-7
-                          text-ink-soft">
+                <div class="flex items-center gap-2">
 
-                    Chaque projet commence par une compréhension précise
-                    de votre activité. Je vous accompagne ensuite dans la
-                    conception, le développement et la mise en ligne d’une
-                    solution pensée pour être
+                    <span class="w-7 h-7
+                                 rounded-full
+                                 bg-pine
+                                 text-white
+                                 flex items-center
+                                 justify-center
+                                 text-xs">
+                        W
+                    </span>
 
-                    <strong class="font-semibold text-ink">
-                        utile, claire et durable.
-                    </strong>
+                    WordPress
+
+                </div>
+
+
+                <div class="flex items-center gap-2">
+
+                    <span class="w-7 h-7
+                                 rounded-full
+                                 bg-ink
+                                 text-white
+                                 flex items-center
+                                 justify-center
+                                 text-xs">
+                        sf
+                    </span>
+
+                    Symfony & PHP sur mesure
+
+                </div>
+
+
+                <div class="flex items-center gap-2">
+
+                    <span class="w-7 h-7
+                                 rounded-full
+                                 bg-terracotta
+                                 text-white
+                                 flex items-center
+                                 justify-center
+                                 text-xs">
+                        ◎
+                    </span>
+
+                    SEO & contenu
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        {# PHOTO #}
+
+        <div class="relative">
+
+            <div class="relative
+                        max-w-[500px]
+                        mx-auto
+                        rounded-[2rem]
+                        overflow-hidden
+                        shadow-lg
+                        group">
+
+                <img
+                    src="{{ asset('images/nath.png') }}"
+                    alt="Nathalie, fondatrice de Tempo agence web"
+                    class="block
+                           w-full h-auto
+                           transition-transform
+                           duration-700
+                           ease-out
+                           group-hover:scale-[1.03]"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    {# =========================================================
+       EXPERTISE
+    ========================================================= #}
+
+    <section class="bg-cream-2 py-20">
+
+        <div class="max-w-7xl mx-auto px-6 sm:px-10">
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+
+                <div>
+
+                    <div class="text-xs
+                                tracking-widest
+                                text-terracotta
+                                font-medium
+                                mb-3">
+                        MON EXPERTISE
+                    </div>
+
+                    <h2 class="font-display
+                               text-3xl
+                               leading-snug">
+                        Des solutions adaptées à vos besoins
+                    </h2>
+
+                </div>
+
+
+                <p class="text-ink-soft
+                          leading-relaxed
+                          self-end">
+
+                    Un accompagnement pensé autour de votre projet,
+                    de vos objectifs et de vos utilisateurs.
 
                 </p>
 
             </div>
 
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+
+                {# WORDPRESS #}
+
+                <div class="bg-cream rounded-2xl p-8">
+
+                    <div class="w-11 h-11
+                                rounded-full
+                                bg-pine
+                                text-white
+                                flex items-center
+                                justify-center
+                                mb-6">
+                        W
+                    </div>
+
+                    <h3 class="font-display text-xl mb-3">
+                        Sites WordPress
+                    </h3>
+
+                    <p class="text-sm
+                              text-ink-soft
+                              leading-relaxed
+                              mb-6">
+
+                        Des sites vitrines, boutiques et blogs élégants,
+                        faciles à administrer et pensés pour évoluer.
+
+                    </p>
+
+                    <ul class="space-y-2
+                               text-sm
+                               text-ink-soft
+                               mb-6">
+
+                        <li class="flex gap-2">
+                            <span class="text-terracotta">✓</span>
+                            Design personnalisé
+                        </li>
+
+                        <li class="flex gap-2">
+                            <span class="text-terracotta">✓</span>
+                            Responsive mobile & desktop
+                        </li>
+
+                        <li class="flex gap-2">
+                            <span class="text-terracotta">✓</span>
+                            SEO technique
+                        </li>
+
+                        <li class="flex gap-2">
+                            <span class="text-terracotta">✓</span>
+                            Formation à l'administration
+                        </li>
+
+                    </ul>
+
+                    <a href="{{ path('app_contact') }}"
+                       aria-label="Me contacter pour un projet WordPress"
+                       class="w-9 h-9
+                              rounded-full
+                              bg-terracotta
+                              text-white
+                              flex items-center
+                              justify-center">
+                        →
+                    </a>
+
+                </div>
+
+
+
+                {# SYMFONY #}
+
+                <div class="bg-[#00687A]
+                            text-cream
+                            rounded-2xl
+                            p-8">
+
+                    <div class="w-11 h-11
+                                rounded-full
+                                bg-white
+                                text-pine
+                                flex items-center
+                                justify-center
+                                mb-6
+                                font-medium">
+                        sf
+                    </div>
+
+                    <h3 class="font-display text-xl mb-3">
+                        Applications Symfony
+                    </h3>
+
+                    <p class="text-sm
+                              text-white/70
+                              leading-relaxed
+                              mb-6">
+
+                        Quand un simple CMS ne suffit plus,
+                        je développe des applications métier
+                        adaptées à vos besoins.
+
+                    </p>
+
+                    <ul class="space-y-2
+                               text-sm
+                               text-white/80
+                               mb-6">
+
+                        <li class="flex gap-2">
+                            <span class="text-terracotta">✓</span>
+                            PHP & Symfony
+                        </li>
+
+                        <li class="flex gap-2">
+                            <span class="text-terracotta">✓</span>
+                            Bases de données & Doctrine
+                        </li>
+
+                        <li class="flex gap-2">
+                            <span class="text-terracotta">✓</span>
+                            Back-office sur mesure
+                        </li>
+
+                        <li class="flex gap-2">
+                            <span class="text-terracotta">✓</span>
+                            Gestion des utilisateurs & rôles
+                        </li>
+
+                    </ul>
+
+                    <a href="{{ path('app_contact') }}"
+                       aria-label="Me contacter pour un projet Symfony"
+                       class="w-9 h-9
+                              rounded-full
+                              bg-terracotta
+                              text-white
+                              flex items-center
+                              justify-center">
+                        →
+                    </a>
+
+                </div>
+
+
+
+                {# SEO #}
+
+                <div class="bg-cream rounded-2xl p-8">
+
+                    <div class="w-11 h-11
+                                rounded-full
+                                bg-terracotta
+                                text-white
+                                flex items-center
+                                justify-center
+                                mb-6">
+                        ◎
+                    </div>
+
+                    <h3 class="font-display text-xl mb-3">
+                        SEO & contenu
+                    </h3>
+
+                    <p class="text-sm
+                              text-ink-soft
+                              leading-relaxed
+                              mb-6">
+
+                        Une belle interface ne suffit pas.
+                        Votre site doit aussi être compréhensible
+                        par les moteurs de recherche.
+
+                    </p>
+
+                    <ul class="space-y-2
+                               text-sm
+                               text-ink-soft
+                               mb-6">
+
+                        <li class="flex gap-2">
+                            <span class="text-terracotta">✓</span>
+                            Structure SEO
+                        </li>
+
+                        <li class="flex gap-2">
+                            <span class="text-terracotta">✓</span>
+                            Contenus optimisés
+                        </li>
+
+                        <li class="flex gap-2">
+                            <span class="text-terracotta">✓</span>
+                            Balises & maillage interne
+                        </li>
+
+                        <li class="flex gap-2">
+                            <span class="text-terracotta">✓</span>
+                            Stratégie éditoriale
+                        </li>
+
+                    </ul>
+
+                    <a href="{{ path('app_contact') }}"
+                       aria-label="Me contacter pour le référencement"
+                       class="w-9 h-9
+                              rounded-full
+                              bg-terracotta
+                              text-white
+                              flex items-center
+                              justify-center">
+                        →
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
 
-
-        {# =====================================================
-           PARCOURS
-        ===================================================== #}
-
-        <div class="grid md:grid-cols-3 gap-4 lg:gap-5">
+    </section>
 
 
-            {# 01 #}
 
-            <article class="group
-                            relative
-                            overflow-hidden
-                            min-h-[280px]
-                            rounded-[1.75rem]
-                            bg-[#00687A]
-                            text-white
-                            p-7 lg:p-8">
+    {# =========================================================
+       APPROCHE
+    ========================================================= #}
 
-                <div class="absolute
-                            -right-12 -top-12
-                            w-36 h-36
-                            rounded-full
-                            bg-white/5"></div>
+    <section class="py-20">
+
+        <div class="max-w-7xl
+                    mx-auto
+                    px-6 sm:px-10">
+
+            <div>
+
+                <div class="text-xs
+                            tracking-widest
+                            text-terracotta
+                            font-medium
+                            mb-3">
+                    UNE APPROCHE DIFFÉRENTE
+                </div>
 
 
-                <div class="relative h-full flex flex-col">
+                <h2 class="font-display
+                           text-3xl
+                           leading-snug
+                           mb-4">
 
-                    <div class="flex items-center justify-between">
+                    Pas seulement un joli site.
+                    <br>
 
-                        <span class="text-xs
-                                     uppercase
-                                     tracking-[0.18em]
-                                     text-white/60">
+                    <span class="text-terracotta">
+                        Un véritable outil.
+                    </span>
+
+                </h2>
+
+
+                <p class="text-ink-soft
+                          leading-relaxed
+                          mb-3
+                          w-full">
+
+                    Un site web doit être beau, mais surtout utile.
+                    Il doit présenter votre activité, rassurer vos visiteurs,
+                    faciliter leur navigation et contribuer à vos objectifs.
+
+                </p>
+
+
+                <a href="{{ path('app_contact') }}"
+                   class="inline-flex
+                          items-center
+                          justify-center
+                          gap-2
+                          rounded-full
+                          bg-[#00687A]
+                          text-white
+                          px-6
+                          py-3.5
+                          text-sm
+                          font-semibold
+                          transition-all
+                          duration-300
+                          hover:bg-[#005966]
+                          hover:-translate-y-0.5
+                          hover:shadow-lg
+                          mb-10">
+
+                    Parlons de votre projet
+
+                    <span aria-hidden="true"
+                          class="transition-transform duration-300">
+                        →
+                    </span>
+
+                </a>
+
+
+                <div class="grid
+                            sm:grid-cols-2
+                            gap-x-8
+                            gap-y-6">
+
+                    <div class="flex gap-3">
+
+                        <span class="w-8 h-8
+                                     rounded-full
+                                     bg-terracotta
+                                     text-white
+                                     text-xs
+                                     flex items-center
+                                     justify-center
+                                     flex-shrink-0">
                             01
                         </span>
 
-                        <span class="flex
-                                     items-center
-                                     justify-center
-                                     w-9 h-9
-                                     rounded-full
-                                     bg-white/10
-                                     text-sm">
-                            ↘
-                        </span>
+                        <div>
+
+                            <div class="font-medium text-sm mb-0.5">
+                                Comprendre
+                            </div>
+
+                            <div class="text-xs text-ink-soft">
+                                Vos besoins, vos utilisateurs et vos objectifs.
+                            </div>
+
+                        </div>
 
                     </div>
 
 
-                    <div class="mt-auto pt-16">
+                    <div class="flex gap-3">
 
-                        <h3 class="font-display
-                                   text-2xl
-                                   mb-3">
-                            Clarifier
-                        </h3>
+                        <span class="w-8 h-8
+                                     rounded-full
+                                     bg-pine
+                                     text-white
+                                     text-xs
+                                     flex items-center
+                                     justify-center
+                                     flex-shrink-0">
+                            02
+                        </span>
 
-                        <p class="text-sm
-                                  leading-6
-                                  text-white/70">
-                          Votre site doit transmettre le bon message dès les premières secondes. Je vous aide à structurer vos contenus, vos priorités et votre parcours utilisateur pour créer une présence en ligne claire, cohérente et adaptée à votre activité.
-                        </p>
+                        <div>
+
+                            <div class="font-medium text-sm mb-0.5">
+                                Concevoir
+                            </div>
+
+                            <div class="text-xs text-ink-soft">
+                                Une expérience claire, moderne et adaptée.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex gap-3">
+
+                        <span class="w-8 h-8
+                                     rounded-full
+                                     bg-terracotta
+                                     text-white
+                                     text-xs
+                                     flex items-center
+                                     justify-center
+                                     flex-shrink-0">
+                            03
+                        </span>
+
+                        <div>
+
+                            <div class="font-medium text-sm mb-0.5">
+                                Développer
+                            </div>
+
+                            <div class="text-xs text-ink-soft">
+                                WordPress ou Symfony selon la nature du projet.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex gap-3">
+
+                        <span class="w-8 h-8
+                                     rounded-full
+                                     bg-[#A68A63]
+                                     text-white
+                                     text-xs
+                                     flex items-center
+                                     justify-center
+                                     flex-shrink-0">
+                            04
+                        </span>
+
+                        <div>
+
+                            <div class="font-medium text-sm mb-0.5">
+                                Faire évoluer
+                            </div>
+
+                            <div class="text-xs text-ink-soft">
+                                Maintenance, contenu, SEO et évolutions futures.
+                            </div>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-            </article>
+            </div>
+
+        </div>
+
+    </section>
 
 
-            {# 02 #}
 
-            <article class="group
-                            relative
-                            overflow-hidden
-                            min-h-[280px]
-                            rounded-[1.75rem]
-                            bg-[#F7F3EC]
-                            border border-[#D9C8A9]/40
-                            p-7 lg:p-8">
+    {# =========================================================
+       TECHNOLOGIES
+       Nouvelle section compacte
+    ========================================================= #}
 
-                <div class="absolute
-                            -right-10 -bottom-14
-                            w-36 h-36
-                            rounded-full
-                            bg-terracotta/10"></div>
+    <section class="relative
+                    overflow-hidden
+                    border-y
+                    border-[#D9C8A9]/40
+                    bg-[#F7F3EC]">
 
 
-                <div class="relative h-full flex flex-col">
+        {# Décoration très légère #}
 
-                    <div class="flex items-center justify-between">
+        <div class="pointer-events-none
+                    absolute
+                    -right-20 -bottom-28
+                    w-64 h-64
+                    rounded-full
+                    border
+                    border-[#00687A]/10">
+        </div>
+
+        <div class="pointer-events-none
+                    absolute
+                    right-16 bottom-10
+                    w-3 h-3
+                    rounded-full
+                    bg-terracotta/70">
+        </div>
+
+
+        <div class="relative
+                    max-w-7xl
+                    mx-auto
+                    px-6 sm:px-10
+                    py-12 lg:py-14">
+
+
+            <div class="grid
+                        lg:grid-cols-[0.75fr_1.25fr]
+                        gap-10 lg:gap-16
+                        items-center">
+
+
+                {# TEXTE #}
+
+                <div>
+
+                    <div class="flex items-center gap-3 mb-4">
+
+                        <span class="w-8 h-px bg-terracotta"></span>
+
+                        <span class="text-[10px]
+                                     uppercase
+                                     tracking-[0.22em]
+                                     font-semibold
+                                     text-terracotta">
+                            Mes outils
+                        </span>
+
+                    </div>
+
+
+                    <h2 class="font-display
+                               text-2xl sm:text-3xl
+                               leading-[1.15]
+                               mb-4">
+
+                        Des technos
+
+                        <span class="text-[#00687A]">
+                            modernes
+                        </span>
+
+                        <br>
+
+                        et éprouvées.
+
+                    </h2>
+
+
+                    <p class="max-w-md
+                              text-sm
+                              leading-6
+                              text-ink-soft">
+
+                        Du design au développement, je m’appuie sur
+                        des technologies et des outils éprouvés pour
+                        concevoir des expériences web fiables,
+                        performantes et adaptées à chaque besoin.
+
+                    </p>
+
+                </div>
+
+
+
+                {# =================================================
+                   LOGOS
+                ================================================= #}
+
+                <div class="grid
+                            grid-cols-3
+                            sm:grid-cols-6
+                            gap-x-5
+                            gap-y-7
+                            items-start">
+
+
+                    {# FIGMA #}
+
+                    <div class="group
+                                flex flex-col
+                                items-center
+                                justify-center
+                                gap-2">
+
+                        <img src="{{ asset('images/figma-logo.svg.webp') }}"
+                             alt="Figma"
+                             loading="lazy"
+                             class="h-9
+                                    max-w-[55px]
+                                    w-auto
+                                    object-contain
+                                    transition-transform
+                                    duration-300
+                                    group-hover:-translate-y-1">
+
+                        <span class="text-[10px] text-ink-soft">
+                            Figma
+                        </span>
+
+                    </div>
+
+
+
+                    {# CANVA #}
+
+                    <div class="group
+                                flex flex-col
+                                items-center
+                                justify-center
+                                gap-2">
+
+                        <img src="{{ asset('images/canva.png') }}"
+                             alt="Canva"
+                             loading="lazy"
+                             class="h-9
+                                    max-w-[65px]
+                                    w-auto
+                                    object-contain
+                                    transition-transform
+                                    duration-300
+                                    group-hover:-translate-y-1">
+
+                        <span class="text-[10px] text-ink-soft">
+                            Canva
+                        </span>
+
+                    </div>
+
+
+
+                    {# SYMFONY #}
+
+                    <div class="group
+                                flex flex-col
+                                items-center
+                                justify-center
+                                gap-2">
+
+                        <img src="{{ asset('images/symfony.svg') }}"
+                             alt="Symfony"
+                             loading="lazy"
+                             class="h-9
+                                    max-w-[55px]
+                                    w-auto
+                                    object-contain
+                                    transition-transform
+                                    duration-300
+                                    group-hover:-translate-y-1">
+
+                        <span class="text-[10px] text-ink-soft">
+                            Symfony
+                        </span>
+
+                    </div>
+
+
+
+                    {# WORDPRESS #}
+
+                    <div class="group
+                                flex flex-col
+                                items-center
+                                justify-center
+                                gap-2">
+
+                        <img src="{{ asset('images/wordpress.webp') }}"
+                             alt="WordPress"
+                             loading="lazy"
+                             class="h-9
+                                    max-w-[55px]
+                                    w-auto
+                                    object-contain
+                                    transition-transform
+                                    duration-300
+                                    group-hover:-translate-y-1">
+
+                        <span class="text-[10px] text-ink-soft">
+                            WordPress
+                        </span>
+
+                    </div>
+
+
+
+                    {# TAILWIND #}
+
+                    <div class="group
+                                flex flex-col
+                                items-center
+                                justify-center
+                                gap-2">
+
+                        <img src="{{ asset('images/tailwind.webp') }}"
+                             alt="Tailwind CSS"
+                             loading="lazy"
+                             class="h-9
+                                    max-w-[65px]
+                                    w-auto
+                                    object-contain
+                                    transition-transform
+                                    duration-300
+                                    group-hover:-translate-y-1">
+
+                        <span class="text-[10px] text-ink-soft">
+                            Tailwind
+                        </span>
+
+                    </div>
+
+
+
+                    {# JAVASCRIPT #}
+
+                    <div class="group
+                                flex flex-col
+                                items-center
+                                justify-center
+                                gap-2">
+
+                        <img src="{{ asset('images/java.jpeg') }}"
+                             alt="JavaScript"
+                             loading="lazy"
+                             class="h-9
+                                    max-w-[55px]
+                                    w-auto
+                                    object-contain
+                                    transition-transform
+                                    duration-300
+                                    group-hover:-translate-y-1">
+
+                        <span class="text-[10px] text-ink-soft">
+                            JavaScript
+                        </span>
+
+                    </div>
+
+
+
+                    {# POSTGRESQL #}
+
+                    <div class="group
+                                flex flex-col
+                                items-center
+                                justify-center
+                                gap-2">
+
+                        <img src="{{ asset('images/postgresql.svg') }}"
+                             alt="PostgreSQL"
+                             loading="lazy"
+                             class="h-9
+                                    max-w-[55px]
+                                    w-auto
+                                    object-contain
+                                    transition-transform
+                                    duration-300
+                                    group-hover:-translate-y-1">
+
+                        <span class="text-[10px] text-ink-soft">
+                            PostgreSQL
+                        </span>
+
+                    </div>
+
+
+
+                    {# DOCKER #}
+
+                    <div class="group
+                                flex flex-col
+                                items-center
+                                justify-center
+                                gap-2">
+
+                        <img src="{{ asset('images/docker.png') }}"
+                             alt="Docker"
+                             loading="lazy"
+                             class="h-9
+                                    max-w-[60px]
+                                    w-auto
+                                    object-contain
+                                    transition-transform
+                                    duration-300
+                                    group-hover:-translate-y-1">
+
+                        <span class="text-[10px] text-ink-soft">
+                            Docker
+                        </span>
+
+                    </div>
+
+
+
+                    {# LINUX #}
+
+                    <div class="group
+                                flex flex-col
+                                items-center
+                                justify-center
+                                gap-2">
+
+                        <img src="{{ asset('images/linux.webp') }}"
+                             alt="Linux"
+                             loading="lazy"
+                             class="h-9
+                                    max-w-[50px]
+                                    w-auto
+                                    object-contain
+                                    transition-transform
+                                    duration-300
+                                    group-hover:-translate-y-1">
+
+                        <span class="text-[10px] text-ink-soft">
+                            Linux
+                        </span>
+
+                    </div>
+
+                    {# GITHUB #}
+
+<div class="group flex flex-col items-center justify-center gap-2">
+
+    <div class="h-12 w-16 flex items-center justify-center">
+
+        <img
+            src="{{ asset('images/github.png') }}"
+            alt="GitHub"
+            loading="lazy"
+            class="max-h-7 max-w-9 w-auto h-auto object-contain
+                   transition-transform duration-300
+                   group-hover:-translate-y-1"
+        >
+
+    </div>
+
+    <span class="text-[10px] text-ink-soft">
+        GitHub
+    </span>
+
+</div>
+
+{# PHP #}
+
+<div class="group flex flex-col items-center justify-center gap-2">
+
+    <div class="h-12 w-16 flex items-center justify-center">
+
+        <img
+            src="{{ asset('images/php.webp') }}"
+            alt="PHP"
+            loading="lazy"
+            class="max-h-9 max-w-14 w-auto h-auto object-contain
+                   transition-transform duration-300
+                   group-hover:-translate-y-1"
+        >
+
+    </div>
+
+    <span class="text-[10px] text-ink-soft">
+        PHP
+    </span>
+
+</div>
+
+
+
+                    {# OPENAI #}
+
+                    <div class="group
+                                flex flex-col
+                                items-center
+                                justify-center
+                                gap-2">
+
+                        <img src="{{ asset('images/openai.webp') }}"
+                             alt="OpenAI"
+                             loading="lazy"
+                             class="h-9
+                                    max-w-[55px]
+                                    w-auto
+                                    object-contain
+                                    transition-transform
+                                    duration-300
+                                    group-hover:-translate-y-1">
+
+                        <span class="text-[10px] text-ink-soft">
+                            OpenAI
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    {# =========================================================
+       ACCOMPAGNEMENT
+    ========================================================= #}
+
+    <section class="relative
+                    overflow-hidden
+                    bg-cream-2
+                    py-16 lg:py-20">
+
+
+        {# Formes décoratives #}
+
+        <div class="pointer-events-none
+                    absolute
+                    -top-20 -right-20
+                    w-56 h-56
+                    rounded-full
+                    bg-terracotta/10">
+        </div>
+
+        <div class="pointer-events-none
+                    absolute
+                    -bottom-24 -left-16
+                    w-64 h-64
+                    rounded-full
+                    bg-[#00687A]/8">
+        </div>
+
+
+        <div class="relative
+                    max-w-7xl
+                    mx-auto
+                    px-6 sm:px-10">
+
+
+            {# INTRO #}
+
+            <div class="grid
+                        lg:grid-cols-[0.8fr_1.2fr]
+                        gap-8 lg:gap-16
+                        items-end
+                        mb-12">
+
+                <div>
+
+                    <div class="flex items-center gap-3 mb-4">
+
+                        <span class="w-8 h-px bg-terracotta"></span>
+
+                        <span class="text-xs
+                                     uppercase
+                                     tracking-[0.2em]
+                                     font-semibold
+                                     text-terracotta">
+                            Mon accompagnement
+                        </span>
+
+                    </div>
+
+
+                    <h2 class="font-display
+                               text-3xl sm:text-4xl
+                               leading-[1.1]">
+
+                        De l’idée
+                        <br>
+
+                        <span class="text-[#00687A]">
+                            à la mise en ligne.
+                        </span>
+
+                    </h2>
+
+                </div>
+
+
+                <div class="lg:pb-1">
+
+                    <p class="max-w-2xl
+                              text-base
+                              leading-7
+                              text-ink-soft">
+
+                        Chaque projet commence par une compréhension précise
+                        de votre activité. Je vous accompagne ensuite dans la
+                        conception, le développement et la mise en ligne d’une
+                        solution pensée pour être
+
+                        <strong class="font-semibold text-ink">
+                            utile, claire et durable.
+                        </strong>
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            {# =================================================
+               PARCOURS
+            ================================================= #}
+
+            <div class="grid md:grid-cols-3 gap-4 lg:gap-5">
+
+
+                {# 01 CLARIFIER #}
+
+                <article class="group
+                                relative
+                                overflow-hidden
+                                min-h-[280px]
+                                rounded-[1.75rem]
+                                bg-[#00687A]
+                                text-white
+                                p-7 lg:p-8">
+
+                    <div class="absolute
+                                -right-12 -top-12
+                                w-36 h-36
+                                rounded-full
+                                bg-white/5">
+                    </div>
+
+
+                    <div class="relative
+                                h-full
+                                flex flex-col">
+
+                        <div class="flex
+                                    items-center
+                                    justify-between">
+
+                            <span class="text-xs
+                                         uppercase
+                                         tracking-[0.18em]
+                                         text-white/60">
+                                01
+                            </span>
+
+                            <span class="flex
+                                         items-center
+                                         justify-center
+                                         w-9 h-9
+                                         rounded-full
+                                         bg-white/10
+                                         text-sm">
+                                ↘
+                            </span>
+
+                        </div>
+
+
+                        <div class="mt-auto pt-16">
+
+                            <h3 class="font-display
+                                       text-2xl
+                                       mb-3">
+                                Clarifier
+                            </h3>
+
+                            <p class="text-sm
+                                      leading-6
+                                      text-white/70">
+
+                                Votre site doit transmettre le bon message dès
+                                les premières secondes. Je vous aide à structurer
+                                vos contenus, vos priorités et votre parcours
+                                utilisateur pour créer une présence en ligne
+                                claire, cohérente et adaptée à votre activité.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                {# 02 VALORISER #}
+
+                <article class="group
+                                relative
+                                overflow-hidden
+                                min-h-[280px]
+                                rounded-[1.75rem]
+                                bg-[#F7F3EC]
+                                border
+                                border-[#D9C8A9]/40
+                                p-7 lg:p-8">
+
+                    <div class="absolute
+                                -right-10 -bottom-14
+                                w-36 h-36
+                                rounded-full
+                                bg-terracotta/10">
+                    </div>
+
+
+                    <div class="relative
+                                h-full
+                                flex flex-col">
+
+                        <div class="flex
+                                    items-center
+                                    justify-between">
+
+                            <span class="text-xs
+                                         uppercase
+                                         tracking-[0.18em]
+                                         font-semibold
+                                         text-terracotta">
+                                02
+                            </span>
+
+                            <span class="flex
+                                         items-center
+                                         justify-center
+                                         w-9 h-9
+                                         rounded-full
+                                         bg-terracotta/10
+                                         text-terracotta
+                                         text-sm">
+                                ✦
+                            </span>
+
+                        </div>
+
+
+                        <div class="mt-auto pt-16">
+
+                            <h3 class="font-display
+                                       text-2xl
+                                       mb-3">
+                                Valoriser
+                            </h3>
+
+                            <p class="text-sm
+                                      leading-6
+                                      text-ink-soft">
+
+                                Design, identité et expérience utilisateur
+                                travaillent ensemble pour mettre votre activité
+                                en valeur. Chaque interface est pensée pour vous
+                                ressembler, inspirer confiance et donner envie
+                                à vos visiteurs de découvrir vos services.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                {# 03 PERFORMER #}
+
+                <article class="group
+                                relative
+                                overflow-hidden
+                                min-h-[280px]
+                                rounded-[1.75rem]
+                                bg-[#E7DDD0]
+                                p-7 lg:p-8">
+
+                    <div class="absolute
+                                right-7 top-7
+                                w-12 h-12
+                                rounded-full
+                                border
+                                border-[#00687A]/20">
+                    </div>
+
+                    <div class="absolute
+                                right-11 top-11
+                                w-4 h-4
+                                rounded-full
+                                bg-[#00687A]">
+                    </div>
+
+
+                    <div class="relative
+                                h-full
+                                flex flex-col">
 
                         <span class="text-xs
                                      uppercase
                                      tracking-[0.18em]
                                      font-semibold
-                                     text-terracotta">
-                            02
+                                     text-[#00687A]">
+                            03
                         </span>
 
-                        <span class="flex
-                                     items-center
-                                     justify-center
-                                     w-9 h-9
-                                     rounded-full
-                                     bg-terracotta/10
-                                     text-terracotta
-                                     text-sm">
-                            ✦
-                        </span>
+
+                        <div class="mt-auto pt-16">
+
+                            <h3 class="font-display
+                                       text-2xl
+                                       mb-3">
+                                Performer
+                            </h3>
+
+                            <p class="text-sm
+                                      leading-6
+                                      text-ink-soft">
+
+                                Derrière le design, je construis un site rapide,
+                                responsive et techniquement solide. WordPress ou
+                                Symfony, la solution est choisie selon vos besoins,
+                                avec une attention particulière portée au
+                                référencement naturel, aux performances et aux
+                                évolutions futures.
+
+                            </p>
+
+                        </div>
 
                     </div>
 
-
-                    <div class="mt-auto pt-16">
-
-                        <h3 class="font-display
-                                   text-2xl
-                                   mb-3">
-                            Valoriser
-                        </h3>
-
-                        <p class="text-sm
-                                  leading-6
-                                  text-ink-soft">
-                           Design, identité et expérience utilisateur travaillent ensemble pour mettre votre activité en valeur. Chaque interface est pensée pour vous ressembler, inspirer confiance et donner envie à vos visiteurs de découvrir vos services.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            {# 03 #}
-
-            <article class="group
-                            relative
-                            overflow-hidden
-                            min-h-[280px]
-                            rounded-[1.75rem]
-                            bg-[#E7DDD0]
-                            p-7 lg:p-8">
-
-                <div class="absolute
-                            right-7 top-7
-                            w-12 h-12
-                            rounded-full
-                            border border-[#00687A]/20"></div>
-
-                <div class="absolute
-                            right-11 top-11
-                            w-4 h-4
-                            rounded-full
-                            bg-[#00687A]"></div>
-
-
-                <div class="relative h-full flex flex-col">
-
-                    <span class="text-xs
-                                 uppercase
-                                 tracking-[0.18em]
-                                 font-semibold
-                                 text-[#00687A]">
-                        03
-                    </span>
-
-
-                    <div class="mt-auto pt-16">
-
-                        <h3 class="font-display
-                                   text-2xl
-                                   mb-3">
-                            Performer
-                        </h3>
-
-                        <p class="text-sm
-                                  leading-6
-                                  text-ink-soft">
-                          Derrière le design, je construis un site rapide, responsive et techniquement solide. WordPress ou Symfony, la solution est choisie selon vos besoins, avec une attention particulière portée au référencement naturel, aux performances et aux évolutions futures.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-        </div>
-
-
-        {# =====================================================
-           LIGNE BASSE
-        ===================================================== #}
-
-        <div class="mt-8
-                    flex flex-col sm:flex-row
-                    sm:items-center
-                    sm:justify-between
-                    gap-5
-                    pt-7
-                    border-t border-[#D9C8A9]/50">
-
-            <div class="flex flex-wrap
-                        items-center
-                        gap-x-6 gap-y-2
-                        text-xs
-                        text-ink-soft">
-
-                <span class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>
-                    WordPress
-                </span>
-
-                <span class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-[#00687A]"></span>
-                    Symfony
-                </span>
-
-                <span class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>
-                    SEO
-                </span>
-
-               
+                </article>
 
             </div>
 
 
-            <a href="{{ path('app_service') }}"
-               class="group
+
+            {# =================================================
+               LIGNE BASSE
+            ================================================= #}
+
+            <div class="mt-8
+                        flex flex-col
+                        sm:flex-row
+                        sm:items-center
+                        sm:justify-between
+                        gap-5
+                        pt-7
+                        border-t
+                        border-[#D9C8A9]/50">
+
+
+                <div class="flex flex-wrap
+                            items-center
+                            gap-x-6 gap-y-2
+                            text-xs
+                            text-ink-soft">
+
+                    <span class="flex items-center gap-2">
+
+                        <span class="w-1.5 h-1.5
+                                     rounded-full
+                                     bg-terracotta">
+                        </span>
+
+                        WordPress
+
+                    </span>
+
+
+                    <span class="flex items-center gap-2">
+
+                        <span class="w-1.5 h-1.5
+                                     rounded-full
+                                     bg-[#00687A]">
+                        </span>
+
+                        Symfony
+
+                    </span>
+
+
+                    <span class="flex items-center gap-2">
+
+                        <span class="w-1.5 h-1.5
+                                     rounded-full
+                                     bg-terracotta">
+                        </span>
+
+                        SEO
+
+                    </span>
+
+                </div>
+
+
+                <a href="{{ path('app_service') }}"
+                   class="group
+                          inline-flex
+                          items-center
+                          gap-3
+                          text-sm
+                          font-semibold
+                          text-[#00687A]">
+
+                    Découvrir mon approche
+
+                    <span class="flex
+                                 items-center
+                                 justify-center
+                                 w-8 h-8
+                                 rounded-full
+                                 bg-[#00687A]
+                                 text-white
+                                 transition-transform
+                                 duration-300
+                                 group-hover:translate-x-1">
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    {# =========================================================
+       CTA FINAL
+    ========================================================= #}
+
+    <section class="bg-[#00687A]
+                    text-cream
+                    py-24
+                    text-center">
+
+        <div class="max-w-2xl
+                    mx-auto
+                    px-6 sm:px-10">
+
+            <div class="text-xs
+                        tracking-widest
+                        text-terracotta
+                        font-medium
+                        mb-4">
+                VOTRE PROJET COMMENCE ICI
+            </div>
+
+
+            <h2 class="font-display
+                       text-3xl
+                       leading-snug
+                       mb-4">
+
+                Et si on créait quelque chose
+                <br>
+                qui vous ressemble vraiment ?
+
+            </h2>
+
+
+            <p class="text-white/70
+                      mb-8
+                      max-w-md
+                      mx-auto">
+
+                Parlez-moi de votre idée, même si elle n'est encore
+                qu'au stade de projet. Nous verrons ensemble la meilleure
+                façon de la concrétiser.
+
+            </p>
+
+
+            <a href="{{ path('app_contact') }}"
+               class="bg-terracotta
+                      hover:bg-terracotta-dark
+                      text-cream
+                      px-6 py-3
+                      rounded-full
+                      text-sm
+                      font-medium
                       inline-flex
                       items-center
-                      gap-3
-                      text-sm
-                      font-semibold
-                      text-[#00687A]">
+                      gap-2
+                      transition">
 
-                Découvrir mon approche
+                Démarrer une discussion
 
-                <span class="flex
-                             items-center
-                             justify-center
-                             w-8 h-8
-                             rounded-full
-                             bg-[#00687A]
-                             text-white
-                             transition-transform
-                             duration-300
-                             group-hover:translate-x-1">
+                <span aria-hidden="true">
                     →
                 </span>
 
@@ -510,24 +1591,8 @@
 
         </div>
 
-    </div>
-
-</section>
-
-  
-
-
-
-  <section class="bg-[#00687A] text-cream py-24 text-center">
-    <div class="max-w-2xl mx-auto px-10">
-      <div class="text-xs tracking-widest text-terracotta font-medium mb-4">VOTRE PROJET COMMENCE ICI</div>
-      <h2 class="font-display text-3xl leading-snug mb-4">Et si on créait quelque chose<br>qui vous ressemble vraiment ?</h2>
-      <p class="text-white/70 mb-8 max-w-md mx-auto">Parlez-moi de votre idée, même si elle n'est encore qu'au stade de projet. Nous verrons ensemble la meilleure façon de la concrétiser.</p>
-      <a href="{{ path('app_contact') }}" class="bg-terracotta hover:bg-terracotta-dark text-cream px-6 py-3 rounded-full text-sm font-medium inline-flex items-center gap-2">
-        Démarrer une discussion <span aria-hidden="true">→</span>
-      </a>
-    </div>
-  </section>
+    </section>
 
 </div>
+
 {% endblock %}

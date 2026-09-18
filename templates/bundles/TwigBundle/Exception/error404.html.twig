@@ -1,0 +1,249 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page introuvable — Tempo{% endblock %}
+
+{% block meta_description %}
+    Cette page n'existe pas ou a été déplacée. Retrouvez les services, réalisations et conseils de Tempo, agence web à Toulouse.
+{% endblock %}
+
+{% block body %}
+
+<section class="relative overflow-hidden bg-cream">
+
+    {# =========================================================
+       DÉCORATIONS
+    ========================================================= #}
+
+    <div class="absolute
+                -top-20 -right-20
+                w-72 h-72
+                rounded-full
+                bg-[#D9C8A9]/30
+                pointer-events-none">
+    </div>
+
+    <div class="absolute
+                top-24 left-[8%]
+                w-5 h-5
+                rounded-full
+                bg-terracotta
+                pointer-events-none">
+    </div>
+
+    <div class="absolute
+                -bottom-28 -left-24
+                w-72 h-72
+                rounded-full
+                border border-terracotta/20
+                pointer-events-none">
+    </div>
+
+
+    {# =========================================================
+       CONTENU
+    ========================================================= #}
+
+    <div class="relative z-10
+                max-w-6xl mx-auto
+                px-6 sm:px-8 lg:px-12 xl:px-16
+                min-h-[72vh]
+                flex items-center">
+
+        <div class="grid lg:grid-cols-[1fr_.75fr]
+                    gap-12 lg:gap-20
+                    items-center
+                    w-full
+                    py-16 lg:py-20">
+
+
+            {# =================================================
+               TEXTE
+            ================================================= #}
+
+            <div class="max-w-xl">
+
+                <div class="flex items-center gap-3 mb-7">
+
+                    <span class="w-8 h-px bg-terracotta"></span>
+
+                    <span class="text-xs
+                                 uppercase
+                                 tracking-[0.22em]
+                                 text-terracotta
+                                 font-semibold">
+                        OUPS, MAUVAISE DIRECTION
+                    </span>
+
+                </div>
+
+
+                <h1 class="font-display
+                           text-4xl sm:text-5xl
+                           lg:text-[3.5rem]
+                           leading-[1.05]
+                           tracking-tight
+                           mb-7">
+
+                    Cette page semble avoir
+
+                    <span class="text-terracotta">
+                        perdu le rythme.
+                    </span>
+
+                </h1>
+
+
+                <p class="text-base sm:text-lg
+                          text-ink-soft
+                          leading-relaxed
+                          max-w-lg
+                          mb-9">
+
+                    La page que vous recherchez n'existe plus,
+                    a peut-être été déplacée ou l'adresse comporte
+                    une petite erreur.
+
+                </p>
+
+
+                {# BOUTONS #}
+
+                <div class="flex flex-wrap gap-3">
+
+                    <a href="{{ path('app_home') }}"
+                       class="group
+                              inline-flex items-center
+                              justify-center gap-3
+                              rounded-full
+                              bg-[#00687A]
+                              text-white
+                              px-6 py-3.5
+                              text-sm font-semibold
+                              transition-all duration-300
+                              hover:bg-[#005966]
+                              hover:-translate-y-0.5
+                              hover:shadow-lg">
+
+                        Retour à l'accueil
+
+                        <span class="transition-transform
+                                     duration-300
+                                     group-hover:translate-x-1">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <a href="{{ path('app_contact') }}"
+                       class="inline-flex items-center
+                              justify-center
+                              rounded-full
+                              border border-[#D9C8A9]
+                              px-6 py-3.5
+                              text-sm font-semibold
+                              text-ink
+                              transition-all duration-300
+                              hover:border-terracotta
+                              hover:text-terracotta">
+
+                        Me contacter
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            {# =================================================
+               404 GRAPHIQUE
+            ================================================= #}
+
+            <div class="relative
+                        flex items-center
+                        justify-center
+                        lg:justify-end">
+
+                <div class="relative
+                            w-[280px] h-[280px]
+                            sm:w-[340px] sm:h-[340px]">
+
+
+                    {# Grand cercle bleu #}
+
+                    <div class="absolute inset-0
+                                rounded-full
+                                bg-[#00687A]">
+                    </div>
+
+
+                    {# Cercle décoratif #}
+
+                    <div class="absolute
+                                -top-5 -right-5
+                                w-24 h-24
+                                rounded-full
+                                bg-terracotta">
+                    </div>
+
+
+                    {# Petit cercle crème #}
+
+                    <div class="absolute
+                                bottom-8 -left-5
+                                w-16 h-16
+                                rounded-full
+                                bg-[#D9C8A9]">
+                    </div>
+
+
+                    {# 404 #}
+
+                    <div class="absolute inset-0
+                                flex flex-col
+                                items-center
+                                justify-center
+                                text-center">
+
+                        <span class="font-display
+                                     text-[5.5rem]
+                                     sm:text-[7rem]
+                                     leading-none
+                                     text-cream">
+                            404
+                        </span>
+
+                        <span class="mt-3
+                                     text-[10px]
+                                     sm:text-xs
+                                     tracking-[0.25em]
+                                     uppercase
+                                     text-white/65">
+                            Page introuvable
+                        </span>
+
+                    </div>
+
+
+                    {# Rosace Tempo #}
+
+                    <div class="absolute
+                                right-3 bottom-10
+                                text-terracotta
+                                text-3xl
+                                leading-none">
+                        ✦
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,801 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion — Tempo{% endblock %}
+
+{% block body %}
+
+<section class="relative min-h-[calc(100vh-80px)] overflow-hidden bg-[#F7F3EC]">
+
+    {# =========================================================
+       DÉCORATIONS DE FOND
+    ========================================================= #}
+
+    <div class="pointer-events-none absolute -top-24 -right-24
+                w-72 h-72 rounded-full
+                border border-[#D9C8A9]/50">
+    </div>
+
+    <div class="pointer-events-none absolute top-24 right-20
+                w-4 h-4 rounded-full bg-terracotta">
+    </div>
+
+    <div class="pointer-events-none absolute -bottom-32 -left-32
+                w-96 h-96 rounded-full
+                bg-[#00687A]/5">
+    </div>
+
+
+    <div class="relative z-10
+                max-w-6xl mx-auto
+                px-6 sm:px-8 lg:px-12
+                py-12 lg:py-16">
+
+        <div class="grid lg:grid-cols-[0.9fr_1.1fr]
+                    min-h-[650px]
+                    overflow-hidden
+                    rounded-[2.5rem]
+                    border border-[#D9C8A9]/40
+                    bg-white/50
+                    shadow-[0_25px_80px_rgba(43,42,37,0.08)]">
+
+
+            {# =================================================
+               PARTIE GAUCHE — UNIVERS TEMPO
+            ================================================= #}
+
+            <div class="relative overflow-hidden
+                        bg-[#00687A]
+                        text-white
+                        p-8 sm:p-10 lg:p-12
+                        min-h-[400px] lg:min-h-full">
+
+
+                {# -----------------------------
+                   FORMES DÉCORATIVES
+                ------------------------------ #}
+
+                <div class="absolute -top-24 -left-20
+                            w-64 h-64
+                            rounded-full
+                            border border-white/10">
+                </div>
+
+                <div class="absolute top-16 right-10
+                            w-16 h-16
+                            rounded-full
+                            bg-terracotta">
+                </div>
+
+                <div class="absolute top-24 right-20
+                            w-4 h-4
+                            rounded-full
+                            bg-[#F0E7D8]">
+                </div>
+
+                <div class="absolute bottom-20 -right-20
+                            w-64 h-64
+                            rounded-full
+                            border border-white/10">
+                </div>
+
+
+                {# -----------------------------
+                   LOGO TYPO
+                ------------------------------ #}
+
+                <div class="relative z-10">
+
+                    <p class="font-display
+                              text-3xl
+                              tracking-tight">
+                        Tempo<span class="text-terracotta">.</span>
+                    </p>
+
+                    <p class="mt-1
+                              text-[9px]
+                              uppercase
+                              tracking-[0.35em]
+                              text-white/55">
+                        Agence web · Toulouse
+                    </p>
+
+                </div>
+
+
+                {# -----------------------------
+                   MESSAGE
+                ------------------------------ #}
+
+                <div class="relative z-10
+                            mt-16 lg:mt-24
+                            max-w-sm">
+
+                    <div class="flex items-center gap-3 mb-6">
+
+                        <span class="w-8 h-px bg-terracotta"></span>
+
+                        <span class="text-[10px]
+                                     uppercase
+                                     tracking-[0.25em]
+                                     text-white/60">
+                            Espace administration
+                        </span>
+
+                    </div>
+
+                    <h1 class="font-display
+                               text-4xl sm:text-5xl
+                               leading-[1.08]">
+
+                        Des idées qui prennent
+
+                        <span class="text-[#E69A67]">
+                            forme.
+                        </span>
+
+                    </h1>
+
+                    <p class="mt-6
+                              max-w-xs
+                              text-sm
+                              leading-7
+                              text-white/65">
+
+                        Un espace pour gérer les projets,
+                        les contenus et faire vivre Tempo.
+
+                    </p>
+
+                </div>
+
+
+                {# =================================================
+                   ILLUSTRATION CSS / SVG
+                ================================================= #}
+
+                <div class="relative z-10 mt-14 lg:mt-20">
+
+                    <div class="relative h-40 max-w-sm">
+
+
+                        {# LIVRES #}
+
+                        <div class="absolute left-0 bottom-0
+                                    w-40 h-9
+                                    rounded-md
+                                    bg-[#F0E7D8]
+                                    rotate-[-2deg]
+                                    shadow-lg">
+
+                            <span class="absolute left-5 top-1/2
+                                         -translate-y-1/2
+                                         text-[8px]
+                                         tracking-[0.22em]
+                                         uppercase
+                                         text-[#00687A]">
+                                Création
+                            </span>
+
+                        </div>
+
+
+                        <div class="absolute left-4 bottom-9
+                                    w-36 h-8
+                                    rounded-md
+                                    bg-terracotta
+                                    rotate-[2deg]
+                                    shadow-lg">
+
+                            <span class="absolute left-5 top-1/2
+                                         -translate-y-1/2
+                                         text-[8px]
+                                         tracking-[0.22em]
+                                         uppercase
+                                         text-white/80">
+                                Stratégie
+                            </span>
+
+                        </div>
+
+
+                        <div class="absolute left-1 bottom-[4.25rem]
+                                    w-44 h-8
+                                    rounded-md
+                                    bg-[#243F42]
+                                    rotate-[-1deg]
+                                    shadow-lg">
+
+                            <span class="absolute left-5 top-1/2
+                                         -translate-y-1/2
+                                         text-[8px]
+                                         tracking-[0.22em]
+                                         uppercase
+                                         text-white/60">
+                                Digital
+                            </span>
+
+                        </div>
+
+
+                        {# TASSE #}
+
+                        <div class="absolute right-7 bottom-1">
+
+                            <div class="relative
+                                        w-20 h-16
+                                        rounded-b-[2rem]
+                                        rounded-t-lg
+                                        bg-[#F7F3EC]">
+
+                                <div class="absolute
+                                            top-4 -right-6
+                                            w-9 h-9
+                                            rounded-full
+                                            border-[6px]
+                                            border-[#F7F3EC]">
+                                </div>
+
+                                <div class="absolute
+                                            top-2 left-3 right-3
+                                            h-2
+                                            rounded-full
+                                            bg-[#B88A67]">
+                                </div>
+
+                                {# Petite rosace #}
+
+                                <div class="absolute inset-0
+                                            flex items-center
+                                            justify-center">
+
+                                    <svg viewBox="0 0 40 40"
+                                         class="w-7 h-7 text-terracotta"
+                                         fill="currentColor"
+                                         aria-hidden="true">
+
+                                        <circle cx="20" cy="11" r="6"/>
+                                        <circle cx="29" cy="20" r="6"/>
+                                        <circle cx="20" cy="29" r="6"/>
+                                        <circle cx="11" cy="20" r="6"/>
+
+                                    </svg>
+
+                                </div>
+
+                            </div>
+
+
+                            {# Vapeur #}
+
+                            <svg class="absolute
+                                        -top-12 left-4
+                                        w-12 h-12
+                                        text-white/25"
+                                 viewBox="0 0 60 60"
+                                 fill="none"
+                                 aria-hidden="true">
+
+                                <path d="M18 52
+                                         C7 38, 30 32, 18 17
+                                         C12 10, 17 5, 22 2"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"/>
+
+                                <path d="M38 52
+                                         C27 39, 48 31, 37 18
+                                         C32 12, 35 7, 40 3"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"/>
+
+                            </svg>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                {# Signature #}
+
+                <div class="relative z-10
+                            mt-10
+                            flex items-center gap-3">
+
+                    <span class="w-6 h-px bg-white/25"></span>
+
+                    <span class="text-[9px]
+                                 uppercase
+                                 tracking-[0.22em]
+                                 text-white/35">
+                        Concevoir · Développer · Faire évoluer
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            {# =================================================
+               FORMULAIRE
+            ================================================= #}
+
+            <div class="relative
+                        flex items-center
+                        bg-[#FBF9F5]
+                        px-7 sm:px-12 lg:px-16
+                        py-12">
+
+
+                {# Petite décoration #}
+
+                <div class="absolute
+                            bottom-10 right-10
+                            w-20 h-20
+                            rounded-full
+                            border border-terracotta/15">
+                </div>
+
+                <div class="absolute
+                            bottom-[4.4rem] right-[4.4rem]
+                            w-3 h-3
+                            rounded-full
+                            bg-terracotta/50">
+                </div>
+
+
+                <div class="relative z-10
+                            w-full
+                            max-w-md
+                            mx-auto">
+
+
+                    {# -----------------------------
+                       EN-TÊTE
+                    ------------------------------ #}
+
+                    <div class="mb-10">
+
+                        <div class="flex items-center gap-3 mb-5">
+
+                            <span class="w-7 h-px bg-terracotta"></span>
+
+                            <span class="text-[10px]
+                                         uppercase
+                                         tracking-[0.24em]
+                                         font-semibold
+                                         text-terracotta">
+                                Bienvenue
+                            </span>
+
+                        </div>
+
+                        <h2 class="font-display
+                                   text-3xl sm:text-4xl
+                                   leading-tight
+                                   text-ink">
+                            Connexion
+                        </h2>
+
+                        <p class="mt-3
+                                  text-sm
+                                  leading-6
+                                  text-ink-soft">
+                            Connectez-vous pour accéder à
+                            l'administration de Tempo.
+                        </p>
+
+                    </div>
+
+
+                    {# -----------------------------
+                       ERREUR
+                    ------------------------------ #}
+
+                    {% if error %}
+
+                        <div class="mb-6
+                                    flex gap-3
+                                    rounded-2xl
+                                    border border-terracotta/20
+                                    bg-terracotta/10
+                                    px-4 py-3.5">
+
+                            <div class="mt-0.5
+                                        flex
+                                        w-5 h-5
+                                        shrink-0
+                                        items-center
+                                        justify-center
+                                        rounded-full
+                                        bg-terracotta
+                                        text-[10px]
+                                        font-semibold
+                                        text-white">
+                                !
+                            </div>
+
+                            <p class="text-sm
+                                      leading-5
+                                      text-terracotta-dark">
+
+                                Email ou mot de passe incorrect.
+
+                            </p>
+
+                        </div>
+
+                    {% endif %}
+
+
+                    {# -----------------------------
+                       SI DÉJÀ CONNECTÉ
+                    ------------------------------ #}
+
+                    {% if app.user %}
+
+                        <div class="mb-6
+                                    rounded-2xl
+                                    bg-[#00687A]/10
+                                    px-5 py-4
+                                    text-sm
+                                    text-[#00687A]">
+
+                            Vous êtes connecté avec
+
+                            <span class="font-semibold">
+                                {{ app.user.userIdentifier }}
+                            </span>.
+
+                            <a href="{{ path('app_logout') }}"
+                               class="ml-1 underline">
+                                Se déconnecter
+                            </a>
+
+                        </div>
+
+                    {% endif %}
+
+
+                    {# =================================================
+                       FORMULAIRE LOGIN
+                    ================================================= #}
+
+                    <form method="post"
+                          class="space-y-6">
+
+
+                        {# EMAIL #}
+
+                        <div>
+
+                            <label for="username"
+                                   class="block mb-2
+                                          text-xs
+                                          font-semibold
+                                          text-ink">
+                                Adresse e-mail
+                            </label>
+
+                            <div class="relative">
+
+                                <div class="pointer-events-none
+                                            absolute inset-y-0 left-0
+                                            flex items-center
+                                            pl-4
+                                            text-ink-soft/60">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                         fill="none"
+                                         viewBox="0 0 24 24"
+                                         stroke-width="1.5"
+                                         stroke="currentColor"
+                                         class="w-5 h-5">
+
+                                        <path stroke-linecap="round"
+                                              stroke-linejoin="round"
+                                              d="M21.75 6.75v10.5
+                                                 a2.25 2.25 0 0 1-2.25 2.25h-15
+                                                 a2.25 2.25 0 0 1-2.25-2.25V6.75
+                                                 m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15
+                                                 a2.25 2.25 0 0 0-2.25 2.25
+                                                 m19.5 0v.243
+                                                 a2.25 2.25 0 0 1-1.07 1.916
+                                                 l-7.5 4.615
+                                                 a2.25 2.25 0 0 1-2.36 0
+                                                 L3.32 8.91
+                                                 a2.25 2.25 0 0 1-1.07-1.916V6.75"/>
+                                    </svg>
+
+                                </div>
+
+                                <input type="email"
+                                       value="{{ last_username }}"
+                                       name="_username"
+                                       id="username"
+                                       autocomplete="email"
+                                       required
+                                       autofocus
+                                       placeholder="votre@email.fr"
+                                       class="w-full
+                                              rounded-2xl
+                                              border border-[#D9C8A9]/70
+                                              bg-white
+                                              py-3.5
+                                              pl-12 pr-4
+                                              text-sm
+                                              text-ink
+                                              outline-none
+                                              transition-all duration-300
+                                              placeholder:text-ink-soft/35
+                                              focus:border-[#00687A]
+                                              focus:ring-4
+                                              focus:ring-[#00687A]/10">
+
+                            </div>
+
+                        </div>
+
+
+                        {# MOT DE PASSE #}
+
+                        <div>
+
+                            <label for="password"
+                                   class="block mb-2
+                                          text-xs
+                                          font-semibold
+                                          text-ink">
+                                Mot de passe
+                            </label>
+
+                            <div class="relative">
+
+                                <div class="pointer-events-none
+                                            absolute inset-y-0 left-0
+                                            flex items-center
+                                            pl-4
+                                            text-ink-soft/60">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                         fill="none"
+                                         viewBox="0 0 24 24"
+                                         stroke-width="1.5"
+                                         stroke="currentColor"
+                                         class="w-5 h-5">
+
+                                        <path stroke-linecap="round"
+                                              stroke-linejoin="round"
+                                              d="M16.5 10.5V6.75
+                                                 a4.5 4.5 0 0 0-9 0v3.75
+                                                 m-.75 9h10.5
+                                                 a2.25 2.25 0 0 0 2.25-2.25v-4.5
+                                                 a2.25 2.25 0 0 0-2.25-2.25H6.75
+                                                 a2.25 2.25 0 0 0-2.25 2.25v4.5
+                                                 a2.25 2.25 0 0 0 2.25 2.25Z"/>
+                                    </svg>
+
+                                </div>
+
+                                <input type="password"
+                                       name="_password"
+                                       id="password"
+                                       autocomplete="current-password"
+                                       required
+                                       placeholder="Votre mot de passe"
+                                       class="w-full
+                                              rounded-2xl
+                                              border border-[#D9C8A9]/70
+                                              bg-white
+                                              py-3.5
+                                              pl-12 pr-12
+                                              text-sm
+                                              text-ink
+                                              outline-none
+                                              transition-all duration-300
+                                              placeholder:text-ink-soft/35
+                                              focus:border-[#00687A]
+                                              focus:ring-4
+                                              focus:ring-[#00687A]/10">
+
+
+                                {# Afficher / masquer mot de passe #}
+
+                                <button type="button"
+                                        id="toggle-password"
+                                        aria-label="Afficher le mot de passe"
+                                        class="absolute
+                                               inset-y-0 right-0
+                                               flex items-center
+                                               pr-4
+                                               text-ink-soft/50
+                                               transition
+                                               hover:text-[#00687A]">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                         fill="none"
+                                         viewBox="0 0 24 24"
+                                         stroke-width="1.5"
+                                         stroke="currentColor"
+                                         class="w-5 h-5">
+
+                                        <path stroke-linecap="round"
+                                              stroke-linejoin="round"
+                                              d="M2.036 12.322
+                                                 a1.012 1.012 0 0 1 0-.639
+                                                 C3.423 7.51 7.36 4.5 12 4.5
+                                                 c4.638 0 8.573 3.007 9.963 7.178
+                                                 .07.207.07.431 0 .639
+                                                 C20.577 16.49 16.64 19.5 12 19.5
+                                                 c-4.638 0-8.573-3.007-9.963-7.178Z"/>
+
+                                        <path stroke-linecap="round"
+                                              stroke-linejoin="round"
+                                              d="M15 12
+                                                 a3 3 0 1 1-6 0
+                                                 3 3 0 0 1 6 0Z"/>
+                                    </svg>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        {# CSRF #}
+
+                        <input type="hidden"
+                               name="_csrf_token"
+                               value="{{ csrf_token('authenticate') }}">
+
+
+                        {# -----------------------------
+                           BOUTON
+                        ------------------------------ #}
+
+                        <button type="submit"
+                                class="group
+                                       flex w-full
+                                       items-center
+                                       justify-center
+                                       gap-3
+                                       rounded-full
+                                       bg-[#00687A]
+                                       px-6 py-4
+                                       text-sm
+                                       font-semibold
+                                       text-white
+                                       shadow-[0_12px_30px_rgba(0,104,122,0.15)]
+                                       transition-all duration-300
+                                       hover:-translate-y-0.5
+                                       hover:bg-[#005966]
+                                       hover:shadow-[0_16px_35px_rgba(0,104,122,0.22)]">
+
+                            Se connecter
+
+                            <span class="transition-transform
+                                         duration-300
+                                         group-hover:translate-x-1">
+                                →
+                            </span>
+
+                        </button>
+
+                    </form>
+
+
+                    {# -----------------------------
+                       SÉCURITÉ
+                    ------------------------------ #}
+
+                    <div class="mt-9
+                                flex items-center
+                                justify-center
+                                gap-2
+                                text-[10px]
+                                uppercase
+                                tracking-[0.16em]
+                                text-ink-soft/45">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke-width="1.5"
+                             stroke="currentColor"
+                             class="w-4 h-4">
+
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M9 12.75
+                                     11.25 15
+                                     15 9.75
+                                     M21 12
+                                     c0 1.268-.63 2.39-1.593 3.068
+                                     a3.745 3.745 0 0 1-1.043 3.296
+                                     3.745 3.745 0 0 1-3.296 1.043
+                                     A3.745 3.745 0 0 1 12 21
+                                     c-1.268 0-2.39-.63-3.068-1.593
+                                     a3.746 3.746 0 0 1-3.296-1.043
+                                     3.745 3.745 0 0 1-1.043-3.296
+                                     A3.745 3.745 0 0 1 3 12
+                                     c0-1.268.63-2.39 1.593-3.068
+                                     a3.745 3.745 0 0 1 1.043-3.296
+                                     3.746 3.746 0 0 1 3.296-1.043
+                                     A3.745 3.745 0 0 1 12 3
+                                     c1.268 0 2.39.63 3.068 1.593
+                                     a3.746 3.746 0 0 1 3.296 1.043
+                                     3.746 3.746 0 0 1 1.043 3.296
+                                     A3.745 3.745 0 0 1 21 12Z"/>
+                        </svg>
+
+                        Accès sécurisé · Tempo
+
+                    </div>
+
+
+                    {# RETOUR SITE #}
+
+                    <div class="mt-6 text-center">
+
+                        <a href="{{ path('app_home') }}"
+                           class="text-xs
+                                  text-ink-soft
+                                  underline
+                                  underline-offset-4
+                                  decoration-[#D9C8A9]
+                                  transition
+                                  hover:text-terracotta">
+
+                            ← Retour au site
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+
+
+{% block javascripts %}
+
+    {{ parent() }}
+
+    <script>
+        document.addEventListener('turbo:load', () => {
+            const password = document.getElementById('password');
+            const toggle = document.getElementById('toggle-password');
+
+            if (!password || !toggle) {
+                return;
+            }
+
+            toggle.onclick = () => {
+                const isHidden = password.type === 'password';
+
+                password.type = isHidden ? 'text' : 'password';
+
+                toggle.setAttribute(
+                    'aria-label',
+                    isHidden
+                        ? 'Masquer le mot de passe'
+                        : 'Afficher le mot de passe'
+                );
+            };
+        });
+    </script>
+
+{% endblock %}

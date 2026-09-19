@@ -336,26 +336,324 @@
 
 
 {# =========================================================
-   FOOTER
+   FOOTER COMPACT
 ========================================================= #}
 
-<footer class="px-6 py-4
-               border-t border-gray-200
-               flex flex-col sm:flex-row
-               gap-2
-               justify-between
-               text-xs text-gray-400">
+<footer class="relative overflow-hidden bg-[#00687A] text-white">
 
-    <span>
-        Tempo agence web Toulouse
-    </span>
 
-    <span>
-        contact@tempo-agenceweb.com
-    </span>
+    {# Petite décoration #}
+    <div class="pointer-events-none
+                absolute
+                -right-20 -top-20
+                w-48 h-48
+                rounded-full
+                border border-white/10">
+    </div>
+
+    <div class="pointer-events-none
+                absolute
+                right-14 top-10
+                w-2 h-2
+                rounded-full
+                bg-terracotta">
+    </div>
+
+
+    <div class="relative max-w-7xl mx-auto px-6 sm:px-10">
+
+        {# PARTIE PRINCIPALE #}
+        {# PARTIE PRINCIPALE #}
+<div class="py-8 lg:py-9">
+
+    {# ==========================================
+       LIGNE 1 : LOGO + NAVIGATION + RÉSEAUX
+    =========================================== #}
+    <div class="flex flex-col
+                md:flex-row
+                md:items-center
+                md:justify-between
+                gap-6">
+
+        {# LOGO #}
+        <a href="{{ path('app_home') }}"
+           class="inline-flex items-center shrink-0"
+           aria-label="Tempo - Accueil">
+
+            <img src="{{ asset('images/tempo2.png') }}"
+                 alt="Tempo"
+                 class="h-23 md:h-26 w-25">
+
+        </a>
+
+
+        {# NAVIGATION #}
+        <nav class="flex
+                    flex-wrap
+                    md:justify-center
+                    items-center
+                    gap-x-5
+                    gap-y-2
+                    text-xs
+                    text-white/70">
+
+            <a href="{{ path('app_service') }}"
+               class="hover:text-white transition">
+                Services
+            </a>
+
+            <a href="{{ path('app_projet_index') }}"
+               class="hover:text-white transition">
+                Réalisations
+            </a>
+
+            <a href="{{ path('app_tarifs') }}"
+               class="hover:text-white transition">
+                Tarifs
+            </a>
+
+            <a href="{{ path('app_apropos') }}"
+               class="hover:text-white transition">
+                À propos
+            </a>
+
+            <a href="{{ path('app_article_index') }}"
+               class="hover:text-white transition">
+                Blog
+            </a>
+
+            <a href="{{ path('app_contact') }}"
+               class="font-semibold
+                      text-white
+                      hover:text-terracotta
+                      transition">
+                Contact
+            </a>
+
+        </nav>
+
+
+        {# RÉSEAUX #}
+        <div class="flex items-center gap-2 shrink-0">
+
+            {# LINKEDIN #}
+            <a href="https://fr.linkedin.com/in/nathalie-camiul-847620198"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="LinkedIn de Nathalie"
+               class="w-8 h-8
+                      rounded-full
+                      border border-white/20
+                      flex items-center justify-center
+                      hover:bg-white
+                      hover:text-[#00687A]
+                      transition">
+
+                <svg viewBox="0 0 24 24"
+                     aria-hidden="true"
+                     class="w-3.5 h-3.5 fill-current">
+
+                    <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7 0h3.84v2.18h.05C11.92 9.17 13.23 7.5 16.68 7.5 21.22 7.5 22 10.48 22 14.36V24h-4v-8.55c0-2.04-.04-4.66-2.84-4.66-2.84 0-3.28 2.22-3.28 4.51V24h-4V8z"/>
+
+                </svg>
+
+            </a>
+
+
+            {# INSTAGRAM #}
+            <a href="https://www.instagram.com/tempo_agence_web"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Instagram de Tempo"
+               class="w-8 h-8
+                      rounded-full
+                      border border-white/20
+                      flex items-center justify-center
+                      hover:bg-terracotta
+                      hover:border-terracotta
+                      transition">
+
+                <svg viewBox="0 0 24 24"
+                     aria-hidden="true"
+                     class="w-3.5 h-3.5
+                            fill-none
+                            stroke-current
+                            stroke-[1.8]">
+
+                    <rect x="3"
+                          y="3"
+                          width="18"
+                          height="18"
+                          rx="5"/>
+
+                    <circle cx="12"
+                            cy="12"
+                            r="4"/>
+
+                    <circle cx="17.5"
+                            cy="6.5"
+                            r="1"
+                            class="fill-current stroke-none"/>
+
+                </svg>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    {# ==========================================
+       LIGNE 2 : DESCRIPTION + COORDONNÉES
+    =========================================== #}
+    <div class="mt-5
+                flex flex-col
+                md:flex-row
+                md:items-end
+                md:justify-between
+                gap-5">
+
+        {# DESCRIPTION #}
+        <p class="max-w-xs
+                  text-xs
+                  leading-5
+                  text-white/65">
+
+            Sites WordPress, applications Symfony
+            et référencement naturel à Toulouse.
+
+        </p>
+
+
+        {# COORDONNÉES #}
+        <div class="flex
+                    flex-col
+                    sm:flex-row
+                    sm:items-center
+                    gap-3 sm:gap-6
+                    text-xs
+                    text-white/75">
+
+            {# EMAIL #}
+            <a href="mailto:contact@tempo-agenceweb.com"
+               class="flex items-center gap-2
+                      hover:text-white
+                      transition">
+
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.7"
+                     aria-hidden="true"
+                     class="w-4 h-4 text-terracotta">
+
+                    <rect x="3"
+                          y="5"
+                          width="18"
+                          height="14"
+                          rx="2"/>
+
+                    <path d="M3 7l9 6 9-6"/>
+
+                </svg>
+
+                <span>
+                    contact@tempo-agenceweb.com
+                </span>
+
+            </a>
+
+
+            {# TÉLÉPHONE #}
+            <a href="tel:+33675064781"
+               class="flex items-center gap-2
+                      hover:text-white
+                      transition">
+
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.7"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     aria-hidden="true"
+                     class="w-4 h-4 text-terracotta">
+
+                    <path d="M22 16.92v3
+                             a2 2 0 0 1-2.18 2
+                             19.79 19.79 0 0 1-8.63-3.07
+                             19.5 19.5 0 0 1-6-6
+                             19.79 19.79 0 0 1-3.07-8.67
+                             A2 2 0 0 1 4.11 2h3
+                             a2 2 0 0 1 2 1.72
+                             12.84 12.84 0 0 0 .7 2.81
+                             2 2 0 0 1-.45 2.11
+                             L8.09 9.91
+                             a16 16 0 0 0 6 6
+                             l1.27-1.27
+                             a2 2 0 0 1 2.11-.45
+                             12.84 12.84 0 0 0 2.81.7
+                             A2 2 0 0 1 22 16.92z"/>
+
+                </svg>
+
+                <span>
+                    06 75 06 47 81
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+    
+
+
+
+
+        {# LIGNE LÉGALE #}
+        <div class="border-t border-white/10
+                    py-4
+                    flex flex-col
+                    sm:flex-row
+                    sm:items-center
+                    sm:justify-between
+                    gap-2
+                    text-[15px]
+                    text-white/45">
+
+            <span>
+                © {{ "now"|date("Y") }} Tempo · Agence web à Toulouse
+            </span>
+
+
+            <div class="flex flex-wrap gap-x-4 gap-y-1">
+
+                <a href="{{ path('app_mentions_legales') }}"
+                   class="hover:text-white transition">
+                    Mentions légales
+                </a>
+
+                <a href="{{ path('app_confidentialite') }}"
+                   class="hover:text-white transition">
+                    Confidentialité
+                </a>
+
+                <a href="{{ path('app_cgv') }}"
+                   class="hover:text-white transition">
+                    CGV
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </footer>
-
 
 
 {# =========================================================

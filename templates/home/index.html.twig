@@ -56,10 +56,10 @@
                       mb-8
                       max-w-md">
 
-                Je suis Nathalie Camiul développeuse fullstack,
-                je conçois des sites WordPress élégants et des
+                Bonjour et bienvenue ! Je suis Nathalie Camiul développeuse fullstack à Toulouse.
+                Passionnée par le web depuis plusieurs années, je conçois des sites WordPress et des
                 applications Symfony sur mesure pour les entreprises,
-                indépendants et projets qui veulent vraiment se démarquer.
+                indépendants, startups et projets qui veulent qualité et fiabilité. J'optimise également vos solutions digitales pour le référencement naturel (SEO).
 
             </p>
 
@@ -165,299 +165,171 @@
         </div>
 
 
-        {# PHOTO #}
+       {# PHOTO #}
 
-        <div class="relative">
+<div class="relative">
 
-            <div class="relative
-                        max-w-[500px]
-                        mx-auto
-                        rounded-[2rem]
-                        overflow-hidden
-                        shadow-lg
-                        group">
+    <div class="relative
+                max-w-[500px]
+                mx-auto
+                rounded-[2rem]
+                overflow-visible
+                group">
 
-                <img
-                    src="{{ asset('images/nath.png') }}"
-                    alt="Nathalie, fondatrice de Tempo agence web"
-                    class="block
-                           w-full h-auto
-                           transition-transform
-                           duration-700
-                           ease-out
-                           group-hover:scale-[1.03]"
-                >
+        {# IMAGE #}
+        <div class="rounded-[2rem]
+                    overflow-hidden
+                    shadow-lg">
 
-            </div>
+            <img
+                src="{{ asset('images/nath.png') }}"
+                alt="Nathalie, fondatrice de Tempo agence web"
+                class="block
+                       w-full h-auto
+                       transition-transform
+                       duration-700
+                       ease-out
+                       group-hover:scale-[1.03]"
+            >
 
         </div>
 
-    </section>
 
-
-
-    {# =========================================================
-       EXPERTISE
-    ========================================================= #}
-
-    <section class="bg-cream-2 py-20">
-
-        <div class="max-w-7xl mx-auto px-6 sm:px-10">
-
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-
-                <div>
-
-                    <div class="text-xs
-                                tracking-widest
-                                text-terracotta
-                                font-medium
-                                mb-3">
-                        MON EXPERTISE
-                    </div>
-
-                    <h2 class="font-display
-                               text-3xl
-                               leading-snug">
-                        Des solutions adaptées à vos besoins
-                    </h2>
-
-                </div>
-
-
-                <p class="text-ink-soft
-                          leading-relaxed
-                          self-end">
-
-                    Un accompagnement pensé autour de votre projet,
-                    de vos objectifs et de vos utilisateurs.
-
-                </p>
-
-            </div>
-
-
-            <div class="grid md:grid-cols-3 gap-6">
-
-
-                {# WORDPRESS #}
-
-                <div class="bg-cream rounded-2xl p-8">
-
-                    <div class="w-11 h-11
-                                rounded-full
-                                bg-pine
-                                text-white
-                                flex items-center
-                                justify-center
-                                mb-6">
-                        W
-                    </div>
-
-                    <h3 class="font-display text-xl mb-3">
-                        Sites WordPress
-                    </h3>
-
-                    <p class="text-sm
-                              text-ink-soft
-                              leading-relaxed
-                              mb-6">
-
-                        Des sites vitrines, boutiques et blogs élégants,
-                        faciles à administrer et pensés pour évoluer.
-
-                    </p>
-
-                    <ul class="space-y-2
-                               text-sm
-                               text-ink-soft
-                               mb-6">
-
-                        <li class="flex gap-2">
-                            <span class="text-terracotta">✓</span>
-                            Design personnalisé
-                        </li>
-
-                        <li class="flex gap-2">
-                            <span class="text-terracotta">✓</span>
-                            Responsive mobile & desktop
-                        </li>
-
-                        <li class="flex gap-2">
-                            <span class="text-terracotta">✓</span>
-                            SEO technique
-                        </li>
-
-                        <li class="flex gap-2">
-                            <span class="text-terracotta">✓</span>
-                            Formation à l'administration
-                        </li>
-
-                    </ul>
-
-                    <a href="{{ path('app_contact') }}"
-                       aria-label="Me contacter pour un projet WordPress"
-                       class="w-9 h-9
-                              rounded-full
-                              bg-terracotta
-                              text-white
-                              flex items-center
-                              justify-center">
-                        →
-                    </a>
-
-                </div>
-
-
-
-                {# SYMFONY #}
-
-                <div class="bg-[#00687A]
-                            text-cream
-                            rounded-2xl
-                            p-8">
-
-                    <div class="w-11 h-11
-                                rounded-full
-                                bg-white
-                                text-pine
-                                flex items-center
-                                justify-center
-                                mb-6
-                                font-medium">
-                        sf
-                    </div>
-
-                    <h3 class="font-display text-xl mb-3">
-                        Applications Symfony
-                    </h3>
-
-                    <p class="text-sm
-                              text-white/70
-                              leading-relaxed
-                              mb-6">
-
-                        Quand un simple CMS ne suffit plus,
-                        je développe des applications métier
-                        adaptées à vos besoins.
-
-                    </p>
-
-                    <ul class="space-y-2
-                               text-sm
-                               text-white/80
-                               mb-6">
-
-                        <li class="flex gap-2">
-                            <span class="text-terracotta">✓</span>
-                            PHP & Symfony
-                        </li>
-
-                        <li class="flex gap-2">
-                            <span class="text-terracotta">✓</span>
-                            Bases de données & Doctrine
-                        </li>
-
-                        <li class="flex gap-2">
-                            <span class="text-terracotta">✓</span>
-                            Back-office sur mesure
-                        </li>
-
-                        <li class="flex gap-2">
-                            <span class="text-terracotta">✓</span>
-                            Gestion des utilisateurs & rôles
-                        </li>
-
-                    </ul>
-
-                    <a href="{{ path('app_contact') }}"
-                       aria-label="Me contacter pour un projet Symfony"
-                       class="w-9 h-9
-                              rounded-full
-                              bg-terracotta
-                              text-white
-                              flex items-center
-                              justify-center">
-                        →
-                    </a>
-
-                </div>
-
-
-
-                {# SEO #}
-
-                <div class="bg-cream rounded-2xl p-8">
-
-                    <div class="w-11 h-11
-                                rounded-full
-                                bg-terracotta
-                                text-white
-                                flex items-center
-                                justify-center
-                                mb-6">
-                        ◎
-                    </div>
-
-                    <h3 class="font-display text-xl mb-3">
-                        SEO & contenu
-                    </h3>
-
-                    <p class="text-sm
-                              text-ink-soft
-                              leading-relaxed
-                              mb-6">
-
-                        Une belle interface ne suffit pas.
-                        Votre site doit aussi être compréhensible
-                        par les moteurs de recherche.
-
-                    </p>
-
-                    <ul class="space-y-2
-                               text-sm
-                               text-ink-soft
-                               mb-6">
-
-                        <li class="flex gap-2">
-                            <span class="text-terracotta">✓</span>
-                            Structure SEO
-                        </li>
-
-                        <li class="flex gap-2">
-                            <span class="text-terracotta">✓</span>
-                            Contenus optimisés
-                        </li>
-
-                        <li class="flex gap-2">
-                            <span class="text-terracotta">✓</span>
-                            Balises & maillage interne
-                        </li>
-
-                        <li class="flex gap-2">
-                            <span class="text-terracotta">✓</span>
-                            Stratégie éditoriale
-                        </li>
-
-                    </ul>
-
-                    <a href="{{ path('app_contact') }}"
-                       aria-label="Me contacter pour le référencement"
-                       class="w-9 h-9
-                              rounded-full
-                              bg-terracotta
-                              text-white
-                              flex items-center
-                              justify-center">
-                        →
-                    </a>
-
-                </div>
-
-            </div>
+        {# =====================================================
+           RÉSEAUX SOCIAUX SUR LA PHOTO
+        ====================================================== #}
+
+        <div class="absolute
+                    right-4
+                    bottom-5
+                    z-20
+                    flex
+                    flex-col
+                    gap-2">
+
+
+            {# LINKEDIN #}
+            <a href="https://fr.linkedin.com/in/nathalie-camiul-847620198"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="LinkedIn de Nathalie"
+               class="w-11 h-11
+                      rounded-full
+                      bg-[#00687A]
+                      text-white
+                      flex
+                      items-center
+                      justify-center
+                      shadow-md
+                      transition-all
+                      duration-300
+                      hover:bg-terracotta
+                      hover:-translate-y-1">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 24 24"
+                     fill="currentColor"
+                     class="w-5 h-5">
+
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452z"/>
+                </svg>
+
+            </a>
+
+
+            {# INSTAGRAM #}
+            <a href="https://www.instagram.com/tempo_agence_web"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Instagram de Tempo"
+               class="w-11 h-11
+                      rounded-full
+                      bg-[#00687A]
+                      text-white
+                      flex
+                      items-center
+                      justify-center
+                      shadow-md
+                      transition-all
+                      duration-300
+                      hover:bg-terracotta
+                      hover:-translate-y-1">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.8"
+                     class="w-5 h-5">
+
+                    <rect x="3"
+                          y="3"
+                          width="18"
+                          height="18"
+                          rx="5"/>
+
+                    <circle cx="12"
+                            cy="12"
+                            r="4"/>
+
+                    <circle cx="17.5"
+                            cy="6.5"
+                            r="1"
+                            fill="currentColor"
+                            stroke="none"/>
+
+                </svg>
+
+            </a>
+
+
+            {# TÉLÉPHONE #}
+            <a href="tel:+33675064781"
+               aria-label="Appeler Nathalie au 06 75 06 47 81"
+               class="w-11 h-11
+                      rounded-full
+                      bg-terracotta
+                      text-white
+                      flex
+                      items-center
+                      justify-center
+                      shadow-md
+                      transition-all
+                      duration-300
+                      hover:bg-[#00687A]
+                      hover:-translate-y-1">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.8"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     class="w-5 h-5">
+
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+                             19.79 19.79 0 0 1-8.63-3.07
+                             19.5 19.5 0 0 1-6-6
+                             19.79 19.79 0 0 1-3.07-8.67
+                             A2 2 0 0 1 4.11 2h3
+                             a2 2 0 0 1 2 1.72
+                             12.84 12.84 0 0 0 .7 2.81
+                             2 2 0 0 1-.45 2.11L8.09 9.91
+                             a16 16 0 0 0 6 6l1.27-1.27
+                             a2 2 0 0 1 2.11-.45
+                             12.84 12.84 0 0 0 2.81.7
+                             A2 2 0 0 1 22 16.92z"/>
+
+                </svg>
+
+            </a>
 
         </div>
 
+    </div>
+
+</div>
     </section>
 
 
@@ -1098,7 +970,6 @@
     </section>
 
 
-
     {# =========================================================
        ACCOMPAGNEMENT
     ========================================================= #}
@@ -1521,69 +1392,164 @@
     </section>
 
 
+{# =========================================================
+   CTA FINAL — ACCUEIL
+========================================================= #}
 
-    {# =========================================================
-       CTA FINAL
-    ========================================================= #}
+<section class="relative overflow-hidden bg-[#FBF8F2]">
 
-    <section class="bg-[#00687A]
-                    text-cream
-                    py-24
-                    text-center">
+    {# =====================================================
+       DÉCORS — GAUCHE
+    ====================================================== #}
 
-        <div class="max-w-2xl
-                    mx-auto
-                    px-6 sm:px-10">
+    {# Grande forme bleu pâle #}
+    <div class="pointer-events-none
+                absolute
+                -left-28
+                top-8
+                w-64 h-64
+                sm:w-80 sm:h-80
+                rounded-full
+                bg-[#00687A]/10">
+    </div>
 
-            <div class="text-xs
-                        tracking-widest
-                        text-terracotta
-                        font-medium
-                        mb-4">
-                VOTRE PROJET COMMENCE ICI
-            </div>
+    {# Cercle contour bleu #}
+    <div class="pointer-events-none
+                absolute
+                -left-28
+                -top-28
+                w-72 h-72
+                sm:w-96 sm:h-96
+                rounded-full
+                border border-[#00687A]/70">
+    </div>
+
+    {# Petit point bleu #}
+    <div class="pointer-events-none
+                absolute
+                left-[11%]
+                top-[18%]
+                w-5 h-5
+                rounded-full
+                bg-[#00687A]">
+    </div>
 
 
-            <h2 class="font-display
-                       text-3xl
-                       leading-snug
-                       mb-4">
+    {# =====================================================
+       DÉCORS — DROITE
+    ====================================================== #}
 
-                Et si on créait quelque chose
-                <br>
-                qui vous ressemble vraiment ?
+    {# Forme bleu pâle #}
+    <div class="pointer-events-none
+                absolute
+                -right-24
+                bottom-0
+                w-64 h-64
+                sm:w-80 sm:h-80
+                rounded-tl-[70%]
+                bg-[#00687A]/15">
+    </div>
 
-            </h2>
+    {# Grand cercle contour #}
+    <div class="pointer-events-none
+                absolute
+                -right-32
+                top-10
+                w-72 h-72
+                sm:w-96 sm:h-96
+                rounded-full
+                border border-[#00687A]/70">
+    </div>
+
+    {# Petit point terracotta #}
+    <div class="pointer-events-none
+                absolute
+                right-[9%]
+                top-[42%]
+                w-3 h-3
+                rounded-full
+                bg-terracotta">
+    </div>
 
 
-            <p class="text-white/70
-                      mb-8
-                      max-w-md
-                      mx-auto">
+    {# =====================================================
+       CONTENU
+    ====================================================== #}
 
-                Parlez-moi de votre idée, même si elle n'est encore
-                qu'au stade de projet. Nous verrons ensemble la meilleure
-                façon de la concrétiser.
+    <div class="relative z-10
+                max-w-5xl
+                mx-auto
+                px-6 sm:px-10
+                py-20 sm:py-24 lg:py-28
+                text-center">
 
-            </p>
+        {# SURTITRE #}
+        <p class="mb-5
+                  text-xs
+                  font-semibold
+                  uppercase
+                  tracking-[0.22em]
+                  text-terracotta">
+            Votre projet commence ici
+        </p>
 
+
+        {# TITRE #}
+        <h2 class="max-w-3xl
+                   mx-auto
+                   font-display
+                   text-3xl sm:text-4xl lg:text-[2.8rem]
+                   leading-[1.15]
+                   text-[#00687A]">
+
+            Et si on créait quelque chose
+            <br class="hidden sm:block">
+            qui vous ressemble vraiment ?
+
+        </h2>
+
+
+        {# TEXTE #}
+        <p class="max-w-2xl
+                  mx-auto
+                  mt-6
+                  text-base sm:text-lg
+                  leading-8
+                  text-ink-soft">
+
+            Parlez-moi de votre idée, même si elle n'est encore
+            qu'au stade de projet. Nous verrons ensemble la meilleure
+            façon de la concrétiser.
+
+        </p>
+
+
+        {# CTA #}
+        <div class="mt-8">
 
             <a href="{{ path('app_contact') }}"
-               class="bg-terracotta
-                      hover:bg-terracotta-dark
-                      text-cream
-                      px-6 py-3
-                      rounded-full
-                      text-sm
-                      font-medium
+               class="group
                       inline-flex
                       items-center
-                      gap-2
-                      transition">
+                      justify-center
+                      gap-4
+                      rounded-full
+                      bg-terracotta
+                      px-7 py-4
+                      text-sm
+                      font-semibold
+                      text-white
+                      transition-all
+                      duration-300
+                      hover:bg-terracotta-dark
+                      hover:-translate-y-0.5">
 
                 Démarrer une discussion
 
-                <span aria-hidden="true">
+                <span class="transition-transform
+                             duration-300
+                             group-hover:translate-x-1"
+                      aria-hidden="true">
                     →
                 </span>
 
@@ -1591,7 +1557,107 @@
 
         </div>
 
-    </section>
+
+        {# =================================================
+           PETITS REPÈRES
+        ================================================== #}
+
+        <div class="mt-12
+                    flex flex-wrap
+                    items-center
+                    justify-center
+                    gap-x-7 gap-y-4
+                    text-sm
+                    text-ink-soft">
+
+
+            <div class="flex items-center gap-3">
+
+                <span class="w-2 h-2
+                             rounded-full
+                             bg-[#00687A]">
+                </span>
+
+                <span>
+                    Écoute
+                </span>
+
+            </div>
+
+
+            <span class="hidden sm:block
+                         w-px h-5
+                         bg-[#D9C8A9]">
+            </span>
+
+
+            <div class="flex items-center gap-3">
+
+                <span class="w-2 h-2
+                             rounded-full
+                             bg-[#00687A]">
+                </span>
+
+                <span>
+                    Conseils sur mesure
+                </span>
+
+            </div>
+
+
+            <span class="hidden sm:block
+                         w-px h-5
+                         bg-[#D9C8A9]">
+            </span>
+
+
+            <div class="flex items-center gap-3">
+
+                <span class="w-2 h-2
+                             rounded-full
+                             bg-[#00687A]">
+                </span>
+
+                <span>
+                    Un accompagnement de A à Z
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    {# =====================================================
+       FORME BLEUE BASSE
+       Crée une transition visuelle avant le footer
+    ====================================================== #}
+
+    <div class="pointer-events-none
+                absolute
+                -bottom-20
+                -left-[5%]
+                w-[55%]
+                h-28
+                rounded-[50%]
+                bg-[#00687A]/10
+                rotate-2">
+    </div>
+
+    <div class="pointer-events-none
+                absolute
+                -bottom-24
+                right-[-5%]
+                w-[55%]
+                h-32
+                rounded-[50%]
+                bg-[#00687A]/15
+                -rotate-2">
+    </div>
+
+</section>
+ 
 
 </div>
 

@@ -182,7 +182,7 @@
                     shadow-lg">
 
             <img
-                src="{{ asset('images/nath.png') }}"
+                src="{{ asset('images/nath.webp') }}"
                 alt="Nathalie, fondatrice de Tempo agence web"
                 class="block
                        w-full h-auto
@@ -1390,6 +1390,150 @@
         </div>
 
     </section>
+
+{# =========================================================
+   BANDEAU — OFFRE DE LANCEMENT
+========================================================= #}
+
+<section class="bg-cream px-6 sm:px-10 py-6">
+
+    <div class="relative
+                max-w-7xl mx-auto
+                overflow-hidden
+                rounded-[1.5rem]
+                bg-[#00687A]
+                text-white">
+
+        {# Décoration discrète #}
+        <div class="pointer-events-none
+                    absolute
+                    -right-12 -top-20
+                    w-48 h-48
+                    rounded-full
+                    border
+                    border-white/10">
+        </div>
+
+        <div class="pointer-events-none
+                    absolute
+                    right-24 -bottom-16
+                    w-32 h-32
+                    rounded-full
+                    bg-white/[0.04]">
+        </div>
+
+
+        <div class="relative
+                    flex flex-col
+                    lg:flex-row
+                    lg:items-center
+                    lg:justify-between
+                    gap-6
+                    px-6 sm:px-8 lg:px-10
+                    py-6 lg:py-7">
+
+
+            {# GAUCHE #}
+            <div class="flex flex-col
+                        sm:flex-row
+                        sm:items-center
+                        gap-5 sm:gap-7">
+
+                <div class="shrink-0">
+
+                    <span class="inline-flex
+                                 items-center
+                                 rounded-full
+                                 bg-terracotta
+                                 px-4 py-2
+                                 text-[10px]
+                                 font-semibold
+                                 uppercase
+                                 tracking-[0.18em]
+                                 text-white">
+
+                        Offre de lancement
+
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <p class="font-display
+                              text-xl sm:text-2xl
+                              leading-tight">
+
+                        <span class="text-[#F0C7B3]">
+                            −20 %
+                        </span>
+
+                        sur votre projet web
+
+                        <span class="hidden sm:inline text-white/30 mx-2">
+                            ·
+                        </span>
+
+                        <span class="block sm:inline">
+                            paiement en 3 fois
+                        </span>
+
+                    </p>
+
+
+                    <p class="mt-1.5
+                              text-xs sm:text-sm
+                              text-white/60">
+
+                        Pour tout devis signé avant le
+                        <strong class="font-medium text-white/90">
+                            31 octobre 2026
+                        </strong>
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            {# LIEN #}
+            <a href="{{ path('app_tarifs') }}"
+               class="group
+                      shrink-0
+                      inline-flex
+                      items-center
+                      justify-center
+                      gap-3
+                      rounded-full
+                      bg-[#FBF8F2]
+                      px-5 py-3
+                      text-sm
+                      font-semibold
+                      text-[#00687A]
+                      transition-all
+                      duration-300
+                      hover:bg-white
+                      hover:-translate-y-0.5">
+
+                Découvrir l'offre
+
+                <span class="transition-transform
+                             duration-300
+                             group-hover:translate-x-1"
+                      aria-hidden="true">
+                    →
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
 
 
 {# =========================================================

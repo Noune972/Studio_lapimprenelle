@@ -10,6 +10,8 @@ use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\RateLimiter\RateLimiterFactory;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
+use Symfony\Component\Mime\Part\DataPart;
 
 class ContactController extends AbstractController
 {
@@ -96,17 +98,43 @@ class ContactController extends AbstractController
             /*
              * 5. Envoi
              */
+
+             
+    
             $mailer->send($email);
 
 
-            /*
-             * 6. Confirmation
-             */
-            $this->addFlash(
-                'success',
-                'Votre message a bien été envoyé, merci !'
-            );
 
+            /*
+
+            /*
+ * 6. Confirmation automatique au client
+ */
+$confirmationEmail = (new TemplatedEmail())
+    ->from('contact@tempo-agenceweb.com')
+    ->to($data['email'])
+    ->replyTo('contact@tempo-agenceweb.com')
+    ->subject('Votre message est bien arrivé chez Tempo')
+    ->htmlTemplate('emails/contact_confirmation.html.twig')
+    ->context([
+        'nom' => $data['nom'],
+    ]);
+
+/*
+ * Logo intégré directement dans l'e-mail
+ */
+$logoPath = $this->getParameter('kernel.project_dir')
+    . '/public/images/tempo3.png';
+
+$confirmationEmail->addPart(
+    (new DataPart(
+        fopen($logoPath, 'r'),
+        'tempo-logo',
+        'image/png'
+    ))->asInline()
+);
+
+$mailer->send($confirmationEmail);
 
             /*
              * PRG : Post / Redirect / Get

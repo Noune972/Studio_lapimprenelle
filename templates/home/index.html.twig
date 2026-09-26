@@ -201,11 +201,159 @@
                 overflow-visible
                 group">
 
-        {# IMAGE #}
-        <div class="rounded-[2rem]
-                    overflow-hidden
-                    shadow-lg">
+                {# =====================================================
+   FRISE ORGANIQUE STUDIO TEMPO
+===================================================== #}
 
+<div class="absolute
+            -right-16 sm:-right-24 lg:-right-40
+            -top-12
+            w-[65%] sm:w-[70%]
+            h-[125%]
+            pointer-events-none
+            z-0
+            overflow-visible"
+     aria-hidden="true">
+
+     {# Branche fine organique #}
+<svg
+    class="absolute
+           -right-8
+           top-[8%]
+           w-[75%]
+           h-[85%]
+           overflow-visible"
+    viewBox="0 0 220 520"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true">
+
+    {# Tige principale #}
+    <path
+        d="M70 500
+           C95 430 55 380 105 315
+           C150 255 95 205 135 145
+           C160 105 160 55 145 10"
+        stroke="#00687A"
+        stroke-width="2"
+        stroke-linecap="round"
+        opacity=".45"
+    />
+
+    {# Petite branche 1 #}
+    <path
+        d="M100 330 C135 315 160 285 175 250"
+        stroke="#00687A"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        opacity=".4"
+    />
+
+    {# Petite branche 2 #}
+    <path
+        d="M120 190 C90 170 72 145 65 115"
+        stroke="#C9653B"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        opacity=".55"
+    />
+
+    {# Feuilles bleu pétrole #}
+    <ellipse cx="139" cy="292" rx="8" ry="22"
+             transform="rotate(45 139 292)"
+             fill="#00687A" opacity=".55"/>
+
+    <ellipse cx="166" cy="264" rx="7" ry="19"
+             transform="rotate(38 166 264)"
+             fill="#00687A" opacity=".4"/>
+
+    <ellipse cx="90" cy="350" rx="8" ry="21"
+             transform="rotate(-38 90 350)"
+             fill="#00687A" opacity=".45"/>
+
+    {# Feuilles terracotta #}
+    <ellipse cx="99" cy="166" rx="7" ry="20"
+             transform="rotate(-42 99 166)"
+             fill="#C9653B" opacity=".65"/>
+
+    <ellipse cx="70" cy="125" rx="6" ry="17"
+             transform="rotate(-35 70 125)"
+             fill="#C9653B" opacity=".45"/>
+
+    <ellipse cx="149" cy="85" rx="7" ry="21"
+             transform="rotate(20 149 85)"
+             fill="#C9653B" opacity=".5"/>
+
+    {# Petits points Tempo #}
+    <circle cx="180" cy="215" r="4" fill="#C9653B" opacity=".7"/>
+    <circle cx="190" cy="200" r="2.5" fill="#00687A" opacity=".5"/>
+    <circle cx="181" cy="185" r="3" fill="#C9653B" opacity=".45"/>
+</svg>
+
+    {# Grand cercle bleu doux #}
+    <div class="absolute
+                top-[18%] right-0
+                w-28 h-28
+                sm:w-40 sm:h-40
+                rounded-full
+                bg-[#00687A]/15">
+    </div>
+
+    {# Forme terracotta #}
+    <div class="absolute
+                top-[2%] right-[18%]
+                w-16 h-32
+                sm:w-24 sm:h-44
+                rounded-[100%_0_100%_0]
+                bg-terracotta/70
+                rotate-[25deg]">
+    </div>
+
+    {# Forme bleu pétrole #}
+    <div class="absolute
+                top-[38%] -right-[8%]
+                w-20 h-40
+                sm:w-28 sm:h-52
+                rounded-[100%_0_100%_0]
+                bg-[#00687A]/65
+                rotate-[18deg]">
+    </div>
+
+    {# Forme crème #}
+    <div class="absolute
+                bottom-[8%] right-[20%]
+                w-20 h-20
+                sm:w-28 sm:h-28
+                rounded-full
+                bg-[#EFE7DA]">
+    </div>
+
+    {# Petite feuille terracotta #}
+    <div class="absolute
+                bottom-[3%] right-[5%]
+                w-10 h-24
+                sm:w-14 sm:h-32
+                rounded-[100%_0_100%_0]
+                bg-terracotta/55
+                rotate-[35deg]">
+    </div>
+
+    {# Petits points #}
+    <div class="absolute top-[32%] right-[8%]
+                flex flex-col gap-2">
+        <span class="w-2 h-2 rounded-full bg-terracotta/70"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-[#00687A]/50"></span>
+        <span class="w-2 h-2 rounded-full bg-terracotta/40"></span>
+    </div>
+
+</div>
+
+        {# IMAGE #}
+        <div class="relative
+            z-10
+            rounded-[2rem]
+            overflow-hidden
+            shadow-lg">
             <img
                 src="{{ asset('images/nath.webp') }}"
                 alt="Nathalie, fondatrice de Tempo agence web"

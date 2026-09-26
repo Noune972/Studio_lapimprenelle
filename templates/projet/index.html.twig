@@ -1,64 +1,160 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Réalisations web WordPress & Symfony — Tempo {% endblock %}
+{% block title %} Réalisations web WordPress & Symfony — Studio Tempo {% endblock %}
 
 {% block meta_description %}
-    Découvrez les sites WordPress et applications Symfony réalisés par Tempo pour accompagner les entreprises dans leurs projets numériques.
+    Découvrez les sites WordPress et applications Symfony réalisés par Studio Tempo pour accompagner les entreprises dans leurs projets numériques.
 {% endblock %}
 
 {% block body %}
 
-<div class="bg-cream text-ink overflow-hidden">
+<style>
+    /* Réalisations — variation éditoriale du langage Studio Tempo */
+    .portfolio-tick {
+        display: inline-block;
+        width: 3px;
+        height: 18px;
+        border-radius: 999px;
+        background: currentColor;
+        transform: rotate(18deg);
+    }
+    .portfolio-track {
+        position: relative;
+        height: 1px;
+        background: rgba(0,104,122,.16);
+    }
+    .portfolio-track::before,
+    .portfolio-track::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: #C9653B;
+        transform: translateY(-50%);
+    }
+    .portfolio-track::before { left: 14%; }
+    .portfolio-track::after { right: 24%; }
+
+    .project-card:nth-child(4n+1) .project-stage { background: #E8D6C4; }
+    .project-card:nth-child(4n+2) .project-stage { background: #DCE8E5; }
+    .project-card:nth-child(4n+3) .project-stage { background: #EAD8D0; }
+    .project-card:nth-child(4n)   .project-stage { background: #E7E0C9; }
+
+    @media (min-width: 768px) {
+        .project-card:nth-child(even) { transform: translateY(4.5rem); }
+        .project-grid { margin-bottom: 4.5rem; }
+    }
+
+    .project-index {
+        font-variant-numeric: tabular-nums;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+    }
+
+    .project-stage::after {
+        content: "";
+        position: absolute;
+        width: 9rem;
+        height: 9rem;
+        right: -4.25rem;
+        bottom: -4.5rem;
+        border: 1px solid rgba(0,104,122,.16);
+        transform: rotate(28deg);
+        border-radius: 2.5rem;
+        pointer-events: none;
+        transition: transform .6s ease;
+    }
+    .project-card:hover .project-stage::after {
+        transform: rotate(38deg) translate(-.3rem,-.3rem);
+    }
+
+    .editorial-mark {
+        position: absolute;
+        pointer-events: none;
+        opacity: .18;
+    }
+    .editorial-mark span {
+        display: block;
+        height: 1px;
+        background: currentColor;
+        transform-origin: left center;
+    }
+    .editorial-mark span:nth-child(1) { width: 5rem; transform: rotate(-8deg); }
+    .editorial-mark span:nth-child(2) { width: 8rem; margin-top: 1rem; transform: rotate(5deg); }
+    .editorial-mark span:nth-child(3) { width: 3rem; margin-top: 1rem; transform: rotate(-14deg); }
+
+    @media (prefers-reduced-motion: reduce) {
+        .project-card:nth-child(even) { transform: none; }
+        .project-stage::after { transition: none; }
+    }
+</style>
+
+
+<div class="bg-[#F7F3EC] text-ink overflow-hidden">
 
 
     {# =========================================================
-       HERO
+       HERO — RYTHME ÉDITORIAL
     ========================================================= #}
 
-    <section class="max-w-6xl mx-auto
+    <section class="relative max-w-6xl mx-auto
                     px-6 sm:px-8 lg:px-12 xl:px-16
                     pt-16 sm:pt-20 lg:pt-28
-                    pb-12 lg:pb-16">
+                    pb-14 lg:pb-20">
 
-        <div class="max-w-4xl reveal">
+        <div class="grid lg:grid-cols-[1.15fr_.85fr] gap-10 lg:gap-20 items-end">
 
-            <div class="flex items-center gap-4 mb-7">
-                <span class="w-10 h-px bg-terracotta"></span>
+            <div class="relative reveal">
 
-                <span class="text-xs
-                             tracking-[0.22em]
-                             uppercase
-                             font-semibold
-                             text-terracotta">
-                    Réalisations
-                </span>
+                <div class="flex items-center gap-3 mb-7">
+                    <span class="portfolio-tick text-terracotta"></span>
+                    <span class="text-xs tracking-[0.22em] uppercase font-semibold text-terracotta">
+                        Réalisations
+                    </span>
+                </div>
+
+                <h1 class="font-display
+                           text-5xl sm:text-6xl lg:text-[4.2rem]
+                           leading-[0.96]
+                           tracking-[-0.045em]">
+                    Des projets pensés
+                    <span class="block text-[#00687A]">
+                        pour convertir.
+                    </span>
+                </h1>
+
+                <div class="portfolio-track mt-9 max-w-md" aria-hidden="true"></div>
+
             </div>
 
-            <h1 class="font-display
-                       text-5xl sm:text-6xl lg:text-[3.5rem]
-                       leading-[0.98]
-                       tracking-[-0.035em]">
+            <div class="relative reveal">
+                <div class="absolute -left-5 sm:-left-8 top-1
+                            w-[3px] h-16 rounded-full
+                            bg-terracotta/70 rotate-[12deg]"
+                     aria-hidden="true"></div>
 
-                Des projets pensés
+                <p class="max-w-xl
+                          text-base sm:text-lg
+                          leading-8
+                          text-ink-soft">
+                    Sites vitrines, e-commerce et applications web :
+                    découvrez une sélection de projets conçus pour répondre
+                    à des objectifs concrets et offrir une expérience claire,
+                    élégante et efficace.
+                </p>
 
-                <span class="block text-terracotta">
-                    pour convertir.
-                </span>
-
-            </h1>
-
-            <p class="mt-7
-                      max-w-2xl
-                      text-base sm:text-lg
-                      leading-8
-                      text-ink-soft">
-
-                Sites vitrines, e-commerce et applications web :
-                découvrez une sélection de projets conçus pour répondre
-                à des objectifs concrets et offrir une expérience claire,
-                élégante et efficace.
-
-            </p>
+                <div class="mt-7 flex items-center gap-3 text-[10px]
+                            tracking-[0.18em] uppercase text-[#00687A]/55"
+                     aria-hidden="true">
+                    <span>01</span>
+                    <span class="w-8 h-px bg-current"></span>
+                    <span>02</span>
+                    <span class="w-14 h-px bg-current"></span>
+                    <span>03</span>
+                </div>
+            </div>
 
         </div>
 
@@ -77,18 +173,19 @@
 
             <span class="inline-flex
                          items-center
-                         rounded-full
+                         rounded-lg
                          bg-terracotta
                          text-white
                          text-sm font-medium
                          px-5 py-2.5">
-                Tous les projets
+                Quelques projets
             </span>
 
             <span class="inline-flex
                          items-center
-                         rounded-full
-                         bg-[#EEE7DC]
+                         rounded-lg
+                         border border-[#00687A]/15
+                         bg-[#00687A]/[0.045]
                          text-ink-soft
                          text-sm
                          px-5 py-2.5">
@@ -97,8 +194,9 @@
 
             <span class="inline-flex
                          items-center
-                         rounded-full
-                         bg-[#EEE7DC]
+                         rounded-lg
+                         border border-[#00687A]/15
+                         bg-[#00687A]/[0.045]
                          text-ink-soft
                          text-sm
                          px-5 py-2.5">
@@ -120,47 +218,43 @@
 
         {% if projets is not empty %}
 
-            <div class="grid
+            <div class="project-grid grid
                         md:grid-cols-2
-                        gap-x-8 lg:gap-x-10
+                        gap-x-8 lg:gap-x-12
                         gap-y-14 lg:gap-y-20">
 
                 {% for projet in projets %}
 
-                    <article class="group reveal">
+                    <article class="project-card group reveal">
 
 
                         {# =================================================
                            ZONE VISUELLE
                         ================================================= #}
 
-                        <div class="relative
-                                    rounded-[2rem]
+                        <div class="project-stage relative
+                                    rounded-[1.35rem]
                                     overflow-hidden
                                     px-5 sm:px-7 lg:px-8
                                     pt-8 sm:pt-10
                                     pb-5 sm:pb-6
-
-                                    {% if loop.index is odd %}
-                                        bg-[#E9E0D4]
-                                    {% else %}
-                                        bg-[#E1E7E4]
-                                    {% endif %}">
+                                    transition-transform duration-500">
 
 
                             {# NUMÉRO DU PROJET #}
 
-                            <span class="absolute
-                                         top-5 left-6
-                                         text-[10px]
-                                         tracking-[0.18em]
-                                         uppercase
-                                         font-semibold
-                                         text-ink/35">
-
-                                {{ '%02d'|format(loop.index) }}
-
-                            </span>
+                            <div class="absolute top-5 left-5 flex items-start gap-3 z-10">
+                                <span class="project-index
+                                             text-[10px]
+                                             tracking-[0.18em]
+                                             uppercase
+                                             font-semibold
+                                             text-[#00687A]/45">
+                                    {{ '%02d'|format(loop.index) }}
+                                </span>
+                                <span class="block w-[2px] h-8 bg-terracotta/65 rotate-[14deg]"
+                                      aria-hidden="true"></span>
+                            </div>
 
 
                             {# =================================================
@@ -593,9 +687,9 @@
 
                             {# LIGNE DÉCORATIVE #}
 
-                            <div class="mt-7
-                                        h-px
-                                        bg-[#D9C8A9]/50">
+                            <div class="mt-7 flex items-center gap-3" aria-hidden="true">
+                                <span class="h-px flex-1 bg-[#00687A]/15"></span>
+                                <span class="w-2 h-2 border border-terracotta/55 rotate-45"></span>
                             </div>
 
                         </div>
@@ -657,197 +751,148 @@
 
 
     {# =========================================================
-       PHILOSOPHIE
+       PHILOSOPHIE — PAUSE DANS LE RYTHME
     ========================================================= #}
 
     <section class="max-w-6xl mx-auto
                     px-6 sm:px-8 lg:px-12 xl:px-16
                     pb-24 lg:pb-28">
 
-        <div class="grid
-                    lg:grid-cols-[0.8fr_1.2fr]
-                    gap-8 lg:gap-20
-                    items-start
+        <div class="relative overflow-hidden
+                    rounded-[2rem]
+                    bg-[#E9D6CB]
+                    px-7 sm:px-10 lg:px-14
+                    py-10 sm:py-12 lg:py-14
                     reveal">
 
-            <div>
+            <div class="editorial-mark text-[#00687A] right-8 top-9 hidden sm:block"
+                 aria-hidden="true">
+                <span></span><span></span><span></span>
+            </div>
 
-                <div class="flex items-center gap-4">
+            <div class="grid
+                        lg:grid-cols-[0.72fr_1.28fr]
+                        gap-8 lg:gap-20
+                        items-start">
 
-                    <span class="w-10 h-px bg-terracotta"></span>
+                <div>
+                    <div class="flex items-center gap-3">
+                        <span class="portfolio-tick text-[#00687A]"></span>
+                        <span class="text-xs tracking-[0.22em] uppercase font-semibold text-[#00687A]">
+                            Ma vision
+                        </span>
+                    </div>
+                </div>
 
-                    <span class="text-xs
-                                 tracking-[0.22em]
-                                 uppercase
-                                 font-semibold
-                                 text-terracotta">
-                        Ma vision
-                    </span>
+                <div>
+                    <h2 class="font-display
+                               text-3xl sm:text-[2.5rem]
+                               leading-[1.15]">
+                        Pas seulement un joli site,
+                        <span class="text-[#00687A]">
+                            un véritable outil.
+                        </span>
+                    </h2>
 
+                    <p class="mt-6 max-w-2xl
+                              text-base sm:text-lg
+                              leading-8 text-ink-soft">
+                        Chaque projet est conçu autour de votre activité,
+                        de vos utilisateurs et de vos objectifs.
+                        Le design donne envie de rester, mais la structure,
+                        les performances et l'expérience doivent surtout
+                        permettre au site d'être réellement utile.
+                    </p>
                 </div>
 
             </div>
-
-
-            <div>
-
-                <h2 class="font-display
-                           text-3xl sm:text-[2.5rem]
-                           leading-[1.15]">
-
-                    Pas seulement un joli site,
-
-                    <span class="text-terracotta">
-                        un véritable outil.
-                    </span>
-
-                </h2>
-
-                <p class="mt-6
-                          max-w-2xl
-                          text-base sm:text-lg
-                          leading-8
-                          text-ink-soft">
-
-                    Chaque projet est conçu autour de votre activité,
-                    de vos utilisateurs et de vos objectifs.
-                    Le design donne envie de rester, mais la structure,
-                    les performances et l'expérience doivent surtout
-                    permettre au site d'être réellement utile.
-
-                </p>
-
-            </div>
-
         </div>
 
     </section>
 
 
     {# =========================================================
-       CTA FINAL
+       CTA FINAL — TERRACOTTA / ÉDITORIAL
     ========================================================= #}
 
     <section class="max-w-6xl mx-auto
                     px-6 sm:px-8 lg:px-12 xl:px-16
                     pb-24 lg:pb-32">
 
-        <div class="relative
-                    overflow-hidden
+        <div class="relative overflow-hidden
                     rounded-[2.5rem]
-                    bg-[#00687A]
+                    bg-[#C9653B]
                     text-white
                     px-7 sm:px-10 lg:px-16
                     py-12 sm:py-14 lg:py-16
                     reveal">
 
-
-            {# DÉCOR #}
-
-            <div class="absolute
-                        -right-24
-                        -top-24
-                        w-72 h-72
-                        rounded-full
-                        border border-white/10">
+            <div class="absolute right-8 top-8 hidden sm:flex
+                        items-end gap-2 opacity-20"
+                 aria-hidden="true">
+                <span class="w-px h-7 bg-white rotate-[10deg]"></span>
+                <span class="w-px h-12 bg-white -rotate-[7deg]"></span>
+                <span class="w-px h-5 bg-white rotate-[15deg]"></span>
+                <span class="w-px h-16 bg-white -rotate-[4deg]"></span>
             </div>
 
-            <div class="absolute
-                        -right-8
-                        -bottom-40
-                        w-80 h-80
-                        rounded-full
-                        border border-white/[0.07]">
-            </div>
-
-
-            <div class="relative
-                        z-10
-                        flex
-                        flex-col lg:flex-row
-                        lg:items-end
-                        lg:justify-between
+            <div class="relative z-10
+                        flex flex-col lg:flex-row
+                        lg:items-end lg:justify-between
                         gap-10">
 
                 <div class="max-w-2xl">
-
-                    <span class="text-xs
-                                 tracking-[0.22em]
-                                 uppercase
-                                 font-semibold
-                                 text-white/60">
+                    <span class="text-xs tracking-[0.22em] uppercase font-semibold text-white/65">
                         Votre projet
                     </span>
 
                     <h2 class="mt-5
                                font-display
-                               text-4xl sm:text-5xl
-                               lg:text-[3.5rem]
+                               text-4xl sm:text-5xl lg:text-[3.5rem]
                                leading-[1.05]">
-
                         Et si le prochain
-
-                        <span class="block text-[#F1A579]">
+                        <span class="block text-[#F7F3EC]">
                             était le vôtre ?
                         </span>
-
                     </h2>
 
-                    <p class="mt-6
-                              max-w-xl
+                    <p class="mt-6 max-w-xl
                               text-base sm:text-lg
-                              leading-8
-                              text-white/70">
-
+                              leading-8 text-white/75">
                         Parlons de votre activité, de vos besoins
                         et de ce que votre futur site doit réellement
                         accomplir.
-
                     </p>
-
                 </div>
 
-
-                <a
-                    href="{{ path('app_contact') }}"
-                    class="inline-flex
-                           self-start lg:self-auto
-                           items-center
-                           gap-3
-                           rounded-full
-                           bg-white
-                           text-[#00687A]
-                           px-6 py-3.5
-                           text-sm
-                           font-semibold
-                           hover:-translate-y-0.5
-                           hover:shadow-lg
-                           transition-all
-                           duration-300"
-                >
-
+                <a href="{{ path('app_contact') }}"
+                   class="inline-flex
+                          self-start lg:self-auto
+                          items-center gap-3
+                          rounded-full
+                          bg-[#F7F3EC]
+                          text-[#00687A]
+                          px-6 py-3.5
+                          text-sm font-semibold
+                          hover:-translate-y-0.5
+                          hover:shadow-lg
+                          transition-all duration-300">
                     Discutons de votre projet
 
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.7"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="w-4 h-4"
-                        aria-hidden="true"
-                    >
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.7"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         class="w-4 h-4"
+                         aria-hidden="true">
                         <path d="M5 12h14"/>
                         <path d="M13 6l6 6-6 6"/>
                     </svg>
-
                 </a>
-
             </div>
-
         </div>
-
     </section>
 
 

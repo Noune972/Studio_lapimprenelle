@@ -8,6 +8,73 @@
 
 {% block body %}
 
+<style>
+    /* Tempo — langage graphique "rythme" */
+    .tempo-rhythm {
+        display: inline-flex;
+        align-items: center;
+        gap: .32rem;
+        color: #C9653B;
+    }
+    .tempo-rhythm > span {
+        display: block;
+        width: .42rem;
+        border-radius: 999px;
+        background: currentColor;
+        transition: height .35s ease, transform .35s ease, opacity .35s ease;
+    }
+    .tempo-rhythm > span:nth-child(1) { height: .8rem; }
+    .tempo-rhythm > span:nth-child(2) { height: 1.55rem; }
+    .tempo-rhythm > span:nth-child(3) { height: 1.05rem; }
+    .tempo-rhythm > span:nth-child(4) { height: 2rem; }
+
+    .tempo-card:hover .tempo-rhythm > span:nth-child(1) { height: 1.45rem; }
+    .tempo-card:hover .tempo-rhythm > span:nth-child(2) { height: .9rem; }
+    .tempo-card:hover .tempo-rhythm > span:nth-child(3) { height: 1.8rem; }
+    .tempo-card:hover .tempo-rhythm > span:nth-child(4) { height: 1.2rem; }
+
+    .tempo-sequence {
+        display: flex;
+        align-items: center;
+        gap: .7rem;
+        color: rgba(201, 101, 59, .38);
+    }
+    .tempo-sequence .dot {
+        width: .42rem;
+        height: .42rem;
+        flex: 0 0 auto;
+        border-radius: 999px;
+        background: currentColor;
+    }
+    .tempo-sequence .beat {
+        height: 1px;
+        background: currentColor;
+    }
+    .tempo-sequence .beat-a { width: 2rem; }
+    .tempo-sequence .beat-b { width: 4.5rem; }
+    .tempo-sequence .beat-c { width: 2.8rem; }
+
+    .tempo-fragment {
+        position: absolute;
+        pointer-events: none;
+        opacity: .07;
+    }
+    .tempo-fragment span {
+        position: absolute;
+        display: block;
+        border-radius: 999px;
+        background: currentColor;
+    }
+    .tempo-fragment .top { width: 10rem; height: 2rem; top: 0; right: 0; }
+    .tempo-fragment .mid { width: 7rem; height: 1.7rem; top: 2.65rem; right: 2.2rem; }
+    .tempo-fragment .stem { width: 1.7rem; height: 7.5rem; top: 2.65rem; right: 2.2rem; }
+
+    @media (prefers-reduced-motion: reduce) {
+        .tempo-rhythm > span { transition: none; }
+    }
+</style>
+
+
 <main class="bg-cream text-ink overflow-hidden">
 
     {# =========================================================
@@ -26,15 +93,19 @@
                     sm:px-10 sm:py-14
                     lg:px-14 lg:py-16">
 
-            {# Décoration #}
-            <div class="absolute -top-24 -right-20
-                        w-64 h-64 rounded-full
-                        bg-[#00687A]/5">
+            {# Décoration Tempo : fragment du T + cadence #}
+            <div class="tempo-fragment text-[#00687A] w-44 h-44 -top-3 -right-3"
+                 aria-hidden="true">
+                <span class="top"></span>
+                <span class="mid"></span>
+                <span class="stem"></span>
             </div>
 
-            <div class="absolute -bottom-16 right-32
-                        w-32 h-32 rounded-full
-                        border border-terracotta/15">
+            <div class="absolute right-10 bottom-8 hidden sm:block"
+                 aria-hidden="true">
+                <div class="tempo-rhythm text-terracotta/35">
+                    <span></span><span></span><span></span><span></span>
+                </div>
             </div>
 
             <div class="relative max-w-4xl reveal">
@@ -71,6 +142,14 @@
                     performantes et pensées pour durer.
 
                 </p>
+
+                <div class="mt-8 flex items-center gap-4 text-terracotta/60"
+                     aria-hidden="true">
+                    <div class="tempo-rhythm">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                    <span class="h-px w-16 bg-current"></span>
+                </div>
 
             </div>
 
@@ -157,7 +236,7 @@
            WORDPRESS
         ===================================================== #}
 
-        <article class="grid
+        <article class="relative grid
                         lg:grid-cols-[50px_0.7fr_1.3fr]
                         gap-5 lg:gap-9
                         items-start
@@ -166,7 +245,14 @@
                         rounded-2xl
                         px-6 sm:px-7 lg:px-8
                         py-6 lg:py-7
-                        reveal">
+                        tempo-card reveal">
+
+            <div class="absolute right-7 top-6 hidden sm:block"
+                 aria-hidden="true">
+                <div class="tempo-rhythm text-terracotta/25">
+                    <span></span><span></span><span></span><span></span>
+                </div>
+            </div>
 
             {# Numéro #}
 
@@ -262,7 +348,7 @@
            SYMFONY
         ===================================================== #}
 
-        <article class="grid
+        <article class="relative grid
                         lg:grid-cols-[50px_0.7fr_1.3fr]
                         gap-5 lg:gap-9
                         items-start
@@ -271,7 +357,14 @@
                         rounded-2xl
                         px-6 sm:px-7 lg:px-8
                         py-6 lg:py-7
-                        reveal">
+                        tempo-card reveal">
+
+            <div class="absolute right-7 top-6 hidden sm:block"
+                 aria-hidden="true">
+                <div class="tempo-rhythm text-terracotta/25">
+                    <span></span><span></span><span></span><span></span>
+                </div>
+            </div>
 
             {# Numéro #}
 
@@ -367,7 +460,7 @@
            SEO
         ===================================================== #}
 
-        <article class="grid
+        <article class="relative grid
                         lg:grid-cols-[50px_0.7fr_1.3fr]
                         gap-5 lg:gap-9
                         items-start
@@ -376,7 +469,14 @@
                         rounded-2xl
                         px-6 sm:px-7 lg:px-8
                         py-6 lg:py-7
-                        reveal">
+                        tempo-card reveal">
+
+            <div class="absolute right-7 top-6 hidden sm:block"
+                 aria-hidden="true">
+                <div class="tempo-rhythm text-terracotta/25">
+                    <span></span><span></span><span></span><span></span>
+                </div>
+            </div>
 
             {# Numéro #}
 
@@ -464,7 +564,16 @@
 
 
 
-    {# =========================================================
+    <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 pb-14"
+     aria-hidden="true">
+    <div class="tempo-sequence">
+        <span class="dot"></span><span class="beat beat-a"></span>
+        <span class="dot"></span><span class="beat beat-b"></span>
+        <span class="dot"></span><span class="beat beat-c"></span>
+    </div>
+</div>
+
+{# =========================================================
    TYPES DE PROJETS / OFFRES
 ========================================================= #}
 
@@ -481,20 +590,19 @@
                 py-14 lg:py-16">
 
 
-        {# Décoration #}
-
-        <div class="absolute
-                    -right-24 -top-24
-                    w-72 h-72
-                    rounded-full
-                    border border-white/10">
+        {# Décoration Tempo #}
+        <div class="tempo-fragment text-white w-48 h-48 -right-6 -top-3"
+             aria-hidden="true">
+            <span class="top"></span>
+            <span class="mid"></span>
+            <span class="stem"></span>
         </div>
 
-        <div class="absolute
-                    right-20 -bottom-20
-                    w-40 h-40
-                    rounded-full
-                    bg-white/[0.03]">
+        <div class="absolute right-10 bottom-10 hidden md:block"
+             aria-hidden="true">
+            <div class="tempo-rhythm text-[#F1A579]/30">
+                <span></span><span></span><span></span><span></span>
+            </div>
         </div>
 
 
@@ -561,6 +669,7 @@
                             lg:grid-cols-[0.7fr_1.3fr]
                             gap-8 lg:gap-14
                             rounded-[2rem]
+                            tempo-card
                             bg-white/[0.07]
                             border border-white/10
                             p-7 sm:p-8 lg:p-10
@@ -725,6 +834,7 @@
                             lg:grid-cols-[0.7fr_1.3fr]
                             gap-8 lg:gap-14
                             rounded-[2rem]
+                            tempo-card
                             bg-white/[0.07]
                             border border-white/10
                             p-7 sm:p-8 lg:p-10
@@ -883,6 +993,7 @@
                             lg:grid-cols-[0.7fr_1.3fr]
                             gap-8 lg:gap-14
                             rounded-[2rem]
+                            tempo-card
                             bg-white/[0.07]
                             border border-white/10
                             p-7 sm:p-8 lg:p-10
@@ -1043,6 +1154,7 @@
                             lg:grid-cols-[0.7fr_1.3fr]
                             gap-8 lg:gap-14
                             rounded-[2rem]
+                            tempo-card
                             bg-[#F7F1E7]
                             text-ink
                             border border-white/10
@@ -1207,6 +1319,7 @@
                             lg:grid-cols-[0.7fr_1.3fr]
                             gap-8 lg:gap-14
                             rounded-[2rem]
+                            tempo-card
                             bg-white/[0.07]
                             border border-white/10
                             p-7 sm:p-8 lg:p-10
@@ -1461,15 +1574,19 @@
 
                 {% for step in steps %}
 
-                    <article class="rounded-2xl
+                    <article class="tempo-card relative overflow-hidden rounded-2xl
                                     border border-[#D9C8A9]/50
                                     bg-white/50
                                     p-6 lg:p-7">
 
-                        <span class="font-display
-                                     text-xl text-terracotta">
-                            {{ step.number }}
-                        </span>
+                        <div class="flex items-start justify-between gap-5">
+                            <span class="font-display text-xl text-terracotta">
+                                {{ step.number }}
+                            </span>
+                            <div class="tempo-rhythm text-[#00687A]/25" aria-hidden="true">
+                                <span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
 
                         <h3 class="font-display
                                    text-xl sm:text-2xl
@@ -1533,6 +1650,12 @@
 
                 </p>
 
+                <div class="tempo-sequence mt-7" aria-hidden="true">
+                    <span class="dot"></span><span class="beat beat-a"></span>
+                    <span class="dot"></span><span class="beat beat-b"></span>
+                    <span class="dot"></span>
+                </div>
+
             </div>
 
         </div>
@@ -1555,11 +1678,11 @@
                     sm:px-10
                     lg:px-14 lg:py-14">
 
-            <div class="absolute
-                        -top-24 -right-20
-                        w-60 h-60
-                        rounded-full
-                        border border-terracotta/10">
+            <div class="tempo-fragment text-terracotta w-44 h-44 -right-5 top-3"
+                 aria-hidden="true">
+                <span class="top"></span>
+                <span class="mid"></span>
+                <span class="stem"></span>
             </div>
 
 

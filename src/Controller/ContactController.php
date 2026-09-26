@@ -72,8 +72,8 @@ class ContactController extends AbstractController
              * 4. Création de l'email
              */
             $email = (new Email())
-                ->from('contact@tempo-agenceweb.com')
-                ->to('contact@tempo-agenceweb.com')
+                ->from('contact@lestudiotempo.fr')
+                ->to('contact@lestudiotempo.fr')
                 ->replyTo($data['email'])
                 ->subject(
                     'Nouveau message de contact — ' . $data['nom']
@@ -111,9 +111,9 @@ class ContactController extends AbstractController
  * 6. Confirmation automatique au client
  */
 $confirmationEmail = (new TemplatedEmail())
-    ->from('contact@tempo-agenceweb.com')
+    ->from('contact@lestudiotempo.fr')
     ->to($data['email'])
-    ->replyTo('contact@tempo-agenceweb.com')
+    ->replyTo('contact@lestudiotempo.fr')
     ->subject('Votre message est bien arrivé chez Tempo')
     ->htmlTemplate('emails/contact_confirmation.html.twig')
     ->context([
@@ -124,7 +124,7 @@ $confirmationEmail = (new TemplatedEmail())
  * Logo intégré directement dans l'e-mail
  */
 $logoPath = $this->getParameter('kernel.project_dir')
-    . '/public/images/tempo3.png';
+    . '/public/images/tempo6.png';
 
 $confirmationEmail->addPart(
     (new DataPart(

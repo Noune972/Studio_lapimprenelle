@@ -1,449 +1,771 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Contact — Tempo, agence web à Toulouse {% endblock %}
+{% block title %}
+    Contact — Studio Tempo, agence web à Toulouse
+{% endblock %}
 
 {% block meta_description %}
-Contactez Tempo pour échanger sur votre projet WordPress, Symfony ou SEO.
+    Contactez Studio Tempo pour échanger sur votre projet WordPress, Symfony, e-commerce, application web ou SEO.
 {% endblock %}
+
 
 {% block body %}
 
-<section class="bg-cream min-h-screen">
+<section class="relative overflow-hidden bg-[#F7F3EC] text-ink">
 
-    <div class="max-w-6xl mx-auto
-                px-6 py-16
-                grid lg:grid-cols-2
-                gap-0
-                rounded-2xl
-                overflow-hidden
-                shadow-lg">
+    {# ============================================================
+       DÉCOR DE FOND — volontairement très discret
+    ============================================================ #}
 
-        {# =====================================================
-           COLONNE PHOTO
-        ===================================================== #}
+    <div class="pointer-events-none absolute inset-0 overflow-hidden"
+         aria-hidden="true">
 
-        <div class="hidden lg:block relative">
-
-            <img
-                src="{{ asset('images/contact.png') }}"
-                alt="Tempo, agence web"
-                class="w-full h-full object-cover"
-                onerror="this.parentElement.style.background='linear-gradient(135deg,#D9C8A9,#B9A480)'"
-            >
-
+        {# Forme terracotta gauche #}
+        <div class="absolute
+                    -left-24 top-16
+                    w-48 h-72
+                    rounded-[50%]
+                    bg-[#C9653B]/12
+                    rotate-[18deg]">
         </div>
 
+        {# Forme bleu Tempo droite #}
+        <div class="absolute
+                    -right-28 top-36
+                    w-64 h-64
+                    rounded-full
+                    bg-[#00687A]/8">
+        </div>
 
-        {# =====================================================
-           COLONNE FORMULAIRE
-        ===================================================== #}
+        {# Ligne fine #}
+        <div class="absolute
+                    right-[7%] top-20
+                    hidden lg:block
+                    w-48 h-24
+                    border-t border-[#C9653B]/35
+                    rounded-[50%]
+                    rotate-[-12deg]">
+        </div>
 
-        <div class="bg-[#F7F1E7] p-10 lg:p-14">
+    </div>
 
-            <div class="text-xs
-                        tracking-widest
-                        text-terracotta
-                        font-medium
-                        mb-3">
-                CONTACT
+
+    {# ============================================================
+       CONTENU
+    ============================================================ #}
+
+    <div class="relative
+                max-w-7xl mx-auto
+                px-6 sm:px-8 lg:px-12
+                py-16 sm:py-20 lg:py-24">
+
+
+        <div class="grid
+                    lg:grid-cols-[0.88fr_1.12fr]
+                    gap-12 lg:gap-16 xl:gap-20
+                    items-center">
+
+
+            {# ====================================================
+               COLONNE GAUCHE
+            ==================================================== #}
+
+            <div>
+
+
+                {# Label #}
+                <div class="flex items-center gap-4 mb-7">
+
+                    <span class="w-8 h-[2px] bg-[#C9653B]"></span>
+
+                    <span class="text-[11px]
+                                 uppercase
+                                 tracking-[0.24em]
+                                 font-semibold
+                                 text-[#C9653B]">
+                        Contact
+                    </span>
+
+                </div>
+
+
+                {# Titre #}
+                <h1 class="font-display
+                           text-5xl sm:text-6xl lg:text-[4.4rem]
+                           leading-[0.98]
+                           tracking-[-0.04em]
+                           max-w-xl">
+
+                    Discutons de
+
+                    <span class="block text-[#C9653B]">
+                        votre projet.
+                    </span>
+
+                </h1>
+
+
+                {# Introduction #}
+                <p class="mt-7
+                          max-w-lg
+                          text-base sm:text-lg
+                          leading-8
+                          text-ink-soft">
+
+                    Un site web, une refonte, un projet e-commerce
+                    ou une application sur mesure&nbsp;?
+
+                    <span class="block">
+                        Je vous réponds sous 24h ouvrées pour échanger
+                        sur vos besoins.
+                    </span>
+
+                </p>
+
+
+
+                {# =================================================
+                   POINTS DE RÉASSURANCE
+                ================================================= #}
+
+                <div class="mt-10
+                            space-y-6
+                            max-w-md">
+
+
+                    {# Échange personnalisé #}
+                    <div class="flex items-start gap-4">
+
+                        <div class="flex
+                                    shrink-0
+                                    items-center justify-center
+                                    w-11 h-11
+                                    rounded-full
+                                    bg-[#C9653B]/10
+                                    text-[#C9653B]">
+
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="1.6"
+                                 class="w-5 h-5">
+
+                                <path stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a10.6 10.6 0 0 1-4.5-.98L3 20l1.3-3.4A7.2 7.2 0 0 1 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8Z"/>
+                            </svg>
+
+                        </div>
+
+                        <div>
+                            <h2 class="font-display
+                                       text-lg
+                                       text-[#00687A]">
+                                Échange personnalisé
+                            </h2>
+
+                            <p class="mt-1
+                                      text-sm
+                                      leading-6
+                                      text-ink-soft">
+                                Une réponse adaptée à vos besoins.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+
+                    {# Sous 24h #}
+                    <div class="flex items-start gap-4">
+
+                        <div class="flex
+                                    shrink-0
+                                    items-center justify-center
+                                    w-11 h-11
+                                    rounded-full
+                                    bg-[#C9653B]/10
+                                    text-[#C9653B]">
+
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="1.6"
+                                 class="w-5 h-5">
+
+                                <circle cx="12"
+                                        cy="12"
+                                        r="9">
+                                </circle>
+
+                                <path stroke-linecap="round"
+                                      d="M12 7v5l3 2"/>
+                            </svg>
+
+                        </div>
+
+                        <div>
+                            <h2 class="font-display
+                                       text-lg
+                                       text-[#00687A]">
+                                Sous 24h
+                            </h2>
+
+                            <p class="mt-1
+                                      text-sm
+                                      leading-6
+                                      text-ink-soft">
+                                Un premier retour rapide.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+
+                    {# Sans engagement #}
+                    <div class="flex items-start gap-4">
+
+                        <div class="flex
+                                    shrink-0
+                                    items-center justify-center
+                                    w-11 h-11
+                                    rounded-full
+                                    bg-[#00687A]/8
+                                    text-[#00687A]">
+
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="1.6"
+                                 class="w-5 h-5">
+
+                                <path stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      d="M20 4c-7 0-12 3-14 8-1 2.5-.5 5 1 7 2-4 5-7 9-9M6 19c3 1 6 .5 8-1.5C17 15 19 10 20 4"/>
+                            </svg>
+
+                        </div>
+
+                        <div>
+                            <h2 class="font-display
+                                       text-lg
+                                       text-[#00687A]">
+                                Sans engagement
+                            </h2>
+
+                            <p class="mt-1
+                                      text-sm
+                                      leading-6
+                                      text-ink-soft">
+                                Pour avancer à votre rythme.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                {# =================================================
+                   PHOTO
+                ================================================= #}
+
+                <div class="relative
+                            mt-12
+                            hidden lg:block
+                            max-w-lg">
+
+                    <div class="overflow-hidden
+                                rounded-[2rem]
+                                aspect-[16/9]
+                                bg-[#E8DDCE]">
+
+                        <img
+                            src="{{ asset('images/contact.png') }}"
+                            alt="Studio Tempo, agence web"
+                            class="w-full
+                                   h-full
+                                   object-cover"
+                            onerror="this.style.display='none'"
+                        >
+
+                    </div>
+
+                    {# Accent très discret sur la photo #}
+                    <div class="absolute
+                                -right-3 -bottom-3
+                                w-20 h-20
+                                rounded-full
+                                border border-[#C9653B]/30"
+                         aria-hidden="true">
+                    </div>
+
+                </div>
+
+
             </div>
 
 
-            <h1 class="font-display text-3xl mb-2">
-                Discutons de votre projet
-            </h1>
+
+            {# ====================================================
+               COLONNE FORMULAIRE
+            ==================================================== #}
+
+            <div class="relative">
 
 
-            <p class="text-sm text-ink-soft mb-8">
-                Réponse sous 24h ouvrées.
-            </p>
+                <div class="relative
+                            bg-[#FCFAF6]
+                            border border-[#00687A]/[0.07]
+                            rounded-[2rem]
+                            px-6 py-8
+                            sm:p-9
+                            lg:p-11
+                            xl:p-12
+                            shadow-[0_20px_60px_rgba(39,48,45,0.06)]">
 
 
-            {# =================================================
-               MESSAGE DE SUCCÈS
-            ================================================= #}
+                    {# Petit titre mobile / formulaire #}
+                    <div class="mb-8">
 
-            {% for message in app.flashes('success') %}
-
-                <div class="mb-6
-                            rounded-xl
-                            border border-[#00687A]/20
-                            bg-[#00687A]/10
-                            px-4 py-3
-                            text-sm
-                            text-[#00687A]">
-
-                    <div class="flex items-center gap-3">
-
-                        <span class="flex
-                                     h-6 w-6
-                                     shrink-0
-                                     items-center justify-center
-                                     rounded-full
-                                     bg-[#00687A]
-                                     text-xs
-                                     text-white">
-                            ✓
-                        </span>
-
-                        <span>
-                            {{ message }}
-                        </span>
-
-                    </div>
-
-                </div>
-
-            {% endfor %}
-
-
-            {# =================================================
-               MESSAGE RATE LIMITER
-            ================================================= #}
-
-            {% for message in app.flashes('error') %}
-
-                <div class="mb-6
-                            rounded-xl
-                            border border-terracotta/20
-                            bg-terracotta/10
-                            px-4 py-3
-                            text-sm
-                            text-terracotta">
-
-                    {{ message }}
-
-                </div>
-
-            {% endfor %}
-
-
-
-            {# =================================================
-               FORMULAIRE
-            ================================================= #}
-
-            {{ form_start(form, {
-                attr: {
-                    class: 'space-y-4'
-                }
-            }) }}
-
-
-                {# =============================================
-                   ERREURS GLOBALES
-                ============================================= #}
-
-                {% if form.vars.submitted and not form.vars.valid %}
-
-                    <div class="rounded-xl
-                                border border-terracotta/20
-                                bg-terracotta/10
-                                px-4 py-3
-                                text-sm
-                                text-terracotta">
-
-                        <p class="font-medium mb-1">
-                            Le formulaire contient une erreur.
+                        <p class="text-[10px]
+                                  uppercase
+                                  tracking-[0.22em]
+                                  font-semibold
+                                  text-[#C9653B]">
+                            Votre demande
                         </p>
 
-                        {{ form_errors(form) }}
+                        <p class="mt-2
+                                  text-sm
+                                  leading-6
+                                  text-ink-soft">
+                            Quelques informations suffisent pour commencer.
+                        </p>
 
                     </div>
 
-                {% endif %}
 
 
+                    {# =================================================
+                       FLASH SUCCESS
+                    ================================================= #}
 
-                {# =============================================
-                   NOM + EMAIL
-                ============================================= #}
+                    {% for message in app.flashes('success') %}
 
-                <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="mb-7
+                                    rounded-xl
+                                    border border-[#00687A]/15
+                                    bg-[#00687A]/[0.06]
+                                    px-4 py-3
+                                    text-sm
+                                    text-[#00687A]">
 
+                            <div class="flex items-center gap-3">
 
-                    {# NOM #}
+                                <span class="flex
+                                             h-6 w-6
+                                             shrink-0
+                                             items-center justify-center
+                                             rounded-full
+                                             bg-[#00687A]
+                                             text-xs
+                                             text-white">
+                                    ✓
+                                </span>
 
-                    <div>
+                                <span>
+                                    {{ message }}
+                                </span>
 
-                        {{ form_label(
-                            form.nom,
-                            null,
-                            {
-                                label_attr: {
-                                    class: 'block text-xs font-medium text-ink-soft mb-1.5'
-                                }
-                            }
-                        ) }}
+                            </div>
 
-                        {{ form_widget(
-                            form.nom,
-                            {
-                                attr: {
-                                    class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'
-                                }
-                            }
-                        ) }}
-
-
-                        <div class="mt-1
-                                    text-xs
-                                    text-terracotta">
-                            {{ form_errors(form.nom) }}
                         </div>
 
-                    </div>
+                    {% endfor %}
 
 
 
-                    {# EMAIL #}
+                    {# =================================================
+                       FLASH ERROR
+                    ================================================= #}
 
-                    <div>
+                    {% for message in app.flashes('error') %}
 
-                        {{ form_label(
-                            form.email,
-                            null,
-                            {
-                                label_attr: {
-                                    class: 'block text-xs font-medium text-ink-soft mb-1.5'
-                                }
-                            }
-                        ) }}
+                        <div class="mb-7
+                                    rounded-xl
+                                    border border-[#C9653B]/20
+                                    bg-[#C9653B]/[0.06]
+                                    px-4 py-3
+                                    text-sm
+                                    text-[#C9653B]">
 
-                        {{ form_widget(
-                            form.email,
-                            {
-                                attr: {
-                                    class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'
-                                }
-                            }
-                        ) }}
+                            {{ message }}
 
-
-                        <div class="mt-1
-                                    text-xs
-                                    text-terracotta">
-                            {{ form_errors(form.email) }}
                         </div>
 
+                    {% endfor %}
+
+
+
+                    {# =================================================
+                       FORMULAIRE
+                    ================================================= #}
+
+                    {{ form_start(form, {
+                        attr: {
+                            class: 'space-y-5'
+                        }
+                    }) }}
+
+
+
+                        {# =============================================
+                           ERREURS GLOBALES
+                        ============================================= #}
+
+                        {% if form.vars.submitted and not form.vars.valid %}
+
+                            <div class="rounded-xl
+                                        border border-[#C9653B]/20
+                                        bg-[#C9653B]/[0.06]
+                                        px-4 py-3
+                                        text-sm
+                                        text-[#C9653B]">
+
+                                <p class="font-medium mb-1">
+                                    Le formulaire contient une erreur.
+                                </p>
+
+                                {{ form_errors(form) }}
+
+                            </div>
+
+                        {% endif %}
+
+
+
+                        {# =============================================
+                           NOM + EMAIL
+                        ============================================= #}
+
+                        <div class="grid sm:grid-cols-2 gap-5">
+
+
+                            {# NOM #}
+                            <div>
+
+                                {{ form_label(
+                                    form.nom,
+                                    null,
+                                    {
+                                        label_attr: {
+                                            class: 'block text-sm font-medium text-[#164B56] mb-2'
+                                        }
+                                    }
+                                ) }}
+
+                                {{ form_widget(
+                                    form.nom,
+                                    {
+                                        attr: {
+                                            class: 'w-full rounded-xl border border-[#263B3F]/15 bg-transparent px-4 py-3 text-sm text-ink placeholder:text-ink-soft/50 focus:outline-none focus:ring-2 focus:ring-[#00687A]/10 focus:border-[#00687A]/60 transition'
+                                        }
+                                    }
+                                ) }}
+
+                                <div class="mt-1.5 text-xs text-[#C9653B]">
+                                    {{ form_errors(form.nom) }}
+                                </div>
+
+                            </div>
+
+
+
+                            {# EMAIL #}
+                            <div>
+
+                                {{ form_label(
+                                    form.email,
+                                    null,
+                                    {
+                                        label_attr: {
+                                            class: 'block text-sm font-medium text-[#164B56] mb-2'
+                                        }
+                                    }
+                                ) }}
+
+                                {{ form_widget(
+                                    form.email,
+                                    {
+                                        attr: {
+                                            class: 'w-full rounded-xl border border-[#263B3F]/15 bg-transparent px-4 py-3 text-sm text-ink placeholder:text-ink-soft/50 focus:outline-none focus:ring-2 focus:ring-[#00687A]/10 focus:border-[#00687A]/60 transition'
+                                        }
+                                    }
+                                ) }}
+
+                                <div class="mt-1.5 text-xs text-[#C9653B]">
+                                    {{ form_errors(form.email) }}
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        {# =============================================
+                           TÉLÉPHONE
+                        ============================================= #}
+
+                        <div>
+
+                            {{ form_label(
+                                form.telephone,
+                                null,
+                                {
+                                    label_attr: {
+                                        class: 'block text-sm font-medium text-[#164B56] mb-2'
+                                    }
+                                }
+                            ) }}
+
+                            {{ form_widget(
+                                form.telephone,
+                                {
+                                    attr: {
+                                        class: 'w-full rounded-xl border border-[#263B3F]/15 bg-transparent px-4 py-3 text-sm text-ink placeholder:text-ink-soft/50 focus:outline-none focus:ring-2 focus:ring-[#00687A]/10 focus:border-[#00687A]/60 transition'
+                                    }
+                                }
+                            ) }}
+
+                            <div class="mt-1.5 text-xs text-[#C9653B]">
+                                {{ form_errors(form.telephone) }}
+                            </div>
+
+                        </div>
+
+
+
+                        {# =============================================
+                           TYPE DE PROJET + BUDGET
+                        ============================================= #}
+
+                        <div class="grid sm:grid-cols-2 gap-5">
+
+
+                            {# TYPE DE PROJET #}
+                            <div>
+
+                                {{ form_label(
+                                    form.typeProjet,
+                                    null,
+                                    {
+                                        label_attr: {
+                                            class: 'block text-sm font-medium text-[#164B56] mb-2'
+                                        }
+                                    }
+                                ) }}
+
+                                {{ form_widget(
+                                    form.typeProjet,
+                                    {
+                                        attr: {
+                                            class: 'w-full rounded-xl border border-[#263B3F]/15 bg-transparent px-4 py-3 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-[#00687A]/10 focus:border-[#00687A]/60 transition'
+                                        }
+                                    }
+                                ) }}
+
+                                <div class="mt-1.5 text-xs text-[#C9653B]">
+                                    {{ form_errors(form.typeProjet) }}
+                                </div>
+
+                            </div>
+
+
+
+                            {# BUDGET #}
+                            <div>
+
+                                {{ form_label(
+                                    form.budget,
+                                    null,
+                                    {
+                                        label_attr: {
+                                            class: 'block text-sm font-medium text-[#164B56] mb-2'
+                                        }
+                                    }
+                                ) }}
+
+                                {{ form_widget(
+                                    form.budget,
+                                    {
+                                        attr: {
+                                            class: 'w-full rounded-xl border border-[#263B3F]/15 bg-transparent px-4 py-3 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-[#00687A]/10 focus:border-[#00687A]/60 transition'
+                                        }
+                                    }
+                                ) }}
+
+                                <div class="mt-1.5 text-xs text-[#C9653B]">
+                                    {{ form_errors(form.budget) }}
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        {# =============================================
+                           MESSAGE
+                        ============================================= #}
+
+                        <div>
+
+                            {{ form_label(
+                                form.message,
+                                null,
+                                {
+                                    label_attr: {
+                                        class: 'block text-sm font-medium text-[#164B56] mb-2'
+                                    }
+                                }
+                            ) }}
+
+                            {{ form_widget(
+                                form.message,
+                                {
+                                    attr: {
+                                        class: 'w-full rounded-xl border border-[#263B3F]/15 bg-transparent px-4 py-3 text-sm text-ink min-h-[135px] resize-y placeholder:text-ink-soft/50 focus:outline-none focus:ring-2 focus:ring-[#00687A]/10 focus:border-[#00687A]/60 transition'
+                                    }
+                                }
+                            ) }}
+
+                            <div class="mt-1.5 text-xs text-[#C9653B]">
+                                {{ form_errors(form.message) }}
+                            </div>
+
+                        </div>
+
+
+
+                        {# =============================================
+                           HONEYPOT ANTI-SPAM
+                        ============================================= #}
+
+                        <div class="absolute
+                                    -left-[9999px]
+                                    w-px h-px
+                                    overflow-hidden"
+                             aria-hidden="true">
+
+                            {{ form_widget(form.website) }}
+                            {{ form_errors(form.website) }}
+
+                        </div>
+
+
+
+                        {# =============================================
+                           BOUTON
+                        ============================================= #}
+
+                        <div class="pt-2">
+
+                            <button
+                                type="submit"
+                                class="group
+                                       inline-flex
+                                       w-full sm:w-auto
+                                       items-center justify-center
+                                       gap-5
+                                       rounded-full
+                                       bg-[#00687A]
+                                       hover:bg-[#005866]
+                                       px-7 py-3.5
+                                       text-sm
+                                       font-semibold
+                                       text-white
+                                       transition-colors
+                                       duration-300">
+
+                                <span>
+                                    Envoyer ma demande
+                                </span>
+
+                                <span class="text-lg
+                                             leading-none
+                                             transition-transform
+                                             duration-300
+                                             group-hover:translate-x-1">
+                                    →
+                                </span>
+
+                            </button>
+
+                        </div>
+
+
+                    {{ form_end(form) }}
+
+
+
+                    {# =================================================
+                       PIED DU FORMULAIRE
+                    ================================================= #}
+
+                    <div class="mt-7
+                                pt-6
+                                border-t border-[#00687A]/10
+                                flex flex-col sm:flex-row
+                                sm:items-center
+                                sm:justify-between
+                                gap-3">
+
+                        <p class="text-xs text-ink-soft/70">
+                            Réponse sous 24h ouvrées.
+                        </p>
+
+                        <p class="text-xs text-ink-soft/70">
+
+                            ou appelez-moi au
+
+                            <a href="tel:+33675064781"
+                               class="font-medium
+                                      text-[#00687A]
+                                      hover:text-[#C9653B]
+                                      transition-colors">
+
+                                06 75 06 47 81
+
+                            </a>
+
+                        </p>
+
                     </div>
+
 
                 </div>
 
 
-
-                {# =============================================
-                   TÉLÉPHONE
-                ============================================= #}
-
-                <div>
-
-                    {{ form_label(
-                        form.telephone,
-                        null,
-                        {
-                            label_attr: {
-                                class: 'block text-xs font-medium text-ink-soft mb-1.5'
-                            }
-                        }
-                    ) }}
-
-                    {{ form_widget(
-                        form.telephone,
-                        {
-                            attr: {
-                                class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'
-                            }
-                        }
-                    ) }}
-
-
-                    <div class="mt-1
-                                text-xs
-                                text-terracotta">
-                        {{ form_errors(form.telephone) }}
-                    </div>
-
-                </div>
-
-
-
-                {# =============================================
-                   TYPE DE PROJET + BUDGET
-                ============================================= #}
-
-                <div class="grid sm:grid-cols-2 gap-4">
-
-
-                    {# TYPE DE PROJET #}
-
-                    <div>
-
-                        {{ form_label(
-                            form.typeProjet,
-                            null,
-                            {
-                                label_attr: {
-                                    class: 'block text-xs font-medium text-ink-soft mb-1.5'
-                                }
-                            }
-                        ) }}
-
-                        {{ form_widget(
-                            form.typeProjet,
-                            {
-                                attr: {
-                                    class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'
-                                }
-                            }
-                        ) }}
-
-
-                        <div class="mt-1
-                                    text-xs
-                                    text-terracotta">
-                            {{ form_errors(form.typeProjet) }}
-                        </div>
-
-                    </div>
-
-
-
-                    {# BUDGET #}
-
-                    <div>
-
-                        {{ form_label(
-                            form.budget,
-                            null,
-                            {
-                                label_attr: {
-                                    class: 'block text-xs font-medium text-ink-soft mb-1.5'
-                                }
-                            }
-                        ) }}
-
-                        {{ form_widget(
-                            form.budget,
-                            {
-                                attr: {
-                                    class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'
-                                }
-                            }
-                        ) }}
-
-
-                        <div class="mt-1
-                                    text-xs
-                                    text-terracotta">
-                            {{ form_errors(form.budget) }}
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                {# =============================================
-                   MESSAGE
-                ============================================= #}
-
-                <div>
-
-                    {{ form_label(
-                        form.message,
-                        null,
-                        {
-                            label_attr: {
-                                class: 'block text-xs font-medium text-ink-soft mb-1.5'
-                            }
-                        }
-                    ) }}
-
-                    {{ form_widget(
-                        form.message,
-                        {
-                            attr: {
-                                class: 'w-full rounded-lg border border-ink/10 px-4 py-2.5 text-sm min-h-[110px] focus:outline-none focus:ring-2 focus:ring-[#00687A]/30 focus:border-[#00687A]'
-                            }
-                        }
-                    ) }}
-
-
-                    <div class="mt-1
-                                text-xs
-                                text-terracotta">
-                        {{ form_errors(form.message) }}
-                    </div>
-
-                </div>
-
-
-
-                {# =============================================
-                   HONEYPOT ANTI-SPAM
-                   Invisible pour l'utilisateur
-                ============================================= #}
-
+                {# Petit détail extérieur #}
                 <div class="absolute
-                            -left-[9999px]
-                            w-px h-px
-                            overflow-hidden"
+                            -right-4 -bottom-4
+                            hidden lg:block
+                            w-20 h-20
+                            rounded-[1.7rem]
+                            border border-[#00687A]/10
+                            -z-10"
                      aria-hidden="true">
-
-                    {{ form_widget(form.website) }}
-
-                    {{ form_errors(form.website) }}
-
                 </div>
 
 
-
-                {# =============================================
-                   BOUTON
-                ============================================= #}
-
-                <button
-                    type="submit"
-                    class="w-full
-                           bg-[#00687A]
-                           hover:bg-[#00566A]
-                           text-white
-                           py-3
-                           rounded-lg
-                           text-sm
-                           font-semibold
-                           transition">
-
-                    Envoyer le message
-
-                </button>
-
-
-            {{ form_end(form) }}
-
-
-
-            {# =================================================
-               EMAIL
-            ================================================= #}
-
-            <p class="text-xs
-                      text-ink-soft/70
-                      text-center
-                      mt-6">
-
-                ou composez directement le
-
-                <a href="tel:0675064781"
-                   class="underline hover:text-[#00687A] transition">
-
-                    0675064781
-
-                </a>
-
-            </p>
+            </div>
 
         </div>
 

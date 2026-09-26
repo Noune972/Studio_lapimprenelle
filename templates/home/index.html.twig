@@ -3,11 +3,22 @@
 {% block title %}Création de sites web à Toulouse - Tempo{% endblock %}
 
 {% block meta_description %}
-    Tempo, agence web à Toulouse : création de sites WordPress, développement d'applications Symfony et accompagnement SEO pour développer votre présence en ligne.
+    Tempo, studio web à Toulouse : création de sites WordPress, développement d'applications Symfony et accompagnement SEO pour développer votre présence en ligne.
 {% endblock %}
 
 
 {% block body %}
+
+<style>
+    /* Signature graphique Tempo — cadence / mouvement */
+    .tempo-rhythm { display:flex; align-items:flex-end; gap:5px; height:34px; }
+    .tempo-rhythm > span { display:block; width:7px; border-radius:999px; background:currentColor; transition:height .35s ease, transform .35s ease, opacity .35s ease; }
+    .tempo-rhythm > span:nth-child(1){height:14px}.tempo-rhythm > span:nth-child(2){height:28px}.tempo-rhythm > span:nth-child(3){height:20px}.tempo-rhythm > span:nth-child(4){height:34px}
+    .tempo-rhythm-hover:hover .tempo-rhythm > span:nth-child(1){height:25px}.tempo-rhythm-hover:hover .tempo-rhythm > span:nth-child(2){height:16px}.tempo-rhythm-hover:hover .tempo-rhythm > span:nth-child(3){height:32px}.tempo-rhythm-hover:hover .tempo-rhythm > span:nth-child(4){height:22px}
+    .tempo-beat { display:flex; align-items:center; gap:10px; color:rgba(196,91,54,.5); }
+    .tempo-beat i { display:block; height:1px; border-radius:999px; background:currentColor; }
+    @media (prefers-reduced-motion: reduce) { .tempo-rhythm > span { transition:none; } }
+</style>
 
 <div class="bg-cream text-ink font-sans">
 
@@ -23,47 +34,61 @@
                     gap-14
                     items-center">
 
-        <div>
+      <div>
 
-            <div class="text-xs
-                        tracking-widest
-                        text-terracotta
-                        font-medium
-                        mb-4">
-                CRÉATION WEB · DÉVELOPPEMENT · SEO
-            </div>
-
-
-            <h1 class="font-display
-                       text-4xl
-                       leading-[1.15]
-                       mb-6">
-
-                Création sites web
-                <br>
-
-                Symfony & WordPress
-
-                <span class="text-terracotta">
-                    Toulouse.
-                </span>
-
-            </h1>
+    <div class="text-xs
+                tracking-widest
+                text-terracotta
+                font-medium
+                mb-4">
+        AGENCE WEB INDÉPENDANTE · TOULOUSE
+    </div>
 
 
-            <p class="text-ink-soft
-                      leading-relaxed
-                      mb-8
-                      max-w-md">
+    <h1 class="font-display
+               text-4xl
+               leading-[1.15]
+               mb-4">
 
-                Bonjour et bienvenue ! Je suis Nathalie Camiul développeuse fullstack à Toulouse.
-                Passionnée par le web depuis plusieurs années, je conçois des sites WordPress et des
-                applications Symfony sur mesure pour les entreprises,
-                indépendants, startups et projets qui veulent qualité et fiabilité. J'optimise également vos solutions digitales pour le référencement naturel (SEO).
+        Le web à votre
 
-            </p>
+        <span class="text-terracotta">
+            rythme.
+        </span>
+
+    </h1>
+
+    <div class="flex items-center gap-3 mb-5 text-terracotta" aria-hidden="true">
+        <div class="tempo-rhythm">
+            <span></span><span></span><span></span><span></span>
+        </div>
+        <span class="w-12 h-px bg-terracotta/30"></span>
+    </div>
 
 
+    <div class="text-lg
+                font-medium
+                text-ink
+                mb-6">
+
+        Sites WordPress
+        <span class="text-terracotta">·</span>
+        Applications Symfony sur mesure
+
+    </div>
+
+
+    <p class="text-ink-soft
+              leading-relaxed
+              mb-8
+              max-w-md">
+
+        Bonjour et bienvenue ! Je suis Nathalie Camiul, développeuse web
+        et fondatrice de Studio Tempo. J'accompagne les entreprises, indépendants,
+        porteurs de projets et startups dans la création de solutions web
+        utiles, performantes et pensées pour évoluer avec leur activité.
+
+    </p>
             <div class="flex flex-wrap gap-3 mb-8">
 
                 <a href="{{ path('app_contact') }}"
@@ -537,6 +562,13 @@
 
 
 
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-2" aria-hidden="true">
+        <div class="tempo-beat">
+            <i class="w-10"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="w-20"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="w-7"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="flex-1"></i>
+        </div>
+    </div>
+
     {# =========================================================
        TECHNOLOGIES
        Nouvelle section compacte
@@ -970,6 +1002,13 @@
     </section>
 
 
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-2" aria-hidden="true">
+        <div class="tempo-beat">
+            <i class="w-10"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="w-20"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="w-7"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="flex-1"></i>
+        </div>
+    </div>
+
     {# =========================================================
        ACCOMPAGNEMENT
     ========================================================= #}
@@ -982,12 +1021,10 @@
 
         {# Formes décoratives #}
 
-        <div class="pointer-events-none
-                    absolute
-                    -top-20 -right-20
-                    w-56 h-56
-                    rounded-full
-                    bg-terracotta/10">
+        <div class="pointer-events-none absolute -top-6 right-8 opacity-30 text-terracotta" aria-hidden="true">
+            <div class="tempo-rhythm scale-[2] origin-top-right">
+                <span></span><span></span><span></span><span></span>
+            </div>
         </div>
 
         <div class="pointer-events-none
@@ -1088,15 +1125,34 @@
                                 text-white
                                 p-7 lg:p-8">
 
-                    <div class="absolute
-                                -right-12 -top-12
-                                w-36 h-36
-                                rounded-full
-                                bg-white/5">
+                    {# Fragment du T Tempo — discret et derrière le contenu #}
+                    <div class="pointer-events-none
+                                absolute
+                                -right-10
+                                top-10
+                                opacity-[0.08]
+                                transition-all
+                                duration-700
+                                group-hover:opacity-[0.13]
+                                group-hover:-translate-x-2"
+                         aria-hidden="true">
+
+                        <div class="relative w-40 h-44">
+                            <span class="absolute right-0 top-0
+                                         w-36 h-9 rounded-full bg-white"></span>
+
+                            <span class="absolute right-10 top-11
+                                         w-24 h-8 rounded-full bg-white"></span>
+
+                            <span class="absolute right-10 top-11
+                                         w-8 h-28 rounded-full bg-white"></span>
+                        </div>
+
                     </div>
 
 
                     <div class="relative
+                                z-10
                                 h-full
                                 flex flex-col">
 
@@ -1240,19 +1296,8 @@
                                 bg-[#E7DDD0]
                                 p-7 lg:p-8">
 
-                    <div class="absolute
-                                right-7 top-7
-                                w-12 h-12
-                                rounded-full
-                                border
-                                border-[#00687A]/20">
-                    </div>
-
-                    <div class="absolute
-                                right-11 top-11
-                                w-4 h-4
-                                rounded-full
-                                bg-[#00687A]">
+                    <div class="absolute right-7 top-7 tempo-rhythm text-[#00687A]/45" aria-hidden="true">
+                        <span></span><span></span><span></span><span></span>
                     </div>
 
 
@@ -1535,6 +1580,13 @@
 </section>
 
 
+
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-2" aria-hidden="true">
+        <div class="tempo-beat">
+            <i class="w-10"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="w-20"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="w-7"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="flex-1"></i>
+        </div>
+    </div>
 
 {# =========================================================
    CTA FINAL — ACCUEIL

@@ -104,7 +104,7 @@ Découvrez les tarifs Studio Tempo pour la création de sites WordPress, sites v
 <article class="group bg-[#FBF8F3]
                 border-2 border-terracotta/60
                 rounded-[1.15rem]
-                px-5 py-6 lg:px-6 lg:py-7 min-h-[550px]
+                px-5 py-6 lg:px-6 lg:py-7 min-h-[550px] flex flex-col
                 transition duration-300 hover:-translate-y-1
                 hover:shadow-[0_16px_45px_rgba(32,51,55,0.06)]">
 
@@ -113,6 +113,100 @@ Découvrez les tarifs Studio Tempo pour la création de sites WordPress, sites v
                             <span class="text-[11px] font-semibold tracking-[0.12em] text-[#C9653B]">
                                 {{ offer.number }}
                             </span>
+                            {# Pictogramme de l'offre #}
+<div class="mt-5 mb-5 flex items-center justify-center
+            w-16 h-16
+            rounded-[45%_55%_52%_48%/55%_45%_55%_45%]
+            {% if loop.index is odd %}
+            bg-[#00687A]/10
+            {% else %}
+            bg-[#C9653B]/10
+            {% endif %}
+            text-[#00687A]
+            transition-transform duration-300
+            group-hover:rotate-[-4deg]
+            group-hover:scale-105">
+
+    {% if offer.number == '01' %}
+        {# ONE PAGE #}
+        <svg viewBox="0 0 24 24"
+             class="w-8 h-8"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.5"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+            <rect x="4" y="3" width="16" height="18" rx="2"/>
+            <path d="M7 7h10"/>
+            <path d="M7 11h7"/>
+            <path d="M7 15h10"/>
+            <path d="M7 18h6"/>
+        </svg>
+
+    {% elseif offer.number == '02' %}
+        {# SITE VITRINE #}
+        <svg viewBox="0 0 24 24"
+             class="w-8 h-8"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.5"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="14" rx="2"/>
+            <path d="M3 8h18"/>
+            <circle cx="6" cy="6" r=".5" fill="currentColor"/>
+            <circle cx="8" cy="6" r=".5" fill="currentColor"/>
+            <path d="M8 21h8"/>
+            <path d="M12 18v3"/>
+        </svg>
+
+    {% elseif offer.number == '03' %}
+        {# E-COMMERCE #}
+        <svg viewBox="0 0 24 24"
+             class="w-8 h-8"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.5"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+            <path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L20 8H7"/>
+            <circle cx="10" cy="20" r="1"/>
+            <circle cx="17" cy="20" r="1"/>
+            <path d="M10 11h6"/>
+            <path d="M13 8v6"/>
+        </svg>
+
+    {% elseif offer.number == '04' %}
+        {# REFONTE #}
+        <svg viewBox="0 0 24 24"
+             class="w-8 h-8"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.5"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+            <path d="M20 7v5h-5"/>
+            <path d="M4 17v-5h5"/>
+            <path d="M6.1 8A7 7 0 0 1 18.5 6L20 8"/>
+            <path d="M17.9 16A7 7 0 0 1 5.5 18L4 16"/>
+        </svg>
+
+    {% elseif offer.number == '05' %}
+        {# APPLICATION WEB & MOBILE #}
+        <svg viewBox="0 0 24 24"
+             class="w-8 h-8"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.5"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+            <path d="M8 9l-4 3 4 3"/>
+            <path d="M16 9l4 3-4 3"/>
+            <path d="M14 6l-4 12"/>
+        </svg>
+    {% endif %}
+
+</div>
                             <span class="w-8 h-px bg-[#C9653B]/60"></span>
                         </div>
 
@@ -144,6 +238,20 @@ Découvrez les tarifs Studio Tempo pour la création de sites WordPress, sites v
                                     <span>{{ item }}</span>
                                 </div>
                             {% endfor %}
+                            <div class="mt-auto pt-7">
+    <a href="{{ path('app_contact') }}"
+       class="inline-flex items-center justify-center gap-3
+              w-full rounded-full
+              bg-[#00687A] text-white
+              px-5 py-3
+              text-sm font-semibold
+              transition-all duration-300
+              hover:bg-[#005966]
+              hover:-translate-y-0.5">
+        Demander un devis
+        <span aria-hidden="true">→</span>
+    </a>
+</div>
                         </div>
 
                         <div class="mt-auto pt-7">

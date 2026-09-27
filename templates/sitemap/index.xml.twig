@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    {# Pages principales #}
+    {% set pages = [
+        'app_home',
+        'app_apropos',
+        'app_service',
+        'app_tarifs',
+        'app_projet_index',
+        'app_article_index',
+        'app_contact'
+    ] %}
+
+    {% for route in pages %}
+        <url>
+            <loc>{{ absolute_url(path(route)) }}</loc>
+        </url>
+    {% endfor %}
+
+    {# Projets #}
+    {% for projet in projets %}
+        <url>
+            <loc>{{ absolute_url(path('app_projet_show', {slug: projet.slug})) }}</loc>
+        </url>
+    {% endfor %}
+
+    {# Articles de blog #}
+    {% for article in articles %}
+        <url>
+            <loc>{{ absolute_url(path('app_article_show', {slug: article.slug})) }}</loc>
+        </url>
+    {% endfor %}
+
+</urlset>

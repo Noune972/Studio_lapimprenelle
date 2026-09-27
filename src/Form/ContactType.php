@@ -60,7 +60,7 @@ class ContactType extends AbstractType
                 'required' => false,
                 'placeholder' => 'Sélectionnez une fourchette',
                 'choices' => [
-                    'Moins de 1000' => 'moins de 1000',
+                    'Moins de 1000 €' => 'moins de 1000',
                     'Moins de 1 500 €' => 'moins-1500',
                     '1 500 € — 3 000 €' => '1500-3000',
                     '3 000 € — 6 000 €' => '3000-6000',

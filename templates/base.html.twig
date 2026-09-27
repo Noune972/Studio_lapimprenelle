@@ -6,11 +6,37 @@
     <meta charset="UTF-8">
 
     <title>
-        {% block title %}Tempo — Agence web Toulouse{% endblock %}
+        {% block title %}Studio Tempo — Agence web Toulouse{% endblock %}
     </title>
 
     <meta name="description"
-    content="{% block meta_description %}Tempo accompagne les entreprises dans la création de sites WordPress, d'applications Symfony et leur visibilité SEO à Toulouse.{% endblock %}">
+    content="{% block meta_description %} Studio Tempo accompagne les entreprises dans la création de sites WordPress, d'applications Symfony et leur visibilité SEO à Toulouse.{% endblock %}">
+
+        {# URL canonique #}
+    <link rel="canonical"
+          href="{% block canonical %}{{ app.request.uri }}{% endblock %}">
+
+    {# Partage réseaux sociaux / Open Graph #}
+    <meta property="og:type"
+          content="{% block og_type %}website{% endblock %}">
+
+    <meta property="og:title"
+          content="{% block og_title %}Studio Tempo — Création de sites web à Toulouse{% endblock %}">
+
+    <meta property="og:description"
+          content="{% block og_description %}Création de sites web WordPress, applications Symfony et accompagnement SEO à Toulouse.{% endblock %}">
+
+    <meta property="og:url"
+          content="{{ app.request.uri }}">
+
+    <meta property="og:image"
+          content="{{ absolute_url(asset('images/tempo7.png')) }}">
+
+    <meta property="og:locale"
+          content="fr_FR">
+
+    <meta property="og:site_name"
+          content="Studio Tempo">
 
 
     <link rel="icon"

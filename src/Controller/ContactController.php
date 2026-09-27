@@ -136,6 +136,11 @@ $confirmationEmail->addPart(
 
 $mailer->send($confirmationEmail);
 
+$this->addFlash(
+    'success',
+    'Votre message a bien été envoyé. Merci !'
+);
+
             /*
              * PRG : Post / Redirect / Get
              * Empêche également le renvoi du formulaire

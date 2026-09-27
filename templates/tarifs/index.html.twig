@@ -79,7 +79,7 @@ Découvrez les tarifs Studio Tempo pour la création de sites WordPress, sites v
                 priceLabel: 'À partir de',
                 price: '2 000 €',
                 text: "Une boutique en ligne performante pour vendre vos produits ou services.",
-                items: ["Jusqu'à 20 pages",'WooCommerce','Paiement sécurisé','Optimisation SEO','Accompagnement']
+                items: ["Jusqu'à 20 artiicles",'WooCommerce','Paiement sécurisé','Optimisation SEO','Accompagnement']
             },
             {
                 number: '04',
@@ -101,10 +101,12 @@ Découvrez les tarifs Studio Tempo pour la création de sites WordPress, sites v
 
         <div class="grid md:grid-cols-2 xl:grid-cols-5 gap-3 lg:gap-4 items-stretch">
             {% for offer in offers %}
-                <article class="group bg-[#FBF8F3] border border-[#DED5C9]/80 rounded-[1.15rem]
-                                px-5 py-6 lg:px-6 lg:py-7 min-h-[550px]
-                                transition duration-300 hover:-translate-y-1
-                                hover:border-[#00687A]/20 hover:shadow-[0_16px_45px_rgba(32,51,55,0.06)]">
+<article class="group bg-[#FBF8F3]
+                border-2 border-terracotta/60
+                rounded-[1.15rem]
+                px-5 py-6 lg:px-6 lg:py-7 min-h-[550px]
+                transition duration-300 hover:-translate-y-1
+                hover:shadow-[0_16px_45px_rgba(32,51,55,0.06)]">
 
                     <div class="h-full flex flex-col">
                         <div class="flex items-center gap-3">
@@ -265,6 +267,177 @@ Découvrez les tarifs Studio Tempo pour la création de sites WordPress, sites v
                 </div>
             {% endfor %}
         </div>
+    </section>
+
+        {# =========================================================
+       FAQ
+    ========================================================= #}
+    <section class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 py-14 lg:py-20">
+
+        <div class="grid lg:grid-cols-[.75fr_1.25fr] gap-10 lg:gap-16 items-start">
+
+            {# Introduction #}
+            <div class="reveal lg:sticky lg:top-28">
+
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="w-9 h-[2px] bg-[#C9653B]"></span>
+
+                    <span class="text-xs uppercase tracking-[0.2em]
+                                 text-[#C9653B] font-semibold">
+                        Questions fréquentes
+                    </span>
+                </div>
+
+                <h2 class="font-display text-3xl sm:text-4xl leading-[1.1] text-[#00687A]">
+                    Une question avant
+                    <span class="block text-[#C9653B]">
+                        de vous lancer ?
+                    </span>
+                </h2>
+
+                <p class="mt-5 text-ink-soft leading-7 max-w-md">
+                    Délais, accompagnement, maintenance…
+                    voici les réponses aux questions que vous pouvez
+                    vous poser avant de démarrer votre projet.
+                </p>
+
+                {# Petit élément graphique #}
+                <div class="hidden lg:block mt-10 relative w-40 h-28"
+                     aria-hidden="true">
+
+                    <div class="absolute left-0 top-2
+                                w-24 h-24 rounded-full
+                                bg-[#00687A]/10">
+                    </div>
+
+                    <div class="absolute left-16 top-10
+                                w-20 h-12
+                                rounded-[50%]
+                                border border-[#C9653B]/60
+                                rotate-[-12deg]">
+                    </div>
+
+                    <span class="absolute left-24 top-5
+                                 w-3 h-3 rounded-full
+                                 bg-[#C9653B]">
+                    </span>
+
+                </div>
+            </div>
+
+
+            {# Questions #}
+            <div class="space-y-3">
+
+                {% set faqs = [
+                    {
+                        question: "Quels sont les délais pour créer mon site ?",
+                        answer: "En moyenne, comptez entre 2 et 8 semaines, selon la taille du site, les fonctionnalités à développer et les contenus à intégrer."
+                    },
+                    {
+                        question: "Travaillez-vous uniquement à Toulouse ?",
+                        answer: "Non. Studio Tempo est basé à Toulouse, mais j'accompagne des clients partout en France. Les échanges et le suivi du projet peuvent parfaitement se faire à distance."
+                    },
+                    {
+                        question: "Proposez-vous la maintenance après la mise en ligne ?",
+                        answer: "Oui. Une maintenance peut être proposée à la demande selon vos besoins : mises à jour, petites modifications, suivi technique ou interventions ponctuelles."
+                    },
+                    {
+                        question: "Est-ce que je saurai gérer mon site moi-même ?",
+                        answer: "Oui. Une formation à la prise en main de votre site peut être prévue afin que vous puissiez gérer sereinement vos contenus au quotidien."
+                    },
+                    {
+                        question: "Puis-je payer mon projet en plusieurs fois ?",
+                        answer: "Oui. Le paiement échelonné sans frais est possible afin de répartir plus confortablement le coût de votre projet."
+                    },
+                    {
+                        question: "Le référencement naturel est-il prévu dans la création du site ?",
+                        answer: "Oui. Une optimisation SEO est prévue selon la formule choisie afin de poser de bonnes bases pour la visibilité de votre site sur les moteurs de recherche."
+                    },
+                    {
+                        question: "Que dois-je fournir pour démarrer mon projet ?",
+                        answer: "Nous définissons ensemble les éléments nécessaires : contenus, images, identité visuelle et fonctionnalités. Si tout n'est pas encore prêt, je vous accompagne pour déterminer ce qu'il reste à préparer."
+                    }
+                ] %}
+
+
+                {% for faq in faqs %}
+
+                    <details class="group bg-[#FBF8F3]
+                                    border border-[#DED5C9]/80
+                                    rounded-[1.2rem]
+                                    overflow-hidden
+                                    transition-all duration-300
+                                    open:border-[#00687A]/25
+                                    open:shadow-[0_12px_35px_rgba(0,104,122,0.06)]">
+
+                        <summary class="flex items-center justify-between gap-6
+                                        px-5 sm:px-7 py-5
+                                        cursor-pointer
+                                        list-none
+                                        [&::-webkit-details-marker]:hidden">
+
+                            <span class="flex items-center gap-4">
+
+                                <span class="flex items-center justify-center
+                                             w-8 h-8 shrink-0
+                                             rounded-full
+                                             bg-[#00687A]/10
+                                             text-[#00687A]
+                                             text-xs font-semibold">
+                                    {{ '%02d'|format(loop.index) }}
+                                </span>
+
+                                <span class="font-semibold
+                                             text-sm sm:text-base
+                                             text-[#00687A]">
+                                    {{ faq.question }}
+                                </span>
+
+                            </span>
+
+                            <span class="relative flex items-center justify-center
+                                         w-8 h-8 shrink-0
+                                         rounded-full
+                                         bg-[#EADBC9]
+                                         text-[#C9653B]">
+
+                                <span class="absolute w-3 h-[1.5px]
+                                             bg-current">
+                                </span>
+
+                                <span class="absolute w-[1.5px] h-3
+                                             bg-current
+                                             transition-transform duration-300
+                                             group-open:rotate-90
+                                             group-open:opacity-0">
+                                </span>
+
+                            </span>
+
+                        </summary>
+
+
+                        <div class="px-5 sm:px-7 pb-6
+                                    sm:pl-[4.75rem]">
+
+                            <div class="h-px bg-[#DED5C9]/70 mb-4"></div>
+
+                            <p class="text-sm leading-7
+                                      text-ink-soft max-w-2xl">
+                                {{ faq.answer }}
+                            </p>
+
+                        </div>
+
+                    </details>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
     </section>
 
 

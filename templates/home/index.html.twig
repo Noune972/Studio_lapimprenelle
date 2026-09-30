@@ -706,7 +706,389 @@
 
         </div>
 
-    </section>
+    </section>{# templates/home/_creation_sites.html.twig #}
+
+<section id="creation-site-internet"
+         class="relative overflow-hidden bg-[#faf7f2] py-20 lg:py-28">
+
+    <div class="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
+
+        {# =========================
+           INTRO
+        ========================== #}
+        <div class="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+
+            <div>
+                <div class="mb-7 flex items-center gap-4">
+                    <span class="h-px w-8 bg-[#54796f]"></span>
+
+                    <span class="text-[11px] font-semibold uppercase tracking-[.28em] text-[#54796f]">
+                        Création de sites internet
+                    </span>
+                </div>
+
+                <h2 class="mb-8 font-serif text-[44px] font-normal leading-[.98] tracking-[-.03em] text-[#172824]
+                           sm:text-3xl lg:text-[35px]">
+
+                    Donnez à votre activité
+
+                    <span class="mt-2 block text-terracotta">
+                        le site qu'elle mérite.
+                    </span>
+                </h2>
+
+                <div class="max-w-2xl space-y-5 text-[16px] leading-7 text-[#56615f] lg:text-[18px]">
+
+                    <p>
+                        Vous souhaitez
+                        <strong class="font-medium text-[#172824]">
+                            créer un site internet
+                        </strong>
+                        professionnel, moderne et adapté à votre activité ?
+                        Le Studio Tempo vous accompagne dans la
+                        <strong class="font-medium text-[#172824]">
+                            création de sites internet
+                        </strong>,
+                        la
+                        <strong class="font-medium text-[#172824]">
+                            refonte de sites web
+                        </strong>
+                        et le
+                        <strong class="font-medium text-[#172824]">
+                            développement web sur mesure
+                        </strong>.
+                    </p>
+
+                    <p>
+                        Spécialisée en
+                        <strong class="font-medium text-[#172824]">
+                            Symfony et WordPress
+                        </strong>,
+                        je conçois des solutions adaptées à vos besoins :
+                        site vitrine, site e-commerce, CMS, plateforme métier
+                        ou développement de fonctionnalités spécifiques.
+                    </p>
+
+                </div>
+
+                <div class="mt-9 flex flex-wrap items-center gap-8">
+
+                    <a href="#contact"
+                       class="group inline-flex items-center gap-8 rounded-full
+                              bg-[#00678A] px-8 py-4 text-[15px] text-white
+                              transition duration-300
+                              hover:-translate-y-1 hover:bg-">
+
+                        Parler de mon projet
+
+                        <span class="text-xl transition-transform duration-300 group-hover:translate-x-1">
+                            →
+                        </span>
+                    </a>
+
+                    <div class="-rotate-3 font-serif italic leading-5 text-[#172824]">
+                        Votre site internet,<br>
+                        à votre image
+                    </div>
+
+                </div>
+            </div>
+
+
+            {# =========================
+               VISUEL
+            ========================== #}
+            <div class="relative">
+
+                <div class="absolute -right-16 -top-16 h-56 w-56 rounded-full
+                            border-2 border-[#df8a68] opacity-60"></div>
+
+                <div class="absolute -left-12 top-10 h-40 w-40 rounded-full
+                            bg-[#f2e6dc]"></div>
+
+                <div class="relative h-[380px] overflow-hidden
+                            rounded-[40%_60%_45%_55%/55%_40%_60%_45%]
+                            sm:h-[480px] lg:h-[570px]">
+
+                    {# Remplace l'image par la tienne #}
+                    <img
+                        src="{{ asset('images/favicon2.png') }}"
+                        alt="Création de sites internet avec Symfony et WordPress"
+                        class="h-full w-full object-cover"
+                        loading="lazy"
+                    >
+
+                </div>
+
+            </div>
+        </div>
+
+
+        {# =========================
+           SERVICES
+        ========================== #}
+
+        <div class="mt-20 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+
+            {# SITE VITRINE #}
+            <article class="group flex flex-col rounded-[26px] border border-black/[.03]
+                            bg-white/70 p-7 shadow-[0_15px_50px_rgba(0,0,0,.025)]
+                            transition duration-300
+                            hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
+
+                <div class="mb-6 flex h-14 w-14 items-center justify-center
+                            rounded-full bg-[#e5ebe7] text-2xl text-[#172824]">
+                    ◫
+                </div>
+
+                <h3 class="mb-3 font-serif text-[23px] text-[#172824]">
+                    Site vitrine
+                </h3>
+
+                <p class="mb-6 text-[15px] leading-6 text-[#66706e]">
+                    Un site clair et efficace pour présenter votre activité,
+                    vos services et votre image.
+                </p>
+
+                <div class="mt-auto flex flex-wrap gap-2">
+                    {% for tag in ['WordPress', 'CMS', 'Pages web'] %}
+                        <span class="rounded-full bg-[#fae9e1] px-3 py-2
+                                     text-[9px] font-semibold uppercase tracking-wider text-[#263633]">
+                            {{ tag }}
+                        </span>
+                    {% endfor %}
+                </div>
+
+            </article>
+
+
+            {# ECOMMERCE #}
+            <article class="group flex flex-col rounded-[26px] border border-black/[.03]
+                            bg-white/70 p-7 shadow-[0_15px_50px_rgba(0,0,0,.025)]
+                            transition duration-300
+                            hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
+
+                <div class="mb-6 flex h-14 w-14 items-center justify-center
+                            rounded-full bg-[#fae4da] text-2xl text-[#d67c5d]">
+                    ♡
+                </div>
+
+                <h3 class="mb-3 font-serif text-[23px] text-[#172824]">
+                    E-commerce
+                </h3>
+
+                <p class="mb-6 text-[15px] leading-6 text-[#66706e]">
+                    Une boutique en ligne performante pour vendre vos produits
+                    ou vos services et développer votre activité.
+                </p>
+
+                <div class="mt-auto flex flex-wrap gap-2">
+                    {% for tag in ['WooCommerce', 'E-commerce', 'SEO'] %}
+                        <span class="rounded-full bg-[#fae9e1] px-3 py-2
+                                     text-[9px] font-semibold uppercase tracking-wider text-[#263633]">
+                            {{ tag }}
+                        </span>
+                    {% endfor %}
+                </div>
+
+            </article>
+
+
+            {# SYMFONY #}
+            <article class="group flex flex-col rounded-[26px] border border-black/[.03]
+                            bg-white/70 p-7 shadow-[0_15px_50px_rgba(0,0,0,.025)]
+                            transition duration-300
+                            hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
+
+                <div class="mb-6 flex h-14 w-14 items-center justify-center
+                            rounded-full bg-[#e5ebe7]
+                            font-mono text-xl text-[#172824]">
+                    &lt;/&gt;
+                </div>
+
+                <h3 class="mb-3 font-serif text-[23px] text-[#172824]">
+                    Développement sur mesure
+                </h3>
+
+                <p class="mb-6 text-[15px] leading-6 text-[#66706e]">
+                    Pour les projets qui dépassent le cadre d'un CMS classique,
+                    je développe avec le
+                    <strong class="font-medium text-[#172824]">
+                        framework Symfony
+                    </strong>
+                    des sites et applications web adaptés à vos besoins métier.
+                </p>
+
+                <div class="mt-auto flex flex-wrap gap-2">
+                    {% for tag in ['Symfony', 'Framework', 'Sur mesure'] %}
+                        <span class="rounded-full bg-[#fae9e1] px-3 py-2
+                                     text-[9px] font-semibold uppercase tracking-wider text-[#263633]">
+                            {{ tag }}
+                        </span>
+                    {% endfor %}
+                </div>
+
+            </article>
+
+
+            {# REFONTE #}
+            <article class="group flex flex-col rounded-[26px] border border-black/[.03]
+                            bg-white/70 p-7 shadow-[0_15px_50px_rgba(0,0,0,.025)]
+                            transition duration-300
+                            hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
+
+                <div class="mb-6 flex h-14 w-14 items-center justify-center
+                            rounded-full bg-[#fae4da] text-3xl text-[#d67c5d]">
+                    ↻
+                </div>
+
+                <h3 class="mb-3 font-serif text-[23px] text-[#172824]">
+                    Refonte de site
+                </h3>
+
+                <p class="mb-6 text-[15px] leading-6 text-[#66706e]">
+                    Votre site actuel ne correspond plus à votre activité ?
+                    Une <strong class="font-medium text-[#172824]">refonte</strong>
+                    permet de moderniser son webdesign, son ergonomie
+                    et ses performances.
+                </p>
+
+                <div class="mt-auto flex flex-wrap gap-2">
+                    {% for tag in ['Webdesign', 'Ergonomie', 'SEO'] %}
+                        <span class="rounded-full bg-[#fae9e1] px-3 py-2
+                                     text-[9px] font-semibold uppercase tracking-wider text-[#263633]">
+                            {{ tag }}
+                        </span>
+                    {% endfor %}
+                </div>
+
+            </article>
+
+
+            {# RESPONSIVE #}
+            <article class="group flex flex-col rounded-[26px] border border-black/[.03]
+                            bg-white/70 p-7 shadow-[0_15px_50px_rgba(0,0,0,.025)]
+                            transition duration-300
+                            hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
+
+                <div class="mb-6 flex h-14 w-14 items-center justify-center
+                            rounded-full bg-[#e5ebe7] text-2xl text-[#172824]">
+                    ▯
+                </div>
+
+                <h3 class="mb-3 font-serif text-[23px] text-[#172824]">
+                    Responsive design
+                </h3>
+
+                <p class="mb-6 text-[15px] leading-6 text-[#66706e]">
+                    Votre site s'adapte aux ordinateurs, tablettes et smartphones
+                    pour offrir une expérience fluide en
+                    <strong class="font-medium text-[#172824]">web mobile</strong>.
+                </p>
+
+                <div class="mt-auto flex flex-wrap gap-2">
+                    {% for tag in ['Responsive design', 'Web mobile'] %}
+                        <span class="rounded-full bg-[#fae9e1] px-3 py-2
+                                     text-[9px] font-semibold uppercase tracking-wider text-[#263633]">
+                            {{ tag }}
+                        </span>
+                    {% endfor %}
+                </div>
+
+            </article>
+
+        </div>
+
+
+        {# =========================
+           STRATEGIE / SEO
+        ========================== #}
+
+        <div class="mt-14 grid border-t border-[#172824]/10 pt-10
+                    md:grid-cols-2 xl:grid-cols-4">
+
+            <div class="flex gap-5 px-5 py-6 xl:border-r xl:border-[#172824]/10">
+                <span class="text-3xl text-[#54796f]">♧</span>
+
+                <div>
+                    <h3 class="mb-2 font-serif text-lg text-[#172824]">
+                        Un site pensé pour votre activité
+                    </h3>
+
+                    <p class="text-sm leading-6 text-[#66706e]">
+                        Chaque projet de
+                        <strong class="font-medium text-[#172824]">
+                            création de site web
+                        </strong>
+                        est pensé autour de votre activité, de vos utilisateurs
+                        et de vos objectifs.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="flex gap-5 px-5 py-6 xl:border-r xl:border-[#172824]/10">
+                <span class="text-3xl text-[#df8a68]">⌕</span>
+
+                <div>
+                    <h3 class="mb-2 font-serif text-lg text-[#172824]">
+                        Une visibilité renforcée
+                    </h3>
+
+                    <p class="text-sm leading-6 text-[#66706e]">
+                        Architecture des pages web, performances et contenus
+                        contribuent à améliorer votre visibilité dans les
+                        <strong class="font-medium text-[#172824]">
+                            moteurs de recherche
+                        </strong>.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="flex gap-5 px-5 py-6 xl:border-r xl:border-[#172824]/10">
+                <span class="text-3xl text-[#54796f]">♙</span>
+
+                <div>
+                    <h3 class="mb-2 font-serif text-lg text-[#172824]">
+                        De nouveaux clients
+                    </h3>
+
+                    <p class="text-sm leading-6 text-[#66706e]">
+                        Votre site s'inscrit dans une véritable
+                        <strong class="font-medium text-[#172824]">
+                            stratégie digitale
+                        </strong>
+                        pour présenter votre savoir-faire et toucher
+                        de nouveaux clients.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="flex gap-5 px-5 py-6">
+                <span class="text-3xl text-[#df8a68]">♡</span>
+
+                <div>
+                    <h3 class="mb-2 font-serif text-lg text-[#172824]">
+                        Un accompagnement complet
+                    </h3>
+
+                    <p class="text-sm leading-6 text-[#66706e]">
+                        De la conception au développement, je vous accompagne
+                        pour créer un site cohérent avec votre image,
+                        votre communication et vos objectifs de webmarketing.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    
 
 
 

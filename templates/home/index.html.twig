@@ -36,16 +36,16 @@
 
       <div>
 
-    <div class="text-xs
+    <h1 class="text-xs
                 tracking-widest
                 text-terracotta
                 font-medium
                 mb-4">
         AGENCE WEB INDÉPENDANTE · TOULOUSE
-    </div>
+    </H1>
 
 
-    <h1 class="font-display
+    <h2 class="font-display
                text-4xl
                leading-[1.15]
                mb-4">
@@ -56,7 +56,7 @@
             rythme.
         </span>
 
-    </h1>
+    </h2>
 
     <div class="flex items-center gap-3 mb-5 text-terracotta" aria-hidden="true">
         <div class="tempo-rhythm">
@@ -806,19 +806,19 @@
                 <div class="absolute -left-12 top-10 h-40 w-40 rounded-full
                             bg-[#f2e6dc]"></div>
 
-                <div class="relative h-[380px] overflow-hidden
-                            rounded-[40%_60%_45%_55%/55%_40%_60%_45%]
-                            sm:h-[480px] lg:h-[570px]">
+<div class="relative aspect-[4/3] w-full overflow-hidden rounded-[2rem]">
 
-                    {# Remplace l'image par la tienne #}
-                    <img
-                        src="{{ asset('images/favicon2.png') }}"
-                        alt="Création de sites internet avec Symfony et WordPress"
-                        class="h-full w-full object-cover"
-                        loading="lazy"
-                    >
+    <img
+        src="{{ asset('images/favicon2.png') }}"
+        alt="Création de sites internet avec Symfony et WordPress"
+        width="900"
+        height="675"
+        loading="lazy"
+        decoding="async"
+        class="absolute inset-0 h-full w-full object-cover"
+    >
 
-                </div>
+</div>
 
             </div>
         </div>

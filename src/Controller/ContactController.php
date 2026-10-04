@@ -114,7 +114,7 @@ $confirmationEmail = (new TemplatedEmail())
     ->from('contact@lestudiotempo.fr')
     ->to($data['email'])
     ->replyTo('contact@lestudiotempo.fr')
-    ->subject('Votre message est bien arrivé chez Tempo')
+    ->subject('Votre message est bien arrivé chez Studio Tempo')
     ->htmlTemplate('emails/contact_confirmation.html.twig')
     ->context([
         'nom' => $data['nom'],

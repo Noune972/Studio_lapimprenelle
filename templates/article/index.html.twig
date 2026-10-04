@@ -193,7 +193,7 @@
                                              text-sm
                                              text-[#00687A]">
 
-                                    {{ '%02d'|format(loop.index) }}
+                                   {{ '%02d'|format(((currentPage - 1) * 6) + loop.index) }}
 
                                 </span>
 
@@ -335,6 +335,75 @@
 
 
         </div>
+
+        {# =========================
+   PAGINATION
+========================= #}
+
+{% if totalPages > 1 %}
+
+    <nav class="mt-16 flex items-center justify-center gap-2"
+         aria-label="Pagination du blog">
+
+        {# Précédent #}
+        {% if currentPage > 1 %}
+            <a href="{{ path('app_article_index', {page: currentPage - 1}) }}"
+               class="px-4 py-2
+                      rounded-full
+                      border border-[#00687A]/20
+                      text-sm font-semibold
+                      text-[#00687A]
+                      transition
+                      hover:bg-[#00687A]
+                      hover:text-white">
+                ← Précédent
+            </a>
+        {% endif %}
+
+
+        {# Numéros de pages #}
+        {% for page in 1..totalPages %}
+
+            <a href="{{ path('app_article_index', {page: page}) }}"
+               class="w-10 h-10
+                      rounded-full
+                      flex items-center justify-center
+                      text-sm font-semibold
+                      transition
+
+                      {% if page == currentPage %}
+                          bg-[#00687A] text-white
+                      {% else %}
+                          border border-[#00687A]/20
+                          text-[#00687A]
+                          hover:bg-[#00687A]/10
+                      {% endif %}">
+
+                {{ page }}
+
+            </a>
+
+        {% endfor %}
+
+
+        {# Suivant #}
+        {% if currentPage < totalPages %}
+            <a href="{{ path('app_article_index', {page: currentPage + 1}) }}"
+               class="px-4 py-2
+                      rounded-full
+                      border border-[#00687A]/20
+                      text-sm font-semibold
+                      text-[#00687A]
+                      transition
+                      hover:bg-[#00687A]
+                      hover:text-white">
+                Suivant →
+            </a>
+        {% endif %}
+
+    </nav>
+
+{% endif %}
 
     </section>
 

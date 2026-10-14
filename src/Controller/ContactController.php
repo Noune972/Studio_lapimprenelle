@@ -12,18 +12,58 @@ use Symfony\Component\RateLimiter\RateLimiterFactory;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mime\Part\DataPart;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
 
 class ContactController extends AbstractController
 {
     #[Route('/contact', name: 'app_contact')]
-    public function index(
-        Request $request,
-        MailerInterface $mailer,
-        RateLimiterFactory $contactFormLimiter,
-    ): Response {
+   public function index(
+    Request $request,
+    MailerInterface $mailer,
+    RateLimiterFactory $contactFormLimiter,
+    HttpClientInterface $httpClient,
+    #[Autowire('%env(TURNSTILE_SECRET_KEY)%')]
+    string $turnstileSecretKey,
+): Response {
         $form = $this->createForm(ContactType::class);
 
         $form->handleRequest($request);
+
+        if ($form->isSubmitted()) {
+    $token = $request->request->get('cf-turnstile-response', '');
+
+    $secret = $turnstileSecretKey;
+    
+    $verified = false;
+
+    if ($token !== '' && $secret !== '') {
+        try {
+            $response = $httpClient->request('POST', 'https://challenges.cloudflare.com/turnstile/v0/siteverify', [
+                'body' => [
+                    'secret' => $secret,
+                    'response' => $token,
+                    'remoteip' => $request->getClientIp(),
+                ],
+                'timeout' => 5,
+            ]);
+
+            $result = $response->toArray(false);
+            $verified = ($result['success'] ?? false) === true;
+        } catch (\Throwable $e) {
+            $verified = false;
+        }
+    }
+
+    if (!$verified) {
+        $this->addFlash(
+            'error',
+            'La vérification anti-robot a échoué. Merci de réessayer.'
+        );
+
+        return $this->redirectToRoute('app_contact');
+    }
+}
 
         if ($form->isSubmitted() && $form->isValid()) {
 
@@ -149,9 +189,11 @@ $this->addFlash(
             return $this->redirectToRoute('app_contact');
         }
 
-
-        return $this->render('contact/index.html.twig', [
-            'form' => $form,
-        ]);
+return $this->render('contact/index.html.twig', [
+    'form' => $form,
+    'turnstile_site_key' => $_ENV['TURNSTILE_SITE_KEY']
+        ?? $_SERVER['TURNSTILE_SITE_KEY']
+        ?? '',
+]);
     }
 }

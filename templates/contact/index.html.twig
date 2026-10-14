@@ -416,7 +416,7 @@
                     {# =================================================
                        FORMULAIRE
                     ================================================= #}
-
+                    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
                     {{ form_start(form, {
                         attr: {
                             class: 'space-y-5'
@@ -674,7 +674,13 @@
                         {# =============================================
                            BOUTON
                         ============================================= #}
-
+<div class="my-6">
+    <div
+        class="cf-turnstile"
+        data-sitekey="{{ turnstile_site_key }}"
+        data-theme="auto"
+    ></div>
+</div>
                         <div class="pt-2">
 
                             <button

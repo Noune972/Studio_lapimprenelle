@@ -269,43 +269,104 @@ Découvrez les tarifs Studio Tempo pour la création de sites WordPress, sites v
     </section>
 
 
-{# Maillage interne — Création de site internet Toulouse #}
-<section class="bg-cream py-12 md:py-16">
+
+{# Maillage interne — Prestations web à Toulouse #}
+<section class="bg-cream py-14 md:py-20">
     <div class="max-w-7xl mx-auto px-6 sm:px-10">
 
-        <div class="flex flex-col md:flex-row
-                    md:items-center md:justify-between
-                    gap-6 rounded-2xl
-                    border border-terracotta/20
-                    bg-white/60 p-8 md:p-10">
+        <div class="max-w-3xl mb-10">
+            <p class="text-xs uppercase tracking-[0.2em] font-semibold text-terracotta mb-4">
+                Les expertises Studio Tempo
+            </p>
 
-            <div class="max-w-3xl">
-                <h2 class="font-display text-2xl md:text-3xl text-ink mb-3">
-                    Vous avez un projet de site internet à Toulouse ?
-                </h2>
+            <h2 class="font-display text-3xl md:text-4xl text-ink mb-5">
+                Une solution web adaptée à votre projet
+            </h2>
 
-                <p class="text-ink-soft leading-relaxed">
-                    Découvrez comment Studio Tempo vous accompagne
-                    dans la création ou la refonte de votre site web :
-                    site vitrine, WordPress, développement Symfony
-                    sur mesure et référencement naturel.
-                </p>
-            </div>
-
-            <a href="{{ path('app_creation_site_toulouse') }}"
-               class="inline-flex items-center justify-center
-                      shrink-0 rounded-full
-                      bg-terracotta px-7 py-4
-                      text-white font-semibold
-                      hover:opacity-90 transition">
-                Création de site internet à Toulouse
-                <span class="ml-3" aria-hidden="true">→</span>
-            </a>
-
+            <p class="text-ink-soft leading-relaxed">
+                Site internet professionnel ou application métier sur mesure :
+                découvrez l'accompagnement adapté à vos besoins.
+            </p>
         </div>
 
+        <div class="grid md:grid-cols-2 gap-6">
+
+            {# Création de site internet #}
+            <article class="flex flex-col h-full rounded-2xl
+                            border border-[#E7DDD2]
+                            bg-white/80 p-8 lg:p-10
+                            shadow-sm hover:shadow-lg
+                            hover:-translate-y-1 transition-all duration-300">
+
+                <span class="font-display text-3xl text-terracotta mb-6">
+                    01
+                </span>
+
+                <div class="w-12 h-1 bg-terracotta rounded-full mb-6"></div>
+
+                <h3 class="font-display text-2xl lg:text-3xl text-[#00687A] mb-5">
+                    Création de site internet
+                </h3>
+
+                <p class="text-ink-soft leading-relaxed mb-8 flex-grow">
+                    Vous souhaitez présenter votre activité, développer votre
+                    visibilité ou moderniser votre présence en ligne ?
+                    Découvrez mes prestations de création de sites vitrines,
+                    de sites WordPress et de refonte à Toulouse.
+                </p>
+
+                <div class="border-t border-[#E7DDD2] pt-6">
+                    <a href="{{ path('app_creation_site_toulouse') }}"
+                       class="inline-flex items-center gap-2
+                              text-sm font-semibold text-terracotta
+                              hover:text-[#00687A] transition-colors">
+                        Création de site internet à Toulouse
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+
+            </article>
+
+            {# Développement d'applications Symfony #}
+            <article class="flex flex-col h-full rounded-2xl
+                            border border-[#E7DDD2]
+                            bg-white/80 p-8 lg:p-10
+                            shadow-sm hover:shadow-lg
+                            hover:-translate-y-1 transition-all duration-300">
+
+                <span class="font-display text-3xl text-terracotta mb-6">
+                    02
+                </span>
+
+                <div class="w-12 h-1 bg-terracotta rounded-full mb-6"></div>
+
+                <h3 class="font-display text-2xl lg:text-3xl text-[#00687A] mb-5">
+                    Applications Symfony sur mesure
+                </h3>
+
+                <p class="text-ink-soft leading-relaxed mb-8 flex-grow">
+                    Votre entreprise a besoin d'un outil métier, d'un espace
+                    client, d'un tableau de bord ou d'une plateforme web
+                    personnalisée ? Je développe des applications avec
+                    Symfony, adaptées à vos fonctionnalités et à vos usages.
+                </p>
+
+                <div class="border-t border-[#E7DDD2] pt-6">
+                    <a href="{{ path('app_developpement_symfony_toulouse') }}"
+                       class="inline-flex items-center gap-2
+                              text-sm font-semibold text-terracotta
+                              hover:text-[#00687A] transition-colors">
+                        Développement d'applications Symfony à Toulouse
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+
+            </article>
+
+        </div>
     </div>
 </section>
+
 
 
 

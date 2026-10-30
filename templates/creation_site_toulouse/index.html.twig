@@ -4,7 +4,7 @@
 {% block title %}Création de site internet à Toulouse | Studio Tempo{% endblock %}
 
 {% block meta_description %}
-Création de site internet à Toulouse : site vitrine, WordPress et développement Symfony sur mesure. Studio Tempo vous accompagne dans votre projet web.
+Création de site internet à Toulouse : site vitrine, WordPress, refonte et référencement naturel. Studio Tempo vous accompagne dans votre projet web.
 {% endblock %}
 
 {% block body %}
@@ -240,11 +240,16 @@ Création de site internet à Toulouse : site vitrine, WordPress et développeme
                     et adaptée à l'évolution de votre projet.
                 </p>
 
-                <div class="mt-auto pt-6 border-t border-[#E7DDD2]">
-                    <span class="text-sm font-medium text-terracotta">
-                        Une solution adaptée à vos besoins
-                    </span>
-                </div>
+                {# Maillage interne vers la page Symfony Toulouse #}
+<div class="mt-auto pt-6 border-t border-[#E7DDD2]">
+    <a href="{{ path('app_developpement_symfony_toulouse') }}"
+       class="inline-flex items-center gap-2
+              text-sm font-semibold text-terracotta
+              hover:text-[#00687A] transition-colors">
+        Découvrir le développement d'applications Symfony à Toulouse
+        <span aria-hidden="true">↗</span>
+    </a>
+</div>
 
             </article>
 

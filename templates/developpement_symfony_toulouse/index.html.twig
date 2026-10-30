@@ -1,0 +1,459 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Développement d'applications Symfony à Toulouse | Studio Tempo{% endblock %}
+
+{% block meta_description %}Développement d'applications web Symfony sur mesure à Toulouse : outils métier, plateformes web, espaces clients et solutions personnalisées avec Studio Tempo.{% endblock %}
+
+{% block body %}
+
+{# HERO #}
+<section class="relative overflow-hidden bg-cream py-20 lg:py-28">
+    <div class="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-terracotta/10 blur-3xl pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="max-w-4xl">
+            <p class="text-xs uppercase tracking-[0.25em] font-semibold text-terracotta mb-6">
+                Studio Tempo · Développement web sur mesure
+            </p>
+
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.12] text-ink mb-8">
+                Développement d'applications
+                <span class="text-terracotta">Symfony à Toulouse</span>
+            </h1>
+
+            <p class="text-lg lg:text-xl leading-relaxed text-ink-soft max-w-3xl mb-10">
+                Vous avez besoin d'un outil métier, d'une plateforme web ou d'une
+                application adaptée à votre activité ? Studio Tempo conçoit et
+                développe des solutions Symfony sur mesure, pensées pour vos usages
+                et vos objectifs.
+            </p>
+
+            <div class="flex flex-wrap gap-4">
+                <a href="{{ path('app_contact') }}"
+                   class="inline-flex items-center justify-center rounded-full bg-terracotta px-8 py-4 text-white font-semibold hover:opacity-90 transition">
+                    Parlons de votre application
+                    <span class="ml-3" aria-hidden="true">↗</span>
+                </a>
+
+                <a href="#solutions"
+                   class="inline-flex items-center justify-center rounded-full border border-ink/20 px-8 py-4 text-ink font-medium hover:border-terracotta hover:text-terracotta transition">
+                    Découvrir les solutions
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# INTRODUCTION #}
+<section class="py-20 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <div>
+            <p class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold mb-5">
+                Une solution pensée pour votre activité
+            </p>
+
+            <h2 class="font-display text-3xl lg:text-4xl text-ink leading-tight mb-6">
+                Quand un site classique ne suffit plus,
+                <span class="text-terracotta">place au sur-mesure.</span>
+            </h2>
+
+            <p class="text-ink-soft leading-relaxed mb-5">
+                Certaines entreprises ont des besoins qui vont au-delà d'un site
+                vitrine : gérer des utilisateurs, automatiser des tâches,
+                centraliser des données ou créer des fonctionnalités spécifiques.
+            </p>
+
+            <p class="text-ink-soft leading-relaxed">
+                Une application web Symfony permet de construire une solution
+                adaptée à ces besoins, avec une architecture organisée et
+                évolutive. L'objectif n'est pas d'ajouter des fonctionnalités
+                inutiles, mais de développer un outil réellement utile au quotidien.
+            </p>
+        </div>
+
+        <div class="rounded-3xl bg-[#F7F3EC] border border-[#E7DDD2] p-8 lg:p-12">
+            <p class="font-display text-2xl lg:text-3xl text-[#00687A] mb-8">
+                Votre métier est unique.
+                <span class="text-terracotta">Votre application peut l'être aussi.</span>
+            </p>
+
+            <div class="space-y-5">
+                <div class="flex gap-4 items-start">
+                    <span class="text-terracotta text-xl">✓</span>
+                    <p class="text-ink-soft">Des fonctionnalités adaptées à vos processus</p>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <span class="text-terracotta text-xl">✓</span>
+                    <p class="text-ink-soft">Une interface pensée pour vos utilisateurs</p>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <span class="text-terracotta text-xl">✓</span>
+                    <p class="text-ink-soft">Une base technique structurée et maintenable</p>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <span class="text-terracotta text-xl">✓</span>
+                    <p class="text-ink-soft">La possibilité de faire évoluer votre outil</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{# SOLUTIONS #}
+<section id="solutions" class="py-20 lg:py-28 bg-[#F7F3EC]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+        <div class="max-w-3xl mb-14">
+            <p class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold mb-4">
+                Applications web sur mesure
+            </p>
+
+            <h2 class="font-display text-3xl lg:text-5xl text-ink leading-tight mb-6">
+                Quelles applications peut-on
+                <span class="text-terracotta">développer avec Symfony ?</span>
+            </h2>
+
+            <p class="text-ink-soft leading-relaxed text-lg">
+                Symfony s'adapte à de nombreux projets nécessitant des fonctionnalités
+                personnalisées et une logique métier spécifique.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            {% set solutions = [
+                {
+                    number: '01',
+                    title: 'Applications métier',
+                    description: 'Des outils internes pour organiser votre activité, simplifier vos processus et centraliser les informations importantes.',
+                    detail: 'Gestion · Automatisation · Organisation'
+                },
+                {
+                    number: '02',
+                    title: 'Espaces clients',
+                    description: 'Des espaces sécurisés permettant à vos clients ou partenaires de consulter des informations et d’accéder à leurs services.',
+                    detail: 'Comptes · Accès · Documents'
+                },
+                {
+                    number: '03',
+                    title: 'Tableaux de bord',
+                    description: 'Des interfaces personnalisées pour suivre vos données, visualiser des indicateurs et faciliter vos décisions.',
+                    detail: 'Données · Indicateurs · Suivi'
+                },
+                {
+                    number: '04',
+                    title: 'Plateformes web',
+                    description: 'Des plateformes avec plusieurs profils utilisateurs, des parcours spécifiques et des fonctionnalités sur mesure.',
+                    detail: 'Utilisateurs · Parcours · Services'
+                },
+                {
+                    number: '05',
+                    title: 'Outils de réservation',
+                    description: 'Des solutions adaptées à la gestion de demandes, de créneaux, de disponibilités ou de rendez-vous.',
+                    detail: 'Planning · Réservations · Notifications'
+                },
+                {
+                    number: '06',
+                    title: 'Évolution d’application',
+                    description: 'L’ajout de fonctionnalités, la modernisation d’interfaces ou l’amélioration progressive d’une application existante.',
+                    detail: 'Évolution · Maintenance · Optimisation'
+                }
+            ] %}
+
+            {% for solution in solutions %}
+                <article class="group flex flex-col h-full rounded-2xl bg-white border border-[#E7DDD2] p-8 lg:p-9 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+
+                    <span class="text-terracotta font-display text-3xl mb-7">
+                        {{ solution.number }}
+                    </span>
+
+                    <div class="w-12 h-0.5 bg-terracotta/70 mb-7"></div>
+
+                    <h3 class="font-display text-2xl text-[#00687A] mb-4">
+                        {{ solution.title }}
+                    </h3>
+
+                    <p class="text-ink-soft leading-relaxed flex-grow mb-8">
+                        {{ solution.description }}
+                    </p>
+
+                    <p class="border-t border-[#E7DDD2] pt-5 text-xs tracking-wide text-terracotta font-semibold">
+                        {{ solution.detail }}
+                    </p>
+
+                </article>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+{# POURQUOI SYMFONY #}
+<section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+
+            <div>
+                <p class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold mb-5">
+                    Une technologie adaptée au sur-mesure
+                </p>
+
+                <h2 class="font-display text-3xl lg:text-5xl text-ink leading-tight mb-7">
+                    Pourquoi choisir
+                    <span class="text-terracotta">Symfony ?</span>
+                </h2>
+
+                <p class="text-ink-soft leading-relaxed mb-5">
+                    Symfony est un framework PHP utilisé pour développer des
+                    applications web structurées et personnalisées. Il offre
+                    des composants réutilisables et des outils adaptés aux
+                    projets nécessitant une logique métier spécifique.
+                </p>
+
+                <p class="text-ink-soft leading-relaxed">
+                    Le choix de Symfony est particulièrement pertinent lorsqu'un
+                    projet demande davantage de liberté qu'un site construit
+                    autour de fonctionnalités standard.
+                </p>
+            </div>
+
+            <div class="space-y-5">
+
+                <div class="rounded-2xl bg-[#F7F3EC] border border-[#E7DDD2] p-7">
+                    <h3 class="font-display text-xl text-[#00687A] mb-3">
+                        Une architecture structurée
+                    </h3>
+                    <p class="text-ink-soft leading-relaxed">
+                        Un code organisé facilite la compréhension, la maintenance
+                        et l'évolution de l'application dans le temps.
+                    </p>
+                </div>
+
+                <div class="rounded-2xl bg-[#F7F3EC] border border-[#E7DDD2] p-7">
+                    <h3 class="font-display text-xl text-[#00687A] mb-3">
+                        Des fonctionnalités personnalisées
+                    </h3>
+                    <p class="text-ink-soft leading-relaxed">
+                        Les fonctionnalités sont conçues autour de vos besoins,
+                        de vos utilisateurs et de vos règles métier.
+                    </p>
+                </div>
+
+                <div class="rounded-2xl bg-[#F7F3EC] border border-[#E7DDD2] p-7">
+                    <h3 class="font-display text-xl text-[#00687A] mb-3">
+                        Une application évolutive
+                    </h3>
+                    <p class="text-ink-soft leading-relaxed">
+                        Une conception adaptée permet de prévoir de nouvelles
+                        fonctionnalités à mesure que votre activité se développe.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{# METHODE #}
+<section class="py-20 lg:py-28 bg-[#F7F3EC]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <p class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold mb-4">
+                Une méthode claire
+            </p>
+
+            <h2 class="font-display text-3xl lg:text-5xl text-ink leading-tight mb-6">
+                Les étapes de votre
+                <span class="text-terracotta">projet Symfony</span>
+            </h2>
+
+            <p class="text-ink-soft leading-relaxed">
+                Un développement sur mesure commence par une bonne compréhension
+                de votre activité et des fonctionnalités réellement nécessaires.
+            </p>
+        </div>
+
+        {% set steps = [
+            {
+                number: '01',
+                title: 'Échange et analyse',
+                description: 'Nous échangeons sur votre activité, vos objectifs, vos utilisateurs et les problèmes que l’application doit résoudre.'
+            },
+            {
+                number: '02',
+                title: 'Conception',
+                description: 'Nous définissons les fonctionnalités prioritaires, les parcours utilisateurs et la structure de la future application.'
+            },
+            {
+                number: '03',
+                title: 'Développement',
+                description: 'L’application est développée avec Symfony, puis testée progressivement pour vérifier son fonctionnement.'
+            },
+            {
+                number: '04',
+                title: 'Mise en ligne et évolution',
+                description: 'Après validation, l’application peut être déployée et enrichie selon les besoins identifiés.'
+            }
+        ] %}
+
+        <div class="grid md:grid-cols-2 gap-6">
+            {% for step in steps %}
+                <article class="rounded-2xl bg-white border border-[#E7DDD2] p-8 lg:p-10 shadow-sm hover:shadow-lg transition">
+                    <span class="font-display text-4xl text-terracotta">
+                        {{ step.number }}
+                    </span>
+
+                    <h3 class="font-display text-2xl text-[#00687A] mt-6 mb-4">
+                        {{ step.title }}
+                    </h3>
+
+                    <p class="text-ink-soft leading-relaxed">
+                        {{ step.description }}
+                    </p>
+                </article>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+
+{# ACCOMPAGNEMENT LOCAL #}
+<section class="py-20 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+        <div class="max-w-4xl">
+            <p class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold mb-5">
+                Studio Tempo · Toulouse et Haute-Garonne
+            </p>
+
+            <h2 class="font-display text-3xl lg:text-4xl text-ink leading-tight mb-7">
+                Votre développement d'application Symfony
+                <span class="text-terracotta">à Toulouse</span>
+            </h2>
+
+            <p class="text-ink-soft leading-relaxed mb-5">
+                Vous êtes entrepreneur, indépendant ou responsable d'une entreprise
+                à Toulouse et vous souhaitez créer un outil numérique adapté à
+                votre organisation ? Studio Tempo vous accompagne dans la
+                conception et le développement de votre application web.
+            </p>
+
+            <p class="text-ink-soft leading-relaxed mb-5">
+                Que votre activité soit située à Toulouse, Blagnac, Colomiers,
+                Balma, Tournefeuille ou ailleurs en Haute-Garonne, les échanges
+                peuvent s'organiser à distance pour faire avancer votre projet
+                de manière claire et progressive.
+            </p>
+
+            <p class="text-ink-soft leading-relaxed">
+                Chaque application répond à un contexte particulier. C'est pourquoi
+                le choix des fonctionnalités, de l'architecture et du calendrier
+                de développement se fait en fonction de votre besoin réel.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+{# FAQ #}
+<section class="py-20 lg:py-28 bg-[#F7F3EC]">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+
+        <div class="text-center mb-14">
+            <p class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold mb-4">
+                Questions fréquentes
+            </p>
+
+            <h2 class="font-display text-3xl lg:text-5xl text-ink">
+                Vos questions sur le
+                <span class="text-terracotta">développement Symfony</span>
+            </h2>
+        </div>
+
+        {% set faqs = [
+            {
+                question: 'Combien coûte le développement d’une application Symfony ?',
+                answer: 'Le budget dépend du nombre de fonctionnalités, de la complexité des règles métier, des interfaces et des éventuelles connexions à des services externes. Un échange initial permet de définir le périmètre du projet et d’établir un devis adapté.'
+            },
+            {
+                question: 'Quelle est la différence entre WordPress et Symfony ?',
+                answer: 'WordPress est particulièrement adapté à de nombreux sites de présentation et projets éditoriaux. Symfony est un framework de développement qui permet de construire des applications personnalisées avec des fonctionnalités métier spécifiques. Le choix dépend avant tout de vos besoins.'
+            },
+            {
+                question: 'Combien de temps faut-il pour créer une application Symfony ?',
+                answer: 'Le délai varie selon les fonctionnalités à développer, les intégrations nécessaires et les étapes de validation. Un outil simple et une plateforme complexe ne demandent pas le même travail. Le planning est défini après l’analyse du projet.'
+            },
+            {
+                question: 'Peut-on faire évoluer une application Symfony après sa mise en ligne ?',
+                answer: 'Oui. Une application conçue avec une architecture adaptée peut évoluer avec de nouvelles fonctionnalités, des améliorations d’interface ou des connexions supplémentaires. Ces évolutions sont étudiées selon la structure existante et les nouveaux besoins.'
+            }
+        ] %}
+
+        <div class="space-y-5">
+            {% for faq in faqs %}
+                <article class="rounded-2xl bg-white border border-[#E7DDD2] p-7 lg:p-9 hover:shadow-lg transition">
+                    <div class="flex items-start gap-5">
+                        <span class="font-display text-2xl text-terracotta shrink-0">
+                            {{ '%02d'|format(loop.index) }}
+                        </span>
+
+                        <div>
+                            <h3 class="font-display text-xl lg:text-2xl text-[#00687A] mb-4">
+                                {{ faq.question }}
+                            </h3>
+
+                            <p class="text-ink-soft leading-relaxed">
+                                {{ faq.answer }}
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+
+{# CTA FINAL #}
+<section class="py-20 lg:py-28 bg-cream">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold mb-5">
+            Donnons vie à votre projet
+        </p>
+
+        <h2 class="font-display text-4xl lg:text-5xl text-ink leading-tight mb-7">
+            Une idée d'application web ?
+            <span class="text-terracotta">Parlons-en.</span>
+        </h2>
+
+        <p class="text-lg text-ink-soft leading-relaxed mb-10 max-w-2xl mx-auto">
+            Décrivez-moi votre besoin, vos objectifs et les fonctionnalités
+            que vous imaginez. Nous pourrons échanger sur la solution
+            la plus adaptée à votre activité.
+        </p>
+
+        <a href="{{ path('app_contact') }}"
+           class="inline-flex items-center justify-center rounded-full bg-terracotta px-9 py-4 text-white font-semibold hover:opacity-90 transition">
+            Discuter de mon projet Symfony
+            <span class="ml-3" aria-hidden="true">↗</span>
+        </a>
+
+        <p class="mt-10 text-sm text-ink-soft">
+            Vous recherchez plutôt un site vitrine ou un site WordPress ?
+            <a href="{{ path('app_creation_site_toulouse') }}"
+               class="text-terracotta underline underline-offset-4 hover:opacity-80 transition">
+                Découvrez la création de site internet à Toulouse
+            </a>.
+        </p>
+
+    </div>
+</section>
+
+{% endblock %}

@@ -44,27 +44,152 @@ Création de site internet à Toulouse : site vitrine, WordPress, refonte et ré
     </section>
 
     {# INTRODUCTION #}
-    <section class="max-w-7xl mx-auto px-6 sm:px-10 py-16">
-        <div class="max-w-3xl">
-            <h2 class="font-display text-3xl md:text-4xl mb-6">
-                Un site web professionnel pour développer votre activité
+    
+<section class="max-w-7xl mx-auto px-6 sm:px-10 py-16 lg:py-24">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
+
+        {# Carte 1 — Création de site internet #}
+        <div class="flex flex-col h-full rounded-3xl border border-[#E7DDD2] bg-white/70 p-7 sm:p-9 lg:p-10 shadow-sm">
+
+            <div class="flex items-center justify-center w-12 h-12 rounded-2xl bg-[#F8EDE5] mb-7">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="24" height="24"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="#B75B3C"
+                     stroke-width="1.8"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     aria-hidden="true">
+                    <rect x="2" y="3" width="20" height="15" rx="2"/>
+                    <path d="M8 21h8M12 18v3"/>
+                </svg>
+            </div>
+
+            <h2 class="font-display text-3xl md:text-4xl leading-tight text-ink mb-6">
+                Un site web professionnel pour
+                <span class="text-terracotta">développer votre activité</span>
             </h2>
 
-            <p class="text-ink-soft leading-relaxed mb-5">
-                Artisan, indépendant, commerçant ou dirigeant d'entreprise :
-                votre site internet est souvent le premier contact entre
-                votre activité et vos futurs clients.
-            </p>
+            <div class="space-y-5 text-ink-soft leading-relaxed">
 
-            <p class="text-ink-soft leading-relaxed">
-                Développeuse web diplômée et
-                fondatrice de votre agence digitale Studio Tempo, je vous accompagne dans
-                la conception d'un site clair, rapide et adapté à vos objectifs,
-                avec une attention particulière à l'expérience utilisateur
-                et au référencement naturel.
-            </p>
+                <p>
+                    Artisan, indépendant, commerçant ou dirigeant d’entreprise :
+                    votre site internet est souvent le premier contact entre
+                    votre activité et vos futurs clients. Il doit présenter
+                    clairement ce que vous faites, rassurer et donner envie
+                    de vous contacter.
+                </p>
+
+                <p>
+                    Je suis Nathalie Camiul, développeuse web diplômée et
+                    fondatrice de Studio Tempo, agence web indépendante située
+                    à Toulouse.
+                </p>
+
+                <p>
+                    Je conçois des sites clairs, rapides et adaptés à vos
+                    objectifs, avec une attention particulière à l’expérience
+                    des utilisateurs et au référencement naturel.
+                </p>
+
+                <p>
+                    Que vous ayez besoin d’une simple page pour démarrer
+                    ou d’un site complet, mes formules débutent à partir
+                    de <strong class="text-ink">790 €</strong> et le paiement
+                    échelonné sans frais est possible.
+                </p>
+
+            </div>
+
+            <div class="mt-auto pt-9">
+                <a href="{{ path('app_tarifs') }}"
+                   class="inline-flex items-center gap-2
+                          text-terracotta font-semibold
+                          hover:gap-3 transition-all duration-200">
+                    Mes tarifs de création de sites internet
+                    <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+
         </div>
-    </section>
+
+        {# Carte 2 — Accompagnement local #}
+        <div class="flex flex-col h-full rounded-3xl border border-[#E7DDD2] bg-white/70 p-7 sm:p-9 lg:p-10 shadow-sm">
+
+            <div class="flex items-center justify-center w-12 h-12 rounded-2xl bg-[#E6F2F1] mb-7">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="24" height="24"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="#00687A"
+                     stroke-width="1.8"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     aria-hidden="true">
+                    <path d="M3 12l4-4 4 4 4-4 6 6"/>
+                    <path d="M3 17l4-4 4 4 4-4 6 6"/>
+                </svg>
+            </div>
+
+            <h2 class="font-display text-3xl md:text-4xl leading-tight text-ink mb-6">
+                Un accompagnement web pour
+                <span class="text-[#00687A]">les entreprises toulousaines</span>
+            </h2>
+
+            <div class="space-y-5 text-ink-soft leading-relaxed">
+
+                <p>
+                    Faire créer son site internet est une étape importante.
+                    Au-delà de l’aspect graphique, il faut réfléchir à la
+                    manière de présenter son activité, de valoriser son
+                    savoir-faire et de répondre aux attentes de ses futurs
+                    clients.
+                </p>
+
+                <p>
+                    J’accompagne les entrepreneurs, artisans, commerçants,
+                    indépendants et petites entreprises de Toulouse et
+                    de son agglomération.
+                </p>
+
+                <p>
+                    Les échanges se font à distance (visio, mail, téléphone), pour Toulouse et toute la France,
+                    ce qui facilite le suivi du projet. Nous pouvons également nous rencontrer autour d'un café.
+                    Ensemble, nous
+                    définissons les pages nécessaires, les contenus à
+                    mettre en avant et les actions que vos visiteurs doivent
+                    pouvoir faire : demander un devis, vous contacter,
+                    découvrir vos prestations ou consulter vos réalisations.
+                </p>
+
+                <p>
+                    Mon objectif est de construire un site cohérent avec
+                    votre identité, simple à utiliser et capable d’évoluer
+                    avec votre entreprise. Vous avez un interlocuteur unique
+                    pour les choix techniques, le développement et les
+                    évolutions futures.
+                </p>
+
+            </div>
+
+            <div class="mt-auto pt-9">
+                <a href="{{ path('app_contact') }}"
+                   class="inline-flex items-center gap-2
+                          text-[#00687A] font-semibold
+                          hover:gap-3 transition-all duration-200">
+                    Parlons de votre projet web
+                    <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
 
     {# PRESTATIONS #}
    
@@ -290,158 +415,472 @@ Création de site internet à Toulouse : site vitrine, WordPress, refonte et ré
 
 
 {# REFONTE DE SITE INTERNET #}
-<section class="max-w-7xl mx-auto px-6 sm:px-10 py-20">
-    <div class="max-w-4xl">
-        <p class="text-terracotta text-sm tracking-widest uppercase mb-4">
-            Moderniser votre présence en ligne
-        </p>
 
-        <h2 class="font-display text-3xl md:text-4xl mb-6">
-            Refonte de site internet à Toulouse :
-            donnez un nouvel élan à votre activité
-        </h2>
+{# ============================================================
+   SECTION 1 — REFONTE DE SITE INTERNET
+   ============================================================ #}
+<section class="max-w-7xl mx-auto px-6 sm:px-10 py-16 lg:py-24">
 
-        <p class="text-ink-soft leading-relaxed mb-5">
-            Votre site internet commence à dater ? Son affichage sur
-            smartphone n'est plus satisfaisant, son contenu ne reflète
-            plus votre stratégie digitale ou vos visiteurs peinent à trouver
-            les informations essentielles ? Une
-            <strong>refonte de site internet</strong> peut être
-            l'occasion de repartir sur des bases plus solides.
-        </p>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-        <p class="text-ink-soft leading-relaxed mb-5">
-            Chez Studio Tempo, une refonte ne consiste pas uniquement
-            à modifier les couleurs ou les images. Elle permet
-            également de repenser la navigation, de clarifier
-            les messages, d'améliorer l'expérience utilisateur,
-             de revoir les performances techniques et le web-design.
-        </p>
-
-        <p class="text-ink-soft leading-relaxed mb-5">
-            Pour les entreprises de Toulouse et de Haute-Garonne,
-            un site professionnel doit présenter clairement
-            les prestations proposées, rassurer les visiteurs
-            et faciliter les demandes de contact ou de devis.
-        </p>
-
-        <p class="text-ink-soft leading-relaxed">
-            Selon votre projet, je peux vous accompagner dans
-            la modernisation d'un site existant
-            ou dans la création d'une nouvelle solution
-            développée avec Symfony. Une attention particulière
-            est portée aux URL existantes, aux redirections
-            et aux contenus importants afin de limiter
-            les risques SEO liés à la migration.
-        </p>
-    </div>
-</section>
-
-{# REALISATIONS #}
-<section class="bg-white/60 py-20">
-    <div class="max-w-7xl mx-auto px-6 sm:px-10">
-        <div class="max-w-4xl">
+        {# Colonne texte #}
+        <div>
             <p class="text-terracotta text-sm tracking-widest uppercase mb-4">
-                Des projets concrets
+                Moderniser votre présence en ligne
             </p>
 
-            <h2 class="font-display text-3xl md:text-4xl mb-6">
-                Des réalisations web adaptées à chaque besoin
+            <h2 class="font-display text-3xl md:text-4xl leading-tight text-ink mb-7">
+                Refonte de site internet à Toulouse :
+                <span class="text-terracotta">
+                    donnez un nouvel élan à votre activité
+                </span>
             </h2>
 
-            <p class="text-ink-soft leading-relaxed mb-5">
-                Chaque projet web répond à une problématique
-                différente. Certains professionnels souhaitent
-                présenter leurs services et développer leur
-                visibilité locale. D'autres ont besoin
-                d'une plateforme plus complète, intégrant
-                des fonctionnalités personnalisées.
-            </p>
+            <div class="space-y-5 text-ink-soft leading-relaxed">
+                <p>
+                    Votre site internet commence à dater ? Son affichage
+                    sur smartphone n'est plus satisfaisant, son contenu
+                    ne reflète plus votre stratégie digitale ou vos
+                    visiteurs peinent à trouver les informations
+                    essentielles ? Une
+                    <strong class="text-ink">refonte de site internet</strong>
+                    peut être l'occasion de repartir sur des bases plus solides.
+                </p>
 
-            <p class="text-ink-soft leading-relaxed mb-5">
-                Mes réalisations illustrent cette diversité
-                de besoins : conception d'interfaces,
-                organisation des contenus, développement
-                de fonctionnalités et adaptation
-                aux usages sur mobile.
-            </p>
+                <p>
+                    Chez Studio Tempo, une refonte ne consiste pas
+                    uniquement à modifier les couleurs ou les images.
+                    Elle permet également de repenser la navigation,
+                    de clarifier les messages, d'améliorer l'expérience
+                    utilisateur et de revoir les performances techniques
+                    ainsi que le web-design.
+                </p>
 
-            <p class="text-ink-soft leading-relaxed mb-5">
-                Pour chaque projet, je privilégie une approche à votre image
-                qui tient compte du public visé, des objectifs
-                de l'entreprise et des contraintes techniques.
-                Le choix entre WordPress et Symfony dépend
-                notamment du niveau de personnalisation attendu
-                et des évolutions envisagées.
-            </p>
+                <p>
+                    Pour les entreprises de Toulouse et de Haute-Garonne,
+                    un site professionnel doit présenter clairement les
+                    prestations proposées, rassurer les visiteurs et
+                    faciliter les demandes de contact ou de devis.
+                </p>
 
-            <p class="text-ink-soft leading-relaxed">
-                Avant de créer votre site internet,
-                nous pouvons échanger sur des exemples
-                de projets et sur les solutions les plus
-                pertinentes pour vous.
-            </p>
+                <p>
+                    Selon votre projet, je peux vous accompagner dans
+                    la modernisation d'un site existant ou dans la
+                    création d'une nouvelle solution développée avec
+                    Symfony. Une attention particulière est portée
+                    aux URL existantes, aux redirections et aux contenus
+                    importants afin de limiter les risques SEO liés
+                    à la migration.
+                </p>
+            </div>
         </div>
+
+        {# Colonne visuelle #}
+        <div class="rounded-3xl border border-[#E7DDD2]
+                    bg-white/70 p-7 sm:p-9 lg:p-10 shadow-sm">
+
+            <div class="flex items-center justify-center w-14 h-14
+                        rounded-2xl bg-[#F8EDE5] mb-8">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="28" height="28"
+                     viewBox="0 0 24 24"
+                     fill="none" stroke="#B75B3C"
+                     stroke-width="1.8"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     aria-hidden="true">
+                    <path d="M3 12a9 9 0 0 1 15.36-6.36L21 8"/>
+                    <path d="M21 3v5h-5"/>
+                    <path d="M21 12a9 9 0 0 1-15.36 6.36L3 16"/>
+                    <path d="M8 16H3v5"/>
+                </svg>
+            </div>
+
+            <h3 class="font-display text-2xl text-ink mb-7">
+                Les objectifs d'une refonte réussie
+            </h3>
+
+            <div class="space-y-5">
+
+                <div class="flex items-start gap-4">
+                    <span class="text-terracotta font-semibold">01</span>
+                    <div>
+                        <h4 class="font-semibold text-ink mb-1">
+                            Moderniser le design
+                        </h4>
+                        <p class="text-sm text-ink-soft leading-relaxed">
+                            Une identité visuelle cohérente avec votre activité.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border-t border-[#E7DDD2]"></div>
+
+                <div class="flex items-start gap-4">
+                    <span class="text-terracotta font-semibold">02</span>
+                    <div>
+                        <h4 class="font-semibold text-ink mb-1">
+                            Améliorer la navigation
+                        </h4>
+                        <p class="text-sm text-ink-soft leading-relaxed">
+                            Un parcours plus simple sur ordinateur et mobile.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border-t border-[#E7DDD2]"></div>
+
+                <div class="flex items-start gap-4">
+                    <span class="text-terracotta font-semibold">03</span>
+                    <div>
+                        <h4 class="font-semibold text-ink mb-1">
+                            Préserver le référencement
+                        </h4>
+                        <p class="text-sm text-ink-soft leading-relaxed">
+                            Une migration préparée pour limiter les pertes SEO.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border-t border-[#E7DDD2]"></div>
+
+                <div class="flex items-start gap-4">
+                    <span class="text-terracotta font-semibold">04</span>
+                    <div>
+                        <h4 class="font-semibold text-ink mb-1">
+                            Faciliter les contacts
+                        </h4>
+                        <p class="text-sm text-ink-soft leading-relaxed">
+                            Des appels à l'action clairs et accessibles.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 </section>
 
-{# ACCOMPAGNEMENT LOCAL #}
-<section class="max-w-7xl mx-auto px-6 sm:px-10 py-20">
-    <div class="max-w-4xl">
-        <p class="text-terracotta text-sm tracking-widest uppercase mb-4">
-            Un accompagnement humain
-        </p>
 
-        <h2 class="font-display text-3xl md:text-4xl mb-6">
-            Un accompagnement web pour les entreprises toulousaines
-        </h2>
+{# ============================================================
+   SECTION 2 — RÉALISATIONS
+   ============================================================ #}
+<section class="bg-white/60 py-16 lg:py-24">
 
-        <p class="text-ink-soft leading-relaxed mb-5">
-            Faire créer son site internet est une étape
-            importante pour une entreprise. Au-delà
-            de l'aspect graphique, il faut réfléchir
-            à la manière de présenter son activité,
-            de valoriser son savoir-faire et de répondre
-            aux attentes de ses futurs clients.
-        </p>
+    <div class="max-w-7xl mx-auto px-6 sm:px-10">
 
-        <p class="text-ink-soft leading-relaxed mb-5">
-            Studio Tempo propose un accompagnement personnalisé
-            aux entrepreneurs, artisans, commerçants,
-            indépendants et petites entreprises
-            de Toulouse et de son agglomération.
-            Les échanges peuvent se dérouler à distance,
-            afin de faciliter le suivi du projet.
-        </p>
+        <div class="grid grid-cols-1 lg:grid-cols-2
+                    gap-10 lg:gap-16 items-center">
 
-        <p class="text-ink-soft leading-relaxed mb-5">
-            Ensemble, nous définissons les pages nécessaires,
-            les contenus à mettre en avant et les actions
-            que les visiteurs doivent pouvoir effectuer :
-            demander un devis, prendre contact,
-            découvrir des prestations ou consulter
-            des réalisations.
-        </p>
+            {# Colonne visuelle — affichée à droite sur mobile #}
+            <div class="order-2 lg:order-1
+                        rounded-3xl border border-[#E7DDD2]
+                        bg-[#F7F3EC] p-7 sm:p-9 lg:p-10">
 
-        <p class="text-ink-soft leading-relaxed">
-            L'objectif est de construire un site web
-            cohérent avec votre identité, simple à utiliser
-            et capable d'évoluer avec votre entreprise.
-            Vous bénéficiez d'un interlocuteur unique
-            pour échanger sur les choix techniques,
-            le développement et les possibilités
-            d'amélioration de votre présence en ligne.
-        </p>
+                <div class="flex items-center justify-center w-14 h-14
+                            rounded-2xl bg-[#E6F2F1] mb-8">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="28" height="28"
+                         viewBox="0 0 24 24"
+                         fill="none" stroke="#00687A"
+                         stroke-width="1.8"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         aria-hidden="true">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M3 9h18"/>
+                        <path d="M9 9v12"/>
+                    </svg>
+                </div>
 
-        <div class="mt-8">
-            <a href="{{ path('app_contact') }}"
-               class="inline-flex items-center justify-center rounded-full bg-terracotta px-7 py-4 text-white font-medium hover:opacity-90 transition">
-                Parlons de votre projet web
-            </a>
+                <h3 class="font-display text-2xl text-ink mb-7">
+                    Des solutions adaptées à vos besoins
+                </h3>
+
+                <div class="space-y-5">
+
+                    <div class="flex items-start gap-4">
+                        <span class="text-[#00687A] font-semibold">01</span>
+                        <div>
+                            <h4 class="font-semibold text-ink mb-1">
+                                Sites vitrines
+                            </h4>
+                            <p class="text-sm text-ink-soft leading-relaxed">
+                                Présenter votre activité et valoriser vos services.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-[#E7DDD2]"></div>
+
+                    <div class="flex items-start gap-4">
+                        <span class="text-[#00687A] font-semibold">02</span>
+                        <div>
+                            <h4 class="font-semibold text-ink mb-1">
+                                Sites WordPress
+                            </h4>
+                            <p class="text-sm text-ink-soft leading-relaxed">
+                                Une gestion des contenus adaptée à votre quotidien.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-[#E7DDD2]"></div>
+
+                    <div class="flex items-start gap-4">
+                        <span class="text-[#00687A] font-semibold">03</span>
+                        <div>
+                            <h4 class="font-semibold text-ink mb-1">
+                                Applications Symfony
+                            </h4>
+                            <p class="text-sm text-ink-soft leading-relaxed">
+                                Des fonctionnalités personnalisées pour vos projets.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                {# Lien optionnel vers une page de réalisations #}
+                {# Ajouter ici un lien lorsque la route est disponible #}
+
+            </div>
+
+            {# Colonne texte #}
+            <div class="order-1 lg:order-2">
+
+                <p class="text-terracotta text-sm tracking-widest uppercase mb-4">
+                    Des projets concrets
+                </p>
+
+                <h2 class="font-display text-3xl md:text-4xl
+                           leading-tight text-ink mb-7">
+                    Des réalisations web
+                    <span class="text-[#00687A]">
+                        adaptées à chaque besoin
+                    </span>
+                </h2>
+
+                <div class="space-y-5 text-ink-soft leading-relaxed">
+                    <p>
+                        Chaque projet web répond à une problématique
+                        différente. Certains professionnels souhaitent
+                        présenter leurs services et développer leur
+                        visibilité locale. D'autres ont besoin d'une
+                        plateforme plus complète, intégrant des
+                        fonctionnalités personnalisées.
+                    </p>
+
+                   
+<p>
+    <a href="{{ path('app_projet_index') }}"
+       class="text-terracotta font-semibold underline
+              underline-offset-4 hover:opacity-70 transition">
+        Mes réalisations
+    </a>
+    illustrent cette diversité de besoins :
+    conception d'interfaces, organisation des contenus,
+    développement de fonctionnalités et adaptation
+    aux usages sur mobile.
+</p>
+
+                    <p>
+                        Pour chaque projet, je privilégie une approche
+                        à votre image qui tient compte du public visé,
+                        des objectifs de l'entreprise et des contraintes
+                        techniques.
+                    </p>
+
+                    <p>
+                        Le choix entre WordPress et Symfony dépend
+                        notamment du niveau de personnalisation attendu
+                        et des évolutions envisagées.
+                    </p>
+
+                    <p>
+                        Avant de créer votre site internet, nous pouvons
+                        échanger sur des exemples de projets et sur
+                        les solutions les plus pertinentes pour vous.
+                    </p>
+                </div>
+
+            </div>
+
         </div>
+
     </div>
 </section>
 
+
+{# ============================================================
+   SECTION 3 — ACCOMPAGNEMENT LOCAL
+   ============================================================ #}
+<section class="max-w-7xl mx-auto px-6 sm:px-10 py-16 lg:py-24">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2
+                gap-10 lg:gap-16 items-center">
+
+        {# Colonne texte #}
+        <div>
+
+            <p class="text-terracotta text-sm tracking-widest uppercase mb-4">
+                Un accompagnement humain
+            </p>
+
+            <h2 class="font-display text-3xl md:text-4xl
+                       leading-tight text-ink mb-7">
+                Un accompagnement web pour
+                <span class="text-[#00687A]">
+                    les entreprises toulousaines
+                </span>
+            </h2>
+
+            <div class="space-y-5 text-ink-soft leading-relaxed">
+
+                <p>
+                    Faire créer son site internet est une étape
+                    importante pour une entreprise. Au-delà de
+                    l'aspect graphique, il faut réfléchir à la
+                    manière de présenter son activité, de valoriser
+                    son savoir-faire et de répondre aux attentes
+                    de ses futurs clients.
+                </p>
+
+                <p>
+                    Studio Tempo propose un accompagnement personnalisé
+                    aux entrepreneurs, artisans, commerçants,
+                    indépendants et petites entreprises de Toulouse
+                    et de son agglomération.
+                </p>
+
+                <p>
+                    Les échanges peuvent se dérouler à distance,
+                    afin de faciliter le suivi du projet.
+                </p>
+
+                <p>
+                    Ensemble, nous définissons les pages nécessaires,
+                    les contenus à mettre en avant et les actions
+                    que les visiteurs doivent pouvoir effectuer :
+                    demander un devis, prendre contact, découvrir
+                    des prestations ou consulter des réalisations.
+                </p>
+
+                <p>
+                    L'objectif est de construire un site web cohérent
+                    avec votre identité, simple à utiliser et capable
+                    d'évoluer avec votre entreprise.
+                </p>
+
+                <p>
+                    Vous bénéficiez d'un interlocuteur unique pour
+                    échanger sur les choix techniques, le développement
+                    et les possibilités d'amélioration de votre
+                    présence en ligne.
+                </p>
+
+            </div>
+
+            <div class="mt-9">
+                <a href="{{ path('app_contact') }}"
+                   class="inline-flex items-center justify-center
+                          gap-3 rounded-full bg-terracotta
+                          px-7 py-4 text-white font-medium
+                          hover:opacity-90 transition">
+                    Parlons de votre projet web
+                    <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+
+        </div>
+
+        {# Colonne visuelle #}
+        <div class="rounded-3xl border border-[#E7DDD2]
+                    bg-white/70 p-7 sm:p-9 lg:p-10 shadow-sm">
+
+            <div class="flex items-center justify-center w-14 h-14
+                        rounded-2xl bg-[#E6F2F1] mb-8">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="28" height="28"
+                     viewBox="0 0 24 24"
+                     fill="none" stroke="#00687A"
+                     stroke-width="1.8"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     aria-hidden="true">
+                    <path d="M8 12h8"/>
+                    <path d="M12 8v8"/>
+                    <circle cx="12" cy="12" r="9"/>
+                </svg>
+            </div>
+
+            <h3 class="font-display text-2xl text-ink mb-7">
+                Un projet, un accompagnement personnalisé
+            </h3>
+
+            <div class="space-y-5">
+
+                <div class="flex items-start gap-4">
+                    <span class="text-[#00687A] font-semibold">01</span>
+                    <div>
+                        <h4 class="font-semibold text-ink mb-1">
+                            Échange et découverte
+                        </h4>
+                        <p class="text-sm text-ink-soft leading-relaxed">
+                            Comprendre votre activité et vos objectifs.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border-t border-[#E7DDD2]"></div>
+
+                <div class="flex items-start gap-4">
+                    <span class="text-[#00687A] font-semibold">02</span>
+                    <div>
+                        <h4 class="font-semibold text-ink mb-1">
+                            Conception sur mesure
+                        </h4>
+                        <p class="text-sm text-ink-soft leading-relaxed">
+                            Définir une solution adaptée à votre projet.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border-t border-[#E7DDD2]"></div>
+
+                <div class="flex items-start gap-4">
+                    <span class="text-[#00687A] font-semibold">03</span>
+                    <div>
+                        <h4 class="font-semibold text-ink mb-1">
+                            Développement
+                        </h4>
+                        <p class="text-sm text-ink-soft leading-relaxed">
+                            Construire un site clair, fiable et responsive.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border-t border-[#E7DDD2]"></div>
+
+                <div class="flex items-start gap-4">
+                    <span class="text-[#00687A] font-semibold">04</span>
+                    <div>
+                        <h4 class="font-semibold text-ink mb-1">
+                            Suivi et évolution
+                        </h4>
+                        <p class="text-sm text-ink-soft leading-relaxed">
+                            Faire évoluer votre site selon vos besoins.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
 
     {# METHODE #}
     
@@ -789,21 +1228,26 @@ Création de site internet à Toulouse : site vitrine, WordPress, refonte et ré
                         </h3>
 
                         <p class="text-ink-soft text-base md:text-lg leading-relaxed">
-                            Le prix d'un site internet dépend de plusieurs critères :
-                            le nombre de pages, le niveau de personnalisation graphique,
-                            les fonctionnalités souhaitées et les besoins techniques.
-                            Un site vitrine professionnel ne nécessite pas le même
-                            investissement qu'une application web développée sur mesure.
-                            Chez Studio Tempo, chaque projet fait l'objet d'une
-                            étude personnalisée afin de proposer une solution
-                            adaptée à vos objectifs et à votre budget.
-                            Vous pouvez consulter
+                            Le prix d’un site internet dépend du nombre de pages, du niveau de personnalisation, des fonctionnalités et des contenus à créer. Chez Studio Tempo, voici mes tarifs de départ :
+
+One Page : à partir de 790 €, pour présenter votre activité sur une page claire et efficace ;
+Site vitrine : à partir de 1 390 €, jusqu’à 5 pages avec rédaction des contenus optimisée pour le SEO ;
+Site e-commerce : à partir de 2 000 €, avec WooCommerce et jusqu’à 20 produits intégrés.
+
+La refonte de site et les applications web sur mesure (Symfony) sont proposées sur devis, après un échange sur vos besoins.
+
+Chaque formule comprend un design personnalisé et responsive, une optimisation SEO et une formation à la prise en main. Un paiement échelonné sans frais est possible, et une fois le projet intégralement réglé, votre site vous appartient entièrement.
                             <a href="{{ path('app_tarifs') }}"
                                class="text-terracotta font-semibold underline
                                       underline-offset-4 hover:opacity-70 transition">
-                                mes tarifs de création de sites internet
+                                Mes tarifs de création de sites internet
                             </a>
-                            ou me contacter pour obtenir un devis.
+                        <p>ou </p>
+                            <a href="{{ path('app_contact') }}"
+                               class="text-terracotta font-semibold underline
+                                      underline-offset-4 hover:opacity-70 transition">
+                             Me contacter pour obtenir un devis.
+                            </a>
                         </p>
 
                     </div>

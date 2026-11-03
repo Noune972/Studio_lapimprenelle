@@ -823,15 +823,15 @@
         {# =========================
            INTRO
         ========================== #}
-        <div class="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+        <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
 
             <div>
                 <div class="mb-7 flex items-center gap-4">
                     <span class="h-px w-8 bg-[#54796f]"></span>
 
-                    <h2 class="text-[11px] font-semibold uppercase tracking-[.28em] text-[#54796f]">
+                    <p class="text-[11px] font-semibold uppercase tracking-[.28em] text-[#54796f]">
                         Création de sites internet
-                    </h2>
+                    </p>
                 </div>
 
                 <h2 class="font-display
@@ -896,263 +896,281 @@
 
 </div>
 
+            </div> {# Fin de la colonne de présentation #}
+
             {# =========================
-               VISUEL
+               VISUEL — COLONNE DROITE
             ========================== #}
-            <div class="relative">
+            <div class="relative mx-auto w-full max-w-lg lg:ml-auto">
+                <div class="pointer-events-none absolute -right-6 -top-8 h-40 w-40 rounded-full border-2 border-[#df8a68]/60 sm:h-52 sm:w-52"></div>
+                <div class="pointer-events-none absolute -bottom-6 -left-6 h-36 w-36 rounded-full bg-[#f2e6dc] sm:h-44 sm:w-44"></div>
 
-                <div class="absolute -right-16 -top-16 h-56 w-56 rounded-full
-                            border-2 border-[#df8a68] opacity-60"></div>
-
-                <div class="absolute -left-12 top-10 h-40 w-40 rounded-full
-                            bg-[#f2e6dc]"></div>
-
-<div class="relative aspect-[4/3] w-full overflow-hidden rounded-[2rem]">
-
-    <img
-        src="{{ asset('images/favicon2.png') }}"
-        alt="Création de sites internet avec Symfony et WordPress"
-        width="900"
-        height="675"
-        loading="lazy"
-        decoding="async"
-        class="absolute inset-0 h-full w-full object-cover"
-    >
-
-</div>
-
+                <div class="relative flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-[2rem] border border-[#E7DDD2] bg-white/75 p-8 shadow-[0_20px_60px_rgba(0,0,0,.05)] sm:p-12">
+                    <img
+                        src="{{ asset('images/favicon2.png') }}"
+                        alt="Identité visuelle de Studio Tempo, création de sites internet WordPress et Symfony"
+                        width="900"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                        class="h-full w-full object-contain"
+                    >
+                </div>
             </div>
         </div>
 
+{# =========================
+   SERVICES
+========================== #}
 
-        {# =========================
-           SERVICES
-        ========================== #}
+<div class="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-6">
 
-        <div class="mt-20 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+    {# SITE VITRINE #}
+    <article class="group flex min-w-0 flex-col rounded-[26px] border border-[#E7DDD2]
+                    bg-white/70 p-7 lg:p-8 md:col-span-1 xl:col-span-2
+                    shadow-[0_15px_50px_rgba(0,0,0,.025)]
+                    transition duration-300
+                    hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
 
-            {# SITE VITRINE #}
-            <article class="group flex flex-col rounded-[26px] border border-black/[.03]
-                            bg-white/70 p-7 shadow-[0_15px_50px_rgba(0,0,0,.025)]
-                            transition duration-300
-                            hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
+        <div class="mb-6 flex h-14 w-14 items-center justify-center
+                    rounded-full bg-[#e5ebe7] text-[#172824]">
 
-                <div class="mb-6 flex h-14 w-14 items-center justify-center
-            rounded-full bg-[#e5ebe7] text-[#172824]">
+            <svg class="h-7 w-7"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.5"
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 aria-hidden="true">
 
-    <svg class="h-7 w-7"
-         viewBox="0 0 24 24"
-         fill="none"
-         stroke="currentColor"
-         stroke-width="1.5"
-         stroke-linecap="round"
-         stroke-linejoin="round"
-         aria-hidden="true">
+                {# Fenêtre du site #}
+                <rect x="2.5" y="3.5" width="19" height="17" rx="2"/>
 
-        {# Fenêtre du site #}
-        <rect x="2.5" y="3.5" width="19" height="17" rx="2"/>
+                {# Barre du navigateur #}
+                <path d="M2.5 8h19"/>
 
-        {# Barre du navigateur #}
-        <path d="M2.5 8h19"/>
+                {# Petits boutons #}
+                <circle cx="6" cy="5.8" r=".6" fill="currentColor" stroke="none"/>
+                <circle cx="8.5" cy="5.8" r=".6" fill="currentColor" stroke="none"/>
 
-        {# Petits boutons #}
-        <circle cx="6" cy="5.8" r=".6" fill="currentColor" stroke="none"/>
-        <circle cx="8.5" cy="5.8" r=".6" fill="currentColor" stroke="none"/>
+                {# Contenu de la page #}
+                <path d="M6 12h7"/>
+                <path d="M6 15h12"/>
+                <path d="M6 18h9"/>
 
-        {# Contenu de la page #}
-        <path d="M6 12h7"/>
-        <path d="M6 15h12"/>
-        <path d="M6 18h9"/>
-
-    </svg>
-
-</div>
-
-                <h2 class="mb-3 font-serif text-[23px] text-[#172824]">
-                    Site vitrine /One page
-                </h2>
-
-                <p class="mb-6 text-[15px] leading-6 text-[#66706e]">
-                    Un site clair et efficace pour présenter votre activité,
-                    vos services et votre image.
-                </p>
-
-                <div class="mt-auto flex flex-wrap gap-2">
-                    {% for tag in ['WordPress', 'CMS', 'Pages web'] %}
-                        <span class="rounded-full bg-[#fae9e1] px-3 py-2
-                                     text-[9px] font-semibold uppercase tracking-wider text-[#263633]">
-                            {{ tag }}
-                        </span>
-                    {% endfor %}
-                </div>
-
-            </article>
-
-
-            {# ECOMMERCE #}
-            <article class="group flex flex-col rounded-[26px] border border-black/[.03]
-                            bg-white/70 p-7 shadow-[0_15px_50px_rgba(0,0,0,.025)]
-                            transition duration-300
-                            hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
-
-               <div class="mb-6 flex h-14 w-14 items-center justify-center
-            rounded-full bg-[#fae4da] text-2xl text-[#d67c5d]">
-    🛒
-</div>
-
-                <h2 class="mb-3 font-serif text-[23px] text-[#172824]">
-                    E-commerce
-                </h2>
-
-                <p class="mb-6 text-[15px] leading-6 text-[#66706e]">
-                    Une boutique en ligne performante pour vendre vos produits
-                    ou vos services et développer votre activité.
-                </p>
-
-                <div class="mt-auto flex flex-wrap gap-2">
-                    {% for tag in ['WooCommerce', 'E-commerce', 'SEO'] %}
-                        <span class="rounded-full bg-[#fae9e1] px-3 py-2
-                                     text-[9px] font-semibold uppercase tracking-wider text-[#263633]">
-                            {{ tag }}
-                        </span>
-                    {% endfor %}
-                </div>
-
-            </article>
-
-
-            {# SYMFONY #}
-            <article class="group flex flex-col rounded-[26px] border border-black/[.03]
-                            bg-white/70 p-7 shadow-[0_15px_50px_rgba(0,0,0,.025)]
-                            transition duration-300
-                            hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
-
-                <div class="mb-6 flex h-14 w-14 items-center justify-center
-                            rounded-full bg-[#e5ebe7]
-                            font-mono text-xl text-[#172824]">
-                    &lt;/&gt;
-                </div>
-
-                <h2 class="mb-3 font-serif text-[23px] text-[#172824]">
-                    Développement sur mesure
-                </h2>
-
-                <p class="mb-6 text-[15px] leading-6 text-[#66706e]">
-                    Pour les projets qui dépassent le cadre d'un CMS classique,
-                    je développe avec le
-                    <strong class="font-medium text-[#172824]">
-                        framework Symfony
-                    </strong>
-                    des sites et applications web adaptés à vos besoins métier.
-                </p>
-
-                <div class="mt-auto flex flex-wrap gap-2">
-                    {% for tag in ['Symfony', 'Framework', 'Sur mesure'] %}
-                        <span class="rounded-full bg-[#fae9e1] px-3 py-2
-                                     text-[9px] font-semibold uppercase tracking-wider text-[#263633]">
-                            {{ tag }}
-                        </span>
-                    {% endfor %}
-                </div>
-
-                {# Maillage interne vers la page Symfony Toulouse #}
-                <a href="{{ path('app_developpement_symfony_toulouse') }}"
-                   class="mt-6 inline-flex items-center gap-2
-                          text-sm font-semibold text-terracotta
-                          hover:opacity-75 transition">
-                   Découvrir le développement d'applications Symfony à Toulouse
-                   <span aria-hidden="true">↗</span>
-                </a>
-            </article>
-
-
-            {# REFONTE #}
-            <article class="group flex flex-col rounded-[26px] border border-black/[.03]
-                            bg-white/70 p-7 shadow-[0_15px_50px_rgba(0,0,0,.025)]
-                            transition duration-300
-                            hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
-
-                <div class="mb-6 flex h-14 w-14 items-center justify-center
-                            rounded-full bg-[#fae4da] text-3xl text-[#d67c5d]">
-                    ↻
-                </div>
-
-                <h2 class="mb-3 font-serif text-[23px] text-[#172824]">
-                    Refonte de site
-                </h2>
-
-                <p class="mb-6 text-[15px] leading-6 text-[#66706e]">
-                    Votre site actuel ne correspond plus à votre activité ?
-                    Une <strong class="font-medium text-[#172824]">refonte</strong>
-                    permet de moderniser son webdesign, son ergonomie
-                    et ses performances.
-                </p>
-
-                <div class="mt-auto flex flex-wrap gap-2">
-                    {% for tag in ['Webdesign', 'Ergonomie', 'SEO'] %}
-                        <span class="rounded-full bg-[#fae9e1] px-3 py-2
-                                     text-[9px] font-semibold uppercase tracking-wider text-[#263633]">
-                            {{ tag }}
-                        </span>
-                    {% endfor %}
-                </div>
-
-            </article>
-
-
-            {# RESPONSIVE #}
-            <article class="group flex flex-col rounded-[26px] border border-black/[.03]
-                            bg-white/70 p-7 shadow-[0_15px_50px_rgba(0,0,0,.025)]
-                            transition duration-300
-                            hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
-
-               <div class="mb-6 flex h-14 w-14 items-center justify-center
-            rounded-full bg-[#e5ebe7] text-[#172824]">
-
-    <svg class="h-7 w-7"
-         viewBox="0 0 24 24"
-         fill="none"
-         stroke="currentColor"
-         stroke-width="1.5"
-         stroke-linecap="round"
-         stroke-linejoin="round"
-         aria-hidden="true">
-
-        {# Écran ordinateur #}
-        <rect x="2" y="4" width="14" height="10" rx="1.5"/>
-        <path d="M6 18h6"/>
-        <path d="M9 14v4"/>
-
-        {# Smartphone #}
-        <rect x="16" y="8" width="6" height="12" rx="1.5"/>
-        <path d="M18.5 17.5h1"/>
-
-    </svg>
-
-</div>
-
-                <h2 class="mb-3 font-serif text-[23px] text-[#172824]">
-                    Responsive design
-                </h2>
-
-                <p class="mb-6 text-[15px] leading-6 text-[#66706e]">
-                    Votre site s'adapte aux ordinateurs, tablettes et smartphones
-                    pour offrir une expérience fluide en
-                    <strong class="font-medium text-[#172824]">web mobile</strong>.
-                </p>
-
-                <div class="mt-auto flex flex-wrap gap-2">
-                    {% for tag in ['Responsive design', 'Web mobile'] %}
-                        <span class="rounded-full bg-[#fae9e1] px-3 py-2
-                                     text-[9px] font-semibold uppercase tracking-wider text-[#263633]">
-                            {{ tag }}
-                        </span>
-                    {% endfor %}
-                </div>
-
-            </article>
+            </svg>
 
         </div>
+
+        <h3 class="mb-4 font-display text-[24px] leading-snug text-[#172824]">
+            Création de site vitrine et One Page
+        </h3>
+
+        <p class="mb-7 text-[15px] leading-7 text-[#66706e]">
+            Un site vitrine ou une one page pour présenter votre activité,
+            vos services et votre savoir-faire, et donner envie à vos futurs
+            clients de vous contacter. Le design est personnalisé, lisible
+            sur mobile et optimisé dès le départ pour le référencement
+            naturel.
+        </p>
+
+        <div class="mt-auto flex flex-wrap gap-2">
+            {% for tag in ['WordPress', 'Site vitrine', 'One Page', 'Responsive'] %}
+                <span class="rounded-full bg-[#fae9e1] px-3 py-2
+                             text-[9px] font-semibold uppercase tracking-wider text-[#263633]">
+                    {{ tag }}
+                </span>
+            {% endfor %}
+        </div>
+
+        <a href="{{ path('app_tarifs') }}"
+           class="mt-6 inline-flex items-center gap-2
+                  text-sm font-semibold text-terracotta
+                  hover:opacity-75 transition">
+            Voir mes tarifs de création de site
+            <span aria-hidden="true">↗</span>
+        </a>
+
+    </article>
+
+
+    {# ECOMMERCE #}
+    <article class="group flex min-w-0 flex-col rounded-[26px] border border-[#E7DDD2]
+                    bg-white/70 p-7 lg:p-8 md:col-span-1 xl:col-span-2
+                    shadow-[0_15px_50px_rgba(0,0,0,.025)]
+                    transition duration-300
+                    hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
+
+        <div class="mb-6 flex h-14 w-14 items-center justify-center
+                    rounded-full bg-[#fae4da] text-2xl text-[#d67c5d]">
+            🛒
+        </div>
+
+        <h3 class="mb-4 font-display text-[24px] leading-snug text-[#172824]">
+            Création de boutique en ligne
+        </h3>
+
+        <p class="mb-7 text-[15px] leading-7 text-[#66706e]">
+            Une boutique en ligne WooCommerce pour vendre vos produits ou
+            vos services sur internet : catalogue, panier, paiement sécurisé,
+            gestion des stocks et des livraisons. Chaque fiche produit est
+            pensée pour rassurer vos clients et se positionner sur Google.
+        </p>
+
+        <div class="mt-auto flex flex-wrap gap-2">
+            {% for tag in ['WooCommerce', 'E-commerce', 'Paiement sécurisé', 'SEO'] %}
+                <span class="rounded-full bg-[#fae9e1] px-3 py-2
+                             text-[9px] font-semibold uppercase tracking-wider text-[#263633]">
+                    {{ tag }}
+                </span>
+            {% endfor %}
+        </div>
+
+        <a href="{{ path('app_tarifs') }}"
+           class="mt-6 inline-flex items-center gap-2
+                  text-sm font-semibold text-terracotta
+                  hover:opacity-75 transition">
+            Voir mes tarifs de boutique en ligne
+            <span aria-hidden="true">↗</span>
+        </a>
+
+    </article>
+
+
+    {# SYMFONY #}
+    <article class="group flex min-w-0 flex-col rounded-[26px] border border-[#E7DDD2]
+                    bg-white/70 p-7 lg:p-8 md:col-span-1 xl:col-span-2
+                    shadow-[0_15px_50px_rgba(0,0,0,.025)]
+                    transition duration-300
+                    hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
+
+        <div class="mb-6 flex h-14 w-14 items-center justify-center
+                    rounded-full bg-[#e5ebe7]
+                    font-mono text-xl text-[#172824]">
+            &lt;/&gt;
+        </div>
+
+        <h3 class="mb-4 font-display text-[24px] leading-snug text-[#172824]">
+            Développement web sur mesure
+        </h3>
+
+        <p class="mb-7 text-[15px] leading-7 text-[#66706e]">
+            Quand un CMS classique ne suffit plus, je développe avec Symfony
+            des sites et des applications web sur mesure : espace client,
+            outil de gestion, plateforme métier, connexion à vos outils par
+            API. Une solution sécurisée et évolutive, construite autour de
+            votre façon de travailler.
+        </p>
+
+        <div class="mt-auto flex flex-wrap gap-2">
+            {% for tag in ['Symfony', 'Application web', 'Sur mesure', 'API'] %}
+                <span class="rounded-full bg-[#fae9e1] px-3 py-2
+                             text-[9px] font-semibold uppercase tracking-wider text-[#263633]">
+                    {{ tag }}
+                </span>
+            {% endfor %}
+        </div>
+
+        {# Maillage interne vers la page Symfony Toulouse #}
+        <a href="{{ path('app_developpement_symfony_toulouse') }}"
+           class="mt-6 inline-flex items-center gap-2
+                  text-sm font-semibold text-terracotta
+                  hover:opacity-75 transition">
+            Découvrir le développement d'applications Symfony à Toulouse
+            <span aria-hidden="true">↗</span>
+        </a>
+    </article>
+
+
+    {# REFONTE #}
+    <article class="group flex min-w-0 flex-col rounded-[26px] border border-[#E7DDD2]
+                    bg-white/70 p-7 lg:p-8 md:col-span-1 xl:col-span-3
+                    shadow-[0_15px_50px_rgba(0,0,0,.025)]
+                    transition duration-300
+                    hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
+
+        <div class="mb-6 flex h-14 w-14 items-center justify-center
+                    rounded-full bg-[#fae4da] text-3xl text-[#d67c5d]">
+            ↻
+        </div>
+
+        <h3 class="mb-4 font-display text-[24px] leading-snug text-[#172824]">
+            Refonte de site internet
+        </h3>
+
+        <p class="mb-7 text-[15px] leading-7 text-[#66706e]">
+            Votre site est vieillissant, lent ou ne vous ressemble plus ?
+            Une refonte permet de moderniser le webdesign, d'améliorer
+            l'ergonomie et la vitesse, et de repartir sur de bonnes bases
+            pour le référencement. Je commence par un audit de l'existant,
+            puis je soigne la migration des pages et des redirections pour
+            ne pas perdre le positionnement que vous avez déjà acquis.
+        </p>
+
+        <div class="mt-auto flex flex-wrap gap-2">
+            {% for tag in ['Refonte de site', 'Webdesign', 'Ergonomie', 'SEO'] %}
+                <span class="rounded-full bg-[#fae9e1] px-3 py-2
+                             text-[9px] font-semibold uppercase tracking-wider text-[#263633]">
+                    {{ tag }}
+                </span>
+            {% endfor %}
+        </div>
+
+    </article>
+
+
+    {# REDACTION SEO #}
+    <article class="group flex min-w-0 flex-col rounded-[26px] border border-[#E7DDD2]
+                    bg-white/70 p-7 lg:p-8 md:col-span-1 xl:col-span-3
+                    shadow-[0_15px_50px_rgba(0,0,0,.025)]
+                    transition duration-300
+                    hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
+
+        <div class="mb-6 flex h-14 w-14 items-center justify-center
+                    rounded-full bg-[#e5ebe7] text-[#172824]">
+
+            <svg class="h-7 w-7"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.5"
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 aria-hidden="true">
+
+                {# Crayon #}
+                <path d="M4 20h4L18.5 9.5a2.1 2.1 0 0 0-3-3L5 17v3z"/>
+                <path d="M13.5 6.5l3 3"/>
+
+            </svg>
+
+        </div>
+
+        <h3 class="mb-4 font-display text-[24px] leading-snug text-[#172824]">
+            Rédaction web et SEO
+        </h3>
+
+        <p class="mb-7 text-[15px] leading-7 text-[#66706e]">
+            Un beau site ne suffit pas s'il n'est pas trouvé. J'écris des
+            textes clairs, utiles à vos visiteurs et optimisés pour Google
+             (Tout cela est inclus dans la création de site et applis). Je fais également l'optimisation
+             technique. Un référencement
+            naturel pensé dans la durée, pour gagner en visibilité locale.
+        </p>
+
+        <div class="mt-auto flex flex-wrap gap-2">
+            {% for tag in ['Rédaction web SEO', 'Référencement naturel', 'Blog', 'SEO local'] %}
+                <span class="rounded-full bg-[#fae9e1] px-3 py-2
+                             text-[9px] font-semibold uppercase tracking-wider text-[#263633]">
+                    {{ tag }}
+                </span>
+            {% endfor %}
+        </div>
+
+    </article>
+
+</div>
 
 
         {# =========================

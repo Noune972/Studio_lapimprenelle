@@ -51,22 +51,11 @@ class ContactType extends AbstractType
                     'Site WordPress' => 'wordpress',
                     'Application Symfony' => 'symfony',
                     'Refonte / maintenance' => 'refonte',
-                    'Je ne sais pas encore' => 'autre',
+                    'Rédaction SEO' => 'SEO',
                 ],
             ])
 
-            ->add('budget', ChoiceType::class, [
-                'label' => 'Budget indicatif',
-                'required' => false,
-                'placeholder' => 'Sélectionnez une fourchette',
-                'choices' => [
-                    'Moins de 1000 €' => 'moins de 1000',
-                    'Moins de 1 500 €' => 'moins-1500',
-                    '1 500 € — 3 000 €' => '1500-3000',
-                    '3 000 € — 6 000 €' => '3000-6000',
-                    'Plus de 6 000 €' => 'plus-6000',
-                ],
-            ])
+            
 
             ->add('message', TextareaType::class, [
                 'label' => 'Parlez-moi de votre projet',

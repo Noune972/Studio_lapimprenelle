@@ -534,6 +534,72 @@
     </section>
 
 
+{# =========================================================
+   BANDEAU — TOULOUSE & PARTOUT EN FRANCE
+   ========================================================= #}
+<section class="bg-[#00687A] py-12 sm:py-14"
+         aria-labelledby="ancrage-local-title">
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-10">
+
+        <div class="flex flex-col lg:flex-row
+                    lg:items-center lg:justify-between
+                    gap-8 lg:gap-12">
+
+            {# Texte principal #}
+            <div class="max-w-3xl">
+
+                <p class="text-white text-xs font-semibold
+                          tracking-[0.18em] uppercase mb-4">
+                    Toulouse & partout en France
+                </p>
+
+                <h2 id="ancrage-local-title"
+                    class="font-display text-2xl sm:text-3xl
+                           text-white leading-snug mb-4">
+                    Votre partenaire web à Toulouse
+                
+                </h2>
+
+                <p class="text-white leading-relaxed">
+                    Basée à Toulouse, j'accompagne les entreprises
+                    de l'agglomération en présentiel et en France à distance.
+                </p>
+
+            </div>
+
+        
+        {# Tags géographiques #}
+        <div class="flex flex-wrap gap-2.5
+                    mt-8 pt-7
+                    border-t border-white/25">
+
+            {% for ville in [
+                'Toulouse',
+                'Blagnac',
+                'Colomiers',
+                'Tournefeuille',
+                'Balma',
+                'Visio partout en France'
+            ] %}
+
+                <span class="inline-flex items-center
+                             rounded-full
+                             border border-white/40
+                             px-4 py-1.5
+                             text-xs font-medium
+                             text-white">
+                    {{ ville }}
+                </span>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
 
     {# =========================================================
        APPROCHE

@@ -50,8 +50,8 @@ class ContactType extends AbstractType
                 'choices' => [
                     'Site WordPress' => 'wordpress',
                     'Application Symfony' => 'symfony',
-                    'Refonte / maintenance' => 'refonte',
-                    'Rédaction SEO' => 'SEO',
+                    'Refonte / Maintenance' => 'refonte',
+                    'Autre' => 'Autre',
                 ],
             ])
 

@@ -1459,6 +1459,135 @@
             </article>
 
 
+{# =================================================
+   MAINTENANCE WORDPRESS
+================================================= #}
+
+<article class="grid
+                lg:grid-cols-[0.7fr_1.3fr]
+                gap-8 lg:gap-14
+                rounded-[2rem]
+                tempo-card
+                bg-white/[0.07]
+                border border-white/10
+                p-7 sm:p-8 lg:p-10
+                mt-5
+                reveal">
+
+    <div>
+
+        <div class="flex items-center gap-4">
+
+            <span class="font-display
+                         text-xl
+                         text-[#F1A579]">
+                06
+            </span>
+
+            <span class="text-xs
+                         tracking-[0.18em]
+                         uppercase
+                         text-white/50">
+                Maintenance WordPress
+            </span>
+
+        </div>
+
+        <h3 class="font-display
+                   text-2xl sm:text-3xl
+                   leading-[1.2]
+                   mt-7">
+
+            Un site WordPress
+            <span class="block text-[#F1A579]">
+                entretenu et sécurisé.
+            </span>
+
+        </h3>
+
+        <p class="mt-5
+                  text-sm sm:text-base
+                  leading-7
+                  text-white/70">
+
+            Gardez votre site WordPress à jour,
+            sécurisé et opérationnel grâce à
+            une maintenance régulière.
+            Concentrez-vous sur votre activité,
+            je m'occupe de son suivi technique.
+
+        </p>
+
+      
+
+    </div>
+
+    <div class="lg:border-l
+                lg:border-white/10
+                lg:pl-12">
+
+        <p class="text-xs
+                  tracking-[0.18em]
+                  uppercase font-semibold
+                  text-white/50
+                  mb-6">
+            Prestations de maintenance
+        </p>
+
+        {% set maintenanceFeatures = [
+            'Mises à jour de WordPress, des thèmes et des extensions',
+            'Sauvegardes régulières du site et de la base de données',
+            'Surveillance de la sécurité et des vulnérabilités',
+            'Vérification du bon fonctionnement après les mises à jour',
+            'Contrôle des formulaires et des fonctionnalités essentielles',
+            'Suivi des performances et du temps de chargement',
+            'Correction des anomalies techniques mineures',
+            'Assistance technique selon les besoins'
+        ] %}
+
+        <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4">
+
+            {% for feature in maintenanceFeatures %}
+
+                <div class="flex items-start gap-3">
+
+                    <span class="mt-0.5
+                                 flex w-5 h-5
+                                 shrink-0
+                                 items-center justify-center
+                                 rounded-full
+                                 bg-[#F1A579]/15">
+
+                        <svg class="w-3 h-3
+                                    text-[#F1A579]"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2">
+
+                            <path d="M5 12.5l4 4L19 7"/>
+
+                        </svg>
+
+                    </span>
+
+                    <p class="text-sm
+                              leading-6
+                              text-white/70">
+                        {{ feature }}
+                    </p>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</article>
+
+
 <div class="mt-10 text-center">
     <a href="{{ path('app_tarifs') }}"
        class="inline-flex items-center justify-center gap-3

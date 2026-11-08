@@ -27,13 +27,13 @@ Découvrez les tarifs Studio Tempo pour la création de sites WordPress, sites v
                 <div class="flex items-center gap-4 mb-6">
                     <span class="w-9 h-[2px] bg-[#C9653B]"></span>
                     <span class="text-[11px] uppercase tracking-[0.24em] text-[#C9653B] font-semibold">
-                        Tarifs
+                        Des solutions adaptées à chaque projets
                     </span>
                 </div>
 
                 <h1 class="font-display text-4xl sm:text-5xl lg:text-[3.8rem] leading-[1.02] tracking-[-0.035em] max-w-3xl">
-                    Des solutions adaptées
-                    <span class="block">à chaque <span class="text-[#C9653B]">projet.</span></span>
+                    Tarifs sites internet
+                     <span class="text-[#C9653B]">Toulouse.</span>
                 </h1>
 
                 <p class="mt-6 max-w-2xl text-base sm:text-lg leading-8 text-ink-soft">
@@ -57,6 +57,15 @@ Découvrez les tarifs Studio Tempo pour la création de sites WordPress, sites v
     <section id="offres" class="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 pb-10">
 
         {% set offers = [
+
+             {
+                number: '01',
+                type: 'Maintenance WordPress',
+                priceLabel: 'Dès',
+                price: '45 € /mois',
+                text: "Maintenir votre site à jour et en sécurité.",
+                items: ['Sauvegardes','Thèmes','Extensions','Sécurité','Retouches textes','suivi des performances,']
+            },
             {
                 number: '01',
                 type: 'One Page',
@@ -99,7 +108,7 @@ Découvrez les tarifs Studio Tempo pour la création de sites WordPress, sites v
             }
         ] %}
 
-        <div class="grid md:grid-cols-2 xl:grid-cols-5 gap-3 lg:gap-4 items-stretch">
+       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 items-stretch">
             {% for offer in offers %}
 <article class="group bg-[#FBF8F3]
                 border-2 border-terracotta/60
@@ -267,109 +276,6 @@ Découvrez les tarifs Studio Tempo pour la création de sites WordPress, sites v
             {% endfor %}
         </div>
     </section>
-
-
-
-{# Maillage interne — Prestations web à Toulouse #}
-<section class="bg-cream py-14 md:py-20">
-    <div class="max-w-7xl mx-auto px-6 sm:px-10">
-
-        <div class="max-w-3xl mb-10">
-            <p class="text-xs uppercase tracking-[0.2em] font-semibold text-terracotta mb-4">
-                Les expertises Studio Tempo
-            </p>
-
-            <h2 class="font-display text-3xl md:text-4xl text-ink mb-5">
-                Une solution web adaptée à votre projet
-            </h2>
-
-            <p class="text-ink-soft leading-relaxed">
-                Site internet professionnel ou application métier sur mesure :
-                découvrez l'accompagnement adapté à vos besoins.
-            </p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-6">
-
-            {# Création de site internet #}
-            <article class="flex flex-col h-full rounded-2xl
-                            border border-[#E7DDD2]
-                            bg-white/80 p-8 lg:p-10
-                            shadow-sm hover:shadow-lg
-                            hover:-translate-y-1 transition-all duration-300">
-
-                <span class="font-display text-3xl text-terracotta mb-6">
-                    01
-                </span>
-
-                <div class="w-12 h-1 bg-terracotta rounded-full mb-6"></div>
-
-                <h3 class="font-display text-2xl lg:text-3xl text-[#00687A] mb-5">
-                    Création de site internet
-                </h3>
-
-                <p class="text-ink-soft leading-relaxed mb-8 flex-grow">
-                    Vous souhaitez présenter votre activité, développer votre
-                    visibilité ou moderniser votre présence en ligne ?
-                    Découvrez mes prestations de création de sites vitrines,
-                    de sites WordPress et de refonte à Toulouse.
-                </p>
-
-                <div class="border-t border-[#E7DDD2] pt-6">
-                    <a href="{{ path('app_creation_site_toulouse') }}"
-                       class="inline-flex items-center gap-2
-                              text-sm font-semibold text-terracotta
-                              hover:text-[#00687A] transition-colors">
-                        Création de site internet à Toulouse
-                        <span aria-hidden="true">↗</span>
-                    </a>
-                </div>
-
-            </article>
-
-            {# Développement d'applications Symfony #}
-            <article class="flex flex-col h-full rounded-2xl
-                            border border-[#E7DDD2]
-                            bg-white/80 p-8 lg:p-10
-                            shadow-sm hover:shadow-lg
-                            hover:-translate-y-1 transition-all duration-300">
-
-                <span class="font-display text-3xl text-terracotta mb-6">
-                    02
-                </span>
-
-                <div class="w-12 h-1 bg-terracotta rounded-full mb-6"></div>
-
-                <h3 class="font-display text-2xl lg:text-3xl text-[#00687A] mb-5">
-                    Applications Symfony sur mesure
-                </h3>
-
-                <p class="text-ink-soft leading-relaxed mb-8 flex-grow">
-                    Votre entreprise a besoin d'un outil métier, d'un espace
-                    client, d'un tableau de bord ou d'une plateforme web
-                    personnalisée ? Je développe des applications avec
-                    Symfony, adaptées à vos fonctionnalités et à vos usages.
-                </p>
-
-                <div class="border-t border-[#E7DDD2] pt-6">
-                    <a href="{{ path('app_developpement_symfony_toulouse') }}"
-                       class="inline-flex items-center gap-2
-                              text-sm font-semibold text-terracotta
-                              hover:text-[#00687A] transition-colors">
-                        Développement d'applications Symfony à Toulouse
-                        <span aria-hidden="true">↗</span>
-                    </a>
-                </div>
-
-            </article>
-
-        </div>
-    </div>
-</section>
-
-
-
-
 
 
 

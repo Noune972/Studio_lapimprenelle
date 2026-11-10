@@ -60,7 +60,7 @@ Découvrez les tarifs Studio Tempo pour la création de sites WordPress, sites v
             {
                 number: '00', type: 'Maintenance WordPress', priceLabel: 'Dès', price: '45 € /mois',
                 text: 'Maintenir votre site à jour et en sécurité.',
-                items: ['Sauvegardes', 'Thèmes', 'Extensions', 'Sécurité', 'Retouches de textes', 'Suivi des performances'],
+                items: ['Sauvegardes', 'Mises à jour thèmes', 'Mises à jour extensions', 'Sécurité', 'Retouches ponctuelles', 'Suivi des performances'],
                 icon: 'shield'
             },
             {
@@ -121,7 +121,12 @@ Découvrez les tarifs Studio Tempo pour la création de sites WordPress, sites v
             {% for offer in offers %}
                 {% set isBlue = loop.index is odd %}
                 <article data-offers-card
-                         class="tempo-offers-card group relative shrink-0 snap-start rounded-[1.65rem] overflow-hidden min-h-[610px] flex flex-col px-3 py-5 sm:px-7 sm:py-8 border transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(0,42,60,0.12)] {{ isBlue ? 'bg-[#00678A] border-[#00678A] text-white' : 'bg-[#FBF8F3] border-[#DED5C9] text-[#263C42]' }}">
+                       class="tempo-offers-card group relative shrink-0 snap-start rounded-[1.65rem] overflow-hidden @media (max-width: 639px) {
+    #offres .tempo-offers-card {
+        min-height: 0 !important;
+        height: auto !important;
+    }
+} flex flex-col px-3 py-5 sm:px-7 sm:py-8 border transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(0,42,60,0.12)] {{ isBlue ? 'bg-[#C9653B] border-[#C9653B] text-white' : 'bg-[#FBF8F3] border-[#DED5C9] text-[#263C42]' }}">
 
                     <div class="pointer-events-none absolute -right-12 -top-16 w-44 h-44 rounded-full border {{ isBlue ? 'border-white/15' : 'border-[#C9653B]/20' }}" aria-hidden="true"></div>
                     <div class="pointer-events-none absolute -right-4 -top-10 w-28 h-28 rounded-full {{ isBlue ? 'bg-white/5' : 'bg-[#00678A]/5' }}" aria-hidden="true"></div>
@@ -148,12 +153,15 @@ Découvrez les tarifs Studio Tempo pour la création de sites WordPress, sites v
                     <h3 class="relative font-display text-lg sm:text-[1.65rem] leading-tight mt-5 sm:mt-7 {{ isBlue ? 'text-white' : 'text-[#00678A]' }}">{{ offer.type }}</h3>
                     <div class="relative mt-5 min-h-[78px]">
                         {% if offer.priceLabel %}<p class="text-[11px] uppercase tracking-[0.18em] mb-2 {{ isBlue ? 'text-white/70' : 'text-ink-soft' }}">{{ offer.priceLabel }}</p>{% endif %}
-                       <p
-    style="font-size: clamp(28px, 3.5vw, 44px) !important; font-weight: 700 !important; line-height: 1.2;"
-    class="font-display {{ isBlue ? 'text-white' : 'text-[#00678A]' }}"
->
-    {{ offer.price }}
-</p>
+ {% if isBlue %}
+    <p style="font-size: 36px; font-weight: 700; line-height: 1.2; color: white;">
+        {{ offer.price }}
+    </p>
+{% else %}
+    <p style="font-size: 36px; font-weight: 700; line-height: 1.2; color: #00678A;">
+        {{ offer.price }}
+    </p>
+{% endif %}
                     </div>
                     <p class="mt-4 text-sm leading-6 min-h-[72px] {{ isBlue ? 'text-white/85' : 'text-ink-soft' }}">{{ offer.text }}</p>
                     <div class="my-5 h-px {{ isBlue ? 'bg-white/25' : 'bg-[#DED5C9]' }}"></div>
@@ -179,8 +187,8 @@ Découvrez les tarifs Studio Tempo pour la création de sites WordPress, sites v
         </div>
 
         <div class="mt-2 flex items-center justify-between gap-4">
-            <p class="text-xs text-ink-soft">Glissez les cartes ou utilisez les flèches.</p>
-            <span class="text-xs font-semibold tracking-[0.1em] text-[#00678A]">6 offres</span>
+           
+            
         </div>
     </section>
 
@@ -242,7 +250,7 @@ Découvrez les tarifs Studio Tempo pour la création de sites WordPress, sites v
                 width: calc((100% - 10px) / 2);
                 flex-basis: calc((100% - 10px) / 2);
                 padding: 18px 10px;
-                min-height: 600px;
+                min-height: 520px;
                 border-radius: 22px !important;
             }
             #offres .tempo-offers-card::after { left: 15px; right: 15px; }

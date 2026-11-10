@@ -196,8 +196,10 @@ Découvrez les tarifs Studio Tempo pour la création de sites WordPress, sites v
         #offres .tempo-offers-card { scroll-snap-align: start; }
         #offres [data-offers-prev], #offres [data-offers-next] { cursor: pointer; }
         @media (min-width: 640px) {
-            #offres .tempo-offers-card { width: calc((100% - 20px) / 2); flex-basis: calc((100% - 20px) / 2); }
-        }
+         #offres .tempo-offers-card {
+    width: 100%;
+    flex-basis: 100%;
+}
         @media (min-width: 1024px) {
             #offres .tempo-offers-card { width: calc((100% - 48px) / 3); flex-basis: calc((100% - 48px) / 3); }
             #offres .tempo-offers-track { gap: 24px; }

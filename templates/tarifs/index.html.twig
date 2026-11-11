@@ -103,8 +103,8 @@ Découvrez les tarifs Studio Tempo pour la création de sites WordPress, sites v
                     <span class="w-8 h-[2px] bg-[#C9653B]"></span>
                     <span class="text-[11px] uppercase tracking-[0.22em] font-semibold text-[#C9653B]">Nos formules</span>
                 </div>
-                <h2 id="offres-title" class="font-display text-3xl sm:text-4xl text-[#00678A]">À chaque projet, son rythme.</h2>
-                <p class="mt-2 text-sm sm:text-base text-ink-soft">Explorez nos offres en faisant défiler les cartes.</p>
+                <h3 id="offres-title" class="font-display text-3xl sm:text-4xl text-[#00678A]">À chaque projet, son rythme.</h3>
+                <p class="mt-2 text-sm sm:text-base text-ink-soft">Faites défiler les cartes pour découvrir mes offres.</p>
             </div>
             <div class="flex items-center gap-3" aria-label="Navigation des offres">
                 <button type="button" data-offers-prev onclick="(function(b){const t=b.closest('section').querySelector('[data-offers-track]');const c=t.querySelector('[data-offers-card]');t.scrollBy({left:-(c.getBoundingClientRect().width+parseFloat(getComputedStyle(t).gap||0)),behavior:'smooth'});})(this)" aria-label="Voir les offres précédentes"
@@ -123,13 +123,7 @@ Découvrez les tarifs Studio Tempo pour la création de sites WordPress, sites v
             {% for offer in offers %}
                 {% set isBlue = loop.index is odd %}
                 <article data-offers-card
-                       class="tempo-offers-card group relative shrink-0 snap-start rounded-[1.65rem] overflow-hidden @media (max-width: 639px) {
-    #offres .tempo-offers-card {
-        min-height: 0 !important;
-        height: auto !important;
-    }
-} flex flex-col px-3 py-5 sm:px-7 sm:py-8 border transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(0,42,60,0.12)] {{ isBlue ? 'bg-[#C9653B] border-[#C9653B] text-white' : 'bg-[#FBF8F3] border-[#DED5C9] text-[#263C42]' }}">
-
+         class="tempo-offers-card group relative shrink-0 snap-start rounded-[1.65rem] overflow-hidden flex flex-col px-3 py-5 sm:px-7 sm:py-8 border transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(0,42,60,0.12)] {{ isBlue ? 'bg-[#00678A] border-[#00678A] text-white' : 'bg-[#FBF8F3] border-[#DED5C9] text-[#263C42]' }}">
                     <div class="pointer-events-none absolute -right-12 -top-16 w-44 h-44 rounded-full border {{ isBlue ? 'border-white/15' : 'border-[#C9653B]/20' }}" aria-hidden="true"></div>
                     <div class="pointer-events-none absolute -right-4 -top-10 w-28 h-28 rounded-full {{ isBlue ? 'bg-white/5' : 'bg-[#00678A]/5' }}" aria-hidden="true"></div>
 

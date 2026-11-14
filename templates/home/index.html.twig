@@ -43,7 +43,7 @@
     #services-carousel {
         display:flex;
         gap:1.5rem;
-        margin-top:4rem;
+        margin-top:1rem;
         padding-bottom:1.5rem;
         max-width:100%;
         overflow-x:auto;
@@ -471,6 +471,13 @@
                 </button>
             </div>
 
+            {# Invitation à faire défiler #}
+            <p class="mt-5 flex items-center justify-end gap-2 text-sm text-ink-soft text-terracotta font-semibold">
+                <span aria-hidden="true">←</span>
+                Faites défiler les cartes pour découvrir tous mes services
+                <span aria-hidden="true">→</span>
+            </p>
+
             {# CARROUSEL — le CSS est dans le bloc <style> en haut de page #}
             <div id="services-carousel" role="region" aria-label="Mes services" tabindex="0">
 
@@ -860,6 +867,8 @@
             <i class="w-10"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="w-20"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="w-7"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="flex-1"></i>
         </div>
     </div>
+
+
 
 
     {# =========================================================

@@ -868,6 +868,135 @@
         </div>
     </div>
 
+{# =========================================================
+   MES RÉALISATIONS — PORTFOLIO EN ÉVENTAIL
+========================================================= #}
+
+<section id="realisations" class="relative overflow-hidden bg-[#F7F3EC] py-20 lg:py-28">
+
+    <div class="relative mx-auto max-w-7xl px-6 sm:px-10">
+
+        <div class="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-10">
+
+            {# TEXTE À GAUCHE #}
+            <div class="relative z-10">
+
+                <div class="mb-6 flex items-center gap-3">
+                    <span class="h-px w-9 bg-[#C9653B]"></span>
+                    <span class="text-xs font-semibold uppercase tracking-[0.22em] text-[#A94F2C]">
+                        Mes réalisations
+                    </span>
+                </div>
+
+                <h2 class="font-display text-2xl leading-[1.12] text-[#172824] sm:text-2xl lg:text-[3.6rem]">
+                    Des projets web<br>
+                    qui prennent
+                    <span class="italic text-[#C9653B]">vie.</span>
+                </h2>
+
+                <p class="mt-7 max-w-md text-base leading-8 text-[#56615f]">
+                    Découvrez quelques
+                    exemples de réalisations concrètes, imaginées
+                    pour répondre à des besoins uniques.
+                </p>
+
+                <a href="{{ path('app_projet_index') }}"
+                   class="mt-9 inline-flex items-center gap-4 rounded-full bg-[#00687A] px-7 py-4 text-sm font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#005966] hover:shadow-lg">
+                    Voir mes réalisations
+                    <span aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+            {# ÉVENTAIL DES PROJETS #}
+            <div class="relative mx-auto w-full max-w-[650px]">
+
+                {# Forme organique de fond #}
+                <div class="pointer-events-none absolute inset-x-[8%] top-[10%] bottom-[5%] rounded-[42%_58%_48%_52%] bg-[#D6E5DF]"></div>
+
+                <div class="pointer-events-none absolute left-[3%] bottom-[5%] h-24 w-24 rounded-full border-2 border-[#00687A]/35"></div>
+
+                <div class="pointer-events-none absolute right-[8%] top-[2%] h-3 w-3 rounded-full bg-[#C9653B]"></div>
+
+                {% if projets is defined and projets|length > 0 %}
+
+                    <div class="relative mx-auto h-[350px] w-full sm:h-[460px] lg:h-[490px]">
+
+                        {% for projet in projets|slice(0, 3) %}
+
+                            {# Position et inclinaison des cartes #}
+                            {% if loop.index == 1 %}
+                                {% set position = 'left-[2%] top-[16%] -rotate-[11deg] z-10 hover:z-40 focus-within:z-40' %}
+                            {% elseif loop.index == 2 %}
+                                {% set position = 'left-[25%] top-[5%] rotate-0 z-30 hover:z-40 focus-within:z-40' %}
+                            {% else %}
+                                {% set position = 'left-[48%] top-[16%] rotate-[11deg] z-20 hover:z-40 focus-within:z-40' %}
+                            {% endif %}
+
+                            <article class="group absolute {{ position }} flex h-[270px] w-[52%] flex-col overflow-hidden rounded-[18px] border-[5px] border-white bg-white shadow-[0_18px_45px_rgba(23,40,36,.18)] transition-all duration-300 hover:rotate-0 hover:-translate-y-4 hover:scale-105 focus-within:rotate-0 focus-within:-translate-y-4 focus-within:scale-105 sm:h-[370px] sm:rounded-[24px] sm:border-[7px] lg:h-[390px]">
+
+                                {# IMAGE DU PROJET #}
+                                <div class="relative h-[56%] shrink-0 overflow-hidden bg-[#E7DDD2]">
+
+                                    {% if projet.image %}
+                                        <img src="{{ asset('uploads/projets/' ~ projet.image) }}"
+                                             alt="Aperçu du projet {{ projet.titre }}"
+                                             loading="lazy"
+                                             decoding="async"
+                                             class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                                    {% else %}
+                                        <div class="flex h-full items-center justify-center bg-[#D6E5DF]">
+                                            <span class="font-display text-2xl text-[#00687A]">
+                                                Studio Tempo
+                                            </span>
+                                        </div>
+                                    {% endif %}
+
+                                </div>
+
+                                {# CONTENU #}
+                                <div class="flex min-h-0 flex-1 flex-col p-2.5 sm:p-4">
+
+                                    {% if projet.typeDeSite %}
+                                        <span class="mb-2 w-fit max-w-full truncate rounded-full bg-[#F9E8DC] px-2 py-1 text-[9px] font-semibold text-[#8F4124] sm:px-3 sm:text-[11px]">
+                                            {{ projet.typeDeSite }}
+                                        </span>
+                                    {% endif %}
+
+                                    <h3 class="line-clamp-2 font-display text-[13px] leading-tight text-[#172824] sm:text-xl">
+                                        {{ projet.titre }}
+                                    </h3>
+
+                                    <p class="mt-2 hidden text-xs leading-5 text-[#56615f] sm:line-clamp-2">
+                                        {{ projet.description|default('Une réalisation Studio Tempo.')|striptags }}
+                                    </p>
+
+                                    <a href="{{ path('app_projet_show', {slug: projet.slug}) }}"
+                                       class="mt-auto flex items-center justify-between gap-2 text-[10px] font-semibold text-[#00687A] sm:text-sm"
+                                       aria-label="Découvrir le projet {{ projet.titre }}">
+                                        <span class="hidden sm:inline">Découvrir le projet</span>
+                                        <span class="sm:hidden">Découvrir</span>
+                                        <span class="text-lg text-[#C9653B]" aria-hidden="true">↗</span>
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+                        {% endfor %}
+
+                    </div>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
 
 {# =========================================================
    DERNIERS ARTICLES DU BLOG — ACCUEIL
@@ -889,8 +1018,8 @@
                 </div>
 
                 <h2 class="font-display text-3xl sm:text-4xl text-[#172824]">
-                    Conseils, idées,
-                    <span class="text-[#C9653B]">actualités web et SEO.</span>
+                    Conseils, idées et
+                    <span class="text-[#C9653B]">actualités du web.</span>
                 </h2>
 
             </div>

@@ -6,11 +6,12 @@
     Agence web à Toulouse : création de sites WordPress, développement d'applications Symfony et accompagnement SEO pour développer votre présence en ligne.
 {% endblock %}
 
-
 {% block body %}
 
 <style>
-    /* Signature graphique Tempo — cadence / mouvement */
+    /* ------------------------------------------------------------
+       Signature graphique Tempo — cadence / mouvement
+    ------------------------------------------------------------ */
     .tempo-rhythm { display:flex; align-items:flex-end; gap:5px; height:34px; }
     .tempo-rhythm > span { display:block; width:7px; border-radius:999px; background:currentColor; transition:height .35s ease, transform .35s ease, opacity .35s ease; }
     .tempo-rhythm > span:nth-child(1){height:14px}.tempo-rhythm > span:nth-child(2){height:28px}.tempo-rhythm > span:nth-child(3){height:20px}.tempo-rhythm > span:nth-child(4){height:34px}
@@ -18,6 +19,44 @@
     .tempo-beat { display:flex; align-items:center; gap:10px; color:rgba(196,91,54,.5); }
     .tempo-beat i { display:block; height:1px; border-radius:999px; background:currentColor; }
     @media (prefers-reduced-motion: reduce) { .tempo-rhythm > span { transition:none; } }
+
+    /* ------------------------------------------------------------
+       Couleurs accessibles (contraste AA) — en CSS pur pour ne pas
+       dépendre du build Tailwind
+       - terracotta "encre" : petits textes sur fond crème (≈ 4,8:1)
+       - bronze : pastille 04 avec chiffre blanc (≈ 5,7:1)
+    ------------------------------------------------------------ */
+    .c-terra-ink { color:#A94F2C; }
+    .bg-terra-ink { background-color:#A94F2C; color:#fff; }
+    .bg-terra-ink:hover { background-color:#8F4124; }
+    .bg-bronze { background-color:#7A6240; color:#fff; }
+    .btn-outline-pine { border:1.5px solid #00687A; color:#00687A; }
+    .btn-outline-pine:hover { background-color:#00687A; color:#fff; }
+
+    /* Textes et tags des cartes services */
+    .svc-text { color:#56615f; }
+    .svc-tag { font-size:11px; }
+
+    /* ------------------------------------------------------------
+       Carrousel des services — CSS pur (ne dépend pas de Tailwind)
+    ------------------------------------------------------------ */
+    #services-carousel {
+        display:flex;
+        gap:1.5rem;
+        margin-top:4rem;
+        padding-bottom:1.5rem;
+        max-width:100%;
+        overflow-x:auto;
+        overscroll-behavior-x:contain;
+        scroll-snap-type:x mandatory;
+        scroll-behavior:smooth;
+        -webkit-overflow-scrolling:touch;
+        scrollbar-width:thin;
+    }
+    #services-carousel > article { flex:0 0 100%; min-width:0; scroll-snap-align:start; }
+    @media (min-width:768px)  { #services-carousel > article { flex-basis:calc((100% - 1.5rem) / 2); } }
+    @media (min-width:1280px) { #services-carousel > article { flex-basis:calc((100% - 3rem) / 3); } }
+    @media (prefers-reduced-motion: reduce) { #services-carousel { scroll-behavior:auto; } }
 </style>
 
 <div class="bg-cream text-ink font-sans">
@@ -27,190 +66,84 @@
        HERO
     ========================================================= #}
 
-    <section class="max-w-7xl mx-auto
-                    px-6 sm:px-10
-                    pt-8 pb-20
-                    grid md:grid-cols-2
-                    gap-14
-                    items-center">
+    <section class="max-w-7xl mx-auto px-6 sm:px-10 pt-8 pb-20 grid md:grid-cols-2 gap-14 items-center">
 
-      <div>
+        <div>
 
-    <h1 class="text-xs
-                tracking-widest
-                text-terracotta
-                font-medium
-                mb-4">
-        Agence web indépendante · TOULOUSE
-    </H1>
+            <h1 class="text-xs tracking-widest c-terra-ink font-medium mb-4">
+                Agence web indépendante · TOULOUSE
+            </h1>
 
+            <h2 class="font-display text-3xl leading-[1.15] mb-4">
+                Le web à votre
+                <span class="text-terracotta">rythme.</span>
+            </h2>
 
-    <h2 class="font-display
-               text-3xl
-               leading-[1.15]
-               mb-4">
+            <div class="flex items-center gap-3 mb-5 text-terracotta" aria-hidden="true">
+                <div class="tempo-rhythm"><span></span><span></span><span></span><span></span></div>
+                <span class="w-12 h-px bg-terracotta/30"></span>
+            </div>
 
-        Le web à votre
+            <div class="text-lg font-medium text-ink mb-6">
+                Sites WordPress
+                <span class="text-terracotta">·</span>
+                Applications Symfony sur mesure
+                <span class="text-terracotta">·</span>
+                SEO
+            </div>
 
-        <span class="text-terracotta">
-            rythme.
-        </span>
+            <p class="text-ink-soft leading-relaxed mb-8 max-w-md">
+                Je suis Nathalie Camiul, développeuse web diplômée
+                et fondatrice de Studio Tempo, agence web indépendante toulousaine.
+                J'aide les entreprises, indépendants,
+                porteurs de projets et startups dans la création de sites web et applications
+                sur mesure, sécurisés et faciles à faire évoluer. Je suis votre unique
+                interlocutrice.
+            </p>
 
-    </h2>
-
-    <div class="flex items-center gap-3 mb-5 text-terracotta" aria-hidden="true">
-        <div class="tempo-rhythm">
-            <span></span><span></span><span></span><span></span>
-        </div>
-        <span class="w-12 h-px bg-terracotta/30"></span>
-    </div>
-
-
-    <div class="text-lg
-                font-medium
-                text-ink
-                mb-6">
-
-        Sites WordPress
-        <span class="text-terracotta">·</span>
-        Applications Symfony sur mesure
-        <span class="text-terracotta">·</span>
-        
-        
-        
-        
-         SEO
-
-    </div>
-
-
-    <p class="text-ink-soft
-              leading-relaxed
-              mb-8 
-              max-w-md">
-
-        Je suis Nathalie Camiul, développeuse web diplômée
-        et fondatrice de Studio Tempo, agence web indépendante toulousaine. 
-        J'aide les entreprises, indépendants,
-        porteurs de projets et startups dans la création de sites web et applications
-        sur mesure, sécurisés et faciles à faire évoluer. Je suis votre unique
-        interlocutrice.
-
-    </p>
-{# Lien interne vers la page SEO Toulouse #}
-<div class="mb-8 max-w-md">
-    <a href="{{ path('app_creation_site_toulouse') }}"
-       class="group inline-flex items-start gap-3
-              text-terracotta font-medium
-              hover:opacity-80 transition">
-
-        <span class="mt-1 text-lg" aria-hidden="true">↗</span>
-
-        <span class="underline underline-offset-4
-                     decoration-terracotta/40
-                     group-hover:decoration-terracotta
-                     transition">
-            Découvrez mon accompagnement pour la création
-            de site internet à Toulouse
-        </span>
-
-    </a>
-</div>
+            {# Lien interne vers la page SEO Toulouse #}
+            <div class="mb-8 max-w-md">
+                <a href="{{ path('app_creation_site_toulouse') }}"
+                   class="group inline-flex items-start gap-3 c-terra-ink font-medium hover:opacity-80 transition">
+                    <span class="mt-1 text-lg" aria-hidden="true">↗</span>
+                    <span class="underline underline-offset-4 decoration-[#A94F2C]/40 group-hover:decoration-[#A94F2C] transition">
+                        Découvrez mon accompagnement pour la création
+                        de site internet à Toulouse
+                    </span>
+                </a>
+            </div>
 
             <div class="flex flex-wrap gap-3 mb-8">
 
                 <a href="{{ path('app_contact') }}"
-                   class="bg-[#00687A]
-                          hover:bg-[#005966]
-                          text-cream
-                          px-6 py-3
-                          rounded-full
-                          text-sm
-                          font-medium
-                          inline-flex
-                          items-center
-                          gap-2
-                          transition">
-
+                   class="bg-[#00687A] hover:bg-[#005966] text-cream px-6 py-3 rounded-full text-sm font-medium inline-flex items-center gap-2 transition">
                     Discuter de mon projet
-
-                    <span aria-hidden="true">
-                        →
-                    </span>
-
+                    <span aria-hidden="true">→</span>
                 </a>
 
-
+                {# Bordure bleu pétrole : le bouton se distingue enfin du texte simple #}
                 <a href="{{ path('app_projet_index') }}"
-                   class="px-6 py-3
-                          rounded-full
-                          text-sm
-                          font-medium
-                          border border-ink/15
-                          transition
-                          hover:border-terracotta
-                          hover:text-terracotta">
-
+                   class="btn-outline-pine px-6 py-3 rounded-full text-sm font-medium transition">
                     Voir mes réalisations
-
                 </a>
 
             </div>
 
-
-            <div class="flex flex-wrap
-                        gap-6
-                        text-sm
-                        text-ink-soft">
+            <div class="flex flex-wrap gap-6 text-sm text-ink-soft">
 
                 <div class="flex items-center gap-2">
-
-                    <span class="w-7 h-7
-                                 rounded-full
-                                 bg-pine
-                                 text-white
-                                 flex items-center
-                                 justify-center
-                                 text-xs">
-                        W
-                    </span>
-
+                    <span class="w-7 h-7 rounded-full bg-pine text-white flex items-center justify-center text-xs">W</span>
                     WordPress
-
                 </div>
 
-
                 <div class="flex items-center gap-2">
-
-                    <span class="w-7 h-7
-                                 rounded-full
-                                 bg-ink
-                                 text-white
-                                 flex items-center
-                                 justify-center
-                                 text-xs">
-                        sf
-                    </span>
-
-                    Symfony & PHP sur mesure
-
+                    <span class="w-7 h-7 rounded-full bg-ink text-white flex items-center justify-center text-xs">sf</span>
+                    Symfony &amp; PHP sur mesure
                 </div>
 
-
                 <div class="flex items-center gap-2">
-
-                    <span class="w-7 h-7
-                                 rounded-full
-                                 bg-terracotta
-                                 text-white
-                                 flex items-center
-                                 justify-center
-                                 text-xs">
-                        ◎
-                    </span>
-
-                    SEO & contenu
-
+                    <span class="w-7 h-7 rounded-full bg-terra-ink flex items-center justify-center text-xs">◎</span>
+                    SEO &amp; contenu
                 </div>
 
             </div>
@@ -218,394 +151,153 @@
         </div>
 
 
-      {# PHOTO #}
+        {# PHOTO #}
+        <div class="relative">
 
-<div class="relative">
+            <div class="relative max-w-[500px] mx-auto rounded-[2rem] overflow-visible group">
 
-    <div class="relative
-                max-w-[500px]
-                mx-auto
-                rounded-[2rem]
-                overflow-visible
-                group">
-                {# =====================================================
-   FRISE ORGANIQUE STUDIO TEMPO
-===================================================== #}
+                {# FRISE ORGANIQUE STUDIO TEMPO #}
+                <div class="absolute -right-16 sm:-right-24 lg:-right-40 -top-12 w-[65%] sm:w-[70%] h-[125%] pointer-events-none z-0 overflow-visible"
+                     aria-hidden="true">
 
-<div class="absolute
-            -right-16 sm:-right-24 lg:-right-40
-            -top-12
-            w-[65%] sm:w-[70%]
-            h-[125%]
-            pointer-events-none
-            z-0
-            overflow-visible"
-     aria-hidden="true">
+                    <svg class="absolute -right-8 top-[8%] w-[75%] h-[85%] overflow-visible"
+                         viewBox="0 0 220 520" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 
-     {# Branche fine organique #}
-<svg
-    class="absolute
-           -right-8
-           top-[8%]
-           w-[75%]
-           h-[85%]
-           overflow-visible"
-    viewBox="0 0 220 520"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true">
+                        <path d="M70 500 C95 430 55 380 105 315 C150 255 95 205 135 145 C160 105 160 55 145 10"
+                              stroke="#00687A" stroke-width="2" stroke-linecap="round" opacity=".45"/>
+                        <path d="M100 330 C135 315 160 285 175 250"
+                              stroke="#00687A" stroke-width="1.5" stroke-linecap="round" opacity=".4"/>
+                        <path d="M120 190 C90 170 72 145 65 115"
+                              stroke="#C9653B" stroke-width="1.5" stroke-linecap="round" opacity=".55"/>
 
-    {# Tige principale #}
-    <path
-        d="M70 500
-           C95 430 55 380 105 315
-           C150 255 95 205 135 145
-           C160 105 160 55 145 10"
-        stroke="#00687A"
-        stroke-width="2"
-        stroke-linecap="round"
-        opacity=".45"
-    />
+                        <ellipse cx="139" cy="292" rx="8" ry="22" transform="rotate(45 139 292)" fill="#00687A" opacity=".55"/>
+                        <ellipse cx="166" cy="264" rx="7" ry="19" transform="rotate(38 166 264)" fill="#00687A" opacity=".4"/>
+                        <ellipse cx="90" cy="350" rx="8" ry="21" transform="rotate(-38 90 350)" fill="#00687A" opacity=".45"/>
 
-    {# Petite branche 1 #}
-    <path
-        d="M100 330 C135 315 160 285 175 250"
-        stroke="#00687A"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        opacity=".4"
-    />
+                        <ellipse cx="99" cy="166" rx="7" ry="20" transform="rotate(-42 99 166)" fill="#C9653B" opacity=".65"/>
+                        <ellipse cx="70" cy="125" rx="6" ry="17" transform="rotate(-35 70 125)" fill="#C9653B" opacity=".45"/>
+                        <ellipse cx="149" cy="85" rx="7" ry="21" transform="rotate(20 149 85)" fill="#C9653B" opacity=".5"/>
 
-    {# Petite branche 2 #}
-    <path
-        d="M120 190 C90 170 72 145 65 115"
-        stroke="#C9653B"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        opacity=".55"
-    />
+                        <circle cx="180" cy="215" r="4" fill="#C9653B" opacity=".7"/>
+                        <circle cx="190" cy="200" r="2.5" fill="#00687A" opacity=".5"/>
+                        <circle cx="181" cy="185" r="3" fill="#C9653B" opacity=".45"/>
+                    </svg>
 
-    {# Feuilles bleu pétrole #}
-    <ellipse cx="139" cy="292" rx="8" ry="22"
-             transform="rotate(45 139 292)"
-             fill="#00687A" opacity=".55"/>
+                    <div class="absolute top-[18%] right-0 w-28 h-28 sm:w-40 sm:h-40 rounded-full bg-[#00687A]/15"></div>
+                    <div class="absolute top-[2%] right-[18%] w-16 h-32 sm:w-24 sm:h-44 rounded-[100%_0_100%_0] bg-terracotta/70 rotate-[25deg]"></div>
+                    <div class="absolute top-[38%] -right-[8%] w-20 h-40 sm:w-28 sm:h-52 rounded-[100%_0_100%_0] bg-[#00687A]/65 rotate-[18deg]"></div>
+                    <div class="absolute bottom-[8%] right-[20%] w-20 h-20 sm:w-28 sm:h-28 rounded-full bg-[#EFE7DA]"></div>
+                    <div class="absolute bottom-[3%] right-[5%] w-10 h-24 sm:w-14 sm:h-32 rounded-[100%_0_100%_0] bg-terracotta/55 rotate-[35deg]"></div>
 
-    <ellipse cx="166" cy="264" rx="7" ry="19"
-             transform="rotate(38 166 264)"
-             fill="#00687A" opacity=".4"/>
+                    <div class="absolute top-[32%] right-[8%] flex flex-col gap-2">
+                        <span class="w-2 h-2 rounded-full bg-terracotta/70"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#00687A]/50"></span>
+                        <span class="w-2 h-2 rounded-full bg-terracotta/40"></span>
+                    </div>
 
-    <ellipse cx="90" cy="350" rx="8" ry="21"
-             transform="rotate(-38 90 350)"
-             fill="#00687A" opacity=".45"/>
+                </div>
 
-    {# Feuilles terracotta #}
-    <ellipse cx="99" cy="166" rx="7" ry="20"
-             transform="rotate(-42 99 166)"
-             fill="#C9653B" opacity=".65"/>
+                {# IMAGE #}
+                <div class="relative z-10 rounded-[2rem] overflow-hidden shadow-lg">
+                    <img src="{{ asset('images/nath-web.webp') }}"
+                         alt="Nathalie, fondatrice de Studio Tempo"
+                         width="800" height="1073"
+                         class="block w-full h-auto transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+                </div>
 
-    <ellipse cx="70" cy="125" rx="6" ry="17"
-             transform="rotate(-35 70 125)"
-             fill="#C9653B" opacity=".45"/>
+                {# RÉSEAUX SOCIAUX SUR LA PHOTO #}
+                <div class="absolute right-4 bottom-5 z-20 flex flex-col gap-2">
 
-    <ellipse cx="149" cy="85" rx="7" ry="21"
-             transform="rotate(20 149 85)"
-             fill="#C9653B" opacity=".5"/>
+                    <a href="https://fr.linkedin.com/in/nathalie-camiul-847620198"
+                       target="_blank" rel="noopener noreferrer"
+                       aria-label="LinkedIn de Nathalie"
+                       class="w-11 h-11 rounded-full bg-[#00687A] text-white flex items-center justify-center shadow-md transition-all duration-300 hover:bg-terracotta hover:-translate-y-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452z"/>
+                        </svg>
+                    </a>
 
-    {# Petits points Tempo #}
-    <circle cx="180" cy="215" r="4" fill="#C9653B" opacity=".7"/>
-    <circle cx="190" cy="200" r="2.5" fill="#00687A" opacity=".5"/>
-    <circle cx="181" cy="185" r="3" fill="#C9653B" opacity=".45"/>
-</svg>
+                    <a href="https://www.instagram.com/tempo_agence_web"
+                       target="_blank" rel="noopener noreferrer"
+                       aria-label="Instagram de Tempo"
+                       class="w-11 h-11 rounded-full bg-[#00687A] text-white flex items-center justify-center shadow-md transition-all duration-300 hover:bg-terracotta hover:-translate-y-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-5 h-5">
+                            <rect x="3" y="3" width="18" height="18" rx="5"/>
+                            <circle cx="12" cy="12" r="4"/>
+                            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                        </svg>
+                    </a>
 
-    {# Grand cercle bleu doux #}
-    <div class="absolute
-                top-[18%] right-0
-                w-28 h-28
-                sm:w-40 sm:h-40
-                rounded-full
-                bg-[#00687A]/15">
-    </div>
+                    <a href="tel:+33675064781"
+                       aria-label="Appeler Nathalie au 06 75 06 47 81"
+                       class="w-11 h-11 rounded-full bg-terracotta text-white flex items-center justify-center shadow-md transition-all duration-300 hover:bg-[#00687A] hover:-translate-y-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </a>
 
-    {# Forme terracotta #}
-    <div class="absolute
-                top-[2%] right-[18%]
-                w-16 h-32
-                sm:w-24 sm:h-44
-                rounded-[100%_0_100%_0]
-                bg-terracotta/70
-                rotate-[25deg]">
-    </div>
+                </div>
 
-    {# Forme bleu pétrole #}
-    <div class="absolute
-                top-[38%] -right-[8%]
-                w-20 h-40
-                sm:w-28 sm:h-52
-                rounded-[100%_0_100%_0]
-                bg-[#00687A]/65
-                rotate-[18deg]">
-    </div>
-
-    {# Forme crème #}
-    <div class="absolute
-                bottom-[8%] right-[20%]
-                w-20 h-20
-                sm:w-28 sm:h-28
-                rounded-full
-                bg-[#EFE7DA]">
-    </div>
-
-    {# Petite feuille terracotta #}
-    <div class="absolute
-                bottom-[3%] right-[5%]
-                w-10 h-24
-                sm:w-14 sm:h-32
-                rounded-[100%_0_100%_0]
-                bg-terracotta/55
-                rotate-[35deg]">
-    </div>
-
-    {# Petits points #}
-    <div class="absolute top-[32%] right-[8%]
-                flex flex-col gap-2">
-        <span class="w-2 h-2 rounded-full bg-terracotta/70"></span>
-        <span class="w-1.5 h-1.5 rounded-full bg-[#00687A]/50"></span>
-        <span class="w-2 h-2 rounded-full bg-terracotta/40"></span>
-    </div>
-
-</div>
-
-        {# IMAGE #}
-        <div class="relative
-            z-10
-            rounded-[2rem]
-            overflow-hidden
-            shadow-lg">
-            <img
-                src="{{ asset('images/nath-web.webp') }}"
-                alt="Nathalie, 
-                fondatrice de Studio Tempo"
-                width="800"
-                height="1073"
-                class="block
-                       w-full h-auto
-                       transition-transform
-                       duration-700
-                       ease-out
-                       group-hover:scale-[1.03]"
-            >
+            </div>
 
         </div>
 
-
-        {# =====================================================
-           RÉSEAUX SOCIAUX SUR LA PHOTO
-        ====================================================== #}
-
-        <div class="absolute
-                    right-4
-                    bottom-5
-                    z-20
-                    flex
-                    flex-col
-                    gap-2">
-
-
-            {# LINKEDIN #}
-            <a href="https://fr.linkedin.com/in/nathalie-camiul-847620198"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="LinkedIn de Nathalie"
-               class="w-11 h-11
-                      rounded-full
-                      bg-[#00687A]
-                      text-white
-                      flex
-                      items-center
-                      justify-center
-                      shadow-md
-                      transition-all
-                      duration-300
-                      hover:bg-terracotta
-                      hover:-translate-y-1">
-
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     viewBox="0 0 24 24"
-                     fill="currentColor"
-                     class="w-5 h-5">
-
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452z"/>
-                </svg>
-
-            </a>
-
-
-            {# INSTAGRAM #}
-            <a href="https://www.instagram.com/tempo_agence_web"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Instagram de Tempo"
-               class="w-11 h-11
-                      rounded-full
-                      bg-[#00687A]
-                      text-white
-                      flex
-                      items-center
-                      justify-center
-                      shadow-md
-                      transition-all
-                      duration-300
-                      hover:bg-terracotta
-                      hover:-translate-y-1">
-
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="1.8"
-                     class="w-5 h-5">
-
-                    <rect x="3"
-                          y="3"
-                          width="18"
-                          height="18"
-                          rx="5"/>
-
-                    <circle cx="12"
-                            cy="12"
-                            r="4"/>
-
-                    <circle cx="17.5"
-                            cy="6.5"
-                            r="1"
-                            fill="currentColor"
-                            stroke="none"/>
-
-                </svg>
-
-            </a>
-
-
-            {# TÉLÉPHONE #}
-            <a href="tel:+33675064781"
-               aria-label="Appeler Nathalie au 06 75 06 47 81"
-               class="w-11 h-11
-                      rounded-full
-                      bg-terracotta
-                      text-white
-                      flex
-                      items-center
-                      justify-center
-                      shadow-md
-                      transition-all
-                      duration-300
-                      hover:bg-[#00687A]
-                      hover:-translate-y-1">
-
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="1.8"
-                     stroke-linecap="round"
-                     stroke-linejoin="round"
-                     class="w-5 h-5">
-
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2
-                             19.79 19.79 0 0 1-8.63-3.07
-                             19.5 19.5 0 0 1-6-6
-                             19.79 19.79 0 0 1-3.07-8.67
-                             A2 2 0 0 1 4.11 2h3
-                             a2 2 0 0 1 2 1.72
-                             12.84 12.84 0 0 0 .7 2.81
-                             2 2 0 0 1-.45 2.11L8.09 9.91
-                             a16 16 0 0 0 6 6l1.27-1.27
-                             a2 2 0 0 1 2.11-.45
-                             12.84 12.84 0 0 0 2.81.7
-                             A2 2 0 0 1 22 16.92z"/>
-
-                </svg>
-
-            </a>
-
-        </div>
-
-    </div>
-
-</div>
     </section>
 
 
-{# =========================================================
-   BANDEAU — TOULOUSE & PARTOUT EN FRANCE
-   ========================================================= #}
-<section class="bg-[#00687A] py-12 sm:py-14"
-         aria-labelledby="ancrage-local-title">
+    {# =========================================================
+       BANDEAU — TOULOUSE & PARTOUT EN FRANCE
+    ========================================================= #}
+    <section class="bg-[#00687A] py-12 sm:py-14" aria-labelledby="ancrage-local-title">
 
-    <div class="max-w-7xl mx-auto px-6 sm:px-10">
+        <div class="max-w-7xl mx-auto px-6 sm:px-10">
 
-        <div class="flex flex-col lg:flex-row
-                    lg:items-center lg:justify-between
-                    gap-8 lg:gap-12">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-12">
 
-            {# Texte principal #}
-            <div class="max-w-3xl">
+                <div class="max-w-3xl">
 
-                <p class="text-white text-xs font-semibold
-                          tracking-[0.18em] uppercase mb-4">
-                    Toulouse, en France & à l'international
-                </p>
+                    <p class="text-white text-xs font-semibold tracking-[0.18em] uppercase mb-4">
+                        Toulouse, en France &amp; à l'international
+                    </p>
 
-                <h2 id="ancrage-local-title"
-                    class="font-display text-2xl sm:text-3xl
-                           text-white leading-snug mb-4">
-                    Votre partenaire web à Toulouse
-                
-                </h2>
+                    <h2 id="ancrage-local-title" class="font-display text-2xl sm:text-3xl text-white leading-snug mb-4">
+                        Votre partenaire web à Toulouse
+                    </h2>
 
-                <p class="text-white leading-relaxed">
-                    Basée à Toulouse, je travaille aux côtés des entreprises
-                    de l'agglomération en discutant autour d'un café mais également partout en France et à l'international par visio
-                    , mail et téléphone.
-                </p>
+                    <p class="text-white leading-relaxed">
+                        Basée à Toulouse, je travaille aux côtés des entreprises
+                        de l'agglomération en discutant autour d'un café, mais également
+                        partout en France et à l'international par visio, mail et téléphone.
+                    </p>
 
-            </div>
+                </div>
 
-        
-        {# Tags géographiques #}
-        <div class="flex flex-wrap gap-2.5
-                    mt-8 pt-7
-                    border-t border-white/25">
+            </div>{# fin de la rangée texte (ce </div> manquait) #}
 
-            {% for ville in [
-                'Toulouse',
-                'Blagnac',
-                'Colomiers',
-                'Tournefeuille',
-                'Balma',
-                'L Union',
-                'Ramonville',
-                'Muret',
-                'Partout en France',
-                'A l international'
-            ] %}
-
-                <span class="inline-flex items-center
-                             rounded-full
-                             border border-white/40
-                             px-4 py-1.5
-                             text-xs font-medium
-                             text-white">
-                    {{ ville }}
-                </span>
-
-            {% endfor %}
+            {# Zones d'intervention : simple liste (ce ne sont pas des boutons) #}
+            <ul class="flex flex-wrap items-center gap-x-3 gap-y-2 mt-8 pt-7 border-t border-white/25 text-sm text-white">
+                {% for ville in [
+                    'Toulouse',
+                    'Blagnac',
+                    'Colomiers',
+                    'Tournefeuille',
+                    'Balma',
+                    "L'Union",
+                    'Ramonville',
+                    'Muret',
+                    'Partout en France',
+                    "À l'international"
+                ] %}
+                    <li class="flex items-center gap-3">
+                        {{ ville }}
+                        {% if not loop.last %}<span class="text-white/50" aria-hidden="true">·</span>{% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
     {# =========================================================
@@ -614,1051 +306,70 @@
 
     <section class="py-20">
 
-        <div class="max-w-7xl
-                    mx-auto
-                    px-6 sm:px-10">
+        <div class="max-w-7xl mx-auto px-6 sm:px-10">
 
             <div>
 
-                <div class="text-xs
-                            tracking-widest
-                            text-terracotta
-                            font-medium
-                            mb-3">
+                <div class="text-xs tracking-widest c-terra-ink font-medium mb-3">
                     UNE APPROCHE DIFFÉRENTE
                 </div>
 
-
-                <h2 class="font-display
-                           text-3xl
-                           leading-snug
-                           mb-4">
-
+                <h2 class="font-display text-3xl leading-snug mb-4">
                     Pas seulement un joli site.
                     <br>
-
-                    <span class="text-terracotta">
-                        Un véritable outil.
-                    </span>
-
+                    <span class="text-terracotta">Un véritable outil.</span>
                 </h2>
 
-<div class="text-ink-soft leading-relaxed w-full">
-
-    <p class="mb-4">
-        Un beau site ne suffit pas : il doit aussi travailler pour vous. 
-        Il présente clairement votre activité, rassure vos visiteurs, leur facilite la navigation 
-        et les amène à vous contacter.
-    </p>
-
-    <p class="mb-4">
-        Il doit enfin être visible. Un site que vos clients ne trouvent pas ne vous apporte rien : un bon référencement
-         naturel est ce qui vous permet d’apparaître quand ils vous cherchent sur Google.
-    </p>
-
-
-
-</div>
-
+                <div class="text-ink-soft leading-relaxed w-full">
+                    <p class="mb-4">
+                        Un beau site ne suffit pas : il doit aussi travailler pour vous.
+                        Il présente clairement votre activité, rassure vos visiteurs, leur facilite la navigation
+                        et les amène à vous contacter.
+                    </p>
+                    <p class="mb-4">
+                        Il doit enfin être visible. Un site que vos clients ne trouvent pas ne vous apporte rien : un bon référencement
+                        naturel est ce qui vous permet d’apparaître quand ils vous cherchent sur Google.
+                    </p>
+                </div>
 
                 <a href="{{ path('app_contact') }}"
-                   class="inline-flex
-                          items-center
-                          justify-center
-                          gap-2
-                          rounded-full
-                          bg-[#00687A]
-                          text-white
-                          px-6
-                          py-3.5
-                          text-sm
-                          font-semibold
-                          transition-all
-                          duration-300
-                          hover:bg-[#005966]
-                          hover:-translate-y-0.5
-                          hover:shadow-lg
-                          mb-10">
-
+                   class="inline-flex items-center justify-center gap-2 rounded-full bg-[#00687A] text-white px-6 py-3.5 text-sm font-semibold transition-all duration-300 hover:bg-[#005966] hover:-translate-y-0.5 hover:shadow-lg mb-10">
                     Parlons de votre projet
-
-                    <span aria-hidden="true"
-                          class="transition-transform duration-300">
-                        →
-                    </span>
-
+                    <span aria-hidden="true" class="transition-transform duration-300">→</span>
                 </a>
 
-
-                <div class="grid
-                            sm:grid-cols-2
-                            gap-x-8
-                            gap-y-6">
+                <div class="grid sm:grid-cols-2 gap-x-8 gap-y-6">
 
                     <div class="flex gap-3">
-
-                        <span class="w-8 h-8
-                                     rounded-full
-                                     bg-terracotta
-                                     text-white
-                                     text-xs
-                                     flex items-center
-                                     justify-center
-                                     flex-shrink-0">
-                            01
-                        </span>
-
+                        <span class="w-8 h-8 rounded-full bg-terra-ink text-xs flex items-center justify-center flex-shrink-0">01</span>
                         <div>
-
-                            <div class="font-medium text-sm mb-0.5">
-                                Comprendre
-                            </div>
-
-                            <div class="text-xs text-ink-soft">
-                                Vos besoins, vos utilisateurs et vos objectifs.
-                            </div>
-
+                            <div class="font-medium text-sm mb-0.5">Comprendre</div>
+                            <div class="text-xs text-ink-soft">Vos besoins, vos utilisateurs et vos objectifs.</div>
                         </div>
-
                     </div>
-
 
                     <div class="flex gap-3">
-
-                        <span class="w-8 h-8
-                                     rounded-full
-                                     bg-pine
-                                     text-white
-                                     text-xs
-                                     flex items-center
-                                     justify-center
-                                     flex-shrink-0">
-                            02
-                        </span>
-
+                        <span class="w-8 h-8 rounded-full bg-pine text-white text-xs flex items-center justify-center flex-shrink-0">02</span>
                         <div>
-
-                            <div class="font-medium text-sm mb-0.5">
-                                Concevoir
-                            </div>
-
-                            <div class="text-xs text-ink-soft">
-                                Une expérience claire, moderne et adaptée.
-                            </div>
-
+                            <div class="font-medium text-sm mb-0.5">Concevoir</div>
+                            <div class="text-xs text-ink-soft">Une expérience claire, moderne et adaptée.</div>
                         </div>
-
                     </div>
-
 
                     <div class="flex gap-3">
-
-                        <span class="w-8 h-8
-                                     rounded-full
-                                     bg-terracotta
-                                     text-white
-                                     text-xs
-                                     flex items-center
-                                     justify-center
-                                     flex-shrink-0">
-                            03
-                        </span>
-
+                        <span class="w-8 h-8 rounded-full bg-terra-ink text-xs flex items-center justify-center flex-shrink-0">03</span>
                         <div>
-
-                            <div class="font-medium text-sm mb-0.5">
-                                Développer
-                            </div>
-
-                            <div class="text-xs text-ink-soft">
-                                WordPress ou Symfony selon la nature du projet.
-                            </div>
-
+                            <div class="font-medium text-sm mb-0.5">Développer</div>
+                            <div class="text-xs text-ink-soft">WordPress ou Symfony selon la nature du projet.</div>
                         </div>
-
                     </div>
-
 
                     <div class="flex gap-3">
-
-                        <span class="w-8 h-8
-                                     rounded-full
-                                     bg-[#A68A63]
-                                     text-white
-                                     text-xs
-                                     flex items-center
-                                     justify-center
-                                     flex-shrink-0">
-                            04
-                        </span>
-
+                        <span class="w-8 h-8 rounded-full bg-bronze text-xs flex items-center justify-center flex-shrink-0">04</span>
                         <div>
-
-                            <div class="font-medium text-sm mb-0.5">
-                                Faire évoluer
-                            </div>
-
-                            <div class="text-xs text-ink-soft">
-                                Maintenance, contenu, SEO et évolutions futures.
-                            </div>
-
+                            <div class="font-medium text-sm mb-0.5">Faire évoluer</div>
+                            <div class="text-xs text-ink-soft">Maintenance, contenu, SEO et évolutions futures.</div>
                         </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>{# templates/home/_creation_sites.html.twig #}
-
-   
-
-
-<section id="creation-site-internet"
-         class="relative overflow-hidden bg-[#faf7f2] py-20 lg:py-28">
-
-    <div class="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
-
-        {# =========================
-           INTRO
-        ========================== #}
-        <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-
-            <div>
-                <div class="mb-7 flex items-center gap-4">
-                    <span class="h-px w-8 bg-[#54796f]"></span>
-
-                    <h2 class="text-[11px] font-semibold uppercase tracking-[.28em] text-[#54796f]">
-                        Création de sites internet
-                    </h2>
-                </div>
-
-                <h2 class="font-display
-                           text-3xl
-                           leading-snug
-                           mb-4">
-                    Donnez à votre activité
-
-                    <span class="mt-2 block text-terracotta">
-                        le site qu'elle mérite.
-                    </span>
-                </h2>
-
-                <div class="max-w-2xl space-y-5 text-[16px] leading-7 text-[#56615f] lg:text-[18px]">
-
-    <p>
-        Vous avez une activité qui mérite d’être mieux présentée, un projet
-        qui prend forme, ou un site qui ne vous ressemble plus ? Je vous 
-        aide à créer un site internet professionnel,
-        robuste et vraiment adapté à ce que vous faites, à Toulouse comme
-      ailleurs.
-    </p>
-
-    <p>
-        Création de site internet, refonte de site web, référencement
-        naturel ou développement sur mesure : mon travail consiste à
-        transformer vos idées en un site clair, rapide et agréable à
-        parcourir.
-    </p>
-
-    <p>
-        Spécialisée en Symfony, WordPress et SEO, je m’adapte à vos
-        besoins : site vitrine, boutique e-commerce, plateforme métier ou
-        fonctionnalités spécifiques.
-    </p>
-
-</div>
-
-<div class="mt-9 flex flex-wrap items-center gap-8">
-
-    <a href="{{ path('app_tarifs') }}"
-       class="group inline-flex items-center gap-8 rounded-full
-              bg-[#00678A] px-8 py-4 text-[15px] text-white
-              transition duration-300
-              hover:-translate-y-1 hover:bg-[#005673]">
-
-        Voir les tarifs
-
-        <span class="text-xl transition-transform duration-300 group-hover:translate-x-1">
-            →
-        </span>
-    </a>
-
-    <div class="-rotate-3 font-serif italic leading-5 text-[#172824]">
-        Votre site internet,<br>
-        à votre image
-    </div>
-
-</div>
-
-            </div> {# Fin de la colonne de présentation #}
-
-            {# =========================
-               VISUEL — COLONNE DROITE
-            ========================== #}
-            <div class="relative mx-auto w-full max-w-lg lg:ml-auto">
-                <div class="pointer-events-none absolute -right-6 -top-8 h-40 w-40 rounded-full border-2 border-[#df8a68]/60 sm:h-52 sm:w-52"></div>
-                <div class="pointer-events-none absolute -bottom-6 -left-6 h-36 w-36 rounded-full bg-[#f2e6dc] sm:h-44 sm:w-44"></div>
-
-                <div class="relative flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-[2rem] border border-[#E7DDD2] bg-white/75 p-8 shadow-[0_20px_60px_rgba(0,0,0,.05)] sm:p-12">
-                    <img
-                        src="{{ asset('images/favicon2.png') }}"
-                        alt="Identité visuelle de Studio Tempo, création de sites internet WordPress et Symfony"
-                        width="900"
-                        height="675"
-                        loading="lazy"
-                        decoding="async"
-                        class="h-full w-full object-contain"
-                    >
-                </div>
-            </div>
-        </div>
-
-{# =========================
-   SERVICES
-========================== #}
-
-<div class="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-6">
-
-    {# SITE VITRINE #}
-    <article class="group flex min-w-0 flex-col rounded-[26px] border border-[#E7DDD2]
-                    bg-white/70 p-7 lg:p-8 md:col-span-1 xl:col-span-2
-                    shadow-[0_15px_50px_rgba(0,0,0,.025)]
-                    transition duration-300
-                    hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
-
-        <div class="mb-6 flex h-14 w-14 items-center justify-center
-                    rounded-full bg-[#e5ebe7] text-[#172824]">
-
-            <svg class="h-7 w-7"
-                 viewBox="0 0 24 24"
-                 fill="none"
-                 stroke="currentColor"
-                 stroke-width="1.5"
-                 stroke-linecap="round"
-                 stroke-linejoin="round"
-                 aria-hidden="true">
-
-                {# Fenêtre du site #}
-                <rect x="2.5" y="3.5" width="19" height="17" rx="2"/>
-
-                {# Barre du navigateur #}
-                <path d="M2.5 8h19"/>
-
-                {# Petits boutons #}
-                <circle cx="6" cy="5.8" r=".6" fill="currentColor" stroke="none"/>
-                <circle cx="8.5" cy="5.8" r=".6" fill="currentColor" stroke="none"/>
-
-                {# Contenu de la page #}
-                <path d="M6 12h7"/>
-                <path d="M6 15h12"/>
-                <path d="M6 18h9"/>
-
-            </svg>
-
-        </div>
-
-        <h3 class="mb-4 font-display text-[24px] leading-snug text-[#172824]">
-            Création de site vitrine et One Page
-        </h3>
-
-        <p class="mb-7 text-[15px] leading-7 text-[#66706e]">
-            Un site vitrine ou une one page pour présenter votre activité,
-            vos services et votre savoir-faire, et donner envie à vos futurs
-            clients de vous contacter. Le design est personnalisé, lisible
-            sur mobile et optimisé dès le départ pour le référencement
-            naturel.
-        </p>
-
-        <div class="mt-auto flex flex-wrap gap-2">
-            {% for tag in ['WordPress', 'Site vitrine', 'One Page', 'Responsive'] %}
-                <span class="rounded-full bg-[#fae9e1] px-3 py-2
-                             text-[9px] font-semibold uppercase tracking-wider text-[#263633]">
-                    {{ tag }}
-                </span>
-            {% endfor %}
-        </div>
-
-        <a href="{{ path('app_tarifs') }}"
-           class="mt-6 inline-flex items-center gap-2
-                  text-sm font-semibold text-terracotta
-                  hover:opacity-75 transition">
-            Voir mes tarifs de création de site
-            <span aria-hidden="true">↗</span>
-        </a>
-
-    </article>
-
-
-    {# ECOMMERCE #}
-    <article class="group flex min-w-0 flex-col rounded-[26px] border border-[#E7DDD2]
-                    bg-white/70 p-7 lg:p-8 md:col-span-1 xl:col-span-2
-                    shadow-[0_15px_50px_rgba(0,0,0,.025)]
-                    transition duration-300
-                    hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
-
-        <div class="mb-6 flex h-14 w-14 items-center justify-center
-                    rounded-full bg-[#fae4da] text-2xl text-[#d67c5d]">
-            🛒
-        </div>
-
-        <h3 class="mb-4 font-display text-[24px] leading-snug text-[#172824]">
-            Création de boutique en ligne
-        </h3>
-
-        <p class="mb-7 text-[15px] leading-7 text-[#66706e]">
-            Une boutique en ligne WooCommerce pour vendre vos produits ou
-            vos services sur internet : catalogue, panier, paiement sécurisé,
-            gestion des stocks et des livraisons. Chaque fiche produit est
-            pensée pour rassurer vos clients et se positionner sur Google.
-        </p>
-
-        <div class="mt-auto flex flex-wrap gap-2">
-            {% for tag in ['WooCommerce', 'E-commerce', 'Paiement sécurisé', 'SEO'] %}
-                <span class="rounded-full bg-[#fae9e1] px-3 py-2
-                             text-[9px] font-semibold uppercase tracking-wider text-[#263633]">
-                    {{ tag }}
-                </span>
-            {% endfor %}
-        </div>
-
-        <a href="{{ path('app_tarifs') }}"
-           class="mt-6 inline-flex items-center gap-2
-                  text-sm font-semibold text-terracotta
-                  hover:opacity-75 transition">
-            Voir mes tarifs de boutique en ligne
-            <span aria-hidden="true">↗</span>
-        </a>
-
-    </article>
-
-
-    {# SYMFONY #}
-    <article class="group flex min-w-0 flex-col rounded-[26px] border border-[#E7DDD2]
-                    bg-white/70 p-7 lg:p-8 md:col-span-1 xl:col-span-2
-                    shadow-[0_15px_50px_rgba(0,0,0,.025)]
-                    transition duration-300
-                    hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
-
-        <div class="mb-6 flex h-14 w-14 items-center justify-center
-                    rounded-full bg-[#e5ebe7]
-                    font-mono text-xl text-[#172824]">
-            &lt;/&gt;
-        </div>
-
-        <h3 class="mb-4 font-display text-[24px] leading-snug text-[#172824]">
-            Développement web sur mesure
-        </h3>
-
-        <p class="mb-7 text-[15px] leading-7 text-[#66706e]">
-            Quand un CMS classique ne suffit plus, je développe avec Symfony
-            des sites et des applications web sur mesure : espace client,
-            outil de gestion, plateforme métier, connexion à vos outils par
-            API. Une solution sécurisée et évolutive, construite autour de
-            votre façon de travailler.
-        </p>
-
-        <div class="mt-auto flex flex-wrap gap-2">
-            {% for tag in ['Symfony', 'Application web', 'Sur mesure', 'API'] %}
-                <span class="rounded-full bg-[#fae9e1] px-3 py-2
-                             text-[9px] font-semibold uppercase tracking-wider text-[#263633]">
-                    {{ tag }}
-                </span>
-            {% endfor %}
-        </div>
-
-        {# Maillage interne vers la page Symfony Toulouse #}
-        <a href="{{ path('app_developpement_symfony_toulouse') }}"
-           class="mt-6 inline-flex items-center gap-2
-                  text-sm font-semibold text-terracotta
-                  hover:opacity-75 transition">
-            Découvrir le développement d'applications Symfony à Toulouse
-            <span aria-hidden="true">↗</span>
-        </a>
-    </article>
-
-
-    {# REFONTE #}
-    <article class="group flex min-w-0 flex-col rounded-[26px] border border-[#E7DDD2]
-                    bg-white/70 p-7 lg:p-8 md:col-span-1 xl:col-span-3
-                    shadow-[0_15px_50px_rgba(0,0,0,.025)]
-                    transition duration-300
-                    hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
-
-        <div class="mb-6 flex h-14 w-14 items-center justify-center
-                    rounded-full bg-[#fae4da] text-3xl text-[#d67c5d]">
-            ↻
-        </div>
-
-        <h3 class="mb-4 font-display text-[24px] leading-snug text-[#172824]">
-            Refonte de site internet
-        </h3>
-
-        <p class="mb-7 text-[15px] leading-7 text-[#66706e]">
-            Votre site est vieillissant, lent ou ne vous ressemble plus ?
-            Une refonte permet de moderniser le webdesign, d'améliorer
-            l'ergonomie et la vitesse, et de repartir sur de bonnes bases
-            pour le référencement. Je commence par un audit de l'existant,
-            puis je soigne la migration des pages et des redirections pour
-            ne pas perdre le positionnement que vous avez déjà acquis.
-        </p>
-
-        <div class="mt-auto flex flex-wrap gap-2">
-            {% for tag in ['Refonte de site', 'Webdesign', 'Ergonomie', 'SEO'] %}
-                <span class="rounded-full bg-[#fae9e1] px-3 py-2
-                             text-[9px] font-semibold uppercase tracking-wider text-[#263633]">
-                    {{ tag }}
-                </span>
-            {% endfor %}
-        </div>
-
-    </article>
-
-
-    {# REDACTION SEO #}
-    <article class="group flex min-w-0 flex-col rounded-[26px] border border-[#E7DDD2]
-                    bg-white/70 p-7 lg:p-8 md:col-span-1 xl:col-span-3
-                    shadow-[0_15px_50px_rgba(0,0,0,.025)]
-                    transition duration-300
-                    hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
-
-        <div class="mb-6 flex h-14 w-14 items-center justify-center
-                    rounded-full bg-[#e5ebe7] text-[#172824]">
-
-            <svg class="h-7 w-7"
-                 viewBox="0 0 24 24"
-                 fill="none"
-                 stroke="currentColor"
-                 stroke-width="1.5"
-                 stroke-linecap="round"
-                 stroke-linejoin="round"
-                 aria-hidden="true">
-
-                {# Crayon #}
-                <path d="M4 20h4L18.5 9.5a2.1 2.1 0 0 0-3-3L5 17v3z"/>
-                <path d="M13.5 6.5l3 3"/>
-
-            </svg>
-
-        </div>
-
-        <h3 class="mb-4 font-display text-[24px] leading-snug text-[#172824]">
-            Rédaction web et SEO
-        </h3>
-
-        <p class="mb-7 text-[15px] leading-7 text-[#66706e]">
-            J'écris des textes clairs, utiles à vos visiteurs et optimisés pour Google
-             (Tout cela est inclus dans la création de site et applis). Je fais également l'optimisation
-             technique. Un référencement
-            naturel pensé dans la durée, pour gagner en visibilité locale.
-        </p>
-
-        <div class="mt-auto flex flex-wrap gap-2">
-            {% for tag in ['Rédaction web SEO', 'Référencement naturel', 'Blog', 'SEO local'] %}
-                <span class="rounded-full bg-[#fae9e1] px-3 py-2
-                             text-[9px] font-semibold uppercase tracking-wider text-[#263633]">
-                    {{ tag }}
-                </span>
-            {% endfor %}
-        </div>
-
-    </article>
-
-    {# MAINTENANCE WORDPRESS #}
-<article class="group flex min-w-0 flex-col rounded-[26px] border border-[#E7DDD2]
-                bg-white/70 p-7 lg:p-8 md:col-span-1 xl:col-span-3
-                shadow-[0_15px_50px_rgba(0,0,0,.025)]
-                transition duration-300
-                hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
-
-    <div class="mb-6 flex h-14 w-14 items-center justify-center
-                rounded-full bg-[#e5ebe7] text-[#172824]">
-
-        <svg class="h-7 w-7"
-             viewBox="0 0 24 24"
-             fill="none"
-             stroke="currentColor"
-             stroke-width="1.5"
-             stroke-linecap="round"
-             stroke-linejoin="round"
-             aria-hidden="true">
-
-            {# Clé à molette #}
-            <path d="M14.7 6.3a4 4 0 0 0-5.4 5.1L3.5 17.2a1.8 1.8 0 0 0 2.6 2.6l5.8-5.8a4 4 0 0 0 5.1-5.4l-2.4 2.4-2.1-.5-.5-2.1 2.4-2.4z"/>
-
-        </svg>
-
-    </div>
-
-    <h3 class="mb-4 font-display text-[24px] leading-snug text-[#172824]">
-        Maintenance WordPress
-    </h3>
-
-    <p class="mb-7 text-[15px] leading-7 text-[#66706e]">
-        Un site WordPress se met à jour, se sauvegarde et se surveille.
-        Je m'en occupe pour vous : mises à jour du site, du thème et des
-        extensions, sauvegardes, sécurité, suivi des performances et petites
-        modifications de contenu. Vous évitez les pannes, les failles et les
-        mauvaises surprises, et vous gardez un site rapide et fiable.
-        
-    </p>
-
-    <div class="mt-auto flex flex-wrap gap-2">
-        {% for tag in ['Maintenance WordPress', 'Mises à jour', 'Sécurité', 'Sauvegardes'] %}
-            <span class="rounded-full bg-[#fae9e1] px-3 py-2
-                         text-[9px] font-semibold uppercase tracking-wider text-[#263633]">
-                {{ tag }}
-            </span>
-        {% endfor %}
-    </div>
-
-</article>
-
-</div>
-
-
-    </div>
-
-</section>
-
-    
-
-
-
-
-    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-2" aria-hidden="true">
-        <div class="tempo-beat">
-            <i class="w-10"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="w-20"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="w-7"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="flex-1"></i>
-        </div>
-    </div>
-
-    {# =========================================================
-       TECHNOLOGIES
-       Nouvelle section compacte
-    ========================================================= #}
-
-    <section class="relative
-                    overflow-hidden
-                    border-y
-                    border-[#D9C8A9]/40
-                    bg-[#F7F3EC]">
-
-
-        {# Décoration très légère #}
-
-        <div class="pointer-events-none
-                    absolute
-                    -right-20 -bottom-28
-                    w-64 h-64
-                    rounded-full
-                    border
-                    border-[#00687A]/10">
-        </div>
-
-        <div class="pointer-events-none
-                    absolute
-                    right-16 bottom-10
-                    w-3 h-3
-                    rounded-full
-                    bg-terracotta/70">
-        </div>
-
-
-        <div class="relative
-                    max-w-7xl
-                    mx-auto
-                    px-6 sm:px-10
-                    py-12 lg:py-14">
-
-
-            <div class="grid
-                        lg:grid-cols-[0.75fr_1.25fr]
-                        gap-10 lg:gap-16
-                        items-center">
-
-
-                {# TEXTE #}
-
-                <div>
-
-                    <div class="flex items-center gap-3 mb-4">
-
-                        <span class="w-8 h-px bg-terracotta"></span>
-
-                        <span class="text-[10px]
-                                     uppercase
-                                     tracking-[0.22em]
-                                     font-semibold
-                                     text-terracotta">
-                            Mes outils
-                        </span>
-
-                    </div>
-
-
-                    <h2 class="font-display
-                               text-2xl sm:text-3xl
-                               leading-[1.15]
-                               mb-4">
-
-                        Des technos
-
-                        <span class="text-[#00687A]">
-                            modernes
-                        </span>
-
-                        <br>
-
-                        et éprouvées.
-
-                    </h2>
-
-
-                    <p class="max-w-md
-                              text-sm
-                              leading-6
-                              text-ink-soft">
-
-                        Du design au développement, je m’appuie sur
-                        des technologies et des outils éprouvés pour
-                        concevoir des expériences web fiables,
-                        performantes et adaptées à chaque besoin.
-
-                    </p>
-
-                </div>
-
-
-
-                {# =================================================
-                   LOGOS
-                ================================================= #}
-
-                <div class="grid
-                            grid-cols-3
-                            sm:grid-cols-6
-                            gap-x-5
-                            gap-y-7
-                            items-start">
-
-
-                    {# FIGMA #}
-
-                    <div class="group
-                                flex flex-col
-                                items-center
-                                justify-center
-                                gap-2">
-
-                        <img src="{{ asset('images/figma-logo.svg.webp') }}"
-                             alt="Figma"
-                             width="250"
-                             height="375" 
-                             loading="lazy"
-                             class="h-9
-                                    max-w-[55px]
-                                    w-auto
-                                    object-contain
-                                    transition-transform
-                                    duration-300
-                                    group-hover:-translate-y-1">
-
-                        <span class="text-[10px] text-ink-soft">
-                            Figma
-                        </span>
-
-                    </div>
-
-
-
-                    {# CANVA #}
-
-                    <div class="group
-                                flex flex-col
-                                items-center
-                                justify-center
-                                gap-2">
-
-                        <img src="{{ asset('images/canva-web.webp') }}"
-                             alt="Canva"
-                             loading="lazy"
-                             class="h-9
-                                    max-w-[65px]
-                                    w-auto
-                                    object-contain
-                                    transition-transform
-                                    duration-300
-                                    group-hover:-translate-y-1">
-
-                        <span class="text-[10px] text-ink-soft">
-                            Canva
-                        </span>
-
-                    </div>
-
-
-
-                    {# SYMFONY #}
-
-                    <div class="group
-                                flex flex-col
-                                items-center
-                                justify-center
-                                gap-2">
-
-                        <img src="{{ asset('images/symfony.svg') }}"
-                             alt="Symfony"
-                             loading="lazy"
-                             class="h-9
-                                    max-w-[55px]
-                                    w-auto
-                                    object-contain
-                                    transition-transform
-                                    duration-300
-                                    group-hover:-translate-y-1">
-
-                        <span class="text-[10px] text-ink-soft">
-                            Symfony
-                        </span>
-
-                    </div>
-
-
-
-                    {# WORDPRESS #}
-
-                    <div class="group
-                                flex flex-col
-                                items-center
-                                justify-center
-                                gap-2">
-
-                        <img src="{{ asset('images/wordpress.webp') }}"
-                             alt="WordPress"
-                             loading="lazy"
-                             class="h-9
-                                    max-w-[55px]
-                                    w-auto
-                                    object-contain
-                                    transition-transform
-                                    duration-300
-                                    group-hover:-translate-y-1">
-
-                        <span class="text-[10px] text-ink-soft">
-                            WordPress
-                        </span>
-
-                    </div>
-
-
-
-                    {# TAILWIND #}
-
-                    <div class="group
-                                flex flex-col
-                                items-center
-                                justify-center
-                                gap-2">
-
-                        <img src="{{ asset('images/tailwind.webp') }}"
-                             alt="Tailwind CSS"
-                             loading="lazy"
-                             class="h-9
-                                    max-w-[65px]
-                                    w-auto
-                                    object-contain
-                                    transition-transform
-                                    duration-300
-                                    group-hover:-translate-y-1">
-
-                        <span class="text-[10px] text-ink-soft">
-                            Tailwind
-                        </span>
-
-                    </div>
-
-
-
-                    {# JAVASCRIPT #}
-
-                    <div class="group
-                                flex flex-col
-                                items-center
-                                justify-center
-                                gap-2">
-
-                        <img src="{{ asset('images/java.jpeg') }}"
-                             alt="JavaScript"
-                             loading="lazy"
-                             class="h-9
-                                    max-w-[55px]
-                                    w-auto
-                                    object-contain
-                                    transition-transform
-                                    duration-300
-                                    group-hover:-translate-y-1">
-
-                        <span class="text-[10px] text-ink-soft">
-                            JavaScript
-                        </span>
-
-                    </div>
-
-
-
-                    {# POSTGRESQL #}
-
-                    <div class="group
-                                flex flex-col
-                                items-center
-                                justify-center
-                                gap-2">
-
-                        <img src="{{ asset('images/postgresql.svg') }}"
-                             alt="PostgreSQL"
-                             loading="lazy"
-                             class="h-9
-                                    max-w-[55px]
-                                    w-auto
-                                    object-contain
-                                    transition-transform
-                                    duration-300
-                                    group-hover:-translate-y-1">
-
-                        <span class="text-[10px] text-ink-soft">
-                            PostgreSQL
-                        </span>
-
-                    </div>
-
-
-
-                    {# DOCKER #}
-
-                    <div class="group
-                                flex flex-col
-                                items-center
-                                justify-center
-                                gap-2">
-
-                        <img src="{{ asset('images/docker.png') }}"
-                             alt="Docker"
-                             loading="lazy"
-                             class="h-9
-                                    max-w-[60px]
-                                    w-auto
-                                    object-contain
-                                    transition-transform
-                                    duration-300
-                                    group-hover:-translate-y-1">
-
-                        <span class="text-[10px] text-ink-soft">
-                            Docker
-                        </span>
-
-                    </div>
-
-
-
-                    {# LINUX #}
-
-                    <div class="group
-                                flex flex-col
-                                items-center
-                                justify-center
-                                gap-2">
-
-                        <img src="{{ asset('images/linux-web.webp') }}"
-                             alt="Linux"
-                             loading="lazy"
-                             class="h-9
-                                    max-w-[50px]
-                                    w-auto
-                                    object-contain
-                                    transition-transform
-                                    duration-300
-                                    group-hover:-translate-y-1">
-
-                        <span class="text-[10px] text-ink-soft">
-                            Linux
-                        </span>
-
-                    </div>
-
-                    {# GITHUB #}
-
-<div class="group flex flex-col items-center justify-center gap-2">
-
-    <div class="h-12 w-16 flex items-center justify-center">
-
-        <img
-            src="{{ asset('images/github.png') }}"
-            alt="GitHub"
-            loading="lazy"
-            class="max-h-7 max-w-9 w-auto h-auto object-contain
-                   transition-transform duration-300
-                   group-hover:-translate-y-1"
-        >
-
-    </div>
-
-    <span class="text-[10px] text-ink-soft">
-        GitHub
-    </span>
-
-</div>
-
-{# PHP #}
-
-<div class="group flex flex-col items-center justify-center gap-2">
-
-    <div class="h-12 w-16 flex items-center justify-center">
-
-        <img
-            src="{{ asset('images/php.webp') }}"
-            alt="PHP"
-            loading="lazy"
-            class="max-h-9 max-w-14 w-auto h-auto object-contain
-                   transition-transform duration-300
-                   group-hover:-translate-y-1"
-        >
-
-    </div>
-
-    <span class="text-[10px] text-ink-soft">
-        PHP
-    </span>
-
-</div>
-
-
-
-                    {# OPENAI #}
-
-                    <div class="group
-                                flex flex-col
-                                items-center
-                                justify-center
-                                gap-2">
-
-                        <img src="{{ asset('images/openai.webp') }}"
-                             alt="OpenAI"
-                             loading="lazy"
-                             class="h-9
-                                    max-w-[55px]
-                                    w-auto
-                                    object-contain
-                                    transition-transform
-                                    duration-300
-                                    group-hover:-translate-y-1">
-
-                        <span class="text-[10px] text-ink-soft">
-                            OpenAI
-                        </span>
-
                     </div>
 
                 </div>
@@ -1670,6 +381,238 @@
     </section>
 
 
+    {# =========================================================
+       CRÉATION DE SITES + CARROUSEL DES SERVICES
+    ========================================================= #}
+
+    <section id="creation-site-internet" class="relative overflow-hidden bg-[#faf7f2] py-20 lg:py-28">
+
+        <div class="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
+
+            {# INTRO #}
+            <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+
+                <div>
+                    <div class="mb-7 flex items-center gap-4">
+                        <span class="h-px w-8 bg-[#54796f]"></span>
+                        <p class="text-[11px] font-semibold uppercase tracking-[.28em] text-[#54796f]">
+                            Création de sites internet
+                        </p>
+                    </div>
+
+                    <h2 class="font-display text-3xl leading-snug mb-4">
+                        Donnez à votre activité
+                        <span class="mt-2 block text-terracotta">le site qu'elle mérite.</span>
+                    </h2>
+
+                    <div class="max-w-2xl space-y-5 text-[16px] leading-7 text-[#56615f] lg:text-[18px]">
+                        <p>
+                            Vous avez une activité qui mérite d’être mieux présentée, un projet
+                            qui prend forme, ou un site qui ne vous ressemble plus ? Je vous
+                            aide à créer un site internet professionnel,
+                            robuste et vraiment adapté à ce que vous faites, à Toulouse comme
+                            ailleurs.
+                        </p>
+                        <p>
+                            Création de site internet, refonte de site web, référencement
+                            naturel ou développement sur mesure : mon travail consiste à
+                            transformer vos idées en un site clair, rapide et agréable à
+                            parcourir.
+                        </p>
+                        <p>
+                            Spécialisée en Symfony, WordPress et SEO, je m’adapte à vos
+                            besoins : site vitrine, boutique e-commerce, plateforme métier ou
+                            fonctionnalités spécifiques.
+                        </p>
+                    </div>
+
+                    <div class="mt-9 flex flex-wrap items-center gap-8">
+
+                        <a href="{{ path('app_tarifs') }}"
+                           class="group inline-flex items-center gap-8 rounded-full bg-[#00678A] px-8 py-4 text-[15px] text-white transition duration-300 hover:-translate-y-1 hover:bg-[#005673]">
+                            Voir les tarifs
+                            <span class="text-xl transition-transform duration-300 group-hover:translate-x-1">→</span>
+                        </a>
+
+                        <div class="-rotate-3 font-serif italic text-lg leading-6 text-[#172824]">
+                            Votre site internet,<br>
+                            à votre image
+                        </div>
+
+                    </div>
+
+                </div>{# fin de la colonne de présentation #}
+
+                {# VISUEL — COLONNE DROITE #}
+                <div class="relative mx-auto w-full max-w-lg lg:ml-auto">
+                    <div class="pointer-events-none absolute -right-6 -top-8 h-40 w-40 rounded-full border-2 border-[#df8a68]/60 sm:h-52 sm:w-52"></div>
+                    <div class="pointer-events-none absolute -bottom-6 -left-6 h-36 w-36 rounded-full bg-[#f2e6dc] sm:h-44 sm:w-44"></div>
+
+                    <div class="relative flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-[2rem] border border-[#E7DDD2] bg-white/75 p-8 shadow-[0_20px_60px_rgba(0,0,0,.05)] sm:p-12">
+                        <img src="{{ asset('images/favicon2.png') }}"
+                             alt="Identité visuelle de Studio Tempo, création de sites internet WordPress et Symfony"
+                             width="900" height="675"
+                             loading="lazy" decoding="async"
+                             class="h-full w-full object-contain">
+                    </div>
+                </div>
+
+            </div>
+
+            {# FLÈCHES DU CARROUSEL #}
+            <div class="mt-16 mb-0 flex items-center justify-end gap-3">
+                <button type="button" id="services-prev" aria-label="Voir les services précédents" aria-controls="services-carousel"
+                        class="flex h-12 w-12 items-center justify-center rounded-full bg-terra-ink transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#00678A]">
+                    <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <button type="button" id="services-next" aria-label="Voir les services suivants" aria-controls="services-carousel"
+                        class="flex h-12 w-12 items-center justify-center rounded-full bg-terra-ink transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#00678A]">
+                    <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+            </div>
+
+            {# CARROUSEL — le CSS est dans le bloc <style> en haut de page #}
+            <div id="services-carousel" role="region" aria-label="Mes services" tabindex="0">
+
+                {# SITE VITRINE #}
+                <article class="group flex flex-col rounded-[26px] border border-[#E7DDD2] bg-white/70 p-7 lg:p-8 shadow-[0_15px_50px_rgba(0,0,0,.025)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
+                    <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#e5ebe7] text-[#172824]">
+                        <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="2.5" y="3.5" width="19" height="17" rx="2"/>
+                            <path d="M2.5 8h19"/>
+                            <circle cx="6" cy="5.8" r=".6" fill="currentColor" stroke="none"/>
+                            <circle cx="8.5" cy="5.8" r=".6" fill="currentColor" stroke="none"/>
+                            <path d="M6 12h7"/><path d="M6 15h12"/><path d="M6 18h9"/>
+                        </svg>
+                    </div>
+                    <h3 class="mb-4 font-display text-[24px] leading-snug text-[#172824]">Création de site vitrine et One Page</h3>
+                    <p class="mb-7 text-[15px] leading-7 svc-text">
+                        Un site vitrine ou une one page pour présenter votre activité,
+                        vos services et votre savoir-faire, et donner envie à vos futurs
+                        clients de vous contacter. Le design est personnalisé, lisible
+                        sur mobile et optimisé dès le départ pour le référencement naturel.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        {% for tag in ['WordPress', 'Site vitrine', 'One Page', 'Responsive'] %}
+                            <span class="rounded-full bg-[#fae9e1] px-3 py-2 svc-tag font-semibold uppercase tracking-wider text-[#263633]">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    <a href="{{ path('app_tarifs') }}" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold c-terra-ink hover:opacity-75 transition">
+                        Voir mes tarifs de création de site <span aria-hidden="true">↗</span>
+                    </a>
+                </article>
+
+                {# E-COMMERCE #}
+                <article class="group flex flex-col rounded-[26px] border border-[#E7DDD2] bg-white/70 p-7 lg:p-8 shadow-[0_15px_50px_rgba(0,0,0,.025)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
+                    <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#fae4da] text-2xl text-[#d67c5d]" aria-hidden="true">🛒</div>
+                    <h3 class="mb-4 font-display text-[24px] leading-snug text-[#172824]">Création de boutique en ligne</h3>
+                    <p class="mb-7 text-[15px] leading-7 svc-text">
+                        Une boutique en ligne WooCommerce pour vendre vos produits ou
+                        vos services sur internet : catalogue, panier, paiement sécurisé,
+                        gestion des stocks et des livraisons. Chaque fiche produit est
+                        pensée pour rassurer vos clients et se positionner sur Google.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        {% for tag in ['WooCommerce', 'E-commerce', 'Paiement sécurisé', 'SEO'] %}
+                            <span class="rounded-full bg-[#fae9e1] px-3 py-2 svc-tag font-semibold uppercase tracking-wider text-[#263633]">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    <a href="{{ path('app_tarifs') }}" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold c-terra-ink hover:opacity-75 transition">
+                        Voir mes tarifs de boutique en ligne <span aria-hidden="true">↗</span>
+                    </a>
+                </article>
+
+                {# SYMFONY #}
+                <article class="group flex flex-col rounded-[26px] border border-[#E7DDD2] bg-white/70 p-7 lg:p-8 shadow-[0_15px_50px_rgba(0,0,0,.025)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
+                    <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#e5ebe7] font-mono text-xl text-[#172824]" aria-hidden="true">&lt;/&gt;</div>
+                    <h3 class="mb-4 font-display text-[24px] leading-snug text-[#172824]">Développement web sur mesure</h3>
+                    <p class="mb-7 text-[15px] leading-7 svc-text">
+                        Quand un CMS classique ne suffit plus, je développe avec Symfony
+                        des sites et des applications web sur mesure : espace client,
+                        outil de gestion, plateforme métier, connexion à vos outils par
+                        API. Une solution sécurisée et évolutive, construite autour de
+                        votre façon de travailler.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        {% for tag in ['Symfony', 'Application web', 'Sur mesure', 'API'] %}
+                            <span class="rounded-full bg-[#fae9e1] px-3 py-2 svc-tag font-semibold uppercase tracking-wider text-[#263633]">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    {# Maillage interne vers la page Symfony Toulouse #}
+                    <a href="{{ path('app_developpement_symfony_toulouse') }}" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold c-terra-ink hover:opacity-75 transition">
+                        Découvrir le développement d'applications Symfony à Toulouse <span aria-hidden="true">↗</span>
+                    </a>
+                </article>
+
+                {# REFONTE #}
+                <article class="group flex flex-col rounded-[26px] border border-[#E7DDD2] bg-white/70 p-7 lg:p-8 shadow-[0_15px_50px_rgba(0,0,0,.025)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
+                    <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#fae4da] text-3xl text-[#d67c5d]" aria-hidden="true">↻</div>
+                    <h3 class="mb-4 font-display text-[24px] leading-snug text-[#172824]">Refonte de site internet</h3>
+                    <p class="mb-7 text-[15px] leading-7 svc-text">
+                        Votre site est vieillissant, lent ou ne vous ressemble plus ?
+                        Une refonte permet de moderniser le webdesign, d'améliorer
+                        l'ergonomie et la vitesse, et de repartir sur de bonnes bases
+                        pour le référencement. Je commence par un audit de l'existant,
+                        puis je soigne la migration des pages et des redirections pour
+                        ne pas perdre le positionnement que vous avez déjà acquis.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        {% for tag in ['Refonte de site', 'Webdesign', 'Ergonomie', 'SEO'] %}
+                            <span class="rounded-full bg-[#fae9e1] px-3 py-2 svc-tag font-semibold uppercase tracking-wider text-[#263633]">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                </article>
+
+                {# RÉDACTION WEB & SEO #}
+                <article class="group flex flex-col rounded-[26px] border border-[#E7DDD2] bg-white/70 p-7 lg:p-8 shadow-[0_15px_50px_rgba(0,0,0,.025)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
+                    <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#e5ebe7] text-[#172824]">
+                        <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 20h4L18.5 9.5a2.1 2.1 0 0 0-3-3L5 17v3z"/>
+                            <path d="M13.5 6.5l3 3"/>
+                        </svg>
+                    </div>
+                    <h3 class="mb-4 font-display text-[24px] leading-snug text-[#172824]">Rédaction web et SEO</h3>
+                    <p class="mb-7 text-[15px] leading-7 svc-text">
+                        J'écris des textes clairs, utiles à vos visiteurs et optimisés pour Google
+                        (tout cela est inclus dans la création de site et d'applis). Je fais également
+                        l'optimisation technique. Un référencement naturel pensé dans la durée,
+                        pour gagner en visibilité locale.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        {% for tag in ['Rédaction web SEO', 'Référencement naturel', 'Blog', 'SEO local'] %}
+                            <span class="rounded-full bg-[#fae9e1] px-3 py-2 svc-tag font-semibold uppercase tracking-wider text-[#263633]">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                </article>
+
+                {# MAINTENANCE WORDPRESS #}
+                <article class="group flex flex-col rounded-[26px] border border-[#E7DDD2] bg-white/70 p-7 lg:p-8 shadow-[0_15px_50px_rgba(0,0,0,.025)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(0,0,0,.07)]">
+                    <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#e5ebe7] text-[#172824]">
+                        <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M14.7 6.3a4 4 0 0 0-5.4 5.1L3.5 17.2a1.8 1.8 0 0 0 2.6 2.6l5.8-5.8a4 4 0 0 0 5.1-5.4l-2.4 2.4-2.1-.5-.5-2.1 2.4-2.4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="mb-4 font-display text-[24px] leading-snug text-[#172824]">Maintenance WordPress</h3>
+                    <p class="mb-7 text-[15px] leading-7 svc-text">
+                        Un site WordPress se met à jour, se sauvegarde et se surveille.
+                        Je m'en occupe pour vous : mises à jour du site, du thème et des
+                        extensions, sauvegardes, sécurité, suivi des performances et petites
+                        modifications de contenu. Vous évitez les pannes, les failles et les
+                        mauvaises surprises, et vous gardez un site rapide et fiable.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        {% for tag in ['Maintenance WordPress', 'Mises à jour', 'Sécurité', 'Sauvegardes'] %}
+                            <span class="rounded-full bg-[#fae9e1] px-3 py-2 svc-tag font-semibold uppercase tracking-wider text-[#263633]">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
 
     <div class="max-w-7xl mx-auto px-6 sm:px-10 py-2" aria-hidden="true">
         <div class="tempo-beat">
@@ -1677,425 +620,232 @@
         </div>
     </div>
 
+
     {# =========================================================
-       ACCOMPAGNEMENT
+       TECHNOLOGIES
     ========================================================= #}
 
-    <section class="relative
-                    overflow-hidden
-                    bg-cream-2
-                    py-16 lg:py-20">
+    <section class="relative overflow-hidden border-y border-[#D9C8A9]/40 bg-[#F7F3EC]">
 
+        <div class="pointer-events-none absolute -right-20 -bottom-28 w-64 h-64 rounded-full border border-[#00687A]/10"></div>
+        <div class="pointer-events-none absolute right-16 bottom-10 w-3 h-3 rounded-full bg-terracotta/70"></div>
 
-        {# Formes décoratives #}
+        <div class="relative max-w-7xl mx-auto px-6 sm:px-10 py-12 lg:py-14">
 
-        <div class="pointer-events-none absolute -top-6 right-8 opacity-30 text-terracotta" aria-hidden="true">
-            <div class="tempo-rhythm scale-[2] origin-top-right">
-                <span></span><span></span><span></span><span></span>
-            </div>
-        </div>
+            <div class="grid lg:grid-cols-[0.75fr_1.25fr] gap-10 lg:gap-16 items-center">
 
-        <div class="pointer-events-none
-                    absolute
-                    -bottom-24 -left-16
-                    w-64 h-64
-                    rounded-full
-                    bg-[#00687A]/8">
-        </div>
-
-
-        <div class="relative
-                    max-w-7xl
-                    mx-auto
-                    px-6 sm:px-10">
-
-
-            {# INTRO #}
-
-            <div class="grid
-                        lg:grid-cols-[0.8fr_1.2fr]
-                        gap-8 lg:gap-16
-                        items-end
-                        mb-12">
-
+                {# TEXTE #}
                 <div>
 
                     <div class="flex items-center gap-3 mb-4">
-
                         <span class="w-8 h-px bg-terracotta"></span>
-
-                        <span class="text-xs
-                                     uppercase
-                                     tracking-[0.2em]
-                                     font-semibold
-                                     text-terracotta">
-                            Mon accompagnement
-                        </span>
-
+                        <span class="text-xs uppercase tracking-[0.22em] font-semibold c-terra-ink">Mes outils</span>
                     </div>
 
-
-                    <h2 class="font-display
-                               text-3xl sm:text-4xl
-                               leading-[1.1]">
-
-                        De l’idée
+                    <h2 class="font-display text-2xl sm:text-3xl leading-[1.15] mb-4">
+                        Des technos
+                        <span class="text-[#00687A]">modernes</span>
                         <br>
-
-                        <span class="text-[#00687A]">
-                            à la mise en ligne.
-                        </span>
-
+                        et éprouvées.
                     </h2>
 
-                </div>
-
-
-                <div class="lg:pb-1">
-
-                    <p class="max-w-2xl
-                              text-base
-                              leading-7
-                              text-ink-soft">
-
-                        Chaque projet commence par une compréhension précise
-                        de votre activité. Je vous accompagne ensuite dans la
-                        conception, le développement et la mise en ligne d’une
-                        solution pensée pour être
-
-                        <strong class="font-semibold text-ink">
-                            utile, claire et durable.
-                        </strong>
-
+                    <p class="max-w-md text-sm leading-6 text-ink-soft">
+                        Du design au développement, je m’appuie sur
+                        des technologies et des outils éprouvés pour
+                        concevoir des expériences web fiables,
+                        performantes et adaptées à chaque besoin.
                     </p>
 
                 </div>
 
+                {# LOGOS #}
+                {% set techs = [
+                    { n: 'Figma',      f: 'figma-logo.svg.webp', c: 'h-9 max-w-[55px]', w: 250, h: 375 },
+                    { n: 'Canva',      f: 'canva-web.webp',      c: 'h-9 max-w-[65px]' },
+                    { n: 'Symfony',    f: 'symfony.svg',         c: 'h-9 max-w-[55px]' },
+                    { n: 'WordPress',  f: 'wordpress.webp',      c: 'h-9 max-w-[55px]' },
+                    { n: 'Tailwind',   f: 'tailwind.webp',       c: 'h-9 max-w-[65px]', alt: 'Tailwind CSS' },
+                    { n: 'JavaScript', f: 'java.jpeg',           c: 'h-9 max-w-[55px]' },
+                    { n: 'PostgreSQL', f: 'postgresql.svg',      c: 'h-9 max-w-[55px]' },
+                    { n: 'Docker',     f: 'docker.png',          c: 'h-9 max-w-[60px]' },
+                    { n: 'Linux',      f: 'linux-web.webp',      c: 'h-9 max-w-[50px]' },
+                    { n: 'GitHub',     f: 'github.png',          c: 'max-h-7 max-w-9 h-auto', wrap: true },
+                    { n: 'PHP',        f: 'php.webp',            c: 'max-h-9 max-w-14 h-auto', wrap: true },
+                    { n: 'OpenAI',     f: 'openai.webp',         c: 'h-9 max-w-[55px]' }
+                ] %}
+
+                <div class="grid grid-cols-3 sm:grid-cols-6 gap-x-5 gap-y-7 items-start">
+                    {% for t in techs %}
+                        <div class="group flex flex-col items-center justify-center gap-2">
+
+                            {% if t.wrap|default(false) %}<div class="h-12 w-16 flex items-center justify-center">{% endif %}
+
+                            <img src="{{ asset('images/' ~ t.f) }}"
+                                 alt="{{ t.alt|default(t.n) }}"
+                                 {% if t.w is defined %}width="{{ t.w }}" height="{{ t.h }}"{% endif %}
+                                 loading="lazy"
+                                 class="{{ t.c }} w-auto object-contain transition-transform duration-300 group-hover:-translate-y-1">
+
+                            {% if t.wrap|default(false) %}</div>{% endif %}
+
+                            <span class="text-[10px] text-ink-soft">{{ t.n }}</span>
+
+                        </div>
+                    {% endfor %}
+                </div>
+
             </div>
 
+        </div>
+
+    </section>
 
 
-            {# =================================================
-               PARCOURS
-            ================================================= #}
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-2" aria-hidden="true">
+        <div class="tempo-beat">
+            <i class="w-10"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="w-20"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="w-7"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="flex-1"></i>
+        </div>
+    </div>
 
-            <div class="grid md:grid-cols-3 gap-4 lg:gap-5">
 
+    {# =========================================================
+       ACCOMPAGNEMENT
+    ========================================================= #}
 
-                {# 01 CLARIFIER #}
+    <section class="relative overflow-hidden bg-cream-2 py-16 lg:py-20">
 
-                <article class="group
-                                relative
-                                overflow-hidden
-                                min-h-[280px]
-                                rounded-[1.75rem]
-                                bg-[#00687A]
-                                text-white
-                                p-7 lg:p-8">
+        <div class="pointer-events-none absolute -top-6 right-8 opacity-30 text-terracotta" aria-hidden="true">
+            <div class="tempo-rhythm scale-[2] origin-top-right"><span></span><span></span><span></span><span></span></div>
+        </div>
 
-                    {# Fragment du T Tempo — discret et derrière le contenu #}
-                    <div class="pointer-events-none
-                                absolute
-                                -right-10
-                                top-10
-                                opacity-[0.08]
-                                transition-all
-                                duration-700
-                                group-hover:opacity-[0.13]
-                                group-hover:-translate-x-2"
-                         aria-hidden="true">
+        <div class="pointer-events-none absolute -bottom-24 -left-16 w-64 h-64 rounded-full bg-[#00687A]/8"></div>
 
-                        <div class="relative w-40 h-44">
-                            <span class="absolute right-0 top-0
-                                         w-36 h-9 rounded-full bg-white"></span>
+        <div class="relative max-w-7xl mx-auto px-6 sm:px-10">
 
-                            <span class="absolute right-10 top-11
-                                         w-24 h-8 rounded-full bg-white"></span>
+            {# INTRO #}
+            <div class="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-16 items-end mb-12">
 
-                            <span class="absolute right-10 top-11
-                                         w-8 h-28 rounded-full bg-white"></span>
-                        </div>
-
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-8 h-px bg-terracotta"></span>
+                        <span class="text-xs uppercase tracking-[0.2em] font-semibold c-terra-ink">Mon accompagnement</span>
                     </div>
 
+                    <h2 class="font-display text-3xl sm:text-4xl leading-[1.1]">
+                        De l’idée
+                        <br>
+                        <span class="text-[#00687A]">à la mise en ligne.</span>
+                    </h2>
+                </div>
 
-                    <div class="relative
-                                z-10
-                                h-full
-                                flex flex-col">
+                <div class="lg:pb-1">
+                    <p class="max-w-2xl text-base leading-7 text-ink-soft">
+                        Chaque projet commence par une compréhension précise
+                        de votre activité. Je vous accompagne ensuite dans la
+                        conception, le développement et la mise en ligne d’une
+                        solution pensée pour être
+                        <strong class="font-semibold text-ink">utile, claire et durable.</strong>
+                    </p>
+                </div>
 
-                        <div class="flex
-                                    items-center
-                                    justify-between">
+            </div>
 
-                            <span class="text-xs
-                                         uppercase
-                                         tracking-[0.18em]
-                                         text-white/60">
-                                01
-                            </span>
+            {# PARCOURS #}
+            <div class="grid md:grid-cols-3 gap-4 lg:gap-5">
 
-                            <span class="flex
-                                         items-center
-                                         justify-center
-                                         w-9 h-9
-                                         rounded-full
-                                         bg-white/10
-                                         text-sm">
-                                ↘
-                            </span>
+                {# 01 CLARIFIER #}
+                <article class="group relative overflow-hidden min-h-[280px] rounded-[1.75rem] bg-[#00687A] text-white p-7 lg:p-8">
 
+                    {# Fragment du T Tempo — discret, derrière le contenu #}
+                    <div class="pointer-events-none absolute -right-10 top-10 opacity-[0.08] transition-all duration-700 group-hover:opacity-[0.13] group-hover:-translate-x-2" aria-hidden="true">
+                        <div class="relative w-40 h-44">
+                            <span class="absolute right-0 top-0 w-36 h-9 rounded-full bg-white"></span>
+                            <span class="absolute right-10 top-11 w-24 h-8 rounded-full bg-white"></span>
+                            <span class="absolute right-10 top-11 w-8 h-28 rounded-full bg-white"></span>
                         </div>
+                    </div>
 
-
+                    <div class="relative z-10 h-full flex flex-col">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs uppercase tracking-[0.18em] text-white/80">01</span>
+                            <span class="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 text-sm" aria-hidden="true">↘</span>
+                        </div>
                         <div class="mt-auto pt-16">
-
-                            <h3 class="font-display
-                                       text-2xl
-                                       mb-3">
-                                Clarifier
-                            </h3>
-
-                            <p class="text-sm
-                                      leading-6
-                                      text-white/70">
-
+                            <h3 class="font-display text-2xl mb-3">Clarifier</h3>
+                            <p class="text-sm leading-6 text-white/90">
                                 Votre site doit transmettre le bon message dès
                                 les premières secondes. Je vous aide à structurer
                                 vos contenus, vos priorités et votre parcours
                                 utilisateur pour créer une présence en ligne
                                 claire, cohérente et adaptée à votre activité.
-
                             </p>
-
                         </div>
-
                     </div>
 
                 </article>
 
-
-
                 {# 02 VALORISER #}
+                <article class="group relative overflow-hidden min-h-[280px] rounded-[1.75rem] bg-[#F7F3EC] border border-[#D9C8A9]/40 p-7 lg:p-8">
 
-                <article class="group
-                                relative
-                                overflow-hidden
-                                min-h-[280px]
-                                rounded-[1.75rem]
-                                bg-[#F7F3EC]
-                                border
-                                border-[#D9C8A9]/40
-                                p-7 lg:p-8">
+                    <div class="absolute -right-10 -bottom-14 w-36 h-36 rounded-full bg-terracotta/10"></div>
 
-                    <div class="absolute
-                                -right-10 -bottom-14
-                                w-36 h-36
-                                rounded-full
-                                bg-terracotta/10">
-                    </div>
-
-
-                    <div class="relative
-                                h-full
-                                flex flex-col">
-
-                        <div class="flex
-                                    items-center
-                                    justify-between">
-
-                            <span class="text-xs
-                                         uppercase
-                                         tracking-[0.18em]
-                                         font-semibold
-                                         text-terracotta">
-                                02
-                            </span>
-
-                            <span class="flex
-                                         items-center
-                                         justify-center
-                                         w-9 h-9
-                                         rounded-full
-                                         bg-terracotta/10
-                                         text-terracotta
-                                         text-sm">
-                                ✦
-                            </span>
-
+                    <div class="relative h-full flex flex-col">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs uppercase tracking-[0.18em] font-semibold c-terra-ink">02</span>
+                            <span class="flex items-center justify-center w-9 h-9 rounded-full bg-terracotta/10 c-terra-ink text-sm" aria-hidden="true">✦</span>
                         </div>
-
-
                         <div class="mt-auto pt-16">
-
-                            <h3 class="font-display
-                                       text-2xl
-                                       mb-3">
-                                Valoriser
-                            </h3>
-
-                            <p class="text-sm
-                                      leading-6
-                                      text-ink-soft">
-
+                            <h3 class="font-display text-2xl mb-3">Valoriser</h3>
+                            <p class="text-sm leading-6 text-ink-soft">
                                 Design, identité et expérience utilisateur
                                 travaillent ensemble pour mettre votre activité
                                 en valeur. Chaque interface est pensée pour vous
                                 ressembler, inspirer confiance et donner envie
                                 à vos visiteurs de découvrir vos services.
-
                             </p>
-
                         </div>
-
                     </div>
 
                 </article>
 
-
-
                 {# 03 PERFORMER #}
-
-                <article class="group
-                                relative
-                                overflow-hidden
-                                min-h-[280px]
-                                rounded-[1.75rem]
-                                bg-[#E7DDD0]
-                                p-7 lg:p-8">
+                <article class="group relative overflow-hidden min-h-[280px] rounded-[1.75rem] bg-[#E7DDD0] p-7 lg:p-8">
 
                     <div class="absolute right-7 top-7 tempo-rhythm text-[#00687A]/45" aria-hidden="true">
                         <span></span><span></span><span></span><span></span>
                     </div>
 
-
-                    <div class="relative
-                                h-full
-                                flex flex-col">
-
-                        <span class="text-xs
-                                     uppercase
-                                     tracking-[0.18em]
-                                     font-semibold
-                                     text-[#00687A]">
-                            03
-                        </span>
-
-
+                    <div class="relative h-full flex flex-col">
+                        <span class="text-xs uppercase tracking-[0.18em] font-semibold text-[#00687A]">03</span>
                         <div class="mt-auto pt-16">
-
-                            <h3 class="font-display
-                                       text-2xl
-                                       mb-3">
-                                Performer
-                            </h3>
-
-                            <p class="text-sm
-                                      leading-6
-                                      text-ink-soft">
-
+                            <h3 class="font-display text-2xl mb-3">Performer</h3>
+                            <p class="text-sm leading-6 text-ink-soft">
                                 Derrière le design, je construis un site rapide,
                                 responsive et techniquement solide. WordPress ou
                                 Symfony, la solution est choisie selon vos besoins,
                                 avec une attention particulière portée au
                                 référencement naturel, aux performances et aux
                                 évolutions futures.
-
                             </p>
-
                         </div>
-
                     </div>
 
                 </article>
 
             </div>
 
+            {# LIGNE BASSE #}
+            <div class="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 pt-7 border-t border-[#D9C8A9]/50">
 
-
-            {# =================================================
-               LIGNE BASSE
-            ================================================= #}
-
-            <div class="mt-8
-                        flex flex-col
-                        sm:flex-row
-                        sm:items-center
-                        sm:justify-between
-                        gap-5
-                        pt-7
-                        border-t
-                        border-[#D9C8A9]/50">
-
-
-                <div class="flex flex-wrap
-                            items-center
-                            gap-x-6 gap-y-2
-                            text-xs
-                            text-ink-soft">
-
-                    <span class="flex items-center gap-2">
-
-                        <span class="w-1.5 h-1.5
-                                     rounded-full
-                                     bg-terracotta">
-                        </span>
-
-                        WordPress
-
-                    </span>
-
-
-                    <span class="flex items-center gap-2">
-
-                        <span class="w-1.5 h-1.5
-                                     rounded-full
-                                     bg-[#00687A]">
-                        </span>
-
-                        Symfony
-
-                    </span>
-
-
-                    <span class="flex items-center gap-2">
-
-                        <span class="w-1.5 h-1.5
-                                     rounded-full
-                                     bg-terracotta">
-                        </span>
-
-                        SEO
-
-                    </span>
-
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-ink-soft">
+                    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>WordPress</span>
+                    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#00687A]"></span>Symfony</span>
+                    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>SEO</span>
                 </div>
 
-
-                <a href="{{ path('app_service') }}"
-                   class="group
-                          inline-flex
-                          items-center
-                          gap-3
-                          text-sm
-                          font-semibold
-                          text-[#00687A]">
-
+                <a href="{{ path('app_service') }}" class="group inline-flex items-center gap-3 text-sm font-semibold text-[#00687A]">
                     Découvrir mon approche
-
-                    <span class="flex
-                                 items-center
-                                 justify-center
-                                 w-8 h-8
-                                 rounded-full
-                                 bg-[#00687A]
-                                 text-white
-                                 transition-transform
-                                 duration-300
-                                 group-hover:translate-x-1">
-                        →
-                    </span>
-
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#00687A] text-white transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
                 </a>
 
             </div>
@@ -2105,208 +855,85 @@
     </section>
 
 
-
-
-
     <div class="max-w-7xl mx-auto px-6 sm:px-10 py-2" aria-hidden="true">
         <div class="tempo-beat">
             <i class="w-10"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="w-20"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="w-7"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="flex-1"></i>
         </div>
     </div>
 
-{# =========================================================
-   CTA FINAL — ACCUEIL
-========================================================= #}
 
-<section class="relative overflow-hidden bg-[#FBF8F2]">
+    {# =========================================================
+       CTA FINAL — ACCUEIL
+    ========================================================= #}
 
-    {# =====================================================
-       DÉCORS — GAUCHE
-    ====================================================== #}
+    <section class="relative overflow-hidden bg-[#FBF8F2]">
 
-    {# Grande forme bleu pâle #}
-    <div class="pointer-events-none
-                absolute
-                -left-28
-                top-8
-                w-64 h-64
-                sm:w-80 sm:h-80
-                rounded-full
-                bg-[#00687A]/10">
-    </div>
+        {# Décors — gauche #}
+        <div class="pointer-events-none absolute -left-28 top-8 w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-[#00687A]/10"></div>
+        <div class="pointer-events-none absolute -left-28 -top-28 w-72 h-72 sm:w-96 sm:h-96 rounded-full border border-[#00687A]/70"></div>
+        <div class="pointer-events-none absolute left-[11%] top-[18%] w-5 h-5 rounded-full bg-[#00687A]"></div>
 
-    {# Cercle contour bleu #}
-    <div class="pointer-events-none
-                absolute
-                -left-28
-                -top-28
-                w-72 h-72
-                sm:w-96 sm:h-96
-                rounded-full
-                border border-[#00687A]/70">
-    </div>
+        {# Décors — droite #}
+        <div class="pointer-events-none absolute -right-24 bottom-0 w-64 h-64 sm:w-80 sm:h-80 rounded-tl-[70%] bg-[#00687A]/15"></div>
+        <div class="pointer-events-none absolute -right-32 top-10 w-72 h-72 sm:w-96 sm:h-96 rounded-full border border-[#00687A]/70"></div>
+        <div class="pointer-events-none absolute right-[9%] top-[42%] w-3 h-3 rounded-full bg-terracotta"></div>
 
-    {# Petit point bleu #}
-    <div class="pointer-events-none
-                absolute
-                left-[11%]
-                top-[18%]
-                w-5 h-5
-                rounded-full
-                bg-[#00687A]">
-    </div>
+        {# Contenu #}
+        <div class="relative z-10 max-w-5xl mx-auto px-6 sm:px-10 py-20 sm:py-24 lg:py-28 text-center">
 
+            <h2 class="max-w-3xl mx-auto font-display text-3xl sm:text-4xl lg:text-[2.8rem] leading-[1.15] text-[#00687A]">
+                Votre prochain projet web
+                <span class="text-terracotta">commence ici.</span>
+            </h2>
 
-    {# =====================================================
-       DÉCORS — DROITE
-    ====================================================== #}
+            <p class="max-w-2xl mx-auto mt-6 text-base sm:text-lg leading-8 text-ink-soft">
+                Une création, une refonte ou une idée
+                à concrétiser ? Présentez-moi votre projet.
+                Nous pourrons échanger sur les possibilités,
+                les délais et les prochaines étapes.
+            </p>
 
-    {# Forme bleu pâle #}
-    <div class="pointer-events-none
-                absolute
-                -right-24
-                bottom-0
-                w-64 h-64
-                sm:w-80 sm:h-80
-                rounded-tl-[70%]
-                bg-[#00687A]/15">
-    </div>
-
-    {# Grand cercle contour #}
-    <div class="pointer-events-none
-                absolute
-                -right-32
-                top-10
-                w-72 h-72
-                sm:w-96 sm:h-96
-                rounded-full
-                border border-[#00687A]/70">
-    </div>
-
-    {# Petit point terracotta #}
-    <div class="pointer-events-none
-                absolute
-                right-[9%]
-                top-[42%]
-                w-3 h-3
-                rounded-full
-                bg-terracotta">
-    </div>
-
-
-    {# =====================================================
-       CONTENU
-    ====================================================== #}
-
-    <div class="relative z-10
-                max-w-5xl
-                mx-auto
-                px-6 sm:px-10
-                py-20 sm:py-24 lg:py-28
-                text-center">
-
-      
-
-
-        {# TITRE #}
-        <h2 class="max-w-3xl
-                   mx-auto
-                   font-display
-                   text-3xl sm:text-4xl lg:text-[2.8rem]
-                   leading-[1.15]
-                   text-[#00687A]">
-
-            Votre prochain projet web
-            <span class="text-terracotta">
-                commence ici.
-            </span>
-
-        </h2>
-
-
-        {# TEXTE #}
-        <p class="max-w-2xl
-                  mx-auto
-                  mt-6
-                  text-base sm:text-lg
-                  leading-8
-                  text-ink-soft">
-
-            Une création, une refonte ou une idée
-            à concrétiser ? Présentez-moi votre projet.
-            Nous pourrons échanger sur les possibilités,
-            les délais et les prochaines étapes.
-
-        </p>
-
-
-        {# CTA #}
-        <div class="mt-8">
-
-            <a href="{{ path('app_contact') }}"
-               class="group
-                      inline-flex
-                      items-center
-                      justify-center
-                      gap-4
-                      rounded-full
-                      bg-terracotta
-                      px-7 py-4
-                      text-sm
-                      font-semibold
-                      text-white
-                      transition-all
-                      duration-300
-                      hover:bg-terracotta-dark
-                      hover:-translate-y-0.5">
-
-                Démarrer une discussion
-
-                <span class="transition-transform
-                             duration-300
-                             group-hover:translate-x-1"
-                      aria-hidden="true">
-                    →
-                </span>
-
-            </a>
+            <div class="mt-8">
+                <a href="{{ path('app_contact') }}"
+                   class="group inline-flex items-center justify-center gap-4 rounded-full bg-terra-ink px-7 py-4 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5">
+                    Démarrer une discussion
+                    <span class="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
+                </a>
+            </div>
 
         </div>
 
+        {# Formes basses : transition visuelle avant le footer #}
+        <div class="pointer-events-none absolute -bottom-20 -left-[5%] w-[55%] h-28 rounded-[50%] bg-[#00687A]/10 rotate-2"></div>
+        <div class="pointer-events-none absolute -bottom-24 right-[-5%] w-[55%] h-32 rounded-[50%] bg-[#00687A]/15 -rotate-2"></div>
 
-    </div>
-
-
-    {# =====================================================
-       FORME BLEUE BASSE
-       Crée une transition visuelle avant le footer
-    ====================================================== #}
-
-    <div class="pointer-events-none
-                absolute
-                -bottom-20
-                -left-[5%]
-                w-[55%]
-                h-28
-                rounded-[50%]
-                bg-[#00687A]/10
-                rotate-2">
-    </div>
-
-    <div class="pointer-events-none
-                absolute
-                -bottom-24
-                right-[-5%]
-                w-[55%]
-                h-32
-                rounded-[50%]
-                bg-[#00687A]/15
-                -rotate-2">
-    </div>
-
-</section>
- 
+    </section>
 
 </div>
+
+{# Carrousel : délégation d'événements (compatible Turbo, un seul écouteur) #}
+<script>
+(function () {
+    if (window.__servicesCarouselInit) return;
+    window.__servicesCarouselInit = true;
+
+    document.addEventListener('click', function (e) {
+        const btn = e.target.closest('#services-prev, #services-next');
+        if (!btn) return;
+
+        const carousel = document.getElementById('services-carousel');
+        const card = carousel && carousel.querySelector('article');
+        if (!card) return;
+
+        const gap = parseFloat(getComputedStyle(carousel).columnGap) || 0;
+        const step = card.getBoundingClientRect().width + gap;
+
+        carousel.scrollBy({
+            left: btn.id === 'services-next' ? step : -step,
+            behavior: 'smooth'
+        });
+    });
+})();
+</script>
 
 {% endblock %}

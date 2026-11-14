@@ -472,7 +472,7 @@
             </div>
 
             {# Invitation à faire défiler #}
-            <p class="mt-5 flex items-center justify-end gap-2 text-sm text-ink-soft text-terracotta font-semibold">
+            <p class="mt-5 flex items-center justify-end gap-2 text-sl text-ink-soft text-terracotta font-semibold">
                 <span aria-hidden="true">←</span>
                 Faites défiler les cartes pour découvrir tous mes services
                 <span aria-hidden="true">→</span>
@@ -868,6 +868,83 @@
         </div>
     </div>
 
+
+{# =========================================================
+   DERNIERS ARTICLES DU BLOG — ACCUEIL
+========================================================= #}
+
+<section class="bg-[#FBF8F3] py-20 lg:py-24">
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-10">
+
+        {# EN-TÊTE #}
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="w-8 h-px bg-[#C9653B]"></span>
+                    <span class="text-xs uppercase tracking-[0.2em] font-semibold text-[#A94F2C]">
+                        Le blog de Studio Tempo
+                    </span>
+                </div>
+
+                <h2 class="font-display text-3xl sm:text-4xl text-[#172824]">
+                    Conseils, idées,
+                    <span class="text-[#C9653B]">actualités web et SEO.</span>
+                </h2>
+
+            </div>
+
+            <a href="{{ path('app_article_index') }}"
+               class="inline-flex items-center gap-3 text-sm font-semibold text-[#00678A] hover:text-[#C9653B] transition">
+                Tous les articles
+                <span aria-hidden="true">→</span>
+            </a>
+
+        </div>
+
+        {# APERÇU DES ARTICLES #}
+        {% if latestArticles is defined and latestArticles|length > 0 %}
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                {% for article in latestArticles|slice(0, 3) %}
+
+                    <article class="group flex flex-col rounded-[26px] overflow-hidden bg-white border border-[#E7DDD2] shadow-[0_12px_35px_rgba(0,0,0,.035)] transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+
+                        <div class="h-1 bg-[#C9653B]"></div>
+
+                        <div class="flex flex-1 flex-col p-7 lg:p-8">
+
+                            
+
+                            <h3 class="font-display text-xl sm:text-2xl leading-snug text-[#172824] mb-4">
+                                {{ article.titre }}
+                            </h3>
+
+                            <p class="text-sm leading-7 text-[#56615f] mb-7">
+                               {{ article.extrait|default('Découvrez cet article sur le blog de Studio Tempo.')|striptags|slice(0, 150) }}…
+                            </p>
+
+                            <a href="{{ path('app_article_show', {slug: article.slug}) }}"
+                               class="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[#00678A] transition group-hover:text-[#C9653B]">
+                                Lire l'article
+                                <span aria-hidden="true">↗</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                {% endfor %}
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
 
 
 

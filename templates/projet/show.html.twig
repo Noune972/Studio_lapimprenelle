@@ -11,7 +11,7 @@
     <div class="text-xs text-gray-400 mb-6">{{ projet.typeDeSite }}</div>
     <div class="h-56 rounded-xl mb-6 overflow-hidden bg-gray-100">
     {% if projet.image %}
-        <img src="{{ asset('images/' ~ projet.image) }}" alt="{{ projet.titre }}" class="w-full h-full object-cover">
+       <img src="{{ asset('uploads/projets/' ~ projet.image) }}" alt="{{ projet.titre }}" class="w-full h-full object-cover">
     {% endif %}
 </div>
 

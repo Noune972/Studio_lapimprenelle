@@ -868,6 +868,93 @@
         </div>
     </div>
 
+<style>
+    /* Éventail interactif des réalisations */
+    #realisations .tempo-fan {
+        position: relative;
+        height: 350px;
+        width: 100%;
+        touch-action: pan-y;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    #realisations .tempo-fan-card {
+        position: absolute;
+        top: 12%;
+        left: 24%;
+        width: 52%;
+        height: 270px;
+        transform-origin: center 85%;
+        transition:
+            transform 450ms cubic-bezier(.22, 1, .36, 1),
+            left 450ms cubic-bezier(.22, 1, .36, 1),
+            top 450ms cubic-bezier(.22, 1, .36, 1),
+            box-shadow 450ms ease;
+        will-change: transform;
+    }
+
+    /* Carte à gauche */
+    #realisations .tempo-fan-card[data-position="left"] {
+        left: 2%;
+        top: 16%;
+        transform: rotate(-11deg) scale(.94);
+        z-index: 1;
+    }
+
+    /* Carte centrale */
+    #realisations .tempo-fan-card[data-position="center"] {
+        left: 24%;
+        top: 5%;
+        transform: rotate(0deg) scale(1);
+        z-index: 3;
+        box-shadow: 0 22px 50px rgba(23, 40, 36, .23);
+    }
+
+    /* Carte à droite */
+    #realisations .tempo-fan-card[data-position="right"] {
+        left: 46%;
+        top: 16%;
+        transform: rotate(11deg) scale(.94);
+        z-index: 2;
+    }
+
+    #realisations .tempo-fan-card:focus-within {
+        z-index: 5;
+    }
+
+    @media (min-width: 640px) {
+        #realisations .tempo-fan {
+            height: 460px;
+        }
+
+        #realisations .tempo-fan-card {
+            height: 370px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        #realisations .tempo-fan {
+            height: 490px;
+        }
+
+        #realisations .tempo-fan-card {
+            height: 390px;
+        }
+
+        #realisations .tempo-fan-card:hover {
+            z-index: 5;
+            transform: rotate(0deg) translateY(-14px) scale(1.04);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        #realisations .tempo-fan-card {
+            transition: none;
+        }
+    }
+</style>
+
 {# =========================================================
    MES RÉALISATIONS — PORTFOLIO EN ÉVENTAIL
 ========================================================= #}
@@ -895,9 +982,8 @@
                 </h2>
 
                 <p class="mt-7 max-w-md text-base leading-8 text-[#56615f]">
-                    Découvrez quelques
-                    exemples de réalisations concrètes, imaginées
-                    pour répondre à des besoins uniques.
+                    Découvrez quelques exemples de réalisations concrètes,
+                    imaginées pour répondre à des besoins uniques.
                 </p>
 
                 <a href="{{ path('app_projet_index') }}"
@@ -908,10 +994,10 @@
 
             </div>
 
-            {# ÉVENTAIL DES PROJETS #}
+            {# ÉVENTAIL INTERACTIF #}
             <div class="relative mx-auto w-full max-w-[650px]">
 
-                {# Forme organique de fond #}
+                {# Décoration de fond #}
                 <div class="pointer-events-none absolute inset-x-[8%] top-[10%] bottom-[5%] rounded-[42%_58%_48%_52%] bg-[#D6E5DF]"></div>
 
                 <div class="pointer-events-none absolute left-[3%] bottom-[5%] h-24 w-24 rounded-full border-2 border-[#00687A]/35"></div>
@@ -920,30 +1006,27 @@
 
                 {% if projets is defined and projets|length > 0 %}
 
-                    <div class="relative mx-auto h-[350px] w-full sm:h-[460px] lg:h-[490px]">
+                    <div class="tempo-fan" id="tempo-fan" aria-label="Réalisations Studio Tempo">
 
                         {% for projet in projets|slice(0, 3) %}
 
-                            {# Position et inclinaison des cartes #}
-                            {% if loop.index == 1 %}
-                                {% set position = 'left-[2%] top-[16%] -rotate-[11deg] z-10 hover:z-40 focus-within:z-40' %}
-                            {% elseif loop.index == 2 %}
-                                {% set position = 'left-[25%] top-[5%] rotate-0 z-30 hover:z-40 focus-within:z-40' %}
-                            {% else %}
-                                {% set position = 'left-[48%] top-[16%] rotate-[11deg] z-20 hover:z-40 focus-within:z-40' %}
-                            {% endif %}
-
-                            <article class="group absolute {{ position }} flex h-[270px] w-[52%] flex-col overflow-hidden rounded-[18px] border-[5px] border-white bg-white shadow-[0_18px_45px_rgba(23,40,36,.18)] transition-all duration-300 hover:rotate-0 hover:-translate-y-4 hover:scale-105 focus-within:rotate-0 focus-within:-translate-y-4 focus-within:scale-105 sm:h-[370px] sm:rounded-[24px] sm:border-[7px] lg:h-[390px]">
+                            <article
+                                class="tempo-fan-card group flex flex-col overflow-hidden rounded-[18px] border-[5px] border-white bg-white shadow-[0_18px_45px_rgba(23,40,36,.18)] sm:rounded-[24px] sm:border-[7px]"
+                                data-position="{{ loop.index == 1 ? 'left' : (loop.index == 2 ? 'center' : 'right') }}"
+                            >
 
                                 {# IMAGE DU PROJET #}
                                 <div class="relative h-[56%] shrink-0 overflow-hidden bg-[#E7DDD2]">
 
                                     {% if projet.image %}
-                                        <img src="{{ asset('uploads/projets/' ~ projet.image) }}"
-                                             alt="Aperçu du projet {{ projet.titre }}"
-                                             loading="lazy"
-                                             decoding="async"
-                                             class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                                        <img
+                                            src="{{ asset('uploads/projets/' ~ projet.image) }}"
+                                            alt="Aperçu du projet {{ projet.titre }}"
+                                            loading="lazy"
+                                            decoding="async"
+                                            draggable="false"
+                                            class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                                        >
                                     {% else %}
                                         <div class="flex h-full items-center justify-center bg-[#D6E5DF]">
                                             <span class="font-display text-2xl text-[#00687A]">
@@ -954,7 +1037,7 @@
 
                                 </div>
 
-                                {# CONTENU #}
+                                {# CONTENU DE LA CARTE #}
                                 <div class="flex min-h-0 flex-1 flex-col p-2.5 sm:p-4">
 
                                     {% if projet.typeDeSite %}
@@ -971,9 +1054,11 @@
                                         {{ projet.description|default('Une réalisation Studio Tempo.')|striptags }}
                                     </p>
 
-                                    <a href="{{ path('app_projet_show', {slug: projet.slug}) }}"
-                                       class="mt-auto flex items-center justify-between gap-2 text-[10px] font-semibold text-[#00687A] sm:text-sm"
-                                       aria-label="Découvrir le projet {{ projet.titre }}">
+                                    <a
+                                        href="{{ path('app_projet_show', {slug: projet.slug}) }}"
+                                        class="mt-auto flex items-center justify-between gap-2 text-[10px] font-semibold text-[#00687A] sm:text-sm"
+                                        aria-label="Découvrir le projet {{ projet.titre }}"
+                                    >
                                         <span class="hidden sm:inline">Découvrir le projet</span>
                                         <span class="sm:hidden">Découvrir</span>
                                         <span class="text-lg text-[#C9653B]" aria-hidden="true">↗</span>
@@ -987,6 +1072,42 @@
 
                     </div>
 
+                    {# FLÈCHES ET POINTS DE NAVIGATION #}
+                    <div class="relative z-40 mt-4 flex items-center justify-center gap-6">
+
+                        <button
+                            type="button"
+                            id="tempo-fan-prev"
+                            aria-label="Réalisation précédente"
+                            class="flex h-10 w-10 items-center justify-center rounded-full border border-[#00687A]/30 text-[#00687A] transition hover:bg-[#00687A] hover:text-white"
+                        >
+                            ←
+                        </button>
+
+                        <div id="tempo-fan-dots" class="flex items-center gap-2" aria-label="Position dans les réalisations">
+
+                            {% for projet in projets|slice(0, 3) %}
+                                <button
+                                    type="button"
+                                    class="tempo-fan-dot h-2.5 w-2.5 rounded-full bg-[#00687A]/25 transition-all"
+                                    data-index="{{ loop.index0 }}"
+                                    aria-label="Afficher la réalisation {{ loop.index }}"
+                                ></button>
+                            {% endfor %}
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="tempo-fan-next"
+                            aria-label="Réalisation suivante"
+                            class="flex h-10 w-10 items-center justify-center rounded-full border border-[#00687A]/30 text-[#00687A] transition hover:bg-[#00687A] hover:text-white"
+                        >
+                            →
+                        </button>
+
+                    </div>
+
                 {% endif %}
 
             </div>
@@ -996,6 +1117,187 @@
     </div>
 
 </section>
+
+{# =========================================================
+   JAVASCRIPT — NAVIGATION TACTILE DE L'ÉVENTAIL
+========================================================= #}
+
+<script>
+(function () {
+
+    function initTempoFan() {
+
+        const fan = document.getElementById('tempo-fan');
+
+        if (!fan || fan.dataset.initialized === 'true') {
+            return;
+        }
+
+        fan.dataset.initialized = 'true';
+
+        const cards = Array.from(fan.querySelectorAll('.tempo-fan-card'));
+        const dots = Array.from(document.querySelectorAll('#tempo-fan-dots .tempo-fan-dot'));
+        const prev = document.getElementById('tempo-fan-prev');
+        const next = document.getElementById('tempo-fan-next');
+
+        if (cards.length === 0) return;
+
+        let activeIndex = Math.min(1, cards.length - 1);
+
+        let startX = 0;
+        let startY = 0;
+        let tracking = false;
+        let suppressClick = false;
+
+        function updateFan() {
+
+            cards.forEach((card, index) => {
+
+                const offset = (index - activeIndex + cards.length) % cards.length;
+
+                let position = 'center';
+
+                if (offset === 1) {
+                    position = 'right';
+                } else if (offset !== 0) {
+                    position = 'left';
+                }
+
+                card.dataset.position = position;
+
+            });
+
+            dots.forEach((dot, index) => {
+
+                const active = index === activeIndex;
+
+                dot.style.backgroundColor = active
+                    ? '#00687A'
+                    : 'rgba(0,104,122,.25)';
+
+                dot.style.transform = active
+                    ? 'scale(1.3)'
+                    : 'scale(1)';
+
+                dot.setAttribute('aria-current', active ? 'true' : 'false');
+
+            });
+
+        }
+
+        function move(direction) {
+
+            activeIndex = (activeIndex + direction + cards.length) % cards.length;
+
+            updateFan();
+
+        }
+
+        if (prev) {
+            prev.addEventListener('click', function () {
+                move(-1);
+            });
+        }
+
+        if (next) {
+            next.addEventListener('click', function () {
+                move(1);
+            });
+        }
+
+        dots.forEach((dot, index) => {
+
+            dot.addEventListener('click', function () {
+
+                activeIndex = index;
+
+                updateFan();
+
+            });
+
+        });
+
+        // Début du geste tactile
+        fan.addEventListener('touchstart', function (event) {
+
+            if (event.touches.length !== 1) return;
+
+            startX = event.touches[0].clientX;
+            startY = event.touches[0].clientY;
+
+            tracking = true;
+
+        }, { passive: true });
+
+        // Fin du geste tactile
+        fan.addEventListener('touchend', function (event) {
+
+            if (!tracking || !event.changedTouches.length) return;
+
+            tracking = false;
+
+            const deltaX = event.changedTouches[0].clientX - startX;
+            const deltaY = event.changedTouches[0].clientY - startY;
+
+            // Ignore les gestes trop courts et le défilement vertical
+            if (
+                Math.abs(deltaX) < 45 ||
+                Math.abs(deltaX) <= Math.abs(deltaY)
+            ) {
+                return;
+            }
+
+            suppressClick = true;
+
+            move(deltaX < 0 ? 1 : -1);
+
+        }, { passive: true });
+
+        fan.addEventListener('touchcancel', function () {
+            tracking = false;
+        }, { passive: true });
+
+        // Empêche l'ouverture d'un projet après un swipe
+        fan.addEventListener('click', function (event) {
+
+            if (!suppressClick) return;
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            suppressClick = false;
+
+        }, true);
+
+        // Toucher une carte latérale la place au centre
+        cards.forEach((card, index) => {
+
+            card.addEventListener('click', function (event) {
+
+                if (index === activeIndex) return;
+
+                event.preventDefault();
+
+                activeIndex = index;
+
+                updateFan();
+
+            });
+
+        });
+
+        updateFan();
+
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTempoFan);
+    } else {
+        initTempoFan();
+    }
+
+})();
+</script>
 
 
 {# =========================================================

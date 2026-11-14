@@ -62,54 +62,88 @@
 <div class="bg-cream text-ink font-sans">
 
 
-    {# =========================================================
-       HERO
-    ========================================================= #}
+   
+{# =========================================================
+   HERO — BOUTONS ET COMPÉTENCES SOUS LA PHOTO SUR MOBILE
+========================================================= #}
 
-    <section class="max-w-7xl mx-auto px-6 sm:px-10 pt-8 pb-20 grid md:grid-cols-2 gap-14 items-center">
+<style>
+    .tempo-hero-desktop-actions {
+        display: none;
+    }
 
-        <div>
+    .tempo-hero-mobile-actions {
+        display: block;
+        margin-top: 28px;
+    }
 
-            <h1 class="text-xs uppercase tracking-widest c-terra-ink font-medium mb-4">
+    @media (min-width: 768px) {
+        .tempo-hero-desktop-actions {
+            display: block;
+        }
+
+        .tempo-hero-mobile-actions {
+            display: none;
+        }
+    }
+</style>
+
+<section class="max-w-7xl mx-auto px-6 sm:px-10 pt-8 pb-20 grid md:grid-cols-2 gap-14 items-center">
+
+    {# =====================================================
+       COLONNE TEXTE
+    ===================================================== #}
+    <div>
+
+        <h1 class="text-xs uppercase tracking-widest c-terra-ink font-medium mb-4">
             Agence web indépendante· TOULOUSE
-            </h1>
-<h2 class="text-4xl leading-[1.15] mb-4 text-[#00687A] text uppercase"
-    style="font-family: 'Manrope', sans-serif; font-weight: 800; letter-spacing: -0.04em;">
-    Le web à votre rythme.
-</h2>
+        </h1>
+
+        <h2 class="text-4xl leading-[1.15] mb-4 text-[#00687A] uppercase"
+            style="font-family: 'Manrope', sans-serif; font-weight: 800; letter-spacing: -0.04em;">
+            Le web à votre rythme.
+        </h2>
+
         <div class="flex items-center gap-3 mb-5 text-terracotta" aria-hidden="true">
-                <div class="tempo-rhythm"><span></span><span></span><span></span><span></span></div>
-                <span class="w-12 h-px bg-terracotta/30"></span>
+            <div class="tempo-rhythm">
+                <span></span><span></span><span></span><span></span>
             </div>
+            <span class="w-12 h-px bg-terracotta/30"></span>
+        </div>
 
-            <div class="text-lg font-medium text-ink mb-6">
-                Sites WordPress
-                <span class="text-terracotta">·</span>
-                Applications Symfony sur mesure
-                <span class="text-terracotta">·</span>
-                SEO
-            </div>
+        <div class="text-lg font-medium text-ink mb-6">
+            Sites WordPress
+            <span class="text-terracotta">·</span>
+            Applications Symfony sur mesure
+            <span class="text-terracotta">·</span>
+            SEO
+        </div>
 
-            <p class="text-ink-soft leading-relaxed mb-8 max-w-md">
-                Je suis Nathalie Camiul, développeuse web diplômée
-                et fondatrice de Studio Tempo, agence web indépendante toulousaine.
-                J'aide les entreprises, indépendants,
-                porteurs de projets et startups dans la création de sites web et applications
-                sur mesure, sécurisés et faciles à faire évoluer. Je suis votre unique
-                interlocutrice.
-            </p>
+        <p class="text-ink-soft leading-relaxed mb-8 max-w-md">
+            Je suis Nathalie Camiul, développeuse web diplômée
+            et fondatrice de Studio Tempo, agence web indépendante toulousaine.
+            J'aide les entreprises, indépendants,
+            porteurs de projets et startups dans la création de sites web et applications
+            sur mesure, sécurisés et faciles à faire évoluer. Je suis votre unique
+            interlocutrice.
+        </p>
 
-            {# Lien interne vers la page SEO Toulouse #}
-            <div class="mb-8 max-w-md">
-                <a href="{{ path('app_creation_site_toulouse') }}"
-                   class="group inline-flex items-start gap-3 c-terra-ink font-medium hover:opacity-80 transition">
-                    <span class="mt-1 text-lg" aria-hidden="true">↗</span>
-                    <span class="underline underline-offset-4 decoration-[#A94F2C]/40 group-hover:decoration-[#A94F2C] transition">
-                        Découvrez mon accompagnement pour la création
-                        de site internet à Toulouse
-                    </span>
-                </a>
-            </div>
+        {# Lien interne vers la page SEO Toulouse #}
+        <div class="mb-8 max-w-md">
+            <a href="{{ path('app_creation_site_toulouse') }}"
+               class="group inline-flex items-start gap-3 c-terra-ink font-medium hover:opacity-80 transition">
+                <span class="mt-1 text-lg" aria-hidden="true">↗</span>
+                <span class="underline underline-offset-4 decoration-[#A94F2C]/40 group-hover:decoration-[#A94F2C] transition">
+                    Découvrez mon accompagnement pour la création
+                    de site internet à Toulouse
+                </span>
+            </a>
+        </div>
+
+        {# =====================================================
+           BOUTONS ET COMPÉTENCES — ORDINATEUR UNIQUEMENT
+        ===================================================== #}
+        <div class="tempo-hero-desktop-actions">
 
             <div class="flex flex-wrap gap-3 mb-8">
 
@@ -119,7 +153,6 @@
                     <span aria-hidden="true">→</span>
                 </a>
 
-                {# Bordure bleu pétrole : le bouton se distingue enfin du texte simple #}
                 <a href="{{ path('app_projet_index') }}"
                    class="btn-outline-pine px-6 py-3 rounded-full text-sm font-medium transition">
                     Voir mes réalisations
@@ -148,99 +181,170 @@
 
         </div>
 
+    </div>
 
-        {# PHOTO #}
-        <div class="relative">
+    {# =====================================================
+       COLONNE PHOTO
+    ===================================================== #}
+    <div class="relative">
 
-            <div class="relative max-w-[500px] mx-auto rounded-[2rem] overflow-visible group">
+        <div class="relative max-w-[500px] mx-auto rounded-[2rem] overflow-visible group">
 
-                {# FRISE ORGANIQUE STUDIO TEMPO #}
-                <div class="absolute -right-16 sm:-right-24 lg:-right-40 -top-12 w-[65%] sm:w-[70%] h-[125%] pointer-events-none z-0 overflow-visible"
-                     aria-hidden="true">
+            {# FRISE ORGANIQUE STUDIO TEMPO #}
+            <div class="absolute -right-16 sm:-right-24 lg:-right-40 -top-12 w-[65%] sm:w-[70%] h-[125%] pointer-events-none z-0 overflow-visible"
+                 aria-hidden="true">
 
-                    <svg class="absolute -right-8 top-[8%] w-[75%] h-[85%] overflow-visible"
-                         viewBox="0 0 220 520" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <svg class="absolute -right-8 top-[8%] w-[75%] h-[85%] overflow-visible"
+                     viewBox="0 0 220 520" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 
-                        <path d="M70 500 C95 430 55 380 105 315 C150 255 95 205 135 145 C160 105 160 55 145 10"
-                              stroke="#00687A" stroke-width="2" stroke-linecap="round" opacity=".45"/>
-                        <path d="M100 330 C135 315 160 285 175 250"
-                              stroke="#00687A" stroke-width="1.5" stroke-linecap="round" opacity=".4"/>
-                        <path d="M120 190 C90 170 72 145 65 115"
-                              stroke="#C9653B" stroke-width="1.5" stroke-linecap="round" opacity=".55"/>
+                    <path d="M70 500 C95 430 55 380 105 315 C150 255 95 205 135 145 C160 105 160 55 145 10"
+                          stroke="#00687A" stroke-width="2" stroke-linecap="round" opacity=".45"/>
 
-                        <ellipse cx="139" cy="292" rx="8" ry="22" transform="rotate(45 139 292)" fill="#00687A" opacity=".55"/>
-                        <ellipse cx="166" cy="264" rx="7" ry="19" transform="rotate(38 166 264)" fill="#00687A" opacity=".4"/>
-                        <ellipse cx="90" cy="350" rx="8" ry="21" transform="rotate(-38 90 350)" fill="#00687A" opacity=".45"/>
+                    <path d="M100 330 C135 315 160 285 175 250"
+                          stroke="#00687A" stroke-width="1.5" stroke-linecap="round" opacity=".4"/>
 
-                        <ellipse cx="99" cy="166" rx="7" ry="20" transform="rotate(-42 99 166)" fill="#C9653B" opacity=".65"/>
-                        <ellipse cx="70" cy="125" rx="6" ry="17" transform="rotate(-35 70 125)" fill="#C9653B" opacity=".45"/>
-                        <ellipse cx="149" cy="85" rx="7" ry="21" transform="rotate(20 149 85)" fill="#C9653B" opacity=".5"/>
+                    <path d="M120 190 C90 170 72 145 65 115"
+                          stroke="#C9653B" stroke-width="1.5" stroke-linecap="round" opacity=".55"/>
 
-                        <circle cx="180" cy="215" r="4" fill="#C9653B" opacity=".7"/>
-                        <circle cx="190" cy="200" r="2.5" fill="#00687A" opacity=".5"/>
-                        <circle cx="181" cy="185" r="3" fill="#C9653B" opacity=".45"/>
+                    <ellipse cx="139" cy="292" rx="8" ry="22" transform="rotate(45 139 292)" fill="#00687A" opacity=".55"/>
+                    <ellipse cx="166" cy="264" rx="7" ry="19" transform="rotate(38 166 264)" fill="#00687A" opacity=".4"/>
+                    <ellipse cx="90" cy="350" rx="8" ry="21" transform="rotate(-38 90 350)" fill="#00687A" opacity=".45"/>
+
+                    <ellipse cx="99" cy="166" rx="7" ry="20" transform="rotate(-42 99 166)" fill="#C9653B" opacity=".65"/>
+                    <ellipse cx="70" cy="125" rx="6" ry="17" transform="rotate(-35 70 125)" fill="#C9653B" opacity=".45"/>
+                    <ellipse cx="149" cy="85" rx="7" ry="21" transform="rotate(20 149 85)" fill="#C9653B" opacity=".5"/>
+
+                    <circle cx="180" cy="215" r="4" fill="#C9653B" opacity=".7"/>
+                    <circle cx="190" cy="200" r="2.5" fill="#00687A" opacity=".5"/>
+                    <circle cx="181" cy="185" r="3" fill="#C9653B" opacity=".45"/>
+
+                </svg>
+
+                <div class="absolute top-[18%] right-0 w-28 h-28 sm:w-40 sm:h-40 rounded-full bg-[#00687A]/15"></div>
+                <div class="absolute top-[2%] right-[18%] w-16 h-32 sm:w-24 sm:h-44 rounded-[100%_0_100%_0] bg-terracotta/70 rotate-[25deg]"></div>
+                <div class="absolute top-[38%] -right-[8%] w-20 h-40 sm:w-28 sm:h-52 rounded-[100%_0_100%_0] bg-[#00687A]/65 rotate-[18deg]"></div>
+                <div class="absolute bottom-[8%] right-[20%] w-20 h-20 sm:w-28 sm:h-28 rounded-full bg-[#EFE7DA]"></div>
+                <div class="absolute bottom-[3%] right-[5%] w-10 h-24 sm:w-14 sm:h-32 rounded-[100%_0_100%_0] bg-terracotta/55 rotate-[35deg]"></div>
+
+                <div class="absolute top-[32%] right-[8%] flex flex-col gap-2">
+                    <span class="w-2 h-2 rounded-full bg-terracotta/70"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#00687A]/50"></span>
+                    <span class="w-2 h-2 rounded-full bg-terracotta/40"></span>
+                </div>
+
+            </div>
+
+            {# PHOTO #}
+            <div class="relative z-10 rounded-[2rem] overflow-hidden shadow-lg">
+                <img src="{{ asset('images/nath-web.webp') }}"
+                     alt="Nathalie, fondatrice de Studio Tempo"
+                     width="800"
+                     height="1073"
+                     class="block w-full h-auto transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+            </div>
+
+            {# RÉSEAUX SOCIAUX SUR LA PHOTO #}
+            <div class="absolute right-4 bottom-5 z-20 flex flex-col gap-2">
+
+                <a href="https://fr.linkedin.com/in/nathalie-camiul-847620198"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="LinkedIn de Nathalie"
+                   class="w-11 h-11 rounded-full bg-[#00687A] text-white flex items-center justify-center shadow-md transition-all duration-300 hover:bg-terracotta hover:-translate-y-1">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24"
+                         fill="currentColor"
+                         class="w-5 h-5">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452z"/>
                     </svg>
+                </a>
 
-                    <div class="absolute top-[18%] right-0 w-28 h-28 sm:w-40 sm:h-40 rounded-full bg-[#00687A]/15"></div>
-                    <div class="absolute top-[2%] right-[18%] w-16 h-32 sm:w-24 sm:h-44 rounded-[100%_0_100%_0] bg-terracotta/70 rotate-[25deg]"></div>
-                    <div class="absolute top-[38%] -right-[8%] w-20 h-40 sm:w-28 sm:h-52 rounded-[100%_0_100%_0] bg-[#00687A]/65 rotate-[18deg]"></div>
-                    <div class="absolute bottom-[8%] right-[20%] w-20 h-20 sm:w-28 sm:h-28 rounded-full bg-[#EFE7DA]"></div>
-                    <div class="absolute bottom-[3%] right-[5%] w-10 h-24 sm:w-14 sm:h-32 rounded-[100%_0_100%_0] bg-terracotta/55 rotate-[35deg]"></div>
+                <a href="https://www.instagram.com/tempo_agence_web"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Instagram de Tempo"
+                   class="w-11 h-11 rounded-full bg-[#00687A] text-white flex items-center justify-center shadow-md transition-all duration-300 hover:bg-terracotta hover:-translate-y-1">
 
-                    <div class="absolute top-[32%] right-[8%] flex flex-col gap-2">
-                        <span class="w-2 h-2 rounded-full bg-terracotta/70"></span>
-                        <span class="w-1.5 h-1.5 rounded-full bg-[#00687A]/50"></span>
-                        <span class="w-2 h-2 rounded-full bg-terracotta/40"></span>
-                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.8"
+                         class="w-5 h-5">
+                        <rect x="3" y="3" width="18" height="18" rx="5"/>
+                        <circle cx="12" cy="12" r="4"/>
+                        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                    </svg>
+                </a>
 
+                <a href="tel:+33675064781"
+                   aria-label="Appeler Nathalie au 06 75 06 47 81"
+                   class="w-11 h-11 rounded-full bg-terracotta text-white flex items-center justify-center shadow-md transition-all duration-300 hover:bg-[#00687A] hover:-translate-y-1">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.8"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         class="w-5 h-5">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                </a>
+
+            </div>
+
+        </div>
+
+        {# =====================================================
+           BOUTONS ET COMPÉTENCES — MOBILE UNIQUEMENT
+           Placés juste sous la photo
+        ===================================================== #}
+        <div class="tempo-hero-mobile-actions relative z-10">
+
+            {# Les deux boutons #}
+            <div class="flex flex-col items-center gap-3 mb-8">
+
+                <a href="{{ path('app_contact') }}"
+                   class="bg-[#00687A] hover:bg-[#005966] text-cream px-6 py-3 rounded-full text-sm font-medium inline-flex items-center justify-center gap-2 transition">
+                    Discuter de mon projet
+                    <span aria-hidden="true">→</span>
+                </a>
+
+                <a href="{{ path('app_projet_index') }}"
+                   class="btn-outline-pine px-6 py-3 rounded-full text-sm font-medium transition inline-flex items-center justify-center">
+                    Voir mes réalisations
+                </a>
+
+            </div>
+
+            {# Les trois compétences #}
+            <div class="flex flex-col items-start gap-4 text-sm text-ink-soft max-w-xs mx-auto">
+
+                <div class="flex items-center gap-3">
+                    <span class="w-7 h-7 rounded-full bg-pine text-white flex items-center justify-center text-xs shrink-0">W</span>
+                    <span>WordPress</span>
                 </div>
 
-                {# IMAGE #}
-                <div class="relative z-10 rounded-[2rem] overflow-hidden shadow-lg">
-                    <img src="{{ asset('images/nath-web.webp') }}"
-                         alt="Nathalie, fondatrice de Studio Tempo"
-                         width="800" height="1073"
-                         class="block w-full h-auto transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+                <div class="flex items-center gap-3">
+                    <span class="w-7 h-7 rounded-full bg-ink text-white flex items-center justify-center text-xs shrink-0">sf</span>
+                    <span>Symfony &amp; PHP sur mesure</span>
                 </div>
 
-                {# RÉSEAUX SOCIAUX SUR LA PHOTO #}
-                <div class="absolute right-4 bottom-5 z-20 flex flex-col gap-2">
-
-                    <a href="https://fr.linkedin.com/in/nathalie-camiul-847620198"
-                       target="_blank" rel="noopener noreferrer"
-                       aria-label="LinkedIn de Nathalie"
-                       class="w-11 h-11 rounded-full bg-[#00687A] text-white flex items-center justify-center shadow-md transition-all duration-300 hover:bg-terracotta hover:-translate-y-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452z"/>
-                        </svg>
-                    </a>
-
-                    <a href="https://www.instagram.com/tempo_agence_web"
-                       target="_blank" rel="noopener noreferrer"
-                       aria-label="Instagram de Tempo"
-                       class="w-11 h-11 rounded-full bg-[#00687A] text-white flex items-center justify-center shadow-md transition-all duration-300 hover:bg-terracotta hover:-translate-y-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-5 h-5">
-                            <rect x="3" y="3" width="18" height="18" rx="5"/>
-                            <circle cx="12" cy="12" r="4"/>
-                            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-                        </svg>
-                    </a>
-
-                    <a href="tel:+33675064781"
-                       aria-label="Appeler Nathalie au 06 75 06 47 81"
-                       class="w-11 h-11 rounded-full bg-terracotta text-white flex items-center justify-center shadow-md transition-all duration-300 hover:bg-[#00687A] hover:-translate-y-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                        </svg>
-                    </a>
-
+                <div class="flex items-center gap-3">
+                    <span class="w-7 h-7 rounded-full bg-terra-ink flex items-center justify-center text-xs shrink-0">◎</span>
+                    <span>SEO &amp; contenu</span>
                 </div>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
     {# =========================================================

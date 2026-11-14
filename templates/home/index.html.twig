@@ -70,15 +70,13 @@
 
         <div>
 
-            <h1 class="text-xs tracking-widest c-terra-ink font-medium mb-4">
-                Agence web indépendante · TOULOUSE
+            <h1 class="text-xs uppercase tracking-widest c-terra-ink font-medium mb-4">
+            Agence web indépendante· TOULOUSE
             </h1>
-
-            <h2 class="font-display text-3xl leading-[1.15] mb-4">
-                Le web à votre
-                <span class="text-terracotta">rythme.</span>
-            </h2>
-
+<h2 class="font-display text-4xl font-bold uppercase leading-[1.15] mb-4">
+    Le web à votre
+    <span class="text-[#00687A]">rythme.</span>
+</h2>
             <div class="flex items-center gap-3 mb-5 text-terracotta" aria-hidden="true">
                 <div class="tempo-rhythm"><span></span><span></span><span></span><span></span></div>
                 <span class="w-12 h-px bg-terracotta/30"></span>
@@ -272,9 +270,9 @@
 
                 </div>
 
-            </div>{# fin de la rangée texte (ce </div> manquait) #}
+            </div>
 
-            {# Zones d'intervention : simple liste (ce ne sont pas des boutons) #}
+            {# Zones d'intervention #}
             <ul class="flex flex-wrap items-center gap-x-3 gap-y-2 mt-8 pt-7 border-t border-white/25 text-sm text-white">
                 {% for ville in [
                     'Toulouse',
@@ -441,7 +439,7 @@
 
                     </div>
 
-                </div>{# fin de la colonne de présentation #}
+                </div>
 
                 {# VISUEL — COLONNE DROITE #}
                 <div class="relative mx-auto w-full max-w-lg lg:ml-auto">
@@ -472,7 +470,7 @@
             </div>
 
             {# Invitation à faire défiler #}
-            <p class="mt-5 flex items-center justify-end gap-2 text-sl text-ink-soft text-terracotta font-semibold">
+            <p class="mt-5 flex items-center justify-end gap-2 text-sm text-ink-soft text-terracotta font-semibold">
                 <span aria-hidden="true">←</span>
                 Faites défiler les cartes pour découvrir tous mes services
                 <span aria-hidden="true">→</span>
@@ -613,247 +611,6 @@
                         {% endfor %}
                     </div>
                 </article>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-2" aria-hidden="true">
-        <div class="tempo-beat">
-            <i class="w-10"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="w-20"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="w-7"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="flex-1"></i>
-        </div>
-    </div>
-
-
-    {# =========================================================
-       TECHNOLOGIES
-    ========================================================= #}
-
-    <section class="relative overflow-hidden border-y border-[#D9C8A9]/40 bg-[#F7F3EC]">
-
-        <div class="pointer-events-none absolute -right-20 -bottom-28 w-64 h-64 rounded-full border border-[#00687A]/10"></div>
-        <div class="pointer-events-none absolute right-16 bottom-10 w-3 h-3 rounded-full bg-terracotta/70"></div>
-
-        <div class="relative max-w-7xl mx-auto px-6 sm:px-10 py-12 lg:py-14">
-
-            <div class="grid lg:grid-cols-[0.75fr_1.25fr] gap-10 lg:gap-16 items-center">
-
-                {# TEXTE #}
-                <div>
-
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="w-8 h-px bg-terracotta"></span>
-                        <span class="text-xs uppercase tracking-[0.22em] font-semibold c-terra-ink">Mes outils</span>
-                    </div>
-
-                    <h2 class="font-display text-2xl sm:text-3xl leading-[1.15] mb-4">
-                        Des technos
-                        <span class="text-[#00687A]">modernes</span>
-                        <br>
-                        et éprouvées.
-                    </h2>
-
-                    <p class="max-w-md text-sm leading-6 text-ink-soft">
-                        Du design au développement, je m’appuie sur
-                        des technologies et des outils éprouvés pour
-                        concevoir des expériences web fiables,
-                        performantes et adaptées à chaque besoin.
-                    </p>
-
-                </div>
-
-                {# LOGOS #}
-                {% set techs = [
-                    { n: 'Figma',      f: 'figma-logo.svg.webp', c: 'h-9 max-w-[55px]', w: 250, h: 375 },
-                    { n: 'Canva',      f: 'canva-web.webp',      c: 'h-9 max-w-[65px]' },
-                    { n: 'Symfony',    f: 'symfony.svg',         c: 'h-9 max-w-[55px]' },
-                    { n: 'WordPress',  f: 'wordpress.webp',      c: 'h-9 max-w-[55px]' },
-                    { n: 'Tailwind',   f: 'tailwind.webp',       c: 'h-9 max-w-[65px]', alt: 'Tailwind CSS' },
-                    { n: 'JavaScript', f: 'java.jpeg',           c: 'h-9 max-w-[55px]' },
-                    { n: 'PostgreSQL', f: 'postgresql.svg',      c: 'h-9 max-w-[55px]' },
-                    { n: 'Docker',     f: 'docker.png',          c: 'h-9 max-w-[60px]' },
-                    { n: 'Linux',      f: 'linux-web.webp',      c: 'h-9 max-w-[50px]' },
-                    { n: 'GitHub',     f: 'github.png',          c: 'max-h-7 max-w-9 h-auto', wrap: true },
-                    { n: 'PHP',        f: 'php.webp',            c: 'max-h-9 max-w-14 h-auto', wrap: true },
-                    { n: 'OpenAI',     f: 'openai.webp',         c: 'h-9 max-w-[55px]' }
-                ] %}
-
-                <div class="grid grid-cols-3 sm:grid-cols-6 gap-x-5 gap-y-7 items-start">
-                    {% for t in techs %}
-                        <div class="group flex flex-col items-center justify-center gap-2">
-
-                            {% if t.wrap|default(false) %}<div class="h-12 w-16 flex items-center justify-center">{% endif %}
-
-                            <img src="{{ asset('images/' ~ t.f) }}"
-                                 alt="{{ t.alt|default(t.n) }}"
-                                 {% if t.w is defined %}width="{{ t.w }}" height="{{ t.h }}"{% endif %}
-                                 loading="lazy"
-                                 class="{{ t.c }} w-auto object-contain transition-transform duration-300 group-hover:-translate-y-1">
-
-                            {% if t.wrap|default(false) %}</div>{% endif %}
-
-                            <span class="text-[10px] text-ink-soft">{{ t.n }}</span>
-
-                        </div>
-                    {% endfor %}
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-2" aria-hidden="true">
-        <div class="tempo-beat">
-            <i class="w-10"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="w-20"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="w-7"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="flex-1"></i>
-        </div>
-    </div>
-
-
-    {# =========================================================
-       ACCOMPAGNEMENT
-    ========================================================= #}
-
-    <section class="relative overflow-hidden bg-cream-2 py-16 lg:py-20">
-
-        <div class="pointer-events-none absolute -top-6 right-8 opacity-30 text-terracotta" aria-hidden="true">
-            <div class="tempo-rhythm scale-[2] origin-top-right"><span></span><span></span><span></span><span></span></div>
-        </div>
-
-        <div class="pointer-events-none absolute -bottom-24 -left-16 w-64 h-64 rounded-full bg-[#00687A]/8"></div>
-
-        <div class="relative max-w-7xl mx-auto px-6 sm:px-10">
-
-            {# INTRO #}
-            <div class="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-16 items-end mb-12">
-
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="w-8 h-px bg-terracotta"></span>
-                        <span class="text-xs uppercase tracking-[0.2em] font-semibold c-terra-ink">Mon accompagnement</span>
-                    </div>
-
-                    <h2 class="font-display text-3xl sm:text-4xl leading-[1.1]">
-                        De l’idée
-                        <br>
-                        <span class="text-[#00687A]">à la mise en ligne.</span>
-                    </h2>
-                </div>
-
-                <div class="lg:pb-1">
-                    <p class="max-w-2xl text-base leading-7 text-ink-soft">
-                        Chaque projet commence par une compréhension précise
-                        de votre activité. Je vous accompagne ensuite dans la
-                        conception, le développement et la mise en ligne d’une
-                        solution pensée pour être
-                        <strong class="font-semibold text-ink">utile, claire et durable.</strong>
-                    </p>
-                </div>
-
-            </div>
-
-            {# PARCOURS #}
-            <div class="grid md:grid-cols-3 gap-4 lg:gap-5">
-
-                {# 01 CLARIFIER #}
-                <article class="group relative overflow-hidden min-h-[280px] rounded-[1.75rem] bg-[#00687A] text-white p-7 lg:p-8">
-
-                    {# Fragment du T Tempo — discret, derrière le contenu #}
-                    <div class="pointer-events-none absolute -right-10 top-10 opacity-[0.08] transition-all duration-700 group-hover:opacity-[0.13] group-hover:-translate-x-2" aria-hidden="true">
-                        <div class="relative w-40 h-44">
-                            <span class="absolute right-0 top-0 w-36 h-9 rounded-full bg-white"></span>
-                            <span class="absolute right-10 top-11 w-24 h-8 rounded-full bg-white"></span>
-                            <span class="absolute right-10 top-11 w-8 h-28 rounded-full bg-white"></span>
-                        </div>
-                    </div>
-
-                    <div class="relative z-10 h-full flex flex-col">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs uppercase tracking-[0.18em] text-white/80">01</span>
-                            <span class="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 text-sm" aria-hidden="true">↘</span>
-                        </div>
-                        <div class="mt-auto pt-16">
-                            <h3 class="font-display text-2xl mb-3">Clarifier</h3>
-                            <p class="text-sm leading-6 text-white/90">
-                                Votre site doit transmettre le bon message dès
-                                les premières secondes. Je vous aide à structurer
-                                vos contenus, vos priorités et votre parcours
-                                utilisateur pour créer une présence en ligne
-                                claire, cohérente et adaptée à votre activité.
-                            </p>
-                        </div>
-                    </div>
-
-                </article>
-
-                {# 02 VALORISER #}
-                <article class="group relative overflow-hidden min-h-[280px] rounded-[1.75rem] bg-[#F7F3EC] border border-[#D9C8A9]/40 p-7 lg:p-8">
-
-                    <div class="absolute -right-10 -bottom-14 w-36 h-36 rounded-full bg-terracotta/10"></div>
-
-                    <div class="relative h-full flex flex-col">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs uppercase tracking-[0.18em] font-semibold c-terra-ink">02</span>
-                            <span class="flex items-center justify-center w-9 h-9 rounded-full bg-terracotta/10 c-terra-ink text-sm" aria-hidden="true">✦</span>
-                        </div>
-                        <div class="mt-auto pt-16">
-                            <h3 class="font-display text-2xl mb-3">Valoriser</h3>
-                            <p class="text-sm leading-6 text-ink-soft">
-                                Design, identité et expérience utilisateur
-                                travaillent ensemble pour mettre votre activité
-                                en valeur. Chaque interface est pensée pour vous
-                                ressembler, inspirer confiance et donner envie
-                                à vos visiteurs de découvrir vos services.
-                            </p>
-                        </div>
-                    </div>
-
-                </article>
-
-                {# 03 PERFORMER #}
-                <article class="group relative overflow-hidden min-h-[280px] rounded-[1.75rem] bg-[#E7DDD0] p-7 lg:p-8">
-
-                    <div class="absolute right-7 top-7 tempo-rhythm text-[#00687A]/45" aria-hidden="true">
-                        <span></span><span></span><span></span><span></span>
-                    </div>
-
-                    <div class="relative h-full flex flex-col">
-                        <span class="text-xs uppercase tracking-[0.18em] font-semibold text-[#00687A]">03</span>
-                        <div class="mt-auto pt-16">
-                            <h3 class="font-display text-2xl mb-3">Performer</h3>
-                            <p class="text-sm leading-6 text-ink-soft">
-                                Derrière le design, je construis un site rapide,
-                                responsive et techniquement solide. WordPress ou
-                                Symfony, la solution est choisie selon vos besoins,
-                                avec une attention particulière portée au
-                                référencement naturel, aux performances et aux
-                                évolutions futures.
-                            </p>
-                        </div>
-                    </div>
-
-                </article>
-
-            </div>
-
-            {# LIGNE BASSE #}
-            <div class="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 pt-7 border-t border-[#D9C8A9]/50">
-
-                <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-ink-soft">
-                    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>WordPress</span>
-                    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#00687A]"></span>Symfony</span>
-                    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>SEO</span>
-                </div>
-
-                <a href="{{ path('app_service') }}" class="group inline-flex items-center gap-3 text-sm font-semibold text-[#00687A]">
-                    Découvrir mon approche
-                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#00687A] text-white transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
-                </a>
 
             </div>
 
@@ -1300,16 +1057,314 @@
 </script>
 
 
+    {# =========================================================
+       TECHNOLOGIES
+    ========================================================= #}
+
+    <section class="relative overflow-hidden border-y border-[#D9C8A9]/40 bg-[#F7F3EC]">
+
+        <div class="pointer-events-none absolute -right-20 -bottom-28 w-64 h-64 rounded-full border border-[#00687A]/10"></div>
+        <div class="pointer-events-none absolute right-16 bottom-10 w-3 h-3 rounded-full bg-terracotta/70"></div>
+
+        <div class="relative max-w-7xl mx-auto px-6 sm:px-10 py-12 lg:py-14">
+
+            <div class="grid lg:grid-cols-[0.75fr_1.25fr] gap-10 lg:gap-16 items-center">
+
+                {# TEXTE #}
+                <div>
+
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-8 h-px bg-terracotta"></span>
+                        <span class="text-xs uppercase tracking-[0.22em] font-semibold c-terra-ink">Mes outils</span>
+                    </div>
+
+                    <h2 class="font-display text-2xl sm:text-3xl leading-[1.15] mb-4">
+                        Des technos
+                        <span class="text-[#00687A]">modernes</span>
+                        <br>
+                        et éprouvées.
+                    </h2>
+
+                    <p class="max-w-md text-sm leading-6 text-ink-soft">
+                        Du design au développement, je m’appuie sur
+                        des technologies et des outils éprouvés pour
+                        concevoir des expériences web fiables,
+                        performantes et adaptées à chaque besoin.
+                    </p>
+
+                </div>
+
+                {# LOGOS #}
+                {% set techs = [
+                    { n: 'Figma',      f: 'figma-logo.svg.webp', c: 'h-9 max-w-[55px]', w: 250, h: 375 },
+                    { n: 'Canva',      f: 'canva-web.webp',      c: 'h-9 max-w-[65px]' },
+                    { n: 'Symfony',    f: 'symfony.svg',         c: 'h-9 max-w-[55px]' },
+                    { n: 'WordPress',  f: 'wordpress.webp',      c: 'h-9 max-w-[55px]' },
+                    { n: 'Tailwind',   f: 'tailwind.webp',       c: 'h-9 max-w-[65px]', alt: 'Tailwind CSS' },
+                    { n: 'JavaScript', f: 'java.jpeg',           c: 'h-9 max-w-[55px]' },
+                    { n: 'PostgreSQL', f: 'postgresql.svg',      c: 'h-9 max-w-[55px]' },
+                    { n: 'Docker',     f: 'docker.png',          c: 'h-9 max-w-[60px]' },
+                    { n: 'Linux',      f: 'linux-web.webp',      c: 'h-9 max-w-[50px]' },
+                    { n: 'GitHub',     f: 'github.png',          c: 'max-h-7 max-w-9 h-auto', wrap: true },
+                    { n: 'PHP',        f: 'php.webp',            c: 'max-h-9 max-w-14 h-auto', wrap: true },
+                    { n: 'OpenAI',     f: 'openai.webp',         c: 'h-9 max-w-[55px]' }
+                ] %}
+
+                <div class="grid grid-cols-3 sm:grid-cols-6 gap-x-5 gap-y-7 items-start">
+                    {% for t in techs %}
+                        <div class="group flex flex-col items-center justify-center gap-2">
+
+                            {% if t.wrap|default(false) %}<div class="h-12 w-16 flex items-center justify-center">{% endif %}
+
+                            <img src="{{ asset('images/' ~ t.f) }}"
+                                 alt="{{ t.alt|default(t.n) }}"
+                                 {% if t.w is defined %}width="{{ t.w }}" height="{{ t.h }}"{% endif %}
+                                 loading="lazy"
+                                 class="{{ t.c }} w-auto object-contain transition-transform duration-300 group-hover:-translate-y-1">
+
+                            {% if t.wrap|default(false) %}</div>{% endif %}
+
+                            <span class="text-[10px] text-ink-soft">{{ t.n }}</span>
+
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-2" aria-hidden="true">
+        <div class="tempo-beat">
+            <i class="w-10"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="w-20"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="w-7"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="flex-1"></i>
+        </div>
+    </div>
+
+
+    {# =========================================================
+       ACCOMPAGNEMENT
+    ========================================================= #}
+
+    <section class="relative overflow-hidden bg-cream-2 py-16 lg:py-20">
+
+        <div class="pointer-events-none absolute -top-6 right-8 opacity-30 text-terracotta" aria-hidden="true">
+            <div class="tempo-rhythm scale-[2] origin-top-right"><span></span><span></span><span></span><span></span></div>
+        </div>
+
+        <div class="pointer-events-none absolute -bottom-24 -left-16 w-64 h-64 rounded-full bg-[#00687A]/8"></div>
+
+        <div class="relative max-w-7xl mx-auto px-6 sm:px-10">
+
+            {# INTRO #}
+            <div class="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-16 items-end mb-12">
+
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-8 h-px bg-terracotta"></span>
+                        <span class="text-xs uppercase tracking-[0.2em] font-semibold c-terra-ink">Mon accompagnement</span>
+                    </div>
+
+                    <h2 class="font-display text-3xl sm:text-4xl leading-[1.1]">
+                        De l’idée
+                        <br>
+                        <span class="text-[#00687A]">à la mise en ligne.</span>
+                    </h2>
+                </div>
+
+                <div class="lg:pb-1">
+                    <p class="max-w-2xl text-base leading-7 text-ink-soft">
+                        Chaque projet commence par une compréhension précise
+                        de votre activité. Je vous accompagne ensuite dans la
+                        conception, le développement et la mise en ligne d’une
+                        solution pensée pour être
+                        <strong class="font-semibold text-ink">utile, claire et durable.</strong>
+                    </p>
+                </div>
+
+            </div>
+
+            {# PARCOURS #}
+            <div class="grid md:grid-cols-3 gap-4 lg:gap-5">
+
+                {# 01 CLARIFIER #}
+                <article class="group relative overflow-hidden min-h-[280px] rounded-[1.75rem] bg-[#00687A] text-white p-7 lg:p-8">
+
+                    {# Fragment du T Tempo — discret, derrière le contenu #}
+                    <div class="pointer-events-none absolute -right-10 top-10 opacity-[0.08] transition-all duration-700 group-hover:opacity-[0.13] group-hover:-translate-x-2" aria-hidden="true">
+                        <div class="relative w-40 h-44">
+                            <span class="absolute right-0 top-0 w-36 h-9 rounded-full bg-white"></span>
+                            <span class="absolute right-10 top-11 w-24 h-8 rounded-full bg-white"></span>
+                            <span class="absolute right-10 top-11 w-8 h-28 rounded-full bg-white"></span>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 h-full flex flex-col">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs uppercase tracking-[0.18em] text-white/80">01</span>
+                            <span class="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 text-sm" aria-hidden="true">↘</span>
+                        </div>
+                        <div class="mt-auto pt-16">
+                            <h3 class="font-display text-2xl mb-3">Clarifier</h3>
+                            <p class="text-sm leading-6 text-white/90">
+                                On commence par se parler. Je prends le temps
+                                 de comprendre votre activité, vos clients et ce que 
+                                 le site doit leur faire faire. Ensemble, nous définissons
+                                  l’essentiel : le message, les pages utiles et le chemin qui 
+                                  mène vos visiteurs jusqu’à vous contacter.
+                            </p>
+                        </div>
+                    </div>
+
+                </article>
+
+                {# 02 VALORISER #}
+                <article class="group relative overflow-hidden min-h-[280px] rounded-[1.75rem] bg-[#F7F3EC] border border-[#D9C8A9]/40 p-7 lg:p-8">
+
+                    <div class="absolute -right-10 -bottom-14 w-36 h-36 rounded-full bg-terracotta/10"></div>
+
+                    <div class="relative h-full flex flex-col">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs uppercase tracking-[0.18em] font-semibold c-terra-ink">02</span>
+                            <span class="flex items-center justify-center w-9 h-9 rounded-full bg-terracotta/10 c-terra-ink text-sm" aria-hidden="true">✦</span>
+                        </div>
+                        <div class="mt-auto pt-16">
+                            <h3 class="font-display text-2xl mb-3">Valoriser</h3>
+                            <p class="text-sm leading-6 text-ink-soft">
+                                Un beau site, c’est d’abord un site qui vous met en valeur. 
+                                Le design, les mots et les visuels sont choisis pour 
+                                refléter votre sérieux, votre style et vos points forts.
+                            </p>
+                        </div>
+                    </div>
+
+                </article>
+
+                {# 03 PERFORMER #}
+                <article class="group relative overflow-hidden min-h-[280px] rounded-[1.75rem] bg-[#E7DDD0] p-7 lg:p-8">
+
+                    <div class="absolute right-7 top-7 tempo-rhythm text-[#00687A]/45" aria-hidden="true">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+
+                    <div class="relative h-full flex flex-col">
+                        <span class="text-xs uppercase tracking-[0.18em] font-semibold text-[#00687A]">03</span>
+                        <div class="mt-auto pt-16">
+                            <h3 class="font-display text-2xl mb-3">Performer</h3>
+                            <p class="text-sm leading-6 text-ink-soft">
+                                Sous le design, une base solide : un site qui se charge vite, 
+                                fonctionne sur tous les écrans et reste 
+                                facile à faire évoluer. Le référencement naturel
+                                 est intégré dès le départ, pas ajouté après coup.
+                            </p>
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
+
+            {# LIGNE BASSE #}
+            <div class="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 pt-7 border-t border-[#D9C8A9]/50">
+
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-ink-soft">
+                    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>WordPress</span>
+                    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#00687A]"></span>Symfony</span>
+                    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>SEO</span>
+                </div>
+
+                <a href="{{ path('app_service') }}" class="group inline-flex items-center gap-3 text-sm font-semibold text-[#00687A]">
+                    Découvrir mon approche
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#00687A] text-white transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-2" aria-hidden="true">
+        <div class="tempo-beat">
+            <i class="w-10"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="w-20"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="w-7"></i><span class="w-2 h-2 rounded-full bg-current"></span><i class="flex-1"></i>
+        </div>
+    </div>
+
+
+
+
+
 {# =========================================================
-   DERNIERS ARTICLES DU BLOG — ACCUEIL
+   DERNIERS ARTICLES DU BLOG — STYLE MINI-MAGAZINE
 ========================================================= #}
 
-<section class="bg-[#FBF8F3] py-20 lg:py-24">
+<style>
+    /* Cartes du blog : décalage sur mobile */
+    .tempo-blog-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+    }
+
+    .tempo-blog-card {
+        width: 92%;
+        min-width: 0;
+        align-self: flex-start;
+        transition:
+            transform 300ms ease,
+            box-shadow 300ms ease;
+    }
+
+    .tempo-blog-card:nth-child(even) {
+        align-self: flex-end;
+    }
+
+    .tempo-blog-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 45px rgba(23, 40, 36, .12);
+    }
+
+    /* Trois cartes en quinconce sur ordinateur */
+    @media (min-width: 1024px) {
+        .tempo-blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            align-items: start;
+            gap: 24px;
+        }
+
+        .tempo-blog-card {
+            width: 100%;
+            align-self: auto;
+        }
+
+        .tempo-blog-card:nth-child(2) {
+            margin-top: 38px;
+        }
+    }
+
+    @media (min-width: 640px) and (max-width: 1023px) {
+        .tempo-blog-card {
+            width: 82%;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .tempo-blog-card {
+            transition: none;
+        }
+    }
+</style>
+
+<section id="blog-accueil" class="bg-[#FBF8F3] py-20 lg:py-24">
 
     <div class="max-w-7xl mx-auto px-6 sm:px-10">
 
         {# EN-TÊTE #}
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
 
             <div>
                 <div class="flex items-center gap-3 mb-4">
@@ -1319,48 +1374,79 @@
                     </span>
                 </div>
 
-                <h2 class="font-display text-3xl sm:text-4xl text-[#172824]">
+                <h2 class="font-display text-3xl sm:text-4xl text-[#172824] leading-tight">
                     Conseils, idées et
                     <span class="text-[#C9653B]">actualités du web.</span>
                 </h2>
 
+              
             </div>
 
             <a href="{{ path('app_article_index') }}"
-               class="inline-flex items-center gap-3 text-sm font-semibold text-[#00678A] hover:text-[#C9653B] transition">
+               class="inline-flex shrink-0 items-center gap-3 text-sm font-semibold text-[#00678A] hover:text-[#C9653B] transition">
                 Tous les articles
                 <span aria-hidden="true">→</span>
             </a>
 
         </div>
 
-        {# APERÇU DES ARTICLES #}
+        {# LES ARTICLES #}
         {% if latestArticles is defined and latestArticles|length > 0 %}
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="tempo-blog-grid">
 
                 {% for article in latestArticles|slice(0, 3) %}
 
-                    <article class="group flex flex-col rounded-[26px] overflow-hidden bg-white border border-[#E7DDD2] shadow-[0_12px_35px_rgba(0,0,0,.035)] transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+                    <article class="tempo-blog-card group flex flex-col overflow-hidden rounded-[24px] border border-[#E7DDD2] bg-white shadow-[0_12px_35px_rgba(23,40,36,.05)]">
 
-                        <div class="h-1 bg-[#C9653B]"></div>
+                        {# BANDEAU GRAPHIQUE #}
+                        <div class="relative flex h-32 items-center justify-between overflow-hidden bg-[#E5EFEB] px-6">
 
-                        <div class="flex flex-1 flex-col p-7 lg:p-8">
+                            {# Grand numéro éditorial #}
+                            <span class="relative z-10 font-display text-[76px] leading-none text-[#00678A] opacity-20"
+                                  aria-hidden="true">
+                                {{ '%02d'|format(loop.index) }}
+                            </span>
 
-                            
+                            {# Motif décoratif #}
+                            <div class="pointer-events-none absolute -right-7 -top-12 h-40 w-40 rounded-full border-[20px] border-[#00678A]/10"></div>
 
-                            <h3 class="font-display text-xl sm:text-2xl leading-snug text-[#172824] mb-4">
+                            <div class="pointer-events-none absolute right-12 bottom-[-30px] h-24 w-24 rotate-12 rounded-[30px] bg-[#C9653B]/15"></div>
+
+                        
+
+                        </div>
+
+                        {# CONTENU #}
+                        <div class="flex flex-1 flex-col p-6 lg:p-7">
+
+                            <div class="mb-4 flex items-center gap-3">
+                                <span class="h-px w-7 bg-[#C9653B]"></span>
+                                <span class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#A94F2C]">
+                                    À découvrir
+                                </span>
+                            </div>
+
+                            <h3 class="mb-4 font-display text-xl leading-snug text-[#172824] sm:text-2xl">
                                 {{ article.titre }}
                             </h3>
 
-                            <p class="text-sm leading-7 text-[#56615f] mb-7">
-                               {{ article.extrait|default('Découvrez cet article sur le blog de Studio Tempo.')|striptags|slice(0, 150) }}…
+                            <p class="mb-8 text-sm leading-7 text-[#56615f]">
+                                {{ article.extrait|default('Découvrez cet article sur le blog de Studio Tempo.')|striptags|slice(0, 150) }}{% if article.extrait|default('')|length > 150 %}…{% endif %}
                             </p>
 
+                            {# LIEN DE L'ARTICLE #}
                             <a href="{{ path('app_article_show', {slug: article.slug}) }}"
-                               class="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[#00678A] transition group-hover:text-[#C9653B]">
-                                Lire l'article
-                                <span aria-hidden="true">↗</span>
+                               class="mt-auto flex items-center justify-between gap-3 border-t border-[#E7DDD2] pt-5 text-sm font-semibold text-[#00678A] transition-colors group-hover:text-[#C9653B]"
+                               aria-label="Lire l'article {{ article.titre }}">
+
+                                <span>Lire l'article</span>
+
+                                <span class="flex h-10 w-10 items-center justify-center rounded-full bg-[#F4E0D4] text-lg text-[#A94F2C] transition duration-300 group-hover:rotate-45 group-hover:bg-[#C9653B] group-hover:text-white"
+                                      aria-hidden="true">
+                                    ↗
+                                </span>
+
                             </a>
 
                         </div>
@@ -1376,6 +1462,7 @@
     </div>
 
 </section>
+
 
 
 

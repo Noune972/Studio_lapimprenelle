@@ -1295,155 +1295,390 @@
 
 
 
+
 {# =========================================================
-   DERNIERS ARTICLES DU BLOG — STYLE MINI-MAGAZINE
+   DERNIERS ARTICLES DU BLOG — CARNET DE CONSEILS
 ========================================================= #}
 
 <style>
-    /* Cartes du blog : décalage sur mobile */
-    .tempo-blog-grid {
+    /* Section blog — carnet de conseils */
+    #blog-accueil {
+        background: #FBF8F3;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #blog-accueil .tempo-blog-list {
+        position: relative;
         display: flex;
         flex-direction: column;
-        gap: 26px;
+        gap: 22px;
+        padding-left: 20px;
     }
 
-    .tempo-blog-card {
-        width: 92%;
+    /* Ligne verticale du parcours */
+    #blog-accueil .tempo-blog-list::before {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 35px;
+        bottom: 35px;
+        width: 2px;
+        background: #E7B99B;
+    }
+
+    #blog-accueil .tempo-blog-item {
+        position: relative;
         min-width: 0;
-        align-self: flex-start;
-        transition:
-            transform 300ms ease,
-            box-shadow 300ms ease;
+        background: #FFFFFF;
+        border: 1px solid #F0E5DB;
+        border-radius: 24px;
+        padding: 18px;
+        box-shadow: 0 12px 30px rgba(23, 40, 36, .06);
+        transition: transform .35s ease, box-shadow .35s ease;
     }
 
-    .tempo-blog-card:nth-child(even) {
-        align-self: flex-end;
+    /* Pastille sur la ligne */
+    #blog-accueil .tempo-blog-item::before {
+        content: "";
+        position: absolute;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: #E7B99B;
+        border: 3px solid #FBF8F3;
+        box-sizing: content-box;
+        left: -25px;
+        top: 32px;
     }
 
-    .tempo-blog-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 20px 45px rgba(23, 40, 36, .12);
+    #blog-accueil .tempo-blog-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(23, 40, 36, .11);
     }
 
-    /* Trois cartes en quinconce sur ordinateur */
-    @media (min-width: 1024px) {
-        .tempo-blog-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            align-items: start;
-            gap: 24px;
+    #blog-accueil .tempo-blog-inner {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Illustration de la fiche */
+    #blog-accueil .tempo-blog-visual {
+        width: 88px;
+        height: 100px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        background: #E5EFEB;
+        color: #00687A;
+        overflow: hidden;
+    }
+
+    #blog-accueil .tempo-blog-item:nth-child(even) .tempo-blog-visual {
+        background: #F9E7DB;
+        color: #C9653B;
+    }
+
+    #blog-accueil .tempo-blog-visual svg {
+        width: 46px;
+        height: 46px;
+    }
+
+    #blog-accueil .tempo-blog-content {
+        flex: 1;
+        min-width: 0;
+    }
+
+    #blog-accueil .tempo-blog-tag {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 999px;
+        background: #E5EFEB;
+        color: #00687A;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .07em;
+        text-transform: uppercase;
+        margin-bottom: 9px;
+    }
+
+    #blog-accueil .tempo-blog-item:nth-child(even) .tempo-blog-tag {
+        background: #F9E7DB;
+        color: #A94F2C;
+    }
+
+    #blog-accueil .tempo-blog-title {
+        font-family: 'Manrope', sans-serif;
+        font-size: 15px;
+        font-weight: 800;
+        line-height: 1.4;
+        color: #172824;
+        overflow-wrap: anywhere;
+    }
+
+    #blog-accueil .tempo-blog-excerpt {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+
+    margin-top: 10px;
+    color: #56615f;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+    #blog-accueil .tempo-blog-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-top: 14px;
+    }
+
+    #blog-accueil .tempo-blog-date {
+        color: #68736F;
+        font-size: 11px;
+    }
+
+    #blog-accueil .tempo-blog-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background: #C9653B;
+        color: #FFFFFF;
+        font-size: 20px;
+        transition: transform .3s ease, background .3s ease;
+    }
+
+    #blog-accueil .tempo-blog-item:hover .tempo-blog-arrow {
+        transform: translateX(4px);
+        background: #00687A;
+    }
+
+    /* Tablette et ordinateur */
+    @media (min-width: 768px) {
+        #blog-accueil .tempo-blog-list {
+            gap: 26px;
+            padding-left: 38px;
         }
 
-        .tempo-blog-card {
-            width: 100%;
-            align-self: auto;
+        #blog-accueil .tempo-blog-list::before {
+            left: 10px;
         }
 
-        .tempo-blog-card:nth-child(2) {
-            margin-top: 38px;
+        #blog-accueil .tempo-blog-item {
+            padding: 26px;
+        }
+
+        #blog-accueil .tempo-blog-item::before {
+            left: -37px;
+            top: 45px;
+        }
+
+        #blog-accueil .tempo-blog-inner {
+            gap: 26px;
+        }
+
+        #blog-accueil .tempo-blog-visual {
+            width: 145px;
+            height: 145px;
+        }
+
+        #blog-accueil .tempo-blog-visual svg {
+            width: 72px;
+            height: 72px;
+        }
+
+        #blog-accueil .tempo-blog-title {
+            font-size: 23px;
+        }
+
+        #blog-accueil .tempo-blog-excerpt {
+            display: block;
+        }
+
+        #blog-accueil .tempo-blog-date {
+            font-size: 13px;
+        }
+
+        #blog-accueil .tempo-blog-arrow {
+            width: 44px;
+            height: 44px;
         }
     }
 
-    @media (min-width: 640px) and (max-width: 1023px) {
-        .tempo-blog-card {
-            width: 82%;
+    /* Apparition progressive */
+    @media (prefers-reduced-motion: no-preference) {
+        #blog-accueil .tempo-blog-item {
+            animation: tempo-blog-appear .7s ease both;
+        }
+
+        #blog-accueil .tempo-blog-item:nth-child(2) {
+            animation-delay: .12s;
+        }
+
+        #blog-accueil .tempo-blog-item:nth-child(3) {
+            animation-delay: .24s;
+        }
+
+        @keyframes tempo-blog-appear {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     }
 
     @media (prefers-reduced-motion: reduce) {
-        .tempo-blog-card {
+        #blog-accueil .tempo-blog-item,
+        #blog-accueil .tempo-blog-arrow {
+            animation: none;
             transition: none;
         }
     }
 </style>
 
-<section id="blog-accueil" class="bg-[#FBF8F3] py-20 lg:py-24">
+<section id="blog-accueil" class="py-20 lg:py-24">
 
-    <div class="max-w-7xl mx-auto px-6 sm:px-10">
+    {# Formes décoratives #}
+    <div class="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-[#D6E5DF] opacity-70"></div>
+    <div class="pointer-events-none absolute -bottom-24 -left-24 h-56 w-56 rounded-full bg-[#F1C7AE] opacity-60"></div>
+
+    <div class="relative z-10 mx-auto max-w-6xl px-6 sm:px-10">
 
         {# EN-TÊTE #}
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+        <div class="mb-12">
 
-            <div>
-                <div class="flex items-center gap-3 mb-4">
-                    <span class="w-8 h-px bg-[#C9653B]"></span>
-                    <span class="text-xs uppercase tracking-[0.2em] font-semibold text-[#A94F2C]">
-                        Le blog de Studio Tempo
-                    </span>
-                </div>
+            <div class="mb-5 flex items-center gap-3">
+                <span class="h-px w-9 bg-[#C9653B]"></span>
 
-                <h2 class="font-display text-3xl sm:text-4xl text-[#172824] leading-tight">
-                    Conseils, idées et
-                    <span class="text-[#C9653B]">actualités du web.</span>
-                </h2>
-
-              
+                <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#A94F2C]">
+                    Le blog de Studio Tempo
+                </span>
             </div>
 
-            <a href="{{ path('app_article_index') }}"
-               class="inline-flex shrink-0 items-center gap-3 text-sm font-semibold text-[#00678A] hover:text-[#C9653B] transition">
-                Tous les articles
-                <span aria-hidden="true">→</span>
-            </a>
+            <h2 class="font-display text-3xl leading-tight text-[#172824] sm:text-4xl">
+                Conseils, idées et
+                <span class="text-[#C9653B]">actualités du web.</span>
+            </h2>
+
+            <p class="mt-5 max-w-2xl text-base leading-7 text-[#56615f]">
+                Des conseils pratiques et des idées pour faire évoluer
+                votre présence en ligne, à votre rythme.
+            </p>
 
         </div>
 
-        {# LES ARTICLES #}
+        {# LISTE DES ARTICLES #}
         {% if latestArticles is defined and latestArticles|length > 0 %}
 
-            <div class="tempo-blog-grid">
+            <div class="tempo-blog-list">
 
                 {% for article in latestArticles|slice(0, 3) %}
 
-                    <article class="tempo-blog-card group flex flex-col overflow-hidden rounded-[24px] border border-[#E7DDD2] bg-white shadow-[0_12px_35px_rgba(23,40,36,.05)]">
+                    <article class="tempo-blog-item">
 
-                        {# BANDEAU GRAPHIQUE #}
-                        <div class="relative flex h-32 items-center justify-between overflow-hidden bg-[#E5EFEB] px-6">
+                        <div class="tempo-blog-inner">
 
-                            {# Grand numéro éditorial #}
-                            <span class="relative z-10 font-display text-[76px] leading-none text-[#00678A] opacity-20"
-                                  aria-hidden="true">
-                                {{ '%02d'|format(loop.index) }}
-                            </span>
+                            {# ILLUSTRATION #}
+                            <div class="tempo-blog-visual" aria-hidden="true">
 
-                            {# Motif décoratif #}
-                            <div class="pointer-events-none absolute -right-7 -top-12 h-40 w-40 rounded-full border-[20px] border-[#00678A]/10"></div>
+                                {% if loop.index == 1 %}
 
-                            <div class="pointer-events-none absolute right-12 bottom-[-30px] h-24 w-24 rotate-12 rounded-[30px] bg-[#C9653B]/15"></div>
+                                    {# Ordinateur #}
+                                    <svg viewBox="0 0 64 64" fill="none">
+                                        <rect x="9" y="13" width="46" height="33" rx="4"
+                                              stroke="currentColor" stroke-width="3"/>
+                                        <path d="M5 51H59L55 56H9L5 51Z"
+                                              stroke="currentColor" stroke-width="3"
+                                              stroke-linejoin="round"/>
+                                        <path d="M40 9L43 3M49 14L56 9"
+                                              stroke="#C9653B" stroke-width="3"
+                                              stroke-linecap="round"/>
+                                    </svg>
 
-                        
+                                {% elseif loop.index == 2 %}
 
-                        </div>
+                                    {# Palette de couleurs #}
+                                    <svg viewBox="0 0 64 64" fill="none">
+                                        <path d="M17 46L34 8L43 13L25 51Z"
+                                              stroke="currentColor" stroke-width="3"
+                                              stroke-linejoin="round"/>
+                                        <path d="M24 49L47 17L54 24L31 55Z"
+                                              stroke="currentColor" stroke-width="3"
+                                              stroke-linejoin="round"/>
+                                        <circle cx="17" cy="49" r="6"
+                                                stroke="currentColor" stroke-width="3"/>
+                                    </svg>
 
-                        {# CONTENU #}
-                        <div class="flex flex-1 flex-col p-6 lg:p-7">
+                                {% else %}
 
-                            <div class="mb-4 flex items-center gap-3">
-                                <span class="h-px w-7 bg-[#C9653B]"></span>
-                              
+                                    {# Liste de conseils #}
+                                    <svg viewBox="0 0 64 64" fill="none">
+                                        <rect x="13" y="10" width="38" height="46" rx="5"
+                                              stroke="currentColor" stroke-width="3"/>
+                                        <path d="M24 10V6H40V10"
+                                              stroke="currentColor" stroke-width="3"
+                                              stroke-linecap="round"/>
+                                        <path d="M21 25L25 29L31 21"
+                                              stroke="currentColor" stroke-width="3"
+                                              stroke-linecap="round"
+                                              stroke-linejoin="round"/>
+                                        <path d="M35 26H43M21 40L25 44L31 36M35 41H43"
+                                              stroke="currentColor" stroke-width="3"
+                                              stroke-linecap="round"
+                                              stroke-linejoin="round"/>
+                                    </svg>
+
+                                {% endif %}
+
                             </div>
 
-                            <h3 class="mb-4 font-display text-xl leading-snug text-[#172824] sm:text-2xl">
-                                {{ article.titre }}
-                            </h3>
+                            {# CONTENU #}
+                            <div class="tempo-blog-content">
 
-                            <p class="mb-8 text-sm leading-7 text-[#56615f]">
-                                {{ article.extrait|default('Découvrez cet article sur le blog de Studio Tempo.')|striptags|slice(0, 150) }}{% if article.extrait|default('')|length > 150 %}…{% endif %}
-                            </p>
 
-                            {# LIEN DE L'ARTICLE #}
-                            <a href="{{ path('app_article_show', {slug: article.slug}) }}"
-                               class="mt-auto flex items-center justify-between gap-3 border-t border-[#E7DDD2] pt-5 text-sm font-semibold text-[#00678A] transition-colors group-hover:text-[#C9653B]"
-                               aria-label="Lire l'article {{ article.titre }}">
+                                <h3 class="tempo-blog-title">
+                                    {{ article.titre }}
+                                </h3>
 
-                                <span>Lire l'article</span>
+                                <p class="tempo-blog-excerpt">
+                                    {{ article.extrait|default('Découvrez cet article sur le blog de Studio Tempo.')|striptags|slice(0, 160) }}{% if article.extrait|default('')|length > 160 %}…{% endif %}
+                                </p>
 
-                                <span class="flex h-10 w-10 items-center justify-center rounded-full bg-[#F4E0D4] text-lg text-[#A94F2C] transition duration-300 group-hover:rotate-45 group-hover:bg-[#C9653B] group-hover:text-white"
-                                      aria-hidden="true">
-                                    ↗
-                                </span>
+                                <div class="tempo-blog-footer">
 
-                            </a>
+                                    <span class="tempo-blog-date">
+                                        {% if article.publishedAt %}
+                                            {{ article.publishedAt|date('d/m/Y') }}
+                                        {% else %}
+                                            À découvrir
+                                        {% endif %}
+                                    </span>
+
+                                    <a href="{{ path('app_article_show', {slug: article.slug}) }}"
+                                       class="tempo-blog-arrow"
+                                       aria-label="Lire l'article {{ article.titre }}">
+                                        →
+                                    </a>
+
+                                </div>
+
+                            </div>
 
                         </div>
 
@@ -1455,9 +1690,21 @@
 
         {% endif %}
 
+        {# BOUTON TOUS LES ARTICLES #}
+        <div class="mt-12 text-center">
+
+            <a href="{{ path('app_article_index') }}"
+               class="inline-flex items-center justify-center gap-4 rounded-full border-2 border-[#00687A] px-8 py-4 text-sm font-semibold text-[#00687A] transition hover:bg-[#00687A] hover:text-white">
+                Tous les articles
+                <span aria-hidden="true">→</span>
+            </a>
+
+        </div>
+
     </div>
 
 </section>
+
 
 
 

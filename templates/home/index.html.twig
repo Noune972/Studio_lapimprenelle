@@ -57,6 +57,8 @@
     @media (min-width:768px)  { #services-carousel > article { flex-basis:calc((100% - 1.5rem) / 2); } }
     @media (min-width:1280px) { #services-carousel > article { flex-basis:calc((100% - 3rem) / 3); } }
     @media (prefers-reduced-motion: reduce) { #services-carousel { scroll-behavior:auto; } }
+
+
 </style>
 
 <div class="bg-cream text-ink font-sans">
@@ -1642,18 +1644,29 @@ document.addEventListener('DOMContentLoaded', function () {
         overflow-wrap: anywhere;
     }
 
-    #blog-accueil .tempo-blog-excerpt {
+  
+
+.tempo-blog-excerpt {
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
     overflow: hidden;
-
-    margin-top: 10px;
-    color: #56615f;
-    font-size: 13px;
-    line-height: 1.6;
+    white-space: normal;
+    font-size: 14px;
+    line-height: 1.7;
 }
+
+@media (min-width: 768px) {
+    .tempo-blog-excerpt {
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        font-size: 15px;
+    }
+}
+
+
+
 
     #blog-accueil .tempo-blog-footer {
         display: flex;

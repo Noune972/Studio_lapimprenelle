@@ -40,24 +40,42 @@
     /* ------------------------------------------------------------
        Carrousel des services — CSS pur (ne dépend pas de Tailwind)
     ------------------------------------------------------------ */
-    #services-carousel {
-        display:flex;
-        gap:1.5rem;
-        margin-top:1rem;
-        padding-bottom:1.5rem;
-        max-width:100%;
-        overflow-x:auto;
-        overscroll-behavior-x:contain;
-        scroll-snap-type:x mandatory;
-        scroll-behavior:smooth;
-        -webkit-overflow-scrolling:touch;
-        scrollbar-width:thin;
-    }
-    #services-carousel > article { flex:0 0 100%; min-width:0; scroll-snap-align:start; }
-    @media (min-width:768px)  { #services-carousel > article { flex-basis:calc((100% - 1.5rem) / 2); } }
-    @media (min-width:1280px) { #services-carousel > article { flex-basis:calc((100% - 3rem) / 3); } }
-    @media (prefers-reduced-motion: reduce) { #services-carousel { scroll-behavior:auto; } }
+   #services-carousel {
+    display:flex;
+    gap:1rem;
+    margin-top:1rem;
+    padding-bottom:1rem;
+    max-width:100%;
+    overflow-x:auto;
+    overscroll-behavior-x:contain;
+    scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:thin;
+}
+#services-carousel > article {
+    flex:0 0 80%;
+    min-width:0;
+    scroll-snap-align:start;
+    padding:1.25rem;
+    border-radius:22px;
+}
+@media (min-width:768px)  { #services-carousel > article { flex-basis:calc((100% - 1rem) / 2); padding:1.5rem; } }
+@media (min-width:1280px) { #services-carousel > article { flex-basis:calc((100% - 2rem) / 3); } }
 
+/* Contenu compact */
+#services-carousel > article > div:first-child { width:44px; height:44px; margin-bottom:.9rem; font-size:20px; }
+#services-carousel > article > div:first-child svg { width:22px; height:22px; }
+#services-carousel h3 { font-size:19px; line-height:1.3; margin-bottom:.6rem; }
+#services-carousel p {
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:1rem;
+}
+#services-carousel .svc-tag { padding:.3rem .65rem; }
+#services-carousel a { margin-top:1rem; font-size:13px; }
+
+@media (prefers-reduced-motion: reduce) { #services-carousel { scroll-behavior:auto; } }
 
 </style>
 
@@ -690,12 +708,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 </button>
             </div>
 
-            {# Invitation à faire défiler #}
-            <p class="mt-5 flex items-center justify-end gap-2 text-sm text-ink-soft text-terracotta font-semibold">
-                <span aria-hidden="true">←</span>
-                Faites défiler les cartes pour découvrir tous mes services
-                <span aria-hidden="true">→</span>
-            </p>
 
             {# CARROUSEL — le CSS est dans le bloc <style> en haut de page #}
             <div id="services-carousel" role="region" aria-label="Mes services" tabindex="0">

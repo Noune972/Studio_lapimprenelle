@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function () {
                class="group inline-flex items-start gap-3 c-terra-ink font-medium hover:opacity-80 transition">
                 <span class="mt-1 text-lg" aria-hidden="true">↗</span>
                 <span class="underline underline-offset-4 decoration-[#A94F2C]/40 group-hover:decoration-[#A94F2C] transition">
-                    Découvrez mon accompagnement
+                    Découvrir mon accompagnement
                 </span>
             </a>
         </div>
@@ -432,6 +432,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <a href="{{ path('app_projet_index') }}"
                    class="btn-outline-pine px-6 py-3 rounded-full text-sm font-medium transition inline-flex items-center justify-center">
                     Voir mes réalisations
+                    <span aria-hidden="true">→</span>
                 </a>
 
             </div>
@@ -440,18 +441,18 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="flex flex-col items-start gap-4 text-sm text-ink-soft max-w-xs mx-auto">
 
                 <div class="flex items-center gap-3">
-                    <span class="w-7 h-7 rounded-full bg-pine text-white flex items-center justify-center text-xs shrink-0">W</span>
-                    <span>WordPress</span>
+                    <span class="w-7 h-7 rounded-full bg-pine text-white flex items-center justify-center text-xs shrink-0"></span>
+                    <span>Site WordPress</span>
                 </div>
 
                 <div class="flex items-center gap-3">
-                    <span class="w-7 h-7 rounded-full bg-ink text-white flex items-center justify-center text-xs shrink-0">sf</span>
-                    <span>Symfony &amp; PHP sur mesure</span>
+                    <span class="w-7 h-7 rounded-full bg-ink text-white flex items-center justify-center text-xs shrink-0"></span>
+                    <span>Appli Symfony sur mesure</span>
                 </div>
 
                 <div class="flex items-center gap-3">
-                    <span class="w-7 h-7 rounded-full bg-terra-ink flex items-center justify-center text-xs shrink-0">◎</span>
-                    <span>SEO &amp; contenu</span>
+                    <span class="w-7 h-7 rounded-full bg-terra-ink flex items-center justify-center text-xs shrink-0"></span>
+                    <span>Référencement SEO</span>
                 </div>
 
             </div>
@@ -1893,7 +1894,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 </h3>
 
                                 <p class="tempo-blog-excerpt">
-                                    {{ article.extrait|default('Découvrez cet article sur le blog de Studio Tempo.')|striptags|slice(0, 160) }}{% if article.extrait|default('')|length > 160 %}…{% endif %}
+                                    {{ article.extrait|default('Découvrez cet article sur le blog de Studio Tempo.')|striptags|slice(0, 450) }}{% if article.extrait|default('')|length > 450 %}…{% endif %}
                                 </p>
 
                                 <div class="tempo-blog-footer">

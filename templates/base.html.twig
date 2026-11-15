@@ -60,6 +60,11 @@
 {# =========================================================
    HEADER
 ========================================================= #}
+<style>
+    @media (max-width: 639px) {
+        .tempo-logo { margin-left: -34px; }
+    }
+</style>
 
 <header class="relative z-50">
 
@@ -76,10 +81,10 @@
            class="flex items-center">
 
             <img
-                src="{{ asset('images/tempo7-web.webp') }}"
-                alt="Tempo"
-                class="w-[220px] sm:w-[260px] h-auto"
-            >
+    src="{{ asset('images/tempo7-web.webp') }}"
+    alt="Tempo"
+    class="tempo-logo w-[220px] sm:w-[260px] h-auto"
+>
 
         </a>
 

@@ -21,10 +21,7 @@
     @media (prefers-reduced-motion: reduce) { .tempo-rhythm > span { transition:none; } }
 
     /* ------------------------------------------------------------
-       Couleurs accessibles (contraste AA) — en CSS pur pour ne pas
-       dépendre du build Tailwind
-       - terracotta "encre" : petits textes sur fond crème (≈ 4,8:1)
-       - bronze : pastille 04 avec chiffre blanc (≈ 5,7:1)
+       Couleurs accessibles 
     ------------------------------------------------------------ */
     .c-terra-ink { color:#A94F2C; }
     .bg-terra-ink { background-color:#A94F2C; color:#fff; }
@@ -434,7 +431,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         {# =====================================================
            BOUTONS ET COMPÉTENCES — MOBILE UNIQUEMENT
-           Placés juste sous la photo
+           
         ===================================================== #}
         <div class="tempo-hero-mobile-actions relative z-10">
 
@@ -709,7 +706,7 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
 
 
-            {# CARROUSEL — le CSS est dans le bloc <style> en haut de page #}
+            {# CARROUSEL #}
             <div id="services-carousel" role="region" aria-label="Mes services" tabindex="0">
 
                 {# SITE VITRINE #}

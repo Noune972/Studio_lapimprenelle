@@ -328,114 +328,49 @@
 
 
 
-
-/* ====================================
-   FRISE VÉGÉTALE DU MENU MOBILE
-==================================== */
-
+/* Frise végétale du menu mobile */
 @media (max-width: 767px) {
 
     .tempo-mobile-panel {
         position: absolute;
-        background-color: #FBF8F3 !important;
         isolation: isolate;
-        overflow: hidden;
     }
 
-    .tempo-menu-botanical {
+    /* Tige courbée */
+    .tempo-mobile-panel::before {
+        content: "";
         position: absolute;
-        right: -14px;
-        top: 65px;
-        width: 135px;
-        height: 410px;
+        right: 14px;
+        top: 105px;
+        width: 65px;
+        height: 280px;
+        border-right: 2px solid #78AEB0;
+        border-radius: 50%;
+        transform: rotate(8deg);
         pointer-events: none;
         z-index: 0;
-        opacity: .85;
     }
 
-    .tempo-menu-botanical svg {
+    /* Feuille bleu pétrole */
+    .tempo-mobile-panel::after {
+        content: "";
         position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 2;
-    }
-
-    .tempo-menu-shape {
-        position: absolute;
-        display: block;
-        pointer-events: none;
-    }
-
-    /* Cercle bleu pâle */
-    .tempo-menu-shape-1 {
-        width: 105px;
-        height: 105px;
         right: -28px;
-        top: 60px;
-        border-radius: 50%;
-        background: rgba(0, 104, 122, .13);
+        top: 165px;
+        width: 95px;
+        height: 145px;
+        background: #00687A;
+        opacity: 0.22;
+        border-radius: 90% 0 90% 0;
+        transform: rotate(-25deg);
+        pointer-events: none;
+        z-index: 0;
     }
 
-    /* Feuille terracotta supérieure */
-    .tempo-menu-shape-2 {
-        width: 45px;
-        height: 92px;
-        right: 20px;
-        top: -35px;
-        border-radius: 100% 0 100% 0;
-        background: rgba(201, 101, 59, .65);
-        transform: rotate(28deg);
-    }
-
-    /* Grande feuille bleu pétrole */
-    .tempo-menu-shape-3 {
-        width: 65px;
-        height: 135px;
-        right: -16px;
-        top: 205px;
-        border-radius: 100% 0 100% 0;
-        background: rgba(0, 104, 122, .52);
-        transform: rotate(20deg);
-    }
-
-    /* Cercle beige */
-    .tempo-menu-shape-4 {
-        width: 75px;
-        height: 75px;
-        right: 40px;
-        bottom: 0;
-        border-radius: 50%;
-        background: #EFE7DA;
-    }
-
-    /* Petite feuille terracotta inférieure */
-    .tempo-menu-shape-5 {
-        width: 38px;
-        height: 80px;
-        right: 5px;
-        bottom: -22px;
-        border-radius: 100% 0 100% 0;
-        background: rgba(201, 101, 59, .48);
-        transform: rotate(35deg);
-    }
-
-    /* Navigation devant la frise */
+    /* Les liens restent au-dessus de la décoration */
     .tempo-mobile-nav {
         position: relative;
-        z-index: 2;
-    }
-
-    /* Garder les liens lisibles */
-    .tempo-mobile-link {
-        position: relative;
-        z-index: 2;
-    }
-
-    .tempo-mobile-contact {
-        position: relative;
-        z-index: 2;
-        background: #00687A;
+        z-index: 1;
     }
 }
 
@@ -631,83 +566,6 @@
     class="hidden md:hidden absolute left-4 right-4 top-full tempo-mobile-panel"
     style="background-color: #FBF8F3 !important; z-index: 9999;"
 >
-
-{# FRISE VÉGÉTALE — MENU MOBILE #}
-<div class="tempo-menu-botanical" aria-hidden="true">
-
-    <svg viewBox="0 0 220 520"
-         fill="none"
-         xmlns="http://www.w3.org/2000/svg">
-
-        {# Tige principale #}
-        <path
-            d="M70 500 C95 430 55 380 105 315 C150 255 95 205 135 145 C160 105 160 55 145 10"
-            stroke="#00687A"
-            stroke-width="2"
-            stroke-linecap="round"
-            opacity=".55"
-        />
-
-        {# Branches secondaires #}
-        <path
-            d="M100 330 C135 315 160 285 175 250"
-            stroke="#00687A"
-            stroke-width="1.5"
-            opacity=".5"
-        />
-
-        <path
-            d="M120 190 C90 170 72 145 65 115"
-            stroke="#C9653B"
-            stroke-width="1.5"
-            opacity=".6"
-        />
-
-        {# Feuilles bleu pétrole #}
-        <ellipse cx="139" cy="292" rx="8" ry="22"
-                 transform="rotate(45 139 292)"
-                 fill="#00687A" opacity=".65"/>
-
-        <ellipse cx="166" cy="264" rx="7" ry="19"
-                 transform="rotate(38 166 264)"
-                 fill="#00687A" opacity=".5"/>
-
-        <ellipse cx="90" cy="350" rx="8" ry="21"
-                 transform="rotate(-38 90 350)"
-                 fill="#00687A" opacity=".55"/>
-
-        {# Feuilles terracotta #}
-        <ellipse cx="99" cy="166" rx="7" ry="20"
-                 transform="rotate(-42 99 166)"
-                 fill="#C9653B" opacity=".7"/>
-
-        <ellipse cx="70" cy="125" rx="6" ry="17"
-                 transform="rotate(-35 70 125)"
-                 fill="#C9653B" opacity=".55"/>
-
-        <ellipse cx="149" cy="85" rx="7" ry="21"
-                 transform="rotate(20 149 85)"
-                 fill="#C9653B" opacity=".6"/>
-
-        {# Petits points #}
-        <circle cx="180" cy="215" r="4"
-                fill="#C9653B" opacity=".7"/>
-
-        <circle cx="190" cy="200" r="2.5"
-                fill="#00687A" opacity=".5"/>
-
-        <circle cx="181" cy="185" r="3"
-                fill="#C9653B" opacity=".45"/>
-
-    </svg>
-
-    <span class="tempo-menu-shape tempo-menu-shape-1"></span>
-    <span class="tempo-menu-shape tempo-menu-shape-2"></span>
-    <span class="tempo-menu-shape tempo-menu-shape-3"></span>
-    <span class="tempo-menu-shape tempo-menu-shape-4"></span>
-    <span class="tempo-menu-shape tempo-menu-shape-5"></span>
-
-</div>
 
     <nav class="tempo-mobile-nav" aria-label="Navigation mobile">
 

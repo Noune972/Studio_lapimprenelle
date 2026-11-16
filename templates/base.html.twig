@@ -855,14 +855,25 @@
         catch (e) { return false; }
     }
 
-    function update() {
-        var bar = document.getElementById('tempo-contact-bar');
-        if (!bar) return;
+    // Vrai tant que les boutons du hero sont à l'écran ou pas encore atteints
+function heroActionsStillAhead() {
+    var el = document.querySelector('.tempo-hero-mobile-actions');
+    if (!el) return false;           // autres pages : pas de hero, on ne bloque pas
+    return el.getBoundingClientRect().bottom > 0;
+}
 
-        var show = !isClosed() && window.scrollY > SHOW_AFTER;
-        bar.classList.toggle('is-visible', show);
-        document.body.classList.toggle('has-contact-bar', show);
-    }
+function update() {
+    var bar = document.getElementById('tempo-contact-bar');
+    if (!bar) return;
+
+    var show = !isClosed()
+        && !onContactPage()
+        && window.scrollY > SHOW_AFTER
+        && !heroActionsStillAhead();
+
+    bar.classList.toggle('is-visible', show);
+    document.body.classList.toggle('has-contact-bar', show);
+}
 
     window.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update);

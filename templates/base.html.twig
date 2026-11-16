@@ -745,11 +745,13 @@
 
 {% endblock %}
 
-
 {# =========================================================
-   BARRE DE CONTACT FIXE — MOBILE UNIQUEMENT
+   BARRE DE CONTACT FIXE — MOBILE UNIQUEMENT 
 ========================================================= #}
-{% if app.request.attributes.get('_route') != 'app_contact' %}
+{% set tcbPath = app.request ? app.request.pathInfo : '' %}
+{% set tcbRoute = app.request ? app.request.attributes.get('_route') : '' %}
+
+{% if tcbRoute != 'app_contact' and not (tcbPath starts with '/contact') %}
 
 <style>
     #tempo-contact-bar { display: none; }
@@ -760,16 +762,14 @@
             left: 0;
             right: 0;
             bottom: 0;
-            z-index: 60;
+            z-index: 9999;
             display: flex;
             align-items: center;
             gap: 10px;
             padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
-            background: rgba(251, 248, 243, .96);
-            -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
-            border-top: 1px solid #E7DDD2;
-            box-shadow: 0 -8px 24px rgba(23, 40, 36, .08);
+            background: #00687A;
+            border-top: 1px solid rgba(255, 255, 255, .18);
+            box-shadow: 0 -8px 24px rgba(23, 40, 36, .18);
             transform: translateY(110%);
             transition: transform .35s ease;
         }
@@ -787,33 +787,32 @@
             justify-content: center;
             gap: 8px;
             text-decoration: none;
+            cursor: pointer;
         }
 
         #tempo-contact-bar .tcb-call {
             flex: 0 0 auto;
             padding: 0 16px;
-            border: 1.5px solid #00687A;
-            color: #00687A;
+            border: 1.5px solid rgba(255, 255, 255, .85);
+            color: #fff;
             background: transparent;
         }
 
         #tempo-contact-bar .tcb-main {
             flex: 1 1 auto;
             padding: 0 16px;
-            background: #00687A;
-            color: #fff;
+            background: #fff;
+            color: #00687A;
         }
 
         #tempo-contact-bar .tcb-close {
             flex: 0 0 46px;
             border: 0;
-            background: #EFE7DA;
-            color: #56615f;
-            font-size: 18px;
-            cursor: pointer;
+            background: rgba(255, 255, 255, .16);
+            color: #fff;
+            font-size: 20px;
         }
 
-        /* Évite que la barre masque le bas de page (pied de page) */
         body.has-contact-bar { padding-bottom: 80px; }
     }
 
@@ -847,7 +846,7 @@
     if (window.__tempoContactBarInit) return;
     window.__tempoContactBarInit = true;
 
-    var SHOW_AFTER = 500;      // px de défilement avant d'afficher la barre
+    var SHOW_AFTER = 300;                       // défilement minimum, en px
     var STORAGE_KEY = 'tempoContactBarClosed';
 
     function isClosed() {
@@ -855,28 +854,38 @@
         catch (e) { return false; }
     }
 
-    // Vrai tant que les boutons du hero sont à l'écran ou pas encore atteints
-function heroActionsStillAhead() {
-    var el = document.querySelector('.tempo-hero-mobile-actions');
-    if (!el) return false;           // autres pages : pas de hero, on ne bloque pas
-    return el.getBoundingClientRect().bottom > 0;
-}
+    function onContactPage() {
+        return window.location.pathname.indexOf('/contact') === 0;
+    }
 
-function update() {
-    var bar = document.getElementById('tempo-contact-bar');
-    if (!bar) return;
+    // Vrai tant que les boutons du hero sont encore à l'écran ou plus bas
+    function heroActionsStillAhead() {
+        var el = document.querySelector('.tempo-hero-mobile-actions');
+        if (!el) return false;
+        var r = el.getBoundingClientRect();
+        if (r.width === 0 && r.height === 0) return false;   // masqué (ordinateur)
+        return r.bottom > 0;
+    }
 
-    var show = !isClosed()
-        && !onContactPage()
-        && window.scrollY > SHOW_AFTER
-        && !heroActionsStillAhead();
+    function update() {
+        var bar = document.getElementById('tempo-contact-bar');
+        if (!bar) return;
 
-    bar.classList.toggle('is-visible', show);
-    document.body.classList.toggle('has-contact-bar', show);
-}
+        var scrolled = window.pageYOffset || document.documentElement.scrollTop || 0;
+
+        var show = !isClosed()
+                && !onContactPage()
+                && scrolled > SHOW_AFTER
+                && !heroActionsStillAhead();
+
+        bar.classList.toggle('is-visible', show);
+        document.body.classList.toggle('has-contact-bar', show);
+    }
 
     window.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update);
+    window.addEventListener('load', update);
+    document.addEventListener('DOMContentLoaded', update);
     document.addEventListener('turbo:load', update);
 
     document.addEventListener('click', function (e) {
@@ -890,6 +899,7 @@ function update() {
 </script>
 
 {% endif %}
+
 
 </body>
 </html>

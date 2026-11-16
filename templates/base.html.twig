@@ -178,6 +178,23 @@
         .tempo-nav a,
         .tempo-nav-cta { transition: none; }
     }
+
+
+/* Logo du header — Desktop */
+.logo-header-tempo {
+    display: block;
+    width: 220px;
+    height: auto;
+    max-width: none;
+}
+
+/* Logo du header — Mobile */
+@media (max-width: 767px) {
+    .logo-header-tempo {
+        width: 110px;
+    }
+}
+/
 </style>
 
 
@@ -198,14 +215,16 @@
 
 
 
+
+
 <a href="{{ path('app_home') }}" class="flex items-center shrink-0">
     <img
-        src="{{ asset('images/tempo7-web.webp') }}"
+        src="{{ asset('images/logo22-web.webp') }}"
         alt="Studio Tempo"
-        class="block h-auto"
-        style="width: 220px; max-width: 100%;"
+        class="logo-header-tempo"
     >
 </a>
+
 
 
 

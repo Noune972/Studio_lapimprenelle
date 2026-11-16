@@ -745,76 +745,7 @@
 
 {% endblock %}
 
-{# =========================================================
-   BOUTON FLOTTANT — PRENDRE RDV (toutes les pages sauf contact)
-========================================================= #}
-{% set fabPath = app.request ? app.request.pathInfo : '' %}
 
-{% if not (fabPath starts with '/contact') %}
-
-<style>
-    .tempo-fab {
-        position: fixed;
-        right: 16px;
-        bottom: calc(16px + env(safe-area-inset-bottom, 0px));
-        z-index: 40;
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        min-height: 52px;
-        padding: 0 20px;
-        border-radius: 999px;
-        background: #00687A;
-        color: #fff;
-        font-size: 14px;
-        font-weight: 600;
-        text-decoration: none;
-        box-shadow: 0 10px 28px rgba(0, 104, 122, .35);
-        transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease;
-    }
-
-    .tempo-fab:hover,
-    .tempo-fab:focus-visible {
-        background: #005966;
-        transform: translateY(-2px);
-        box-shadow: 0 14px 32px rgba(0, 104, 122, .42);
-    }
-
-    .tempo-fab:focus-visible {
-        outline: 3px solid #fff;
-        outline-offset: 2px;
-        box-shadow: 0 0 0 5px #00687A;
-    }
-
-    .tempo-fab svg { width: 20px; height: 20px; flex-shrink: 0; }
-
-    /* Laisse de la place en bas de page pour que le bouton ne masque pas le pied de page */
-    @media (max-width: 767px) {
-        body { padding-bottom: 76px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .tempo-fab { transition: none; }
-    }
-</style>
-
-<a href="https://calendar.app.google/BRxyUX2zZN9zrEf26"
-   class="tempo-fab"
-   target="_blank"
-   rel="noopener noreferrer"
-   aria-label="Prendre un rendez-vous téléphonique avec Nathalie (s'ouvre dans un nouvel onglet)">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-     stroke="currentColor" stroke-width="2" stroke-linecap="round"
-     stroke-linejoin="round" aria-hidden="true">
-    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-    <line x1="16" y1="2" x2="16" y2="6"/>
-    <line x1="8" y1="2" x2="8" y2="6"/>
-    <line x1="3" y1="10" x2="21" y2="10"/>
-</svg>
-    Réserver un appel
-</a>
-
-{% endif %}
 
 </body>
 </html>

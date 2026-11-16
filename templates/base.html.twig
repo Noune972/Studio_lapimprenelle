@@ -201,14 +201,18 @@
 ======================================== */
 
 .tempo-mobile-panel {
-    background: #FBF8F3;
+    position: absolute;
+    z-index: 100;
+    background-color: #FBF8F3 !important;
     border: 1px solid #E8DCCE;
     border-radius: 24px;
-    box-shadow: 0 18px 45px rgba(23, 40, 36, 0.12);
-    overflow: hidden;
-    max-height: calc(100dvh - 110px);
+    box-shadow: 0 18px 45px rgba(23, 40, 36, 0.18);
+    overflow-x: hidden;
     overflow-y: auto;
+    max-height: calc(100dvh - 110px);
+    isolation: isolate;
 }
+
 
 .tempo-mobile-nav {
     padding: 26px 24px 24px;
@@ -281,15 +285,16 @@
     background: #F5EBE3;
 }
 
-/* Bouton contact */
+
+/* Bouton contact bleu pétrole */
 .tempo-mobile-contact {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 16px 22px;
     border-radius: 16px;
-    background: #C9653B;
-    color: white;
+    background: #00687A;
+    color: #FFFFFF;
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
@@ -297,9 +302,11 @@
 }
 
 .tempo-mobile-contact:hover {
-    background: #AD502D;
+    background: #004E5C;
+    color: #FFFFFF;
     transform: translateY(-2px);
 }
+
 
 /* Écrans très étroits */
 @media (max-width: 360px) {
@@ -318,6 +325,55 @@
         transition: none;
     }
 }
+
+
+
+/* Frise végétale du menu mobile */
+@media (max-width: 767px) {
+
+    .tempo-mobile-panel {
+        position: absolute;
+        isolation: isolate;
+    }
+
+    /* Tige courbée */
+    .tempo-mobile-panel::before {
+        content: "";
+        position: absolute;
+        right: 14px;
+        top: 105px;
+        width: 65px;
+        height: 280px;
+        border-right: 2px solid #78AEB0;
+        border-radius: 50%;
+        transform: rotate(8deg);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    /* Feuille bleu pétrole */
+    .tempo-mobile-panel::after {
+        content: "";
+        position: absolute;
+        right: -28px;
+        top: 165px;
+        width: 95px;
+        height: 145px;
+        background: #00687A;
+        opacity: 0.22;
+        border-radius: 90% 0 90% 0;
+        transform: rotate(-25deg);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    /* Les liens restent au-dessus de la décoration */
+    .tempo-mobile-nav {
+        position: relative;
+        z-index: 1;
+    }
+}
+
 
 
 </style>
@@ -504,11 +560,13 @@
 
     
 {# MENU MOBILE — FIL CONDUCTEUR #}
+
 <div
     id="mobile-menu"
-    class="hidden md:hidden absolute left-4 right-4 top-full
-           tempo-mobile-panel"
+    class="hidden md:hidden absolute left-4 right-4 top-full tempo-mobile-panel"
+    style="background-color: #FBF8F3 !important; z-index: 9999;"
 >
+
     <nav class="tempo-mobile-nav" aria-label="Navigation mobile">
 
         {# Fil conducteur et liens #}

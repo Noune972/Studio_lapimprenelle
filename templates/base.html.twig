@@ -195,6 +195,131 @@
     }
 }
 /
+
+/* ========================================
+   MENU MOBILE — FIL CONDUCTEUR
+======================================== */
+
+.tempo-mobile-panel {
+    background: #FBF8F3;
+    border: 1px solid #E8DCCE;
+    border-radius: 24px;
+    box-shadow: 0 18px 45px rgba(23, 40, 36, 0.12);
+    overflow: hidden;
+    max-height: calc(100dvh - 110px);
+    overflow-y: auto;
+}
+
+.tempo-mobile-nav {
+    padding: 26px 24px 24px;
+}
+
+/* Ligne verticale */
+.tempo-mobile-timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 25px;
+}
+
+.tempo-mobile-timeline::before {
+    content: "";
+    position: absolute;
+    left: 11px;
+    top: 25px;
+    bottom: 25px;
+    width: 1px;
+    background: #D9A38C;
+}
+
+/* Liens */
+.tempo-mobile-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+    padding: 10px 12px 10px 48px;
+    color: #173D42;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 14px;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+/* Petits points sur la ligne */
+.tempo-mobile-link::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: 1.5px solid #D18A69;
+    background: #FBF8F3;
+    z-index: 1;
+}
+
+/* Page active */
+.tempo-mobile-link.is-active {
+    color: #00687A;
+    font-weight: 700;
+    background: #F3E8DF;
+}
+
+.tempo-mobile-link.is-active::before {
+    background: #C9653B;
+    border-color: #C9653B;
+    box-shadow: 0 0 0 4px #FBF8F3;
+}
+
+.tempo-mobile-link:hover {
+    color: #C9653B;
+    background: #F5EBE3;
+}
+
+/* Bouton contact */
+.tempo-mobile-contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 22px;
+    border-radius: 16px;
+    background: #C9653B;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.tempo-mobile-contact:hover {
+    background: #AD502D;
+    transform: translateY(-2px);
+}
+
+/* Écrans très étroits */
+@media (max-width: 360px) {
+    .tempo-mobile-nav {
+        padding: 20px 18px;
+    }
+
+    .tempo-mobile-link {
+        min-height: 50px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tempo-mobile-link,
+    .tempo-mobile-contact {
+        transition: none;
+    }
+}
+
+
 </style>
 
 
@@ -377,70 +502,66 @@
        MENU MOBILE
     ========================================================= #}
 
-    <div
-        id="mobile-menu"
-        class="hidden md:hidden
-               absolute
-               left-4 right-4
-               top-full
-               bg-[#F6F2EB]
-               border border-[#D9C8A9]/40
-               rounded-2xl
-               shadow-xl
-               overflow-hidden"
-    >
+    
+{# MENU MOBILE — FIL CONDUCTEUR #}
+<div
+    id="mobile-menu"
+    class="hidden md:hidden absolute left-4 right-4 top-full
+           tempo-mobile-panel"
+>
+    <nav class="tempo-mobile-nav" aria-label="Navigation mobile">
 
-        <nav class="tempo-mobile-nav flex flex-col p-3" aria-label="Navigation mobile">
+        {# Fil conducteur et liens #}
+        <div class="tempo-mobile-timeline">
 
             <a href="{{ path('app_home') }}"
-               class="px-5 py-3.5 rounded-xl text-sm text-ink hover:bg-white/60 hover:text-terracotta transition">
+               class="tempo-mobile-link {{ app.request.attributes.get('_route') == 'app_home' ? 'is-active' : '' }}"
+               {% if app.request.attributes.get('_route') == 'app_home' %}aria-current="page"{% endif %}>
                 Accueil
             </a>
 
             <a href="{{ path('app_service') }}"
-               class="px-5 py-3.5 rounded-xl text-sm text-ink hover:bg-white/60 hover:text-terracotta transition">
+               class="tempo-mobile-link {{ app.request.attributes.get('_route') == 'app_service' ? 'is-active' : '' }}"
+               {% if app.request.attributes.get('_route') == 'app_service' %}aria-current="page"{% endif %}>
                 Services
             </a>
 
             <a href="{{ path('app_projet_index') }}"
-               class="px-5 py-3.5 rounded-xl text-sm text-ink hover:bg-white/60 hover:text-terracotta transition">
+               class="tempo-mobile-link {{ app.request.attributes.get('_route') == 'app_projet_index' ? 'is-active' : '' }}"
+               {% if app.request.attributes.get('_route') == 'app_projet_index' %}aria-current="page"{% endif %}>
                 Réalisations
             </a>
 
             <a href="{{ path('app_apropos') }}"
-               class="px-5 py-3.5 rounded-xl text-sm text-ink hover:bg-white/60 hover:text-terracotta transition">
+               class="tempo-mobile-link {{ app.request.attributes.get('_route') == 'app_apropos' ? 'is-active' : '' }}"
+               {% if app.request.attributes.get('_route') == 'app_apropos' %}aria-current="page"{% endif %}>
                 À propos
             </a>
 
             <a href="{{ path('app_tarifs') }}"
-               class="px-5 py-3.5 rounded-xl text-sm text-ink hover:bg-white/60 hover:text-terracotta transition">
+               class="tempo-mobile-link {{ app.request.attributes.get('_route') == 'app_tarifs' ? 'is-active' : '' }}"
+               {% if app.request.attributes.get('_route') == 'app_tarifs' %}aria-current="page"{% endif %}>
                 Tarifs
             </a>
 
             <a href="{{ path('app_article_index') }}"
-               class="px-5 py-3.5 rounded-xl text-sm text-ink hover:bg-white/60 hover:text-terracotta transition">
+               class="tempo-mobile-link {{ app.request.attributes.get('_route') == 'app_article_index' ? 'is-active' : '' }}"
+               {% if app.request.attributes.get('_route') == 'app_article_index' %}aria-current="page"{% endif %}>
                 Blog
             </a>
 
+        </div>
 
-            {# Séparateur #}
-            <div class="h-px bg-[#D9C8A9]/50 my-2"></div>
+        {# Bouton contact #}
+        <a href="{{ path('app_contact') }}"
+           data-nav-cta
+           class="tempo-mobile-contact">
+            <span>Me contacter</span>
+            <span aria-hidden="true">→</span>
+        </a>
 
-
-            {# CONTACT MOBILE #}
-            <a href="{{ path('app_contact') }}"
-               data-nav-cta
-               class="flex items-center justify-between rounded-xl bg-terracotta text-white px-5 py-3.5 text-sm font-medium hover:bg-terracotta-dark transition">
-
-                Me contacter
-
-                <span aria-hidden="true">→</span>
-
-            </a>
-
-        </nav>
-
-    </div>
+    </nav>
+</div>
 
 </header>
 

@@ -60,8 +60,7 @@
 
 
 {# =========================================================
-   STYLE DE L'EN-TÊTE (fixe au défilement + menu desktop)
-   Tout est en CSS pur : ne dépend pas du build Tailwind.
+   STYLE DE L'EN-TÊTE
 ========================================================= #}
 <style>
     /* Coupe ce qui dépasse sur les côtés sans casser position: sticky.
@@ -73,7 +72,7 @@
         position: sticky;
         top: 0;
         z-index: 50;
-        background: rgba(247, 243, 236, .97);   /* pas de backdrop-filter : il casserait le menu mobile */
+        background: #F7F3EC;   /* opaque : le texte de la page ne transparaît plus dessous */
         border-bottom: 1px solid transparent;
         transition: box-shadow .3s ease, border-color .3s ease;
     }
@@ -83,20 +82,40 @@
         box-shadow: 0 6px 24px rgba(23, 40, 36, .08);
     }
 
-    /* ---------- Logo (taille fixe : l'en-tête ne change jamais de hauteur au défilement) ---------- */
-    .tempo-header .tempo-logo { display: block; width: 220px; height: auto; }
-
-    @media (max-width: 639px) {
-        .tempo-header .tempo-logo { margin-left: -43px; }
+    /* ---------- Logo (une seule règle, valable pour les deux noms de classe) ---------- */
+    .tempo-header .tempo-logo,
+    .tempo-header .logo-header-tempo {
+        display: block;
+        width: 80px;          /* mobile */
+        height: auto;
+        max-width: none;
     }
 
     @media (min-width: 768px) and (max-width: 1023px) {
-        .tempo-header .tempo-logo { width: 150px; }
+        .tempo-header .tempo-logo,
+        .tempo-header .logo-header-tempo { width: 100px; }
     }
 
     @media (min-width: 1024px) {
-        .tempo-header .tempo-logo { width: 190px; }
+        .tempo-header .tempo-logo,
+        .tempo-header .logo-header-tempo { width: 125px; }
     }
+
+    /* ---------- Mention « Agence web indépendante » (mobile) ---------- */
+    .tempo-header-tag {
+        flex: 1 1 0;
+        min-width: 0;
+        padding: 0 8px;
+        text-align: center;
+        font-size: 11px;
+        font-weight: 600;
+        line-height: 1.25;
+        color: #00678A;
+        text-wrap: balance;
+    }
+
+    @media (min-width: 768px) { .tempo-header-tag { display: none; } }
+    @media (max-width: 339px) { .tempo-header-tag { display: none; } }
 
     /* ---------- Menu desktop ---------- */
     .tempo-nav { display: none; }
@@ -104,6 +123,8 @@
     @media (min-width: 768px) {
         .tempo-nav { display: flex; align-items: center; gap: 2px; }
     }
+
+    .tempo-nav a { white-space: nowrap; }
 
     .tempo-nav a:not(.tempo-nav-cta) {
         position: relative;
@@ -119,9 +140,6 @@
         .tempo-nav { gap: 4px; }
         .tempo-nav a:not(.tempo-nav-cta) { padding: 10px 14px; font-size: 15px; }
     }
-
-    /* Évite que « À propos » passe sur deux lignes */
-    .tempo-nav a { white-space: nowrap; }
 
     /* Trait terracotta qui glisse sous le lien */
     .tempo-nav a:not(.tempo-nav-cta)::after {
@@ -152,7 +170,7 @@
 
     .tempo-nav a[aria-current="page"] { font-weight: 600; }
 
-    /* Bouton Contact */
+    /* Bouton Contact desktop */
     .tempo-nav-cta {
         font-weight: 600;
         transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease;
@@ -165,219 +183,166 @@
         box-shadow: 0 10px 24px rgba(0, 104, 122, .28);
     }
 
-    /* ---------- Menu mobile : page active ---------- */
-    .tempo-mobile-nav a[aria-current="page"]:not([data-nav-cta]) {
-        background: rgba(255, 255, 255, .75);
-        color: #00687A;
-        font-weight: 600;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .tempo-header,
-        .tempo-nav a::after,
-        .tempo-nav a,
-        .tempo-nav-cta { transition: none; }
-    }
-
-
-/* Logo du header — Desktop */
-.logo-header-tempo {
-    display: block;
-    width: 220px;
-    height: auto;
-    max-width: none;
-}
-
-/* Logo du header — Mobile */
-@media (max-width: 767px) {
-    .logo-header-tempo {
-        width: 110px;
-    }
-}
-/
-
-/* ========================================
-   MENU MOBILE — FIL CONDUCTEUR
-======================================== */
-
-.tempo-mobile-panel {
-    position: absolute;
-    z-index: 100;
-    background-color: #FBF8F3 !important;
-    border: 1px solid #E8DCCE;
-    border-radius: 24px;
-    box-shadow: 0 18px 45px rgba(23, 40, 36, 0.18);
-    overflow-x: hidden;
-    overflow-y: auto;
-    max-height: calc(100dvh - 110px);
-    isolation: isolate;
-}
-
-
-.tempo-mobile-nav {
-    padding: 26px 24px 24px;
-}
-
-/* Ligne verticale */
-.tempo-mobile-timeline {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    margin-bottom: 25px;
-}
-
-.tempo-mobile-timeline::before {
-    content: "";
-    position: absolute;
-    left: 11px;
-    top: 25px;
-    bottom: 25px;
-    width: 1px;
-    background: #D9A38C;
-}
-
-/* Liens */
-.tempo-mobile-link {
-    position: relative;
-    display: flex;
-    align-items: center;
-    min-height: 56px;
-    padding: 10px 12px 10px 48px;
-    color: #173D42;
-    font-size: 17px;
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 14px;
-    transition: color 0.2s ease, background 0.2s ease;
-}
-
-/* Petits points sur la ligne */
-.tempo-mobile-link::before {
-    content: "";
-    position: absolute;
-    left: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 13px;
-    height: 13px;
-    border-radius: 50%;
-    border: 1.5px solid #D18A69;
-    background: #FBF8F3;
-    z-index: 1;
-}
-
-/* Page active */
-.tempo-mobile-link.is-active {
-    color: #00687A;
-    font-weight: 700;
-    background: #F3E8DF;
-}
-
-.tempo-mobile-link.is-active::before {
-    background: #C9653B;
-    border-color: #C9653B;
-    box-shadow: 0 0 0 4px #FBF8F3;
-}
-
-.tempo-mobile-link:hover {
-    color: #C9653B;
-    background: #F5EBE3;
-}
-
-
-/* Bouton contact bleu pétrole */
-.tempo-mobile-contact {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 22px;
-    border-radius: 16px;
-    background: #00687A;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.tempo-mobile-contact:hover {
-    background: #004E5C;
-    color: #FFFFFF;
-    transform: translateY(-2px);
-}
-
-
-/* Écrans très étroits */
-@media (max-width: 360px) {
-    .tempo-mobile-nav {
-        padding: 20px 18px;
-    }
-
-    .tempo-mobile-link {
-        min-height: 50px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .tempo-mobile-link,
-    .tempo-mobile-contact {
-        transition: none;
-    }
-}
-
-
-
-/* Frise végétale du menu mobile */
-@media (max-width: 767px) {
-
+    /* ========================================
+       MENU MOBILE — FIL CONDUCTEUR
+    ======================================== */
     .tempo-mobile-panel {
         position: absolute;
+        z-index: 100;
+        background-color: #FBF8F3 !important;
+        border: 1px solid #E8DCCE;
+        border-radius: 24px;
+        box-shadow: 0 18px 45px rgba(23, 40, 36, .18);
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: calc(100dvh - 110px);
         isolation: isolate;
     }
 
-    /* Tige courbée */
-    .tempo-mobile-panel::before {
-        content: "";
-        position: absolute;
-        right: 14px;
-        top: 105px;
-        width: 65px;
-        height: 280px;
-        border-right: 2px solid #78AEB0;
-        border-radius: 50%;
-        transform: rotate(8deg);
-        pointer-events: none;
-        z-index: 0;
-    }
-
-    /* Feuille bleu pétrole */
-    .tempo-mobile-panel::after {
-        content: "";
-        position: absolute;
-        right: -28px;
-        top: 165px;
-        width: 95px;
-        height: 145px;
-        background: #00687A;
-        opacity: 0.22;
-        border-radius: 90% 0 90% 0;
-        transform: rotate(-25deg);
-        pointer-events: none;
-        z-index: 0;
-    }
-
-    /* Les liens restent au-dessus de la décoration */
     .tempo-mobile-nav {
         position: relative;
         z-index: 1;
+        padding: 26px 24px 24px;
     }
-}
 
+    /* Ligne verticale */
+    .tempo-mobile-timeline {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        margin-bottom: 25px;
+    }
 
+    .tempo-mobile-timeline::before {
+        content: "";
+        position: absolute;
+        left: 11px;
+        top: 25px;
+        bottom: 25px;
+        width: 1px;
+        background: #D9A38C;
+    }
 
+    /* Liens */
+    .tempo-mobile-link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        min-height: 56px;
+        padding: 10px 12px 10px 48px;
+        color: #173D42;
+        font-size: 17px;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: 14px;
+        transition: color .2s ease, background .2s ease;
+    }
+
+    /* Petits points sur la ligne */
+    .tempo-mobile-link::before {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        border: 1.5px solid #D18A69;
+        background: #FBF8F3;
+        z-index: 1;
+    }
+
+    .tempo-mobile-link:hover {
+        color: #A94F2C;
+        background: #F5EBE3;
+    }
+
+    /* Page active : fonctionne avec la classe is-active OU avec aria-current (posé par le script) */
+    .tempo-mobile-link.is-active,
+    .tempo-mobile-link[aria-current="page"] {
+        color: #00687A;
+        font-weight: 700;
+        background: #F3E8DF;
+    }
+
+    .tempo-mobile-link.is-active::before,
+    .tempo-mobile-link[aria-current="page"]::before {
+        background: #C9653B;
+        border-color: #C9653B;
+        box-shadow: 0 0 0 4px #FBF8F3;
+    }
+
+    /* Bouton contact bleu pétrole */
+    .tempo-mobile-contact {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 22px;
+        border-radius: 16px;
+        background: #00687A;
+        color: #FFFFFF;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background .2s ease, transform .2s ease;
+    }
+
+    .tempo-mobile-contact:hover {
+        background: #004E5C;
+        color: #FFFFFF;
+        transform: translateY(-2px);
+    }
+
+    /* Écrans très étroits */
+    @media (max-width: 360px) {
+        .tempo-mobile-nav { padding: 20px 18px; }
+        .tempo-mobile-link { min-height: 50px; }
+    }
+
+    /* Frise végétale du menu mobile */
+    @media (max-width: 767px) {
+        .tempo-mobile-panel::before {
+            content: "";
+            position: absolute;
+            right: 14px;
+            top: 105px;
+            width: 65px;
+            height: 280px;
+            border-right: 2px solid #78AEB0;
+            border-radius: 50%;
+            transform: rotate(8deg);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .tempo-mobile-panel::after {
+            content: "";
+            position: absolute;
+            right: -28px;
+            top: 165px;
+            width: 95px;
+            height: 145px;
+            background: #00687A;
+            opacity: .22;
+            border-radius: 90% 0 90% 0;
+            transform: rotate(-25deg);
+            pointer-events: none;
+            z-index: 0;
+        }
+    }
+
+    /* ---------- Animations réduites ---------- */
+    @media (prefers-reduced-motion: reduce) {
+        .tempo-header,
+        .tempo-nav a,
+        .tempo-nav a::after,
+        .tempo-nav-cta,
+        .tempo-mobile-link,
+        .tempo-mobile-contact { transition: none; }
+    }
 </style>
-
 
 {# =========================================================
    HEADER
@@ -400,7 +365,7 @@
 
 <a href="{{ path('app_home') }}" class="flex items-center shrink-0">
     <img
-        src="{{ asset('images/tempo7-web.webp') }}"
+        src="{{ asset('images/logo8-web.webp') }}"
         alt="Studio Tempo"
         class="logo-header-tempo"
     >
@@ -408,7 +373,8 @@
 
 
 
-
+{# Mention centrée, mobile uniquement #}
+<span class="tempo-header-tag">Agence web indépendante</span>
 
 
 

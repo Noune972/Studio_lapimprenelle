@@ -44,11 +44,12 @@
       href="{{ asset('images/favicon2.png') }}?v=2">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
     
 {% block stylesheets %}
+    {{ importmap('app') }}
 {% endblock %}
-
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
 
 <style>
 /* MENU MOBILE — STUDIO TEMPO */
@@ -391,6 +392,14 @@
         .tempo-mobile-contact { transition: none; }
     }
 </style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
+
+
 
 {# =========================================================
    HEADER
@@ -878,13 +887,7 @@
 ========================================================= #}
 
 {% block javascripts %}
-
-    {% block importmap %}
-        {{ importmap('app') }}
-    {% endblock %}
-
 {% endblock %}
-
 
 
 </body>

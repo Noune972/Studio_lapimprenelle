@@ -50,6 +50,108 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
 
+<style>
+/* MENU MOBILE — STUDIO TEMPO */
+@media (max-width: 767px) {
+
+    #mobile-menu.tempo-mobile-panel {
+        background: #FBF8F3 !important;
+        border-radius: 0 0 32px 32px;
+        padding: 28px 22px 36px;
+        max-height: calc(100dvh - 85px);
+        overflow-y: auto;
+        box-shadow: 0 20px 40px rgba(23, 40, 36, .12);
+    }
+
+    #mobile-menu .tempo-mobile-nav {
+        display: block;
+    }
+
+    #mobile-menu .tempo-mobile-timeline {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+
+    #mobile-menu .tempo-mobile-timeline::before,
+    #mobile-menu .tempo-mobile-timeline::after,
+    #mobile-menu .tempo-mobile-link::before,
+    #mobile-menu .tempo-mobile-link::after {
+        content: none !important;
+        display: none !important;
+    }
+
+    #mobile-menu .tempo-mobile-link {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+        min-height: 70px;
+        padding: 12px 0;
+        margin: 0;
+        border: 0;
+        border-bottom: 1px solid rgba(23, 40, 36, .16);
+        border-radius: 0;
+        background: transparent !important;
+        color: #172824;
+        font-family: "Manrope", sans-serif;
+        font-size: clamp(22px, 6vw, 30px);
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+        text-decoration: none;
+        box-shadow: none;
+        transform: none;
+    }
+
+    #mobile-menu .tempo-mobile-link:last-child {
+        border-bottom: 0;
+    }
+
+    #mobile-menu .tempo-mobile-number {
+        flex: 0 0 28px;
+        color: #C9653B;
+        font-family: "Manrope", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0;
+    }
+
+    #mobile-menu .tempo-mobile-link.is-active,
+    #mobile-menu .tempo-mobile-link[aria-current="page"] {
+        color: #C9653B;
+    }
+
+    #mobile-menu .tempo-mobile-contact {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+        min-height: 58px;
+        margin-top: 28px;
+        padding: 14px 18px;
+        border-radius: 999px;
+        background: #00687A !important;
+        color: #fff !important;
+        font-family: "Manrope", sans-serif;
+        font-size: 15px;
+        font-weight: 800;
+        letter-spacing: .03em;
+        text-transform: uppercase;
+        text-decoration: none;
+        box-shadow: none;
+    }
+
+    #mobile-menu .tempo-mobile-contact span {
+        color: inherit;
+    }
+}
+</style>
+
 </head>
 
 
@@ -213,15 +315,6 @@
         margin-bottom: 25px;
     }
 
-    .tempo-mobile-timeline::before {
-        content: "";
-        position: absolute;
-        left: 11px;
-        top: 25px;
-        bottom: 25px;
-        width: 1px;
-        background: #D9A38C;
-    }
 
     /* Liens */
     .tempo-mobile-link {
@@ -236,21 +329,6 @@
         text-decoration: none;
         border-radius: 14px;
         transition: color .2s ease, background .2s ease;
-    }
-
-    /* Petits points sur la ligne */
-    .tempo-mobile-link::before {
-        content: "";
-        position: absolute;
-        left: 5px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 13px;
-        height: 13px;
-        border-radius: 50%;
-        border: 1.5px solid #D18A69;
-        background: #FBF8F3;
-        z-index: 1;
     }
 
     .tempo-mobile-link:hover {
@@ -300,37 +378,8 @@
         .tempo-mobile-link { min-height: 50px; }
     }
 
-    /* Frise végétale du menu mobile */
-    @media (max-width: 767px) {
-        .tempo-mobile-panel::before {
-            content: "";
-            position: absolute;
-            right: 14px;
-            top: 105px;
-            width: 65px;
-            height: 280px;
-            border-right: 2px solid #78AEB0;
-            border-radius: 50%;
-            transform: rotate(8deg);
-            pointer-events: none;
-            z-index: 0;
-        }
 
-        .tempo-mobile-panel::after {
-            content: "";
-            position: absolute;
-            right: -28px;
-            top: 165px;
-            width: 95px;
-            height: 145px;
-            background: #00687A;
-            opacity: .22;
-            border-radius: 90% 0 90% 0;
-            transform: rotate(-25deg);
-            pointer-events: none;
-            z-index: 0;
-        }
-    }
+        
 
     /* ---------- Animations réduites ---------- */
     @media (prefers-reduced-motion: reduce) {
@@ -519,68 +568,65 @@
 
     </div>
 
-    {# =========================================================
-       MENU MOBILE
-    ========================================================= #}
-
-    
-{# MENU MOBILE — FIL CONDUCTEUR #}
-
+  {# MENU MOBILE — STYLE ÉDITORIAL PREMIUM #}
 <div
     id="mobile-menu"
     class="hidden md:hidden absolute left-4 right-4 top-full tempo-mobile-panel"
     style="background-color: #FBF8F3 !important; z-index: 9999;"
 >
-
     <nav class="tempo-mobile-nav" aria-label="Navigation mobile">
 
-        {# Fil conducteur et liens #}
         <div class="tempo-mobile-timeline">
 
             <a href="{{ path('app_home') }}"
                class="tempo-mobile-link {{ app.request.attributes.get('_route') == 'app_home' ? 'is-active' : '' }}"
                {% if app.request.attributes.get('_route') == 'app_home' %}aria-current="page"{% endif %}>
-                Accueil
+                <span class="tempo-mobile-number">00</span>
+                <span>Accueil</span>
             </a>
 
             <a href="{{ path('app_service') }}"
                class="tempo-mobile-link {{ app.request.attributes.get('_route') == 'app_service' ? 'is-active' : '' }}"
                {% if app.request.attributes.get('_route') == 'app_service' %}aria-current="page"{% endif %}>
-                Services
+                <span class="tempo-mobile-number">01</span>
+                <span>Services</span>
             </a>
 
             <a href="{{ path('app_projet_index') }}"
                class="tempo-mobile-link {{ app.request.attributes.get('_route') == 'app_projet_index' ? 'is-active' : '' }}"
                {% if app.request.attributes.get('_route') == 'app_projet_index' %}aria-current="page"{% endif %}>
-                Réalisations
+                <span class="tempo-mobile-number">02</span>
+                <span>Réalisations</span>
             </a>
 
             <a href="{{ path('app_apropos') }}"
                class="tempo-mobile-link {{ app.request.attributes.get('_route') == 'app_apropos' ? 'is-active' : '' }}"
                {% if app.request.attributes.get('_route') == 'app_apropos' %}aria-current="page"{% endif %}>
-                À propos
+                <span class="tempo-mobile-number">03</span>
+                <span>À propos</span>
             </a>
 
             <a href="{{ path('app_tarifs') }}"
                class="tempo-mobile-link {{ app.request.attributes.get('_route') == 'app_tarifs' ? 'is-active' : '' }}"
                {% if app.request.attributes.get('_route') == 'app_tarifs' %}aria-current="page"{% endif %}>
-                Tarifs
+                <span class="tempo-mobile-number">04</span>
+                <span>Tarifs</span>
             </a>
 
             <a href="{{ path('app_article_index') }}"
                class="tempo-mobile-link {{ app.request.attributes.get('_route') == 'app_article_index' ? 'is-active' : '' }}"
                {% if app.request.attributes.get('_route') == 'app_article_index' %}aria-current="page"{% endif %}>
-                Blog
+                <span class="tempo-mobile-number">05</span>
+                <span>Blog</span>
             </a>
 
         </div>
 
-        {# Bouton contact #}
         <a href="{{ path('app_contact') }}"
            data-nav-cta
            class="tempo-mobile-contact">
+            <span aria-hidden="true">✉</span>
             <span>Me contacter</span>
-            <span aria-hidden="true">→</span>
         </a>
 
     </nav>

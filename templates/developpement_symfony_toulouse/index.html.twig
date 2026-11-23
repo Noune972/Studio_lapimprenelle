@@ -1,9 +1,9 @@
 
 {% extends 'base.html.twig' %}
 
-{% block title %}Développement d'applications Symfony à Toulouse | Studio Tempo{% endblock %}
+{% block title %}Développement d'applications sur mesure à Toulouse | Studio Tempo{% endblock %}
 
-{% block meta_description %}Développement d'applications web Symfony sur mesure à Toulouse : outils métier, plateformes web, espaces clients et solutions personnalisées avec Studio Tempo.{% endblock %}
+{% block meta_description %}Développement d'applications web et mobile sur mesure à Toulouse : outils métier, plateformes web, espaces clients et solutions personnalisées.{% endblock %}
 
 {% block body %}
 
@@ -13,19 +13,17 @@
 
     <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
         <div class="max-w-4xl">
-            <p class="text-xs uppercase tracking-[0.25em] font-semibold text-terracotta mb-6">
-                Studio Tempo · Développement web sur mesure
-            </p>
+          
 
             <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.12] text-ink mb-8">
                 Développement d'applications
-                <span class="text-terracotta">Symfony à Toulouse</span>
+                <span class="text-terracotta">sur mesure à Toulouse</span>
             </h1>
 
             <p class="text-lg lg:text-xl leading-relaxed text-ink-soft max-w-3xl mb-10">
                 Vous avez besoin d'une application métier, d'une plateforme web ou d'une
                 application mobile adaptée à votre activité ? Je conçois et
-                développe des solutions Symfony sur mesure, pensées pour vos usages
+                développe des solutions sur mesure, pensées pour vos usages
                 et vos objectifs.
             </p>
 
@@ -112,8 +110,8 @@
             </p>
 
             <h2 class="font-display text-3xl lg:text-5xl text-ink leading-tight mb-6">
-                Quelles applications peut-on
-                <span class="text-terracotta">développer avec Symfony ?</span>
+                Quelles fonctionalités peut-on développer avec un application
+                <span class="text-terracotta">web ou mobile?</span>
             </h2>
 
             <p class="text-ink-soft leading-relaxed text-lg">
@@ -160,7 +158,44 @@
                     title: 'Évolution d’application',
                     description: 'L’ajout de fonctionnalités, la modernisation d’interfaces ou l’amélioration progressive d’une application existante.',
                     detail: 'Évolution · Maintenance · Optimisation'
-                }
+                },
+
+                {
+    number: '07',
+    title: 'Gestion de devis et de facturation',
+    description: 'Des outils pour créer, envoyer et suivre vos devis et vos factures, avec génération de documents PDF et suivi des paiements.',
+    detail: 'Devis · Factures · Suivi'
+},
+{
+    number: '08',
+    title: 'Suivi de projets et de chantiers',
+    description: 'Des applications pour suivre l’avancement de vos dossiers, répartir les tâches et partager l’information avec vos équipes et vos clients.',
+    detail: 'Projets · Tâches · Avancement'
+},
+{
+    number: '09',
+    title: 'Mise en relation et marketplaces',
+    description: 'Des plateformes qui connectent deux types d’utilisateurs, par exemple des clients et des prestataires, avec profils, demandes et messagerie.',
+    detail: 'Profils · Demandes · Messagerie'
+},
+{
+    number: '10',
+    title: 'Gestion d’adhérents et d’associations',
+    description: 'Des outils pour gérer vos membres, leurs cotisations, vos événements et vos communications, dans un espace unique.',
+    detail: 'Membres · Cotisations · Événements'
+},
+{
+    number: '11',
+    title: 'Suivi de santé et de bien-être',
+    description: 'Des applications de suivi personnel, de saisie de données et de visualisation, avec une attention particulière à la sécurité des informations.',
+    detail: 'Suivi · Données · Sécurité'
+},
+{
+    number: '12',
+    title: 'Connexion entre vos outils (API)',
+    description: 'Des passerelles qui relient votre site, votre CRM, votre comptabilité ou vos outils de paiement pour automatiser les échanges de données.',
+    detail: 'API · Intégrations · Automatisation'
+}
             ] %}
 
             {% for solution in solutions %}

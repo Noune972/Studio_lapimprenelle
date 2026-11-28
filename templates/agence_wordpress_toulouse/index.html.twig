@@ -1,83 +1,98 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Agence WordPress Toulouse – Création et refonte et maintenance{% endblock %}
-{% block meta_description %}Création de sites WordPress à Toulouse : site vitrine, boutique WooCommerce, refonte et SEO local. Studio Tempo, votre agence web indépendante.{% endblock %}
+{% block title %}Agence WordPress à Toulouse : création, refonte, SEO | Studio Tempo{% endblock %}
+{% block meta_description %}Agence WordPress à Toulouse : création de site vitrine, boutique WooCommerce, refonte, maintenance et SEO local. Tarifs dès 790 €, devis personnalisé.{% endblock %}
 
 {% block body %}
-{# HERO — composition asymétrique #}
+{# HERO #}
 <section class="relative overflow-hidden bg-cream py-20 lg:py-28">
     <div class="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-terracotta/10 blur-3xl pointer-events-none" aria-hidden="true"></div>
     <div class="relative max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-5 gap-12 items-center">
         <div class="lg:col-span-3">
-            
-            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.12] text-ink mb-8">Agence WordPress à Toulouse </h1>
-            <p class="text-lg lg:text-xl text-ink-soft leading-relaxed mb-8">Vous souhaitez attirer de nouveaux clients, présenter vos prestations ou vendre en ligne ? Je conçois des sites internet professionnels qui associent identité visuelle, simplicité de gestion et référencement naturel.</p>
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.12] text-ink mb-8">Agence WordPress à Toulouse : création, refonte et maintenance de votre site</h1>
+            <p class="text-lg lg:text-xl text-ink-soft leading-relaxed mb-5">Vous souhaitez créer un site WordPress à Toulouse pour attirer de nouveaux clients, présenter vos services ou vendre en ligne ?</p>
+            <p class="text-lg text-ink-soft leading-relaxed mb-8">Je conçois des sites internet professionnels, sur mesure, qui associent identité visuelle, simplicité de gestion et référencement naturel, avec des tarifs affichés dès 890 €.</p>
             <div class="flex flex-wrap gap-4">
                 <a href="{{ path('app_contact') }}" class="inline-flex items-center justify-center rounded-full bg-[#00687A] px-8 py-4 text-white font-semibold hover:opacity-90 transition">Parlons de votre projet <span class="ml-3" aria-hidden="true">↗</span></a>
                 <a href="#prestations" class="inline-flex items-center justify-center rounded-full border border-ink/20 px-8 py-4 text-ink font-medium hover:border-terracotta transition">Découvrir mes prestations</a>
             </div>
         </div>
         <div class="lg:col-span-2 rounded-3xl bg-[#00687A] text-white p-8 lg:p-12">
-            
             <p class="font-display text-3xl lg:text-4xl leading-tight mb-8">Votre identité.<br>Votre site.<br>Votre autonomie.</p>
             <div class="space-y-4 border-t border-white/30 pt-6">
                 <p>01 — Une interlocutrice unique</p>
-                <p>02 — Un design personnalisé</p>
+                <p>02 — Un design WordPress personnalisé</p>
                 <p>03 — Un socle SEO dès la création</p>
+                <p>04 — Des tarifs clairs, un site qui vous appartient</p>
             </div>
         </div>
     </div>
 </section>
 
-{# PRESTATIONS — grille asymétrique #}
+{# PRESTATIONS #}
 <section id="prestations" class="bg-white py-20 lg:py-28 scroll-mt-24">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="max-w-3xl mb-12">
             <p class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold mb-4">Créer · Transformer · Faire évoluer</p>
-            <h2 class="font-display text-3xl lg:text-5xl text-ink leading-tight mb-6">Des solutions WordPress <span class="text-terracotta">pour chaque ambition.</span></h2>
-            <p class="text-lg text-ink-soft leading-relaxed">Artisan, commerçant, indépendant ou dirigeant de TPE : votre présence en ligne doit répondre à vos besoins réels, sans complexité superflue.</p>
+            <h2 class="font-display text-3xl lg:text-5xl text-ink leading-tight mb-6">Création de site WordPress à Toulouse : <span class="text-terracotta">des solutions pour chaque ambition.</span></h2>
+            <p class="text-lg text-ink-soft leading-relaxed">Artisan, commerçant, restaurateur, profession libérale, indépendant ou dirigeant de TPE : votre présence en ligne doit répondre à vos besoins réels, sans complexité superflue. Que vous partiez de zéro ou que vous ayez déjà un site, je vous propose la solution WordPress la plus adaptée à votre activité et à votre budget.</p>
         </div>
         <div class="grid md:grid-cols-5 gap-6">
             <article class="md:col-span-3 rounded-3xl bg-[#F7F3EC] border border-[#E7DDD2] p-8 lg:p-12">
                 <span class="font-display text-4xl text-terracotta">01</span>
                 <h3 class="font-display text-3xl text-[#00687A] mt-6 mb-4">Création de site vitrine WordPress sur mesure</h3>
-                <p class="text-ink-soft leading-relaxed mb-5">Présentez votre métier, vos services et vos réalisations dans un univers graphique qui vous ressemble. Je structure vos pages pour aider vos visiteurs à comprendre votre offre et à vous contacter facilement, y compris depuis leur smartphone.</p>
-                <p class="text-ink-soft leading-relaxed">Un site vitrine peut évoluer avec votre entreprise : nouvelles prestations, portfolio, actualités ou pages dédiées à vos spécialités.</p>
+                <p class="text-ink-soft leading-relaxed mb-5">Présentez votre métier, vos services et vos réalisations dans un univers graphique qui vous ressemble. Je structure vos pages pour aider vos visiteurs à comprendre votre offre et à vous contacter facilement, y compris depuis leur smartphone. Le design est personnalisé, le site est responsive et optimisé pour le référencement naturel dès sa conception.</p>
+                <p class="text-ink-soft leading-relaxed">Un site vitrine peut évoluer avec votre entreprise : nouvelles prestations, portfolio, actualités, blog ou pages dédiées à vos spécialités. Si vous avez seulement besoin d’une présence claire pour démarrer, une one page WordPress est aussi possible.</p>
             </article>
             <article class="md:col-span-2 rounded-3xl bg-cream border border-[#E7DDD2] p-8 lg:p-10">
                 <span class="font-display text-4xl text-terracotta">02</span>
                 <h3 class="font-display text-2xl text-[#00687A] mt-6 mb-4">Boutique en ligne WooCommerce</h3>
-                <p class="text-ink-soft leading-relaxed">Vendez vos produits avec une boutique adaptée à votre catalogue, à vos modalités de livraison et à vos moyens de paiement. Les fiches produits et le parcours de commande sont pensés pour faciliter les achats et la gestion quotidienne.</p>
+                <p class="text-ink-soft leading-relaxed">Vendez vos produits ou vos services avec une boutique WooCommerce adaptée à votre catalogue, à vos modalités de livraison et à vos moyens de paiement. Les fiches produits, le panier et le parcours de commande sont pensés pour faciliter les achats, rassurer vos clients et simplifier la gestion quotidienne des commandes et des stocks.</p>
             </article>
             <article class="md:col-span-2 rounded-3xl bg-cream border border-[#E7DDD2] p-8 lg:p-10">
                 <span class="font-display text-4xl text-terracotta">03</span>
                 <h3 class="font-display text-2xl text-[#00687A] mt-6 mb-4">Refonte de site WordPress existant</h3>
-                <p class="text-ink-soft leading-relaxed">Un design vieillissant, une navigation confuse ou des pages lentes ? Je repense votre site en tenant compte des contenus existants, des adresses à conserver et des redirections nécessaires pour limiter les pertes de visibilité.</p>
+                <p class="text-ink-soft leading-relaxed">Un design vieillissant, une navigation confuse, un site lent ou qui s’affiche mal sur mobile ? Je commence par un audit de votre site actuel, puis je repense l’ergonomie et le design en tenant compte des contenus existants, des adresses à conserver et des redirections nécessaires pour limiter les pertes de visibilité sur Google.</p>
             </article>
             <article class="md:col-span-3 rounded-3xl bg-[#F7F3EC] border border-[#E7DDD2] p-8 lg:p-12">
                 <span class="font-display text-4xl text-terracotta">04</span>
-                <h3 class="font-display text-3xl text-[#00687A] mt-6 mb-4">Maintenance et accompagnement technique</h3>
-                <p class="text-ink-soft leading-relaxed mb-5">Les mises à jour, les sauvegardes et la compatibilité des extensions contribuent à la pérennité de votre installation. Selon vos besoins, nous définissons un suivi adapté à votre site et à votre niveau d'autonomie.</p>
+                <h3 class="font-display text-3xl text-[#00687A] mt-6 mb-4">Maintenance WordPress et accompagnement technique</h3>
+                <p class="text-ink-soft leading-relaxed mb-5">Les mises à jour de WordPress, du thème et des extensions, les sauvegardes et le suivi de la sécurité contribuent à la pérennité de votre site. La maintenance se fait à la demande, selon vos besoins : mises à jour, petites modifications de contenu, dépannage ou suivi technique, sans forfait imposé.</p>
                 <a href="{{ path('app_service') }}" class="text-[#00687A] font-semibold underline underline-offset-4">Découvrir mes services web ↗</a>
             </article>
         </div>
     </div>
 </section>
 
-{# SEO — contraste éditorial #}
+{# POUR QUI #}
+<section class="bg-cream py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+        <div>
+            <p class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold mb-5">Pour quels projets ?</p>
+            <h2 class="font-display text-3xl lg:text-4xl text-ink leading-tight">Un site WordPress pour <span class="text-terracotta">les professionnels toulousains.</span></h2>
+        </div>
+        <div class="text-ink-soft leading-relaxed space-y-5">
+            <p>J’accompagne les artisans, les commerçants, les restaurateurs, les professions libérales, les transporteurs, les associations et les dirigeants de petites entreprises qui veulent un site clair, professionnel et facile à gérer.</p>
+            <p>Que vous lanciez votre activité, que vous souhaitiez être mieux trouvé sur Google à Toulouse ou que vous vouliez vendre vos produits en ligne, WordPress offre une base solide, souple et évolutive.</p>
+        </div>
+    </div>
+</section>
+
+{# SEO #}
 <section class="bg-[#00687A] text-white py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-20">
         <div>
             <p class="text-xs uppercase tracking-[0.2em] font-semibold mb-5">Visibilité & performance</p>
-            <h2 class="font-display text-3xl lg:text-5xl leading-tight mb-7">Un beau site, c'est bien.<br>Un site que vos clients trouvent, c'est mieux.</h2>
-            <p class="text-lg leading-relaxed text-white/90">La création d'un site WordPress optimisé pour Google commence avant le développement. J'organise les contenus autour des recherches de vos prospects et des services que vous souhaitez mettre en avant.</p>
+            <h2 class="font-display text-3xl lg:text-5xl leading-tight mb-7">Un site WordPress optimisé SEO :<br>un site que vos clients trouvent.</h2>
+            <p class="text-lg leading-relaxed text-white/90 mb-5">La création d’un site WordPress optimisé pour Google commence avant le développement. J’organise les contenus autour des recherches de vos prospects et des services que vous souhaitez mettre en avant, avec un socle de référencement naturel intégré dès la conception.</p>
+            <p class="text-lg leading-relaxed text-white/90">Un site rapide, bien structuré et lisible sur mobile est plus agréable pour vos visiteurs, et plus facile à comprendre pour les moteurs de recherche.</p>
         </div>
         <div class="divide-y divide-white/30">
             {% set seo = [
-                {title: 'Référencement local', description: 'Des pages adaptées à votre activité et à votre zone de clientèle, pour répondre aux recherches géographiques pertinentes.'},
-                {title: 'Architecture et contenus', description: 'Des titres hiérarchisés, des métadonnées personnalisées et des liens internes qui facilitent la navigation et la compréhension des pages.'},
-                {title: 'Performance mobile', description: 'Des images optimisées, une interface responsive et une sélection raisonnée des extensions pour limiter les ressources inutiles.'},
-                {title: 'Une visibilité qui se construit', description: 'Un socle technique solide, à enrichir dans le temps avec des contenus utiles. Aucun positionnement sur Google ne peut être garanti.'}
+                {title: 'Référencement local à Toulouse', description: 'Des pages adaptées à votre activité et à votre zone de clientèle, pour répondre aux recherches géographiques pertinentes et apparaître auprès des clients proches de vous.'},
+                {title: 'Architecture et contenus', description: 'Des titres hiérarchisés, des métadonnées personnalisées, des contenus rédigés pour vos visiteurs et des liens internes qui facilitent la navigation et la compréhension des pages.'},
+                {title: 'Performance et vitesse mobile', description: 'Des images optimisées, une interface responsive, un certificat SSL et une sélection raisonnée des extensions pour limiter les ressources inutiles et accélérer le chargement.'},
+                {title: 'Une visibilité qui se construit', description: 'Un socle technique solide, à enrichir dans le temps avec des contenus utiles, des avis clients et un suivi régulier. Aucun positionnement sur Google ne peut être garanti.'}
             ] %}
             {% for item in seo %}
                 <div class="py-6 first:pt-0">
@@ -89,39 +104,68 @@
     </div>
 </section>
 
-{# POSITIONNEMENT ET AUTONOMIE #}
+{# POURQUOI WORDPRESS #}
 <section class="bg-cream py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div class="rounded-3xl border border-[#E7DDD2] bg-white p-8 lg:p-12">
             <p class="text-xs uppercase tracking-[0.2em] text-[#00687A] font-semibold mb-6">Une relation directe</p>
             <p class="font-display text-3xl lg:text-4xl text-ink leading-tight mb-6">Derrière votre site, <span class="text-terracotta">une personne qui vous écoute.</span></p>
-            <p class="text-ink-soft leading-relaxed mb-6">Vous échangez directement avec moi, de la définition de votre projet à sa mise en ligne.</p>
+            <p class="text-ink-soft leading-relaxed mb-6">Vous échangez directement avec moi, de la définition de votre projet à sa mise en ligne. Pas d’intermédiaire, pas de relais : une interlocutrice unique, qui connaît votre site et votre activité.</p>
             <a href="{{ path('app_apropos') }}" class="text-[#00687A] font-semibold underline underline-offset-4">Faire connaissance ↗</a>
         </div>
         <div>
             <h2 class="font-display text-3xl lg:text-4xl text-ink leading-tight mb-6">Pourquoi choisir WordPress pour votre entreprise ?</h2>
-            <p class="text-ink-soft leading-relaxed mb-5">Ce CMS permet de gérer les contenus de votre site depuis une interface d'administration, sans devoir modifier le code à chaque changement. Vous pouvez actualiser vos horaires, publier un article ou présenter une nouvelle prestation.</p>
-            <p class="text-ink-soft leading-relaxed mb-5">Son écosystème permet également d'ajouter des fonctionnalités lorsque votre activité évolue. Je privilégie les solutions utiles et maintenables plutôt que l'accumulation d'extensions.</p>
-            <p class="text-ink-soft leading-relaxed mb-6">Si votre projet nécessite des règles métier complexes ou une application spécifique, un développement sur mesure peut être plus pertinent.</p>
+            <p class="text-ink-soft leading-relaxed mb-5">WordPress est un CMS (système de gestion de contenu) qui permet de gérer les textes, les images et les pages de votre site depuis une interface d’administration, sans devoir modifier le code à chaque changement. Vous pouvez actualiser vos horaires, publier un article de blog ou présenter une nouvelle prestation en toute autonomie.</p>
+            <p class="text-ink-soft leading-relaxed mb-5">Son écosystème de thèmes et d’extensions permet aussi d’ajouter des fonctionnalités lorsque votre activité évolue : formulaire de contact, blog, boutique, prise de rendez-vous. Je privilégie les solutions utiles et maintenables plutôt que l’accumulation d’extensions, pour garder un site rapide et sûr.</p>
+            <p class="text-ink-soft leading-relaxed mb-6">Si votre projet nécessite des règles métier complexes, un espace client ou une application spécifique, un développement sur mesure avec Symfony peut être plus pertinent.</p>
             <a href="{{ path('app_creation_site_toulouse') }}" class="text-[#00687A] font-semibold underline underline-offset-4">Comparer les solutions de création de site internet ↗</a>
         </div>
     </div>
 </section>
 
-{# METHODE — frise verticale #}
-<section class="bg-white py-20 lg:py-28">
+{# CE QUI EST INCLUS #}
+<section class="bg-white py-20 lg:py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-5 gap-12 lg:gap-16">
+        <div class="lg:col-span-2">
+            <p class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold mb-5">Ce qui est inclus</p>
+            <h2 class="font-display text-3xl lg:text-4xl text-ink leading-tight mb-6">Un site WordPress <span class="text-terracotta">clé en main.</span></h2>
+            <p class="text-ink-soft leading-relaxed">Chaque création de site comprend les éléments essentiels pour être en ligne, lisible, sécurisé et facile à gérer.</p>
+        </div>
+        <ul class="lg:col-span-3 grid sm:grid-cols-2 gap-x-8 gap-y-5">
+            {% set inclus = [
+                'Design personnalisé dans le respect de votre identité visuelle',
+                'Site responsive : mobile, tablette et ordinateur',
+                'Organisation des contenus et de la navigation',
+                'Formulaire de contact et fonctionnalités adaptées',
+                'Optimisation SEO technique des pages',
+                'Optimisation des performances et du temps de chargement',
+                'Certificat SSL (site sécurisé en https)',
+                'Formation à la prise en main de votre site'
+            ] %}
+            {% for item in inclus %}
+                <li class="flex items-start gap-3 text-ink-soft leading-6">
+                    <span class="mt-0.5 flex w-5 h-5 shrink-0 items-center justify-center rounded-full bg-[#00687A]/10 text-[#00687A] text-xs" aria-hidden="true">✓</span>
+                    {{ item }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+{# METHODE #}
+<section class="bg-[#F7F3EC] py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-5 gap-12 lg:gap-20">
         <div class="lg:col-span-2">
             <p class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold mb-5">Une collaboration en quatre temps</p>
             <h2 class="font-display text-3xl lg:text-5xl text-ink leading-tight mb-6">De la première idée <span class="text-terracotta">à votre autonomie.</span></h2>
-            <p class="text-ink-soft leading-relaxed">Vous savez où en est votre projet, ce qui reste à valider et comment votre futur site prend forme.</p>
+            <p class="text-ink-soft leading-relaxed">Vous savez où en est votre projet, ce qui reste à valider et comment votre futur site WordPress prend forme.</p>
         </div>
         <ol class="lg:col-span-3 border-l border-[#E7DDD2] ml-5">
             {% set steps = [
-                {title: 'Comprendre votre métier', description: 'Nous définissons vos objectifs, votre clientèle, les pages nécessaires et le budget disponible.'},
-                {title: 'Imaginer votre univers', description: 'Je travaille la structure, les parcours de navigation et la direction graphique avant la réalisation technique.'},
-                {title: 'Développer et tester', description: 'Je réalise le site, intègre les contenus et vérifie les fonctionnalités, les affichages mobiles et les éléments SEO.'},
-                {title: 'Publier et transmettre', description: 'Après validation, le site est mis en ligne. Nous définissons les modalités de prise en main et de suivi pour vous permettre de gérer vos contenus.'}
+                {title: 'Comprendre votre métier', description: 'Nous définissons vos objectifs, votre clientèle, les pages nécessaires et le budget disponible, pour poser une base claire avant de commencer.'},
+                {title: 'Imaginer votre univers', description: 'Je travaille la structure, les parcours de navigation et la direction graphique avant la réalisation technique, pour que le site vous ressemble.'},
+                {title: 'Développer et tester', description: 'Je réalise le site WordPress, j’intègre les contenus et je vérifie les fonctionnalités, l’affichage sur mobile et les éléments de référencement.'},
+                {title: 'Publier et transmettre', description: 'Après validation, le site est mis en ligne. Je vous forme à la prise en main pour que vous puissiez gérer vos contenus, et nous définissons le suivi dont vous avez besoin.'}
             ] %}
             {% for step in steps %}
                 <li class="relative pl-10 pb-10 last:pb-0">
@@ -134,20 +178,63 @@
     </div>
 </section>
 
-{# REALISATIONS ET BUDGET #}
+{# TARIFS ET DELAIS #}
+<section class="bg-white py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="max-w-3xl mb-12">
+            <p class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold mb-5">Un investissement réfléchi</p>
+            <h2 class="font-display text-3xl lg:text-5xl text-ink leading-tight mb-6">Quel prix pour un site WordPress <span class="text-terracotta">professionnel à Toulouse ?</span></h2>
+            <p class="text-lg text-ink-soft leading-relaxed">Le tarif dépend du nombre de pages, de la personnalisation graphique, des contenus et des fonctionnalités. Voici mes tarifs de départ, avec un devis précis pour chaque projet.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            {% set offres = [
+                {nom: 'One Page', prix: '890 €', texte: 'Une présence claire et efficace sur une seule page, pour présenter votre activité, votre offre ou un lancement. Délai indicatif : environ 1 semaine.'},
+                {nom: 'Site vitrine', prix: '1 490 €', texte: 'Un site multipage pour présenter votre entreprise, valoriser vos services et transformer vos visiteurs en prises de contact. Délai indicatif : environ 3 semaines.'},
+                {nom: 'Boutique en ligne', prix: '2 000 €', texte: 'Une boutique WooCommerce avec catalogue, panier, paiement sécurisé et gestion des commandes. Délai indicatif : environ 1 mois et demi.'}
+            ] %}
+            {% for offre in offres %}
+                <article class="rounded-3xl bg-[#F7F3EC] border border-[#E7DDD2] p-8">
+                    <h3 class="font-display text-2xl text-[#00687A] mb-2">{{ offre.nom }}</h3>
+                    <p class="text-sm text-ink-soft">à partir de</p>
+                    <p class="font-display text-4xl text-terracotta mb-4">{{ offre.prix }}</p>
+                    <p class="text-ink-soft leading-relaxed">{{ offre.texte }}</p>
+                </article>
+            {% endfor %}
+        </div>
+        <p class="mt-8 max-w-3xl text-ink-soft leading-relaxed">La refonte d’un site WordPress existant est proposée sur devis, après audit. Le paiement peut être échelonné sans frais, et une fois le projet intégralement réglé, le site vous appartient entièrement. Les délais sont indicatifs et commencent après validation du projet et réception des contenus.</p>
+        <a href="{{ path('app_tarifs') }}" class="mt-6 inline-flex rounded-full bg-[#00687A] px-7 py-3 text-white font-semibold hover:opacity-90 transition">Consulter tous mes tarifs ↗</a>
+    </div>
+</section>
+
+{# MAINTENANCE #}
+<section class="bg-cream py-20 lg:py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+        <div>
+            <p class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold mb-5">Après la mise en ligne</p>
+            <h2 class="font-display text-3xl lg:text-4xl text-ink leading-tight mb-6">Maintenance WordPress : <span class="text-terracotta">sécurité, mises à jour et sauvegardes.</span></h2>
+            <p class="text-ink-soft leading-relaxed">Un site WordPress est un outil vivant : WordPress, le thème et les extensions évoluent régulièrement. Sans entretien, un site devient plus lent, plus vulnérable et plus sujet aux pannes. Je peux m’en occuper pour vous, à la demande.</p>
+            {# Maillage possible vers l’article « Maintenance WordPress : pourquoi est-elle indispensable ? » #}
+        </div>
+        <ul class="space-y-5 text-ink-soft leading-relaxed">
+            <li><strong class="font-display text-xl text-[#00687A] font-normal block mb-1">Mises à jour</strong>WordPress, thème et extensions, avec vérification du bon fonctionnement après chaque intervention.</li>
+            <li><strong class="font-display text-xl text-[#00687A] font-normal block mb-1">Sauvegardes et sécurité</strong>Des copies régulières de votre site et une attention portée aux failles courantes, pour pouvoir restaurer rapidement en cas de problème.</li>
+            <li><strong class="font-display text-xl text-[#00687A] font-normal block mb-1">Modifications et dépannage</strong>Petites modifications de contenu, ajout d’une page, correction d’un bug ou intervention ponctuelle en cas d’incident.</li>
+        </ul>
+    </div>
+</section>
+
+{# REALISATIONS #}
 <section class="bg-[#F7F3EC] py-20 lg:py-24">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-2 gap-6">
-        <article class="rounded-3xl bg-white border border-[#E7DDD2] p-8 lg:p-12">
-            <p class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold mb-5">Des univers différents</p>
-            <h2 class="font-display text-3xl text-ink mb-6">Découvrez mes réalisations web</h2>
-            <p class="text-ink-soft leading-relaxed mb-8">Explorez mon portfolio pour découvrir mon approche du design, de la navigation et de la mise en valeur des activités professionnelles.</p>
-            <a href="{{ path('app_projet_index') }}" class="inline-flex rounded-full border border-ink/20 px-7 py-3 text-[#00687A] font-semibold hover:border-terracotta transition">Voir les réalisations ↗</a>
-        </article>
-        <article class="rounded-3xl bg-[#00687A] text-white p-8 lg:p-12">
-            <p class="text-xs uppercase tracking-[0.2em] font-semibold mb-5">Un investissement réfléchi</p>
-            <h2 class="font-display text-3xl mb-6">Quel prix pour un site WordPress professionnel ?</h2>
-            <p class="text-white/90 leading-relaxed mb-8">Le tarif dépend du nombre de pages, de la personnalisation graphique, des contenus et des fonctionnalités. Le devis précise le périmètre de la création ainsi que les éventuels frais récurrents à prévoir.</p>
-            <a href="{{ path('app_tarifs') }}" class="inline-flex rounded-full bg-white px-7 py-3 text-[#00687A] font-semibold hover:opacity-90 transition">Consulter mes tarifs ↗</a>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <article class="rounded-3xl bg-white border border-[#E7DDD2] p-8 lg:p-12 grid lg:grid-cols-3 gap-8 items-center">
+            <div class="lg:col-span-2">
+                <p class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold mb-5">Des univers différents</p>
+                <h2 class="font-display text-3xl text-ink mb-5">Découvrez mes réalisations web</h2>
+                <p class="text-ink-soft leading-relaxed">Restauration, travaux, transport, santé, aide à la personne : explorez mon portfolio pour découvrir mon approche du design, de la navigation et de la mise en valeur des activités professionnelles.</p>
+            </div>
+            <div class="lg:text-right">
+                <a href="{{ path('app_projet_index') }}" class="inline-flex rounded-full border border-ink/20 px-7 py-3 text-[#00687A] font-semibold hover:border-terracotta transition">Voir les réalisations ↗</a>
+            </div>
         </article>
     </div>
 </section>
@@ -157,28 +244,30 @@
     <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
         <h2 class="font-display text-3xl lg:text-4xl text-ink leading-tight">Votre développeuse WordPress <span class="text-terracotta">à Toulouse et en Haute-Garonne.</span></h2>
         <div class="text-ink-soft leading-relaxed space-y-5">
-            <p>Studio Tempo accompagne les professionnels de Toulouse et de son agglomération, de Blagnac à Balma en passant par Colomiers et Tournefeuille. Que vous lanciez votre activité ou souhaitiez moderniser votre communication, nous construisons votre projet autour de votre clientèle et de vos objectifs.</p>
-            <p>Les échanges peuvent également se dérouler entièrement à distance, avec la même attention portée à chaque étape.</p>
+            <p>Studio Tempo accompagne les professionnels de Toulouse et de son agglomération, de Blagnac à Balma en passant par Colomiers et Tournefeuille. Que vous lanciez votre activité ou souhaitiez moderniser votre communication, je construis votre projet autour de votre clientèle et de vos objectifs.</p>
+            <p>Les échanges peuvent aussi se dérouler entièrement à distance, par visio, par mail ou par téléphone, avec la même attention portée à chaque étape, pour les entreprises de toute la France.</p>
         </div>
     </div>
 </section>
 
-{# FAQ — HTML natif, sans JS #}
+{# FAQ #}
 <section class="bg-cream py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-3 gap-10 lg:gap-16">
         <div>
             <p class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold mb-5">Questions fréquentes</p>
-            <h2 class="font-display text-3xl lg:text-4xl text-ink leading-tight mb-5">Avant de lancer <span class="text-terracotta">votre projet.</span></h2>
-            <p class="text-ink-soft leading-relaxed">Les réponses aux questions que vous pouvez vous poser avant de choisir votre prestataire.</p>
+            <h2 class="font-display text-3xl lg:text-4xl text-ink leading-tight mb-5">Avant de lancer <span class="text-terracotta">votre site WordPress.</span></h2>
+            <p class="text-ink-soft leading-relaxed">Les réponses aux questions que vous pouvez vous poser avant de choisir votre agence WordPress à Toulouse.</p>
         </div>
         <div class="lg:col-span-2 space-y-4">
             {% set faqs = [
-                {question: 'Combien de temps faut-il pour créer un site vitrine WordPress ?', answer: 'Le délai dépend du nombre de pages, des fonctionnalités, de la disponibilité des contenus et des validations. Un calendrier prévisionnel est défini au début du projet.'},
-                {question: 'Puis-je modifier mon site sans connaissances techniques ?', answer: 'Oui, les contenus prévus pour être administrables peuvent être modifiés depuis le tableau de bord. Les changements structurels ou certaines fonctionnalités peuvent toutefois nécessiter une intervention technique.'},
+                {question: 'Combien coûte un site WordPress à Toulouse ?', answer: 'Mes tarifs de départ sont de 890 € pour une one page, 1 490 € pour un site vitrine et 2 000 € pour une boutique en ligne WooCommerce. La refonte d’un site existant est proposée sur devis. Le prix final dépend du nombre de pages, de la personnalisation et des fonctionnalités.'},
+                {question: 'Combien de temps faut-il pour créer un site vitrine WordPress ?', answer: 'À titre indicatif, comptez environ une semaine pour une one page, trois semaines pour un site vitrine et un mois et demi pour une boutique en ligne. Le délai dépend aussi de la disponibilité de vos contenus et de vos validations. Un calendrier prévisionnel est défini au début du projet.'},
+                {question: 'Puis-je modifier mon site sans connaissances techniques ?', answer: 'Oui. Les contenus prévus pour être administrables peuvent être modifiés depuis le tableau de bord WordPress, et je vous forme à la prise en main. Les changements structurels ou certaines fonctionnalités peuvent toutefois nécessiter une intervention technique.'},
                 {question: 'Pouvez-vous reprendre un site créé par un autre prestataire ?', answer: 'Une reprise est envisageable après analyse de votre installation, des accès disponibles, des licences et de la compatibilité des composants existants.'},
                 {question: 'Comment préserver mon référencement lors d’une refonte ?', answer: 'Il faut identifier les pages existantes, conserver les URL pertinentes et prévoir des redirections permanentes lorsque les adresses changent. Ces précautions limitent les risques sans garantir le maintien de toutes les positions.'},
-                {question: 'Quels frais prévoir après la mise en ligne ?', answer: 'Le nom de domaine, l’hébergement, certaines licences et la maintenance peuvent entraîner des coûts récurrents. Ils sont à distinguer du prix initial de création.'},
-                {question: 'WordPress est-il adapté à la vente en ligne ?', answer: 'WooCommerce permet de gérer un catalogue, des commandes et des paiements. La pertinence de cette solution dépend du volume de produits, des intégrations et des besoins de gestion de votre boutique.'}
+                {question: 'Quels frais prévoir après la mise en ligne ?', answer: 'Le nom de domaine, l’hébergement, certaines licences et la maintenance peuvent entraîner des coûts récurrents. Ils sont à distinguer du prix initial de création et précisés dans le devis.'},
+                {question: 'WordPress est-il adapté à la vente en ligne ?', answer: 'WooCommerce permet de gérer un catalogue, des commandes et des paiements sécurisés. La pertinence de cette solution dépend du volume de produits, des intégrations et des besoins de gestion de votre boutique.'},
+                {question: 'Le site m’appartient-il une fois terminé ?', answer: 'Oui. Une fois le projet intégralement réglé, votre site vous appartient entièrement. Le paiement peut être échelonné sans frais.'}
             ] %}
             {% for faq in faqs %}
                 <details class="group rounded-2xl bg-white border border-[#E7DDD2] p-6 lg:p-8">
@@ -199,8 +288,8 @@
         <div class="rounded-3xl bg-[#F7F3EC] border border-[#E7DDD2] p-8 lg:p-16 grid lg:grid-cols-3 gap-8 items-center">
             <div class="lg:col-span-2">
                 <p class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold mb-5">À votre tour</p>
-                <h2 class="font-display text-3xl lg:text-5xl text-ink leading-tight mb-5">Et si votre prochain site commençait <span class="text-terracotta">par une conversation ?</span></h2>
-                <p class="text-ink-soft leading-relaxed">Parlez-moi de votre activité, de vos envies et de vos contraintes. Nous identifierons ensemble la solution adaptée à votre projet.</p>
+                <h2 class="font-display text-3xl lg:text-5xl text-ink leading-tight mb-5">Et si votre prochain site WordPress commençait <span class="text-terracotta">par une conversation ?</span></h2>
+                <p class="text-ink-soft leading-relaxed">Parlez-moi de votre activité, de vos envies et de vos contraintes. Je vous réponds avec une solution adaptée à votre projet et un devis personnalisé.</p>
             </div>
             <div class="lg:text-right">
                 <a href="{{ path('app_contact') }}" class="inline-flex items-center justify-center rounded-full bg-[#00687A] px-8 py-4 text-white font-semibold hover:opacity-90 transition">Discuter de mon projet <span class="ml-3" aria-hidden="true">↗</span></a>
@@ -208,4 +297,11 @@
         </div>
     </div>
 </section>
+
+{# Données structurées FAQ #}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{% for faq in faqs %}{"@type":"Question","name":{{ faq.question|json_encode|raw }},"acceptedAnswer":{"@type":"Answer","text":{{ faq.answer|json_encode|raw }}}}{% if not loop.last %},{% endif %}{% endfor %}
+]}
+</script>
 {% endblock %}

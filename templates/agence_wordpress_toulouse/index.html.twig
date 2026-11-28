@@ -1,0 +1,211 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Agence WordPress Toulouse – Création et refonte et maintenance{% endblock %}
+{% block meta_description %}Création de sites WordPress à Toulouse : site vitrine, boutique WooCommerce, refonte et SEO local. Studio Tempo, votre agence web indépendante.{% endblock %}
+
+{% block body %}
+{# HERO — composition asymétrique #}
+<section class="relative overflow-hidden bg-cream py-20 lg:py-28">
+    <div class="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-terracotta/10 blur-3xl pointer-events-none" aria-hidden="true"></div>
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-5 gap-12 items-center">
+        <div class="lg:col-span-3">
+            
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.12] text-ink mb-8">Agence WordPress à Toulouse </h1>
+            <p class="text-lg lg:text-xl text-ink-soft leading-relaxed mb-8">Vous souhaitez attirer de nouveaux clients, présenter vos prestations ou vendre en ligne ? Je conçois des sites internet professionnels qui associent identité visuelle, simplicité de gestion et référencement naturel.</p>
+            <div class="flex flex-wrap gap-4">
+                <a href="{{ path('app_contact') }}" class="inline-flex items-center justify-center rounded-full bg-[#00687A] px-8 py-4 text-white font-semibold hover:opacity-90 transition">Parlons de votre projet <span class="ml-3" aria-hidden="true">↗</span></a>
+                <a href="#prestations" class="inline-flex items-center justify-center rounded-full border border-ink/20 px-8 py-4 text-ink font-medium hover:border-terracotta transition">Découvrir mes prestations</a>
+            </div>
+        </div>
+        <div class="lg:col-span-2 rounded-3xl bg-[#00687A] text-white p-8 lg:p-12">
+            
+            <p class="font-display text-3xl lg:text-4xl leading-tight mb-8">Votre identité.<br>Votre site.<br>Votre autonomie.</p>
+            <div class="space-y-4 border-t border-white/30 pt-6">
+                <p>01 — Une interlocutrice unique</p>
+                <p>02 — Un design personnalisé</p>
+                <p>03 — Un socle SEO dès la création</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# PRESTATIONS — grille asymétrique #}
+<section id="prestations" class="bg-white py-20 lg:py-28 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="max-w-3xl mb-12">
+            <p class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold mb-4">Créer · Transformer · Faire évoluer</p>
+            <h2 class="font-display text-3xl lg:text-5xl text-ink leading-tight mb-6">Des solutions WordPress <span class="text-terracotta">pour chaque ambition.</span></h2>
+            <p class="text-lg text-ink-soft leading-relaxed">Artisan, commerçant, indépendant ou dirigeant de TPE : votre présence en ligne doit répondre à vos besoins réels, sans complexité superflue.</p>
+        </div>
+        <div class="grid md:grid-cols-5 gap-6">
+            <article class="md:col-span-3 rounded-3xl bg-[#F7F3EC] border border-[#E7DDD2] p-8 lg:p-12">
+                <span class="font-display text-4xl text-terracotta">01</span>
+                <h3 class="font-display text-3xl text-[#00687A] mt-6 mb-4">Création de site vitrine WordPress sur mesure</h3>
+                <p class="text-ink-soft leading-relaxed mb-5">Présentez votre métier, vos services et vos réalisations dans un univers graphique qui vous ressemble. Je structure vos pages pour aider vos visiteurs à comprendre votre offre et à vous contacter facilement, y compris depuis leur smartphone.</p>
+                <p class="text-ink-soft leading-relaxed">Un site vitrine peut évoluer avec votre entreprise : nouvelles prestations, portfolio, actualités ou pages dédiées à vos spécialités.</p>
+            </article>
+            <article class="md:col-span-2 rounded-3xl bg-cream border border-[#E7DDD2] p-8 lg:p-10">
+                <span class="font-display text-4xl text-terracotta">02</span>
+                <h3 class="font-display text-2xl text-[#00687A] mt-6 mb-4">Boutique en ligne WooCommerce</h3>
+                <p class="text-ink-soft leading-relaxed">Vendez vos produits avec une boutique adaptée à votre catalogue, à vos modalités de livraison et à vos moyens de paiement. Les fiches produits et le parcours de commande sont pensés pour faciliter les achats et la gestion quotidienne.</p>
+            </article>
+            <article class="md:col-span-2 rounded-3xl bg-cream border border-[#E7DDD2] p-8 lg:p-10">
+                <span class="font-display text-4xl text-terracotta">03</span>
+                <h3 class="font-display text-2xl text-[#00687A] mt-6 mb-4">Refonte de site WordPress existant</h3>
+                <p class="text-ink-soft leading-relaxed">Un design vieillissant, une navigation confuse ou des pages lentes ? Je repense votre site en tenant compte des contenus existants, des adresses à conserver et des redirections nécessaires pour limiter les pertes de visibilité.</p>
+            </article>
+            <article class="md:col-span-3 rounded-3xl bg-[#F7F3EC] border border-[#E7DDD2] p-8 lg:p-12">
+                <span class="font-display text-4xl text-terracotta">04</span>
+                <h3 class="font-display text-3xl text-[#00687A] mt-6 mb-4">Maintenance et accompagnement technique</h3>
+                <p class="text-ink-soft leading-relaxed mb-5">Les mises à jour, les sauvegardes et la compatibilité des extensions contribuent à la pérennité de votre installation. Selon vos besoins, nous définissons un suivi adapté à votre site et à votre niveau d'autonomie.</p>
+                <a href="{{ path('app_service') }}" class="text-[#00687A] font-semibold underline underline-offset-4">Découvrir mes services web ↗</a>
+            </article>
+        </div>
+    </div>
+</section>
+
+{# SEO — contraste éditorial #}
+<section class="bg-[#00687A] text-white py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+            <p class="text-xs uppercase tracking-[0.2em] font-semibold mb-5">Visibilité & performance</p>
+            <h2 class="font-display text-3xl lg:text-5xl leading-tight mb-7">Un beau site, c'est bien.<br>Un site que vos clients trouvent, c'est mieux.</h2>
+            <p class="text-lg leading-relaxed text-white/90">La création d'un site WordPress optimisé pour Google commence avant le développement. J'organise les contenus autour des recherches de vos prospects et des services que vous souhaitez mettre en avant.</p>
+        </div>
+        <div class="divide-y divide-white/30">
+            {% set seo = [
+                {title: 'Référencement local', description: 'Des pages adaptées à votre activité et à votre zone de clientèle, pour répondre aux recherches géographiques pertinentes.'},
+                {title: 'Architecture et contenus', description: 'Des titres hiérarchisés, des métadonnées personnalisées et des liens internes qui facilitent la navigation et la compréhension des pages.'},
+                {title: 'Performance mobile', description: 'Des images optimisées, une interface responsive et une sélection raisonnée des extensions pour limiter les ressources inutiles.'},
+                {title: 'Une visibilité qui se construit', description: 'Un socle technique solide, à enrichir dans le temps avec des contenus utiles. Aucun positionnement sur Google ne peut être garanti.'}
+            ] %}
+            {% for item in seo %}
+                <div class="py-6 first:pt-0">
+                    <h3 class="font-display text-xl lg:text-2xl mb-3">{{ item.title }}</h3>
+                    <p class="text-white/90 leading-relaxed">{{ item.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{# POSITIONNEMENT ET AUTONOMIE #}
+<section class="bg-cream py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="rounded-3xl border border-[#E7DDD2] bg-white p-8 lg:p-12">
+            <p class="text-xs uppercase tracking-[0.2em] text-[#00687A] font-semibold mb-6">Une relation directe</p>
+            <p class="font-display text-3xl lg:text-4xl text-ink leading-tight mb-6">Derrière votre site, <span class="text-terracotta">une personne qui vous écoute.</span></p>
+            <p class="text-ink-soft leading-relaxed mb-6">Vous échangez directement avec moi, de la définition de votre projet à sa mise en ligne.</p>
+            <a href="{{ path('app_apropos') }}" class="text-[#00687A] font-semibold underline underline-offset-4">Faire connaissance ↗</a>
+        </div>
+        <div>
+            <h2 class="font-display text-3xl lg:text-4xl text-ink leading-tight mb-6">Pourquoi choisir WordPress pour votre entreprise ?</h2>
+            <p class="text-ink-soft leading-relaxed mb-5">Ce CMS permet de gérer les contenus de votre site depuis une interface d'administration, sans devoir modifier le code à chaque changement. Vous pouvez actualiser vos horaires, publier un article ou présenter une nouvelle prestation.</p>
+            <p class="text-ink-soft leading-relaxed mb-5">Son écosystème permet également d'ajouter des fonctionnalités lorsque votre activité évolue. Je privilégie les solutions utiles et maintenables plutôt que l'accumulation d'extensions.</p>
+            <p class="text-ink-soft leading-relaxed mb-6">Si votre projet nécessite des règles métier complexes ou une application spécifique, un développement sur mesure peut être plus pertinent.</p>
+            <a href="{{ path('app_creation_site_toulouse') }}" class="text-[#00687A] font-semibold underline underline-offset-4">Comparer les solutions de création de site internet ↗</a>
+        </div>
+    </div>
+</section>
+
+{# METHODE — frise verticale #}
+<section class="bg-white py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-5 gap-12 lg:gap-20">
+        <div class="lg:col-span-2">
+            <p class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold mb-5">Une collaboration en quatre temps</p>
+            <h2 class="font-display text-3xl lg:text-5xl text-ink leading-tight mb-6">De la première idée <span class="text-terracotta">à votre autonomie.</span></h2>
+            <p class="text-ink-soft leading-relaxed">Vous savez où en est votre projet, ce qui reste à valider et comment votre futur site prend forme.</p>
+        </div>
+        <ol class="lg:col-span-3 border-l border-[#E7DDD2] ml-5">
+            {% set steps = [
+                {title: 'Comprendre votre métier', description: 'Nous définissons vos objectifs, votre clientèle, les pages nécessaires et le budget disponible.'},
+                {title: 'Imaginer votre univers', description: 'Je travaille la structure, les parcours de navigation et la direction graphique avant la réalisation technique.'},
+                {title: 'Développer et tester', description: 'Je réalise le site, intègre les contenus et vérifie les fonctionnalités, les affichages mobiles et les éléments SEO.'},
+                {title: 'Publier et transmettre', description: 'Après validation, le site est mis en ligne. Nous définissons les modalités de prise en main et de suivi pour vous permettre de gérer vos contenus.'}
+            ] %}
+            {% for step in steps %}
+                <li class="relative pl-10 pb-10 last:pb-0">
+                    <span class="absolute -left-5 top-0 w-10 h-10 rounded-full bg-[#00687A] text-white flex items-center justify-center font-semibold">{{ '%02d'|format(loop.index) }}</span>
+                    <h3 class="font-display text-2xl text-[#00687A] mb-3">{{ step.title }}</h3>
+                    <p class="text-ink-soft leading-relaxed">{{ step.description }}</p>
+                </li>
+            {% endfor %}
+        </ol>
+    </div>
+</section>
+
+{# REALISATIONS ET BUDGET #}
+<section class="bg-[#F7F3EC] py-20 lg:py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-2 gap-6">
+        <article class="rounded-3xl bg-white border border-[#E7DDD2] p-8 lg:p-12">
+            <p class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold mb-5">Des univers différents</p>
+            <h2 class="font-display text-3xl text-ink mb-6">Découvrez mes réalisations web</h2>
+            <p class="text-ink-soft leading-relaxed mb-8">Explorez mon portfolio pour découvrir mon approche du design, de la navigation et de la mise en valeur des activités professionnelles.</p>
+            <a href="{{ path('app_projet_index') }}" class="inline-flex rounded-full border border-ink/20 px-7 py-3 text-[#00687A] font-semibold hover:border-terracotta transition">Voir les réalisations ↗</a>
+        </article>
+        <article class="rounded-3xl bg-[#00687A] text-white p-8 lg:p-12">
+            <p class="text-xs uppercase tracking-[0.2em] font-semibold mb-5">Un investissement réfléchi</p>
+            <h2 class="font-display text-3xl mb-6">Quel prix pour un site WordPress professionnel ?</h2>
+            <p class="text-white/90 leading-relaxed mb-8">Le tarif dépend du nombre de pages, de la personnalisation graphique, des contenus et des fonctionnalités. Le devis précise le périmètre de la création ainsi que les éventuels frais récurrents à prévoir.</p>
+            <a href="{{ path('app_tarifs') }}" class="inline-flex rounded-full bg-white px-7 py-3 text-[#00687A] font-semibold hover:opacity-90 transition">Consulter mes tarifs ↗</a>
+        </article>
+    </div>
+</section>
+
+{# ANCRAGE LOCAL #}
+<section class="bg-white py-20 lg:py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+        <h2 class="font-display text-3xl lg:text-4xl text-ink leading-tight">Votre développeuse WordPress <span class="text-terracotta">à Toulouse et en Haute-Garonne.</span></h2>
+        <div class="text-ink-soft leading-relaxed space-y-5">
+            <p>Studio Tempo accompagne les professionnels de Toulouse et de son agglomération, de Blagnac à Balma en passant par Colomiers et Tournefeuille. Que vous lanciez votre activité ou souhaitiez moderniser votre communication, nous construisons votre projet autour de votre clientèle et de vos objectifs.</p>
+            <p>Les échanges peuvent également se dérouler entièrement à distance, avec la même attention portée à chaque étape.</p>
+        </div>
+    </div>
+</section>
+
+{# FAQ — HTML natif, sans JS #}
+<section class="bg-cream py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-3 gap-10 lg:gap-16">
+        <div>
+            <p class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold mb-5">Questions fréquentes</p>
+            <h2 class="font-display text-3xl lg:text-4xl text-ink leading-tight mb-5">Avant de lancer <span class="text-terracotta">votre projet.</span></h2>
+            <p class="text-ink-soft leading-relaxed">Les réponses aux questions que vous pouvez vous poser avant de choisir votre prestataire.</p>
+        </div>
+        <div class="lg:col-span-2 space-y-4">
+            {% set faqs = [
+                {question: 'Combien de temps faut-il pour créer un site vitrine WordPress ?', answer: 'Le délai dépend du nombre de pages, des fonctionnalités, de la disponibilité des contenus et des validations. Un calendrier prévisionnel est défini au début du projet.'},
+                {question: 'Puis-je modifier mon site sans connaissances techniques ?', answer: 'Oui, les contenus prévus pour être administrables peuvent être modifiés depuis le tableau de bord. Les changements structurels ou certaines fonctionnalités peuvent toutefois nécessiter une intervention technique.'},
+                {question: 'Pouvez-vous reprendre un site créé par un autre prestataire ?', answer: 'Une reprise est envisageable après analyse de votre installation, des accès disponibles, des licences et de la compatibilité des composants existants.'},
+                {question: 'Comment préserver mon référencement lors d’une refonte ?', answer: 'Il faut identifier les pages existantes, conserver les URL pertinentes et prévoir des redirections permanentes lorsque les adresses changent. Ces précautions limitent les risques sans garantir le maintien de toutes les positions.'},
+                {question: 'Quels frais prévoir après la mise en ligne ?', answer: 'Le nom de domaine, l’hébergement, certaines licences et la maintenance peuvent entraîner des coûts récurrents. Ils sont à distinguer du prix initial de création.'},
+                {question: 'WordPress est-il adapté à la vente en ligne ?', answer: 'WooCommerce permet de gérer un catalogue, des commandes et des paiements. La pertinence de cette solution dépend du volume de produits, des intégrations et des besoins de gestion de votre boutique.'}
+            ] %}
+            {% for faq in faqs %}
+                <details class="group rounded-2xl bg-white border border-[#E7DDD2] p-6 lg:p-8">
+                    <summary class="flex items-center justify-between gap-5 cursor-pointer list-none text-[#00687A] font-display text-xl focus-visible:outline-2 focus-visible:outline-offset-4">
+                        <h3>{{ faq.question }}</h3>
+                        <span class="shrink-0 text-terracotta text-2xl group-open:rotate-45 transition-transform" aria-hidden="true">+</span>
+                    </summary>
+                    <p class="text-ink-soft leading-relaxed mt-5">{{ faq.answer }}</p>
+                </details>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{# CTA FINAL #}
+<section class="bg-white py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="rounded-3xl bg-[#F7F3EC] border border-[#E7DDD2] p-8 lg:p-16 grid lg:grid-cols-3 gap-8 items-center">
+            <div class="lg:col-span-2">
+                <p class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold mb-5">À votre tour</p>
+                <h2 class="font-display text-3xl lg:text-5xl text-ink leading-tight mb-5">Et si votre prochain site commençait <span class="text-terracotta">par une conversation ?</span></h2>
+                <p class="text-ink-soft leading-relaxed">Parlez-moi de votre activité, de vos envies et de vos contraintes. Nous identifierons ensemble la solution adaptée à votre projet.</p>
+            </div>
+            <div class="lg:text-right">
+                <a href="{{ path('app_contact') }}" class="inline-flex items-center justify-center rounded-full bg-[#00687A] px-8 py-4 text-white font-semibold hover:opacity-90 transition">Discuter de mon projet <span class="ml-3" aria-hidden="true">↗</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
